@@ -1,8 +1,8 @@
 #ifndef MyAppVersion
-  #define MyAppVersion "1.0.0"
+  #define MyAppVersion "1.0.1"
 #endif
 #ifndef MyFileVersion
-  #define MyFileVersion "1.0.0.0"
+  #define MyFileVersion "1.0.1.0"
 #endif
 #ifndef MySourceDir
   #error MySourceDir must point to the portable application directory.
@@ -40,7 +40,7 @@ Compression=lzma2/max
 SolidCompression=yes
 WizardStyle=modern
 ArchitecturesAllowed=x64compatible
-MinVersion=10.0.22000
+MinVersion=10.0.18362
 CloseApplications=yes
 RestartApplications=no
 
