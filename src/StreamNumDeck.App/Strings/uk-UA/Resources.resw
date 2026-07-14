@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Видалити</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Редагувати</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Скасувати</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>Система і команди</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>автоматизація</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Грати одночасно</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Запустіть макрос клавіатури</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>автоматизація</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Додайте дію до автоматизації</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Додати крок</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Дія</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Зачекайте перед наступним кроком</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Закінчити</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Пропустіть усі кроки, що залишилися, і завершіть автоматизацію</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Рухатися вгору</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Рухатися вниз</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Кроки макросу: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Крок: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Введіть паузу від 0,1 до 3600 секунд.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Додайте хоча б один елемент до автоматизації.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Автоматизація не може містити більше ніж {0} кроків.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Нічого не робити</value>

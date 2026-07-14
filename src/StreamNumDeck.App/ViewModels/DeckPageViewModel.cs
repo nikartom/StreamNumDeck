@@ -82,6 +82,7 @@ public partial class DeckPageViewModel(
                 .SelectMany(static profile => new[] { profile.NumLockOff, profile.NumLockOn })
                 .SelectMany(static layer => layer.Assignments.Values)
                 .Select(static assignment => assignment.Action)
+                .SelectMany(static action => action.EnumerateExecutableActions())
                 .OfType<PlaySoundActionDefinition>(),
             configuration.Settings,
             cancellationToken);
@@ -270,6 +271,7 @@ public partial class DeckPageViewModel(
         OpenPathActionDefinition => AppStrings.Get("Action_OpenPath"),
         OpenUriActionDefinition => AppStrings.Get("Action_OpenUri"),
         KeyboardMacroActionDefinition => AppStrings.Get("Action_KeyboardMacro"),
+        AutomationActionDefinition => AppStrings.Get("Action_Automation"),
         ObsActionDefinition obs => AppStrings.Format("Action_ObsFormat", obs.Action),
         _ => AppStrings.Get("Action_Execute"),
     };

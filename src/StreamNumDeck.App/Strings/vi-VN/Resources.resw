@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Xóa</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Chỉnh sửa</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Hủy bỏ</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>Hệ thống và lệnh</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Tự động hóa</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Chơi đồng thời</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Chạy macro bàn phím</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Tự động hóa</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Thêm hành động vào tự động hóa</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Thêm bước</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>hành động</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Tạm dừng</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Chờ trước bước tiếp theo</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Kết thúc</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Bỏ qua tất cả các bước còn lại và hoàn tất quá trình tự động hóa</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>giây</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Di chuyển lên</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Di chuyển xuống</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Các bước vĩ mô: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Bước: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Nhập thời gian tạm dừng trong khoảng từ 0,1 đến 3600 giây.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Thêm ít nhất một yếu tố vào tự động hóa.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Quá trình tự động hóa không thể chứa nhiều hơn {0} bước.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>không làm gì cả</value>

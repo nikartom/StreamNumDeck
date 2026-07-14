@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>削除</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>編集</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>システムとコマンド</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>自動化</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>同時にプレイする</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>キーボードマクロを実行する</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>自動化</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>オートメーションにアクションを追加する</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>ステップの追加</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>アクション</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>一時停止</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>次のステップに進む前に待ちます</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>残りの手順をすべてスキップして自動化を終了します</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>上に移動</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>下に移動</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>マクロステップ: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>ステップ: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>0.1 ～ 3600 秒の範囲で一時停止を入力します。</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>少なくとも 1 つの要素をオート​​メーションに追加します。</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>オートメーションには {0} 個を超えるステップを含めることはできません。</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>何もしない</value>

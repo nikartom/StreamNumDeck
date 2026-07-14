@@ -408,6 +408,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
                 .SelectMany(static profile => new[] { profile.NumLockOff, profile.NumLockOn })
                 .SelectMany(static layer => layer.Assignments.Values)
                 .Select(static assignment => assignment.Action)
+                .SelectMany(static action => action.EnumerateExecutableActions())
                 .OfType<PlaySoundActionDefinition>();
             await audioPlaybackService
                 .PreloadAsync(sounds, configuration.Settings, cancellationToken)
@@ -504,7 +505,8 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         UserErrorRaised?.Invoke(ErrorTitle, ErrorText);
     }
 
-    private void ObsController_StateChanged(object? sender, ObsConnectionStateChangedEventArgs e) =>
+    private void ObsController_StateChanged(object? sender, ObsConnectionStateChangedEventArgs e)
+    {
         OnUi(() =>
         {
             if (!string.IsNullOrWhiteSpace(e.ErrorMessage))
@@ -514,6 +516,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
 
             ApplyObsState(e.State);
         });
+    }
 
     private async Task ApplyCaptureTargetsAsync(
         GlobalSettings settings,
@@ -565,6 +568,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         OpenPathActionDefinition => AppStrings.Get("Action_OpenPath", "Open path"),
         OpenUriActionDefinition => AppStrings.Get("Action_OpenUri", "Open link"),
         KeyboardMacroActionDefinition => AppStrings.Get("Action_KeyboardMacro", "Keyboard macro"),
+        AutomationActionDefinition => AppStrings.Get("Action_Automation", "Automation"),
         ObsActionDefinition => "OBS",
         _ => AppStrings.Get("Action_Execute", "Action"),
     };

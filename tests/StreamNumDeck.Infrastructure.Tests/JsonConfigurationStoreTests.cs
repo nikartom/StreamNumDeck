@@ -119,6 +119,40 @@ public sealed class JsonConfigurationStoreTests
     }
 
     [TestMethod]
+    public async Task SaveAndLoad_PreservesAutomationStepsAndNestedActions()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault();
+        var automation = new AutomationActionDefinition(
+            ImmutableArray.Create<AutomationStepDefinition>(
+                new ExecuteAutomationStepDefinition(new ToggleMicrophoneMuteActionDefinition()),
+                new PauseAutomationStepDefinition(1_250),
+                new ExecuteAutomationStepDefinition(new ObsActionDefinition(ObsActionKind.SwitchScene, "Gameplay")),
+                new FinishAutomationStepDefinition()));
+        var profile = configuration.ActiveProfile.WithAssignment(
+            NumLockLayer.On,
+            DeckKey.Numpad0,
+            new KeyAssignment("Начать", IconReference.BuiltIn("play"), automation));
+
+        await store.SaveAsync(configuration.ReplaceProfile(profile));
+        var loaded = await store.LoadAsync();
+
+        var loadedAutomation = Assert.IsInstanceOfType<AutomationActionDefinition>(
+            loaded.ActiveProfile.NumLockOn.GetAssignment(DeckKey.Numpad0).Action);
+        Assert.HasCount(4, loadedAutomation.Steps);
+        Assert.IsInstanceOfType<ToggleMicrophoneMuteActionDefinition>(
+            Assert.IsInstanceOfType<ExecuteAutomationStepDefinition>(loadedAutomation.Steps[0]).Action);
+        Assert.AreEqual(
+            1_250,
+            Assert.IsInstanceOfType<PauseAutomationStepDefinition>(loadedAutomation.Steps[1]).DurationMilliseconds);
+        Assert.AreEqual(
+            "Gameplay",
+            Assert.IsInstanceOfType<ObsActionDefinition>(
+                Assert.IsInstanceOfType<ExecuteAutomationStepDefinition>(loadedAutomation.Steps[2]).Action).TargetName);
+        Assert.IsInstanceOfType<FinishAutomationStepDefinition>(loadedAutomation.Steps[3]);
+    }
+
+    [TestMethod]
     public async Task SaveAndLoad_PreservesSystemAudioAction()
     {
         using var store = new JsonConfigurationStore(paths);

@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>حذف</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>إلغاء</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>النظام والأوامر</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>الأتمتة</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>العب في وقت واحد</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>تشغيل ماكرو لوحة المفاتيح</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>الأتمتة</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>إضافة الإجراء إلى الأتمتة</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>أضف خطوة</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>العمل</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>وقفة</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>انتظر قبل الخطوة التالية</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>إنهاء</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>تخطي كافة الخطوات المتبقية والانتهاء من الأتمتة</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>ثواني</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>تحرك للأعلى</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>تحرك للأسفل</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>خطوات الماكرو: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>الخطوة: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>أدخل وقفة بين 0.1 و 3600 ثانية.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>أضف عنصرًا واحدًا على الأقل إلى الأتمتة.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>لا يمكن أن تحتوي عملية التشغيل التلقائي على أكثر من {0} خطوة.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>لا تفعل شيئا</value>

@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Verwijderen</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Annuleer</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>Systeem en commando's</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Automatisering</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Speel tegelijkertijd</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Voer een toetsenbordmacro uit</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Automatisering</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Voeg actie toe aan automatisering</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Stap toevoegen</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Actie</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pauze</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Wacht met de volgende stap</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Afwerking</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Sla alle resterende stappen over en voltooi de automatisering</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>seconden</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Ga omhoog</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Ga naar beneden</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Macrostappen: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Stap: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Voer een pauze in tussen 0,1 en 3600 seconden.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Voeg minimaal één element toe aan de automatisering.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Een automatisering kan niet meer dan {0} stappen bevatten.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Doe niets</value>

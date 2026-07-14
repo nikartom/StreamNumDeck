@@ -111,7 +111,7 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
                         "StreamNumDeck disconnected",
                         cancellationToken).ConfigureAwait(false);
                 }
-                catch (WebSocketException)
+                catch (Exception exception) when (exception is WebSocketException or ObjectDisposedException)
                 {
                 }
             }
@@ -398,6 +398,20 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
                 pair.Value.TrySetException(exception);
             }
 
+            if (ReferenceEquals(socket, activeSocket))
+            {
+                socket = null;
+                try
+                {
+                    activeSocket.Abort();
+                }
+                catch
+                {
+                }
+
+                activeSocket.Dispose();
+            }
+
             if (maintainConnection && !disposed)
             {
                 SetState(ObsConnectionState.Reconnecting, failure?.Message);
@@ -442,7 +456,14 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
                 await lifecycleGate.WaitAsync(cancellationToken).ConfigureAwait(false);
                 try
                 {
-                    if (!maintainConnection || disposed || socket?.State is WebSocketState.Open)
+                    if (!maintainConnection || disposed)
+                    {
+                        return;
+                    }
+
+                    if (socket?.State is WebSocketState.Open
+                        && State is ObsConnectionState.Connected
+                        && receiveTask is { IsCompleted: false })
                     {
                         return;
                     }

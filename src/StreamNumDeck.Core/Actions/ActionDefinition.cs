@@ -8,6 +8,7 @@ public enum ActionGroup
     Sound,
     Obs,
     System,
+    Automation,
 }
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "type")]
@@ -22,6 +23,7 @@ public enum ActionGroup
 [JsonDerivedType(typeof(OpenUriActionDefinition), "openUri")]
 [JsonDerivedType(typeof(KeyboardMacroActionDefinition), "keyboardMacro")]
 [JsonDerivedType(typeof(ObsActionDefinition), "obs")]
+[JsonDerivedType(typeof(AutomationActionDefinition), "automation")]
 public abstract record ActionDefinition
 {
     [JsonIgnore]

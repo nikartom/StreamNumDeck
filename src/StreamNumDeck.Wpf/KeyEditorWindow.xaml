@@ -145,6 +145,7 @@
                         </DockPanel>
                     </Border>
 
+                    <StackPanel x:Name="AppearanceSection">
                     <TextBlock Text="{localization:Loc Editor_Appearance.Text, Fallback=Appearance}"
                                FontSize="16" FontWeight="SemiBold" />
                     <TextBlock Text="{localization:Loc ProfileIcon.Text, Fallback=Choose how the key will look}"
@@ -201,6 +202,7 @@
                     </Grid>
 
                     <Border Height="1" Background="#414141" Margin="0,20,0,18" />
+                    </StackPanel>
 
                     <TextBlock Text="{localization:Loc Editor_ActionSection.Text, Fallback=Action}"
                                FontSize="16" FontWeight="SemiBold" />
@@ -258,6 +260,123 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
+
+                    <Border x:Name="AutomationPanel" Grid.Column="2" Margin="-3,-3,-3,0" Padding="14"
+                            Background="#262626" BorderBrush="#414141" BorderThickness="1"
+                            CornerRadius="9" Visibility="Collapsed" VerticalAlignment="Top">
+                        <StackPanel>
+                            <ItemsControl x:Name="AutomationStepsItemsControl">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Margin="0,0,0,7" Padding="10,8"
+                                                BorderThickness="1" CornerRadius="7">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Background" Value="#2E2E2E" />
+                                                    <Setter Property="BorderBrush" Value="#494949" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsFinish}" Value="True">
+                                                            <Setter Property="BorderBrush" Value="#866B2E" />
+                                                            <Setter Property="Background" Value="#332E22" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="32" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="{Binding Glyph}" FontFamily="Segoe Fluent Icons"
+                                                           FontSize="18" Foreground="#BFD0FF"
+                                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                <StackPanel Grid.Column="1" Margin="8,0,8,0" VerticalAlignment="Center">
+                                                    <TextBlock Text="{Binding Title}" FontSize="12" FontWeight="SemiBold"
+                                                               TextWrapping="Wrap" />
+                                                    <TextBlock Text="{Binding Detail}" Margin="0,2,0,0" FontSize="10"
+                                                               Foreground="{StaticResource SecondaryTextBrush}"
+                                                               TextWrapping="Wrap" />
+                                                    <StackPanel x:Name="PauseEditor" Orientation="Horizontal"
+                                                                Margin="0,6,0,0" Visibility="Collapsed">
+                                                        <TextBox Width="86" Height="30"
+                                                                 Text="{Binding SecondsText, UpdateSourceTrigger=PropertyChanged}"
+                                                                 LostFocus="PauseSeconds_LostFocus" />
+                                                        <TextBlock Text="{localization:Loc Automation_Seconds, Fallback=seconds}"
+                                                                   Margin="8,0,0,0" VerticalAlignment="Center"
+                                                                   Foreground="{StaticResource SecondaryTextBrush}" />
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                                                    <Button x:Name="EditAutomationStepButton" Width="30" Height="30" Margin="0,0,4,0"
+                                                            Padding="0" Click="EditAutomationStep_Click"
+                                                            ToolTip="{localization:Loc Common_Edit, Fallback=Edit}">
+                                                        <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE70F;" FontSize="12" />
+                                                    </Button>
+                                                    <Button Width="30" Height="30" Margin="0,0,4,0" Padding="0"
+                                                            Click="MoveAutomationStepUp_Click"
+                                                            ToolTip="{localization:Loc Automation_MoveUp, Fallback=Move up}">
+                                                        <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE74A;" FontSize="12" />
+                                                    </Button>
+                                                    <Button Width="30" Height="30" Margin="0,0,4,0" Padding="0"
+                                                            Click="MoveAutomationStepDown_Click"
+                                                            ToolTip="{localization:Loc Automation_MoveDown, Fallback=Move down}">
+                                                        <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE74B;" FontSize="12" />
+                                                    </Button>
+                                                    <Button Width="30" Height="30" Padding="0" Click="RemoveAutomationStep_Click"
+                                                            ToolTip="{localization:Loc Common_Delete, Fallback=Delete}">
+                                                        <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE74D;" FontSize="12" />
+                                                    </Button>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding IsPause}" Value="True">
+                                                <Setter TargetName="PauseEditor" Property="Visibility" Value="Visible" />
+                                                <Setter TargetName="EditAutomationStepButton" Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsFinish}" Value="True">
+                                                <Setter TargetName="EditAutomationStepButton" Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
+                            <Button x:Name="AddAutomationStepButton" Width="46" Height="38"
+                                    HorizontalAlignment="Center" Padding="0"
+                                    Click="AddAutomationStep_Click"
+                                    ToolTip="{localization:Loc Automation_AddStep, Fallback=Add step}">
+                                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE710;" FontSize="17"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Button>
+
+                            <Border x:Name="AutomationAddMenu" Margin="0,9,0,0" Padding="8"
+                                    Background="#303030" BorderBrush="#505050" BorderThickness="1"
+                                    CornerRadius="7" Visibility="Collapsed">
+                                <UniformGrid Columns="3">
+                                    <Button Margin="3" MinHeight="48" Click="AddAutomationAction_Click">
+                                        <StackPanel>
+                                            <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE710;" FontSize="16" HorizontalAlignment="Center" />
+                                            <TextBlock Text="{localization:Loc Automation_AddAction, Fallback=Action}" FontSize="11" />
+                                        </StackPanel>
+                                    </Button>
+                                    <Button Margin="3" MinHeight="48" Click="AddAutomationPause_Click">
+                                        <StackPanel>
+                                            <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE916;" FontSize="18" HorizontalAlignment="Center" />
+                                            <TextBlock Text="{localization:Loc Automation_Pause, Fallback=Pause}" FontSize="11" />
+                                        </StackPanel>
+                                    </Button>
+                                    <Button Margin="3" MinHeight="48" Click="AddAutomationFinish_Click">
+                                        <StackPanel>
+                                            <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE71A;" FontSize="18" HorizontalAlignment="Center" />
+                                            <TextBlock Text="{localization:Loc Automation_Finish, Fallback=Finish}" FontSize="11" />
+                                        </StackPanel>
+                                    </Button>
+                                </UniformGrid>
+                            </Border>
+                        </StackPanel>
+                    </Border>
                     </Grid>
 
                     <Border x:Name="ActionParametersCard" Margin="0,14,0,0" Padding="14"
@@ -320,7 +439,7 @@
 
             <Border Grid.Row="2" Background="#262626" BorderBrush="#3C3C3C" BorderThickness="0,1,0,0" CornerRadius="0,0,12,12">
                 <Grid Margin="18,0">
-                    <Button Content="{localization:Loc Editor_Dialog.SecondaryButtonText, Fallback=Clear}"
+                    <Button x:Name="RemoveButton" Content="{localization:Loc Editor_Dialog.SecondaryButtonText, Fallback=Clear}"
                             MinWidth="84" HorizontalAlignment="Left" Click="Remove_Click" />
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <Button Content="{localization:Loc Common_Cancel, Fallback=Cancel}"

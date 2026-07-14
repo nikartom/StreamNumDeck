@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>हटाएँ</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>संपादित करें</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>सिस्टम और आदेश</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>स्वचालन</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>एक साथ खेलें</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>कीबोर्ड मैक्रो चलाएँ</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>स्वचालन</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>स्वचालन में क्रिया जोड़ें</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>चरण जोड़ें</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>कार्रवाई</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>विराम</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>अगले चरण से पहले प्रतीक्षा करें</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>ख़त्म करो</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>शेष सभी चरणों को छोड़ें और स्वचालन समाप्त करें</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>सेकंड</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>ऊपर बढ़ो</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>नीचे जाएँ</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>मैक्रो चरण: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>चरण: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>0.1 और 3600 सेकंड के बीच विराम दर्ज करें।</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>स्वचालन में कम से कम एक तत्व जोड़ें.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>एक स्वचालन में {0} से अधिक चरण नहीं हो सकते।</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>कुछ मत करो</value>

@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>삭제</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>편집</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>취소</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>시스템 및 명령</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>자동화</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>동시에 플레이</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>키보드 매크로 실행</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>자동화</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>자동화에 작업 추가</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>단계 추가</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>액션</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>일시중지</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>다음 단계 전에 기다리세요</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>마침</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>남은 모든 단계를 건너뛰고 자동화를 완료하세요.</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>초</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>위로 이동</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>아래로 이동</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>매크로 단계: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>단계: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>0.1~3600초 사이의 일시 중지를 입력합니다.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>자동화에 하나 이상의 요소를 추가합니다.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>자동화에는 {0}개 이상의 단계를 포함할 수 없습니다.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>아무것도 하지 마세요</value>

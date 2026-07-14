@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Hapus</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Sunting</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Batalkan</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>Sistem dan perintah</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Otomatisasi</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Mainkan secara bersamaan</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Jalankan makro keyboard</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Otomatisasi</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Tambahkan tindakan ke otomatisasi</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Tambahkan langkah</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Jeda</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Tunggu sebelum langkah berikutnya</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Selesai</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Lewati semua langkah selanjutnya dan selesaikan otomatisasi</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>detik</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Naik</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Pindah ke bawah</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Langkah makro: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Langkah: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Masukkan jeda antara 0,1 dan 3600 detik.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Tambahkan setidaknya satu elemen ke otomatisasi.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Otomatisasi tidak boleh berisi lebih dari {0} langkah.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Jangan lakukan apa pun</value>

@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>删除</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>系统和命令</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>自动化</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>同时播放</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>运行键盘宏</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>自动化</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>向自动化添加操作</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>添加步骤</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>行动</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>等待后再进行下一步</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>跳过所有剩余步骤并完成自动化</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>向上移动</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>宏步骤：{0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>步骤：{0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>输入 0.1 到 3600 秒之间的暂停。</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>向自动化添加至少一个元素。</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>自动化包含的步骤不能超过 {0} 个。</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>什么都不做</value>

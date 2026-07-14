@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Удалить</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Отмена</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>Система и команды</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Автоматизация</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Воспроизводить одновременно</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Выполнить клавиатурный макрос</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Автоматизация</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Добавить действие в автоматизацию</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Добавить элемент</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Действие</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Подождать перед следующим элементом</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Завершить</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Пропустить оставшиеся элементы и завершить автоматизацию</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Переместить выше</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Переместить ниже</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Шагов макроса: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Шаг: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Укажите паузу от 0,1 до 3600 секунд.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Добавьте в автоматизацию хотя бы один элемент.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Автоматизация не может содержать больше {0} элементов.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Ничего не делать</value>

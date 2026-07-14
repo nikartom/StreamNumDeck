@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Elimina</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Annulla</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>Sistema e comandi</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Automazione</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Gioca contemporaneamente</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Esegui la macro della tastiera</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Automazione</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Aggiungi azione all'automazione</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Aggiungi passaggio</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Azione</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Attendi prima del passaggio successivo</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Finisci</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Salta tutti i passaggi rimanenti e completa l'automazione</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>secondi</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Vai su</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Spostati giù</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Passaggi macro: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Passaggio: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Immettere una pausa compresa tra 0,1 e 3600 secondi.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Aggiungi almeno un elemento all'automazione.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Un'automazione non può contenere più di {0} passaggi.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Non fare nulla</value>

@@ -83,6 +83,7 @@ public partial class App : Microsoft.UI.Xaml.Application
         services.AddSingleton<IProtectedCredentialStore, WindowsCredentialStore>();
         services.AddSingleton<IObsController, ObsWebSocketController>();
         services.AddSingleton<IActionExecutor, ObsActionExecutor>();
+        services.AddSingleton<ActionDispatcher>();
         services.AddSingleton<DeckRuntimeService>();
         services.AddTransient<DeckPageViewModel>();
         services.AddTransient<SettingsPageViewModel>();

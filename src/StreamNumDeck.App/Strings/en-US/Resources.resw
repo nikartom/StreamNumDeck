@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>System and commands</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Automation</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Play alongside other sounds</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Run keyboard macro</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Automation</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Add action to automation</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Add step</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Wait before the next step</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Skip all remaining steps and finish the automation</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Move up</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Move down</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Macro steps: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Step: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Enter a pause between 0.1 and 3600 seconds.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Add at least one element to the automation.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>An automation cannot contain more than {0} steps.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Do nothing</value>

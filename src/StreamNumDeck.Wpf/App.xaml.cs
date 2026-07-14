@@ -85,6 +85,7 @@ public partial class App : System.Windows.Application
         collection.AddSingleton<IObsController, ObsWebSocketController>();
         collection.AddSingleton<IObsConnectionTester, ObsConnectionTester>();
         collection.AddSingleton<IActionExecutor, ObsActionExecutor>();
+        collection.AddSingleton<ActionDispatcher>();
         collection.AddSingleton<DeckRuntimeService>();
         collection.AddSingleton<OverlayPositionStore>();
         collection.AddSingleton<MicrophoneMuteOverlayController>();

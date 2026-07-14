@@ -69,6 +69,39 @@ public sealed class ObsWebSocketControllerTests
         Assert.AreNotEqual(ObsConnectionState.Connected, controller.State);
     }
 
+    [TestMethod]
+    [Timeout(15_000)]
+    public async Task ServerDisconnectAsync_ReconnectsAndCanReadCatalog()
+    {
+        var port = ReservePort();
+        using var listener = new HttpListener();
+        listener.Prefixes.Add($"http://127.0.0.1:{port}/");
+        listener.Start();
+
+        var serverTask = RunServerDisconnectThenCatalogAsync(listener);
+        await using var controller = new ObsWebSocketController(new NullCredentialStore());
+        var connectedCount = 0;
+        var reconnected = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        controller.StateChanged += (_, args) =>
+        {
+            if (args.State is ObsConnectionState.Connected
+                && Interlocked.Increment(ref connectedCount) >= 2)
+            {
+                reconnected.TrySetResult();
+            }
+        };
+
+        await controller.ConnectAsync(new ObsConnectionSettings("127.0.0.1", port, "test"));
+        await reconnected.Task.WaitAsync(TimeSpan.FromSeconds(5));
+
+        var catalog = await controller.GetCatalogAsync();
+        await serverTask;
+
+        CollectionAssert.AreEquivalent(new[] { "Gameplay" }, catalog.Scenes.ToArray());
+        CollectionAssert.AreEquivalent(new[] { "Microphone" }, catalog.Inputs.ToArray());
+        CollectionAssert.AreEquivalent(new[] { "Camera", "Microphone" }, catalog.Sources.ToArray());
+    }
+
     private static async Task<string> RunServerAsync(HttpListener listener)
     {
         var context = await listener.GetContextAsync();
@@ -129,6 +162,62 @@ public sealed class ObsWebSocketControllerTests
         _ = await ReceiveAsync(socket);
         await SendAsync(socket, new { op = 2, d = new { negotiatedRpcVersion = 1 } });
         socket.Abort();
+    }
+
+    private static async Task RunServerDisconnectThenCatalogAsync(HttpListener listener)
+    {
+        using (var firstSocket = await AcceptAndIdentifyAsync(listener))
+        {
+            firstSocket.Abort();
+        }
+
+        using var secondSocket = await AcceptAndIdentifyAsync(listener);
+        for (var index = 0; index < 3; index++)
+        {
+            using var request = JsonDocument.Parse(await ReceiveAsync(secondSocket));
+            var requestData = request.RootElement.GetProperty("d");
+            var requestType = requestData.GetProperty("requestType").GetString()!;
+            var requestId = requestData.GetProperty("requestId").GetString()!;
+            object responseData = requestType switch
+            {
+                "GetSceneList" => new { scenes = new[] { new { sceneName = "Gameplay" } } },
+                "GetInputList" => new { inputs = new[] { new { inputName = "Microphone" } } },
+                "GetSceneItemList" => new { sceneItems = new[] { new { sourceName = "Camera" } } },
+                _ => throw new AssertFailedException($"Unexpected OBS request: {requestType}"),
+            };
+
+            await SendAsync(secondSocket, new
+            {
+                op = 7,
+                d = new
+                {
+                    requestType,
+                    requestId,
+                    requestStatus = new { result = true, code = 100 },
+                    responseData,
+                },
+            });
+        }
+    }
+
+    private static async Task<WebSocket> AcceptAndIdentifyAsync(HttpListener listener)
+    {
+        var context = await listener.GetContextAsync();
+        var webSocketContext = await context.AcceptWebSocketAsync(null);
+        var socket = webSocketContext.WebSocket;
+
+        await SendAsync(socket, new
+        {
+            op = 0,
+            d = new
+            {
+                obsWebSocketVersion = "5.6.3",
+                rpcVersion = 1,
+            },
+        });
+        _ = await ReceiveAsync(socket);
+        await SendAsync(socket, new { op = 2, d = new { negotiatedRpcVersion = 1 } });
+        return socket;
     }
 
     private static async Task SendAsync(WebSocket socket, object payload)

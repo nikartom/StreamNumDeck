@@ -199,14 +199,14 @@
                                 </ToggleButton.Template>
                             </ToggleButton>
                             <TextBlock x:Name="SelectionContent"
-                                       Margin="{TemplateBinding Padding}"
+                                       Margin="8,3,34,3"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
                                        IsHitTestVisible="False"
                                        TextTrimming="CharacterEllipsis"
                                        Text="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DisplayTextConverter}}" />
                             <TextBox x:Name="PART_EditableTextBox"
-                                     Margin="{TemplateBinding Padding}"
+                                     Margin="8,3,34,3"
                                      VerticalAlignment="Center"
                                      Background="Transparent"
                                      BorderThickness="0"

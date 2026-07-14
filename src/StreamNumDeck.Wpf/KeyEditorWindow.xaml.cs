@@ -1,3 +1,6 @@
+using System.Collections.Immutable;
+using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -20,6 +23,7 @@ public partial class KeyEditorWindow : Window
         new ActionGroupOption("sound", AppStrings.Get("ActionGroup_Sound", "Sound"), "\uE767"),
         new ActionGroupOption("obs", "OBS Studio", "\uE95A"),
         new ActionGroupOption("system", AppStrings.Get("ActionGroup_System", "System"), "\uE756"),
+        new ActionGroupOption("automation", AppStrings.Get("ActionGroup_Automation", "Automation"), "\uE945"),
     };
 
     private static readonly IReadOnlyList<ActionOption> Actions = new[]
@@ -51,6 +55,7 @@ public partial class KeyEditorWindow : Window
         new ActionOption("obs-record-stop", AppStrings.Get("Action_ObsStopRecord", "OBS: stop recording"), null, false, false),
         new ActionOption("obs-replay", AppStrings.Get("Action_ObsSaveReplay", "OBS: save replay buffer"), null, false, false),
         new ActionOption("obs-media-restart", AppStrings.Get("Action_ObsRestartMedia", "OBS: restart media source"), AppStrings.Get("Field_Source", "Source"), false, false),
+        new ActionOption("automation", AppStrings.Get("Action_Automation", "Automation"), null, false, false),
     };
 
     private readonly Func<string, CancellationToken, Task<IconReference>> importIcon;
@@ -60,6 +65,10 @@ public partial class KeyEditorWindow : Window
     private readonly KeyAssignment otherLayerAssignment;
     private readonly Func<string, int, SoundPlaybackBehavior, CancellationToken, Task> previewSound;
     private readonly Func<CancellationToken, Task> stopSounds;
+    private readonly ObservableCollection<AutomationStepItem> automationSteps = new();
+    private readonly bool actionOnlyMode;
+    private CancellationTokenSource? parameterSuggestionsCancellation;
+    private int parameterSuggestionsRequestVersion;
     private IconReference selectedIcon = IconReference.BuiltIn("plus");
 
     public KeyEditorWindow(
@@ -71,7 +80,8 @@ public partial class KeyEditorWindow : Window
         Func<CancellationToken, Task<ObsCatalog>> getObsCatalog,
         Func<CancellationToken, Task<IReadOnlyList<AudioApplication>>> getAudioApplications,
         Func<string, int, SoundPlaybackBehavior, CancellationToken, Task> previewSound,
-        Func<CancellationToken, Task> stopSounds)
+        Func<CancellationToken, Task> stopSounds,
+        bool actionOnlyMode = false)
     {
         this.importIcon = importIcon;
         this.resolveIconPath = resolveIconPath;
@@ -80,6 +90,7 @@ public partial class KeyEditorWindow : Window
         this.getAudioApplications = getAudioApplications;
         this.previewSound = previewSound;
         this.stopSounds = stopSounds;
+        this.actionOnlyMode = actionOnlyMode;
         InitializeComponent();
         var isNumLockOn = System.Windows.Input.Keyboard.IsKeyToggled(System.Windows.Input.Key.NumLock);
         var currentLayerName = AppStrings.Get(isNumLockOn ? "Common_On" : "Common_Off", isNumLockOn ? "on" : "off");
@@ -93,14 +104,36 @@ public partial class KeyEditorWindow : Window
         IconListBox.ItemsSource = new[] { StreamNumDeck.App.Presentation.BuiltInIconCatalog.BlankOption }
             .Concat(StreamNumDeck.App.Presentation.BuiltInIconCatalog.Options.Where(option => option.Id != "square"))
             .ToArray();
-        ActionGroupListBox.ItemsSource = ActionGroups;
+        AutomationStepsItemsControl.ItemsSource = automationSteps;
+        ActionGroupListBox.ItemsSource = actionOnlyMode
+            ? ActionGroups.Where(group => group.Id is "sound" or "obs" or "system").ToArray()
+            : ActionGroups;
         SoundBehaviorComboBox.ItemsSource = new[]
         {
             new SoundBehaviorOption(SoundPlaybackBehavior.PlayAlongside, AppStrings.Get("SoundBehavior_Alongside", "Play alongside")),
             new SoundBehaviorOption(SoundPlaybackBehavior.RestartSameSound, AppStrings.Get("SoundBehavior_Restart", "Restart the same sound")),
             new SoundBehaviorOption(SoundPlaybackBehavior.StopOthers, AppStrings.Get("SoundBehavior_StopOthers", "Stop other sounds")),
         };
-        ApplyAssignment(current);
+        if (actionOnlyMode)
+        {
+            AppearanceSection.Visibility = Visibility.Collapsed;
+            RemoveButton.Visibility = Visibility.Collapsed;
+            Height = 720;
+            Title = AppStrings.Get("Automation_ActionPickerTitle", "Add action to automation");
+
+            if (current.Action is NoActionDefinition or AutomationActionDefinition)
+            {
+                ActionGroupListBox.SelectedItem = ((IEnumerable<ActionGroupOption>)ActionGroupListBox.ItemsSource).First();
+            }
+            else
+            {
+                ApplyAssignment(current);
+            }
+        }
+        else
+        {
+            ApplyAssignment(current);
+        }
     }
 
     public KeyAssignment Assignment { get; private set; } = KeyAssignment.Empty;
@@ -115,6 +148,14 @@ public partial class KeyEditorWindow : Window
 
     private void Close_Click(object sender, RoutedEventArgs e) => Close();
 
+    protected override void OnClosed(EventArgs e)
+    {
+        parameterSuggestionsCancellation?.Cancel();
+        parameterSuggestionsCancellation?.Dispose();
+        parameterSuggestionsCancellation = null;
+        base.OnClosed(e);
+    }
+
     private void ActionGroupListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (ActionGroupListBox.SelectedItem is not ActionGroupOption group)
@@ -124,6 +165,7 @@ public partial class KeyEditorWindow : Window
 
         var currentId = (ActionListBox.SelectedItem as ActionOption)?.Id;
         PopulateActions(group.Id, currentId);
+        ActionListBox.Visibility = group.Id == "automation" ? Visibility.Collapsed : Visibility.Visible;
     }
 
     private void ActionListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -131,8 +173,17 @@ public partial class KeyEditorWindow : Window
         UpdateActionFields();
         if (ActionListBox.SelectedItem is ActionOption option)
         {
-            _ = LoadParameterSuggestionsAsync(option.Id);
+            StartParameterSuggestionsLoad(option.Id);
         }
+    }
+
+    private void StartParameterSuggestionsLoad(string actionId)
+    {
+        parameterSuggestionsCancellation?.Cancel();
+        var cancellation = new CancellationTokenSource();
+        parameterSuggestionsCancellation = cancellation;
+        var requestVersion = ++parameterSuggestionsRequestVersion;
+        _ = LoadParameterSuggestionsAsync(actionId, requestVersion, cancellation);
     }
 
     private void NestedActionList_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
@@ -244,6 +295,147 @@ public partial class KeyEditorWindow : Window
         }
     }
 
+    private void AddAutomationStep_Click(object sender, RoutedEventArgs e) =>
+        AutomationAddMenu.Visibility = AutomationAddMenu.Visibility == Visibility.Visible
+            ? Visibility.Collapsed
+            : Visibility.Visible;
+
+    private void AddAutomationAction_Click(object sender, RoutedEventArgs e)
+    {
+        AutomationAddMenu.Visibility = Visibility.Collapsed;
+        ShowAutomationActionEditor();
+    }
+
+    private void AddAutomationPause_Click(object sender, RoutedEventArgs e)
+    {
+        AutomationAddMenu.Visibility = Visibility.Collapsed;
+        AddAutomationStep(new PauseAutomationStepDefinition(1_000));
+    }
+
+    private void AddAutomationFinish_Click(object sender, RoutedEventArgs e)
+    {
+        AutomationAddMenu.Visibility = Visibility.Collapsed;
+        AddAutomationStep(new FinishAutomationStepDefinition());
+    }
+
+    private void EditAutomationStep_Click(object sender, RoutedEventArgs e)
+    {
+        if ((sender as FrameworkElement)?.DataContext is AutomationStepItem item &&
+            item.Definition is ExecuteAutomationStepDefinition actionStep)
+        {
+            ShowAutomationActionEditor(item, actionStep.Action);
+        }
+    }
+
+    private void MoveAutomationStepUp_Click(object sender, RoutedEventArgs e) =>
+        MoveAutomationStep(sender, -1);
+
+    private void MoveAutomationStepDown_Click(object sender, RoutedEventArgs e) =>
+        MoveAutomationStep(sender, 1);
+
+    private void RemoveAutomationStep_Click(object sender, RoutedEventArgs e)
+    {
+        if ((sender as FrameworkElement)?.DataContext is AutomationStepItem item)
+        {
+            automationSteps.Remove(item);
+            HideValidation();
+        }
+    }
+
+    private void PauseSeconds_LostFocus(object sender, RoutedEventArgs e)
+    {
+        if ((sender as System.Windows.Controls.TextBox)?.DataContext is not AutomationStepItem item || !item.IsPause)
+        {
+            return;
+        }
+
+        try
+        {
+            _ = item.ToDefinition();
+            HideValidation();
+        }
+        catch (Exception exception)
+        {
+            ShowValidation(
+                "Error_SaveAssignment",
+                "Enter a pause between 0.1 and 3600 seconds",
+                exception);
+        }
+    }
+
+    private void AddAutomationStep(AutomationStepDefinition step)
+    {
+        if (automationSteps.Count >= AutomationActionDefinition.MaximumStepCount)
+        {
+            ShowValidation(AppStrings.Format(
+                "Automation_TooManySteps",
+                AutomationActionDefinition.MaximumStepCount));
+            return;
+        }
+
+        automationSteps.Add(new AutomationStepItem(step));
+        HideValidation();
+    }
+
+    private void MoveAutomationStep(object sender, int offset)
+    {
+        if ((sender as FrameworkElement)?.DataContext is not AutomationStepItem item)
+        {
+            return;
+        }
+
+        var oldIndex = automationSteps.IndexOf(item);
+        var newIndex = oldIndex + offset;
+        if (oldIndex >= 0 && newIndex >= 0 && newIndex < automationSteps.Count)
+        {
+            automationSteps.Move(oldIndex, newIndex);
+        }
+    }
+
+    private void ShowAutomationActionEditor(
+        AutomationStepItem? item = null,
+        ActionDefinition? currentAction = null)
+    {
+        var current = new KeyAssignment(
+            string.Empty,
+            IconReference.BuiltIn("blank"),
+            currentAction ?? new NoActionDefinition());
+        var editor = new KeyEditorWindow(
+            DeckKey.Numpad0,
+            current,
+            KeyAssignment.Empty,
+            importIcon,
+            resolveIconPath,
+            getObsCatalog,
+            getAudioApplications,
+            previewSound,
+            stopSounds,
+            actionOnlyMode: true)
+        {
+            Owner = this,
+        };
+
+        if (editor.ShowDialog() != true)
+        {
+            return;
+        }
+
+        var replacement = new AutomationStepItem(
+            new ExecuteAutomationStepDefinition(editor.Assignment.Action));
+        if (item is null)
+        {
+            AddAutomationStep(replacement.Definition);
+        }
+        else
+        {
+            var index = automationSteps.IndexOf(item);
+            if (index >= 0)
+            {
+                automationSteps[index] = replacement;
+            }
+        }
+    }
+
     private void Remove_Click(object sender, RoutedEventArgs e)
     {
         Assignment = new KeyAssignment(string.Empty, IconReference.BuiltIn("square"), new NoActionDefinition());
@@ -263,8 +455,8 @@ public partial class KeyEditorWindow : Window
             var option = ActionListBox.SelectedItem as ActionOption
                 ?? throw new InvalidOperationException("Select an action.");
             Assignment = new KeyAssignment(
-                LabelTextBox.Text,
-                selectedIcon,
+                actionOnlyMode ? string.Empty : LabelTextBox.Text,
+                actionOnlyMode ? IconReference.BuiltIn("blank") : selectedIcon,
                 CreateAction(option.Id, GetParameter(), checked((int)Math.Round(VolumeSlider.Value))));
             DialogResult = true;
         }
@@ -282,6 +474,7 @@ public partial class KeyEditorWindow : Window
         }
 
         var hasParameter = option.ParameterLabel is not null;
+        var isAutomation = option.Id == "automation";
         var usesSuggestions = option.Id.StartsWith("obs-", StringComparison.Ordinal)
                               && option.Id is not ("obs-stream-start" or "obs-stream-stop" or "obs-record-start" or "obs-record-stop" or "obs-replay")
                               || option.Id.StartsWith("app-volume-", StringComparison.Ordinal);
@@ -311,7 +504,9 @@ public partial class KeyEditorWindow : Window
         VolumePanel.Margin = hasParameter
             ? new Thickness(0, hint.Length == 0 ? 50 : 86, 0, 0)
             : new Thickness(0);
-        ActionParametersCard.Visibility = hasParameter || option.ShowValue || option.Id == "launch"
+        AutomationPanel.Visibility = isAutomation ? Visibility.Visible : Visibility.Collapsed;
+        AutomationAddMenu.Visibility = Visibility.Collapsed;
+        ActionParametersCard.Visibility = !isAutomation && (hasParameter || option.ShowValue || option.Id == "launch")
             ? Visibility.Visible
             : Visibility.Collapsed;
     }
@@ -321,10 +516,19 @@ public partial class KeyEditorWindow : Window
         LabelTextBox.Text = assignment.Label;
         ShowIcon(assignment.Icon);
 
+        automationSteps.Clear();
+        if (assignment.Action is AutomationActionDefinition automation)
+        {
+            foreach (var step in automation.Steps)
+            {
+                automationSteps.Add(new AutomationStepItem(step));
+            }
+        }
+
         var state = ReadAction(assignment.Action);
         var action = Actions.Single(option => option.Id == state.Id);
         ActionGroupListBox.SelectedItem = ActionGroups.Single(group => group.Id == action.Group);
-        PopulateActions(action.Group, action.Id);
+        ActionListBox.SelectedItem = action;
 
         ParameterTextBox.Text = state.Parameter ?? string.Empty;
         ParameterComboBox.Text = state.Parameter ?? string.Empty;
@@ -413,20 +617,23 @@ public partial class KeyEditorWindow : Window
             ? ParameterComboBox.Text
             : ParameterTextBox.Text;
 
-    private async Task LoadParameterSuggestionsAsync(string actionId)
+    private async Task LoadParameterSuggestionsAsync(
+        string actionId,
+        int requestVersion,
+        CancellationTokenSource cancellation)
     {
         try
         {
             IReadOnlyList<string>? values = null;
             if (actionId.StartsWith("app-volume-", StringComparison.Ordinal))
             {
-                values = (await getAudioApplications(CancellationToken.None))
+                values = (await getAudioApplications(cancellation.Token))
                     .Select(application => application.Id)
                     .ToArray();
             }
             else if (actionId is "obs-scene" or "obs-source" or "obs-input-mute" or "obs-media-restart")
             {
-                var catalog = await getObsCatalog(CancellationToken.None);
+                var catalog = await getObsCatalog(cancellation.Token);
                 values = actionId switch
                 {
                     "obs-scene" => catalog.Scenes,
@@ -435,17 +642,32 @@ public partial class KeyEditorWindow : Window
                 };
             }
 
-            if (values is not null)
+            cancellation.Token.ThrowIfCancellationRequested();
+            if (values is not null
+                && requestVersion == parameterSuggestionsRequestVersion
+                && (ActionListBox.SelectedItem as ActionOption)?.Id == actionId)
             {
                 var current = ParameterComboBox.Text;
                 ParameterComboBox.ItemsSource = values;
                 ParameterComboBox.Text = current;
             }
         }
+        catch (OperationCanceledException) when (cancellation.IsCancellationRequested)
+        {
+        }
         catch (Exception exception)
         {
             AppLogger.Error("Load action parameter suggestions", exception);
             ParameterComboBox.ToolTip = null;
+        }
+        finally
+        {
+            if (ReferenceEquals(parameterSuggestionsCancellation, cancellation))
+            {
+                parameterSuggestionsCancellation = null;
+            }
+
+            cancellation.Dispose();
         }
     }
 
@@ -477,8 +699,22 @@ public partial class KeyEditorWindow : Window
         "obs-record-stop" => new ObsActionDefinition(ObsActionKind.StopRecording),
         "obs-replay" => new ObsActionDefinition(ObsActionKind.SaveReplayBuffer),
         "obs-media-restart" => new ObsActionDefinition(ObsActionKind.RestartMediaSource, parameter),
+        "automation" => CreateAutomationAction(),
         _ => throw new ArgumentOutOfRangeException(nameof(id)),
     };
+
+    private AutomationActionDefinition CreateAutomationAction()
+    {
+        if (automationSteps.Count == 0)
+        {
+            throw new InvalidOperationException(AppStrings.Get(
+                "Automation_Empty",
+                "Add at least one element to the automation."));
+        }
+
+        return new AutomationActionDefinition(
+            automationSteps.Select(step => step.ToDefinition()).ToImmutableArray());
+    }
 
     private static ActionState ReadAction(ActionDefinition action) => action switch
     {
@@ -498,6 +734,7 @@ public partial class KeyEditorWindow : Window
         LaunchProcessActionDefinition launch => new ActionState("launch", launch.ExecutablePath, 10, SoundPlaybackBehavior.RestartSameSound, launch.Arguments, launch.WorkingDirectory),
         KeyboardMacroActionDefinition macro => new ActionState("macro", KeyboardMacroTextCodec.Format(macro.Steps), 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionDefinition obs => ReadObsAction(obs),
+        AutomationActionDefinition => new ActionState("automation", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         _ => new ActionState("none", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
     };
 
@@ -533,6 +770,7 @@ public partial class KeyEditorWindow : Window
             "sound" or "mic-mute" or "master-mute" or "volume-up" or "volume-down"
                 or "app-volume-up" or "app-volume-down" => "sound",
             "url" or "path" or "launch" or "macro" => "system",
+            "automation" => "automation",
             _ => "obs",
         };
 
@@ -554,6 +792,7 @@ public partial class KeyEditorWindow : Window
             "obs-stream-start" => "\uE95A",
             "obs-stream-stop" or "obs-record-stop" => "\uE71A",
             "obs-record-start" => "\uE7C8",
+            "automation" => "\uE945",
             _ => "\uE72C",
         };
     }
@@ -565,4 +804,98 @@ public partial class KeyEditorWindow : Window
         SoundPlaybackBehavior SoundBehavior,
         string? Arguments,
         string? WorkingDirectory);
+
+    private sealed class AutomationStepItem
+    {
+        public AutomationStepItem(AutomationStepDefinition definition)
+        {
+            Definition = definition;
+
+            switch (definition)
+            {
+                case ExecuteAutomationStepDefinition actionStep:
+                    var state = ReadAction(actionStep.Action);
+                    var option = Actions.Single(action => action.Id == state.Id);
+                    Title = option.Name;
+                    Detail = GetActionDetail(actionStep.Action, state, option);
+                    Glyph = option.Glyph;
+                    break;
+
+                case PauseAutomationStepDefinition pause:
+                    Title = AppStrings.Get("Automation_Pause", "Pause");
+                    Detail = AppStrings.Get("Automation_PauseHint", "Wait before the next step");
+                    Glyph = "\uE916";
+                    SecondsText = (pause.DurationMilliseconds / 1000d).ToString("0.###", CultureInfo.CurrentCulture);
+                    break;
+
+                case FinishAutomationStepDefinition:
+                    Title = AppStrings.Get("Automation_Finish", "Finish");
+                    Detail = AppStrings.Get("Automation_FinishHint", "Skip all remaining steps and finish the automation");
+                    Glyph = "\uE71A";
+                    break;
+
+                default:
+                    throw new NotSupportedException($"Unsupported automation step {definition.GetType().Name}.");
+            }
+        }
+
+        public AutomationStepDefinition Definition { get; }
+
+        public string Title { get; } = string.Empty;
+
+        public string Detail { get; } = string.Empty;
+
+        public string Glyph { get; } = string.Empty;
+
+        public string SecondsText { get; set; } = string.Empty;
+
+        public bool IsPause => Definition is PauseAutomationStepDefinition;
+
+        public bool IsFinish => Definition is FinishAutomationStepDefinition;
+
+        public AutomationStepDefinition ToDefinition()
+        {
+            if (!IsPause)
+            {
+                return Definition;
+            }
+
+            if (!double.TryParse(SecondsText, NumberStyles.Number, CultureInfo.CurrentCulture, out var seconds) &&
+                !double.TryParse(SecondsText, NumberStyles.Number, CultureInfo.InvariantCulture, out seconds))
+            {
+                throw CreateInvalidPauseException();
+            }
+
+            if (double.IsNaN(seconds) ||
+                double.IsInfinity(seconds) ||
+                seconds < PauseAutomationStepDefinition.MinimumMilliseconds / 1000d ||
+                seconds > PauseAutomationStepDefinition.MaximumMilliseconds / 1000d)
+            {
+                throw CreateInvalidPauseException();
+            }
+
+            var milliseconds = checked((int)Math.Round(seconds * 1000, MidpointRounding.AwayFromZero));
+            return new PauseAutomationStepDefinition(milliseconds);
+        }
+
+        private static FormatException CreateInvalidPauseException() => new(AppStrings.Get(
+            "Automation_InvalidPause",
+            "Enter a pause between 0.1 and 3600 seconds."));
+
+        private static string GetActionDetail(
+            ActionDefinition action,
+            ActionState state,
+            ActionOption option) => action switch
+        {
+            KeyboardMacroActionDefinition macro => AppStrings.Format(
+                "Automation_MacroSteps",
+                macro.Steps.Length),
+            AdjustMasterVolumeActionDefinition volume => AppStrings.Format(
+                "Automation_VolumeStep",
+                volume.StepPercent),
+            AdjustApplicationVolumeActionDefinition volume => $"{volume.ApplicationId} · {AppStrings.Format("Automation_VolumeStep", volume.StepPercent)}",
+            _ when !string.IsNullOrWhiteSpace(state.Parameter) => state.Parameter!,
+            _ => option.Description ?? string.Empty,
+        };
+    }
 }

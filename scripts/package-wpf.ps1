@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [ValidatePattern('^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$')]
-    [string] $Version = '1.0.1',
+    [string] $Version = '1.2.0',
 
     [switch] $SkipInstaller
 )
@@ -75,6 +75,7 @@ try {
         -p:Version=$Version `
         -p:AssemblyVersion=$fileVersion `
         -p:FileVersion=$fileVersion `
+        -p:InformationalVersion=$Version `
         -p:DebugSymbols=false `
         -p:DebugType=None
     if ($LASTEXITCODE -ne 0) {

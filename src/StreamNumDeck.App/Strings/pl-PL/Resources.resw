@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Usuń</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Anuluj</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>System i polecenia</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Automatyzacja</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Graj jednocześnie</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Uruchom makro klawiatury</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Automatyzacja</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Dodaj akcję do automatyzacji</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Dodaj krok</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Akcja</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Poczekaj przed następnym krokiem</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Zakończ</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Pomiń wszystkie pozostałe kroki i zakończ automatyzację</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>sekundy</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Przesuń się w górę</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Przesuń w dół</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Kroki makra: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Krok: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Wprowadź pauzę o długości od 0,1 do 3600 sekund.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Dodaj chociaż jeden element do automatyzacji.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Automatyzacja nie może zawierać więcej niż {0} kroków.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Nie rób nic</value>

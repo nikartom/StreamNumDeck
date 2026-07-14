@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Ta bort</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Redigera</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Avbryt</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>System och kommandon</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Automation</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Spela samtidigt</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Kör tangentbordsmakro</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Automation</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Lägg till åtgärder för automatisering</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Lägg till steg</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Åtgärd</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Vänta innan nästa steg</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Avsluta</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Hoppa över alla återstående steg och avsluta automatiseringen</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>sekunder</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Flytta uppåt</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Flytta ner</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Makrosteg: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Steg: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Ange en paus mellan 0,1 och 3600 sekunder.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Lägg till minst ett element till automatiseringen.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>En automatisering kan inte innehålla mer än {0} steg.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Gör ingenting</value>

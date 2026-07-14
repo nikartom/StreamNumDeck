@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>ลบ</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>แก้ไข</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>ระบบและคำสั่ง</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>ระบบอัตโนมัติ</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>เล่นพร้อมกัน</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>เรียกใช้แมโครแป้นพิมพ์</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>ระบบอัตโนมัติ</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>เพิ่มการดำเนินการให้กับระบบอัตโนมัติ</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>เพิ่มขั้นตอน</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>หยุดชั่วคราว</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>รอก่อนขั้นตอนต่อไป</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>เสร็จสิ้น</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>ข้ามขั้นตอนที่เหลือทั้งหมดและดำเนินการอัตโนมัติให้เสร็จสิ้น</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>วินาที</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>เลื่อนขึ้น</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>เลื่อนลง</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>ขั้นตอนมาโคร: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>ขั้นตอน: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>ป้อนการหยุดชั่วคราวระหว่าง 0.1 ถึง 3600 วินาที</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>เพิ่มอย่างน้อยหนึ่งองค์ประกอบให้กับระบบอัตโนมัติ</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>ระบบอัตโนมัติไม่สามารถมีมากกว่า {0} ขั้นตอน</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>ไม่ต้องทำอะไรเลย</value>

@@ -273,6 +273,9 @@
   <data name="Common_Delete" xml:space="preserve">
     <value>Smazat</value>
   </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Upravit</value>
+  </data>
   <data name="Common_Cancel" xml:space="preserve">
     <value>Zrušit</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
     <value>Systém a příkazy</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>automatizace</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Hrajte současně</value>
@@ -377,6 +383,54 @@
   </data>
   <data name="Action_KeyboardMacro" xml:space="preserve">
     <value>Spusťte makro klávesnice</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>automatizace</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Přidejte k automatizaci akci</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Přidat krok</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Akce</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Před dalším krokem počkejte</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Dokončit</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Přeskočte všechny zbývající kroky a dokončete automatizaci</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>sekund</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Posuňte se nahoru</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Posuňte se dolů</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Kroky makra: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Krok: {0} %</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Zadejte pauzu mezi 0,1 a 3600 sekundami.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Přidejte do automatizace alespoň jeden prvek.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Automatizace nemůže obsahovat více než {0} kroků.</value>
   </data>
   <data name="Action_None" xml:space="preserve">
     <value>Nedělejte nic</value>
