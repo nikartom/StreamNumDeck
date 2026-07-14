@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Контрольна колода для стримерів і геймерів</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>Новий профіль</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Новий профіль</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Створити</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>Новий профіль</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>Ім'я</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>Наприклад, Gaming stream</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>значок</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Глобальні налаштування</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>Звук, OBS Studio та поведінка програми</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>зберегти</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>Звук</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>Вивідний пристрій</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>Системний пристрій за замовчуванням</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>Основний обсяг</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>Дозволити одночасні звуки</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>Попереднє завантаження коротких звуків</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>система</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>Почніть з Windows</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>Згорнути до області сповіщень</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>Увімкнути захоплення під час запуску</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>Зовнішній вигляд</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>Використовувати налаштування Windows</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>світло</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>Темний</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>Індикатор положення мікрофона</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>Після натискання перетягніть індикатор мишею. Його позиція буде збережена.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>Клавіатура</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>Увімкнути/вимкнути захоплення клавіш</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>Фізична клавіша NumLock перемикає між двома рівнями призначення.</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>OBS Studio</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>Адреса</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>Залиште порожнім, щоб зберегти поточний пароль</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>Пароль зберігається в безпечному сховищі Windows</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>Тестове підключення</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>Підтримайте автора</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>Якщо StreamNumDeck вам корисний, ви можете підтримати його розвиток.</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>Підтримка на DonationAlerts</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>захоплення</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>Захоплення клавіатури</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 — аварійна пауза</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>Не вдалося виконати дію</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Перемикання шару NumLock</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>зберегти</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>ясно</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>Зовнішній вигляд</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>Виберіть свій значок…</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>Мітка</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>Додатково</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>Скопіюйте призначення з іншого шару</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>Дія</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>Група</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>Дія</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>Аудіофайл</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>Перегляд…</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>Попередній перегляд</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>Обсяг</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>Поведінка</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>застосування</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>Виберіть програму або введіть назву .exe</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>Крок зміни, %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>У списку показано програми, для яких Windows уже створила аудіосеанс.</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>Сцена або джерело</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>Точна назва в OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>Програма, шлях або адреса</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>Аргументи</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>Додатково</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>Робочий каталог</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>Додатково</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>Вводьте кожен крок з нового рядка. Комбінація клавіш: Ctrl+Shift+S. Затримка: зачекайте 250. Рядки, що починаються з #, є коментарями.</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>Послідовність</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Увімкнено</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Вимкнено</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>зберегти</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Створити</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>Згорнути</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>Аудіо файли</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>Всі файли</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>Ніяких дій</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>Звук</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>Система і команди</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>Грати одночасно</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>Перезапустіть цей звук</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>Припиніть інші звуки</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>Відтворення звуку</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>Вимкніть або ввімкніть мікрофон за умовчанням</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>Вимкнути або ввімкнути головний вихід</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>Відрегулюйте основний рівень гучності</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>Відрегулюйте гучність програми</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>Збільшити основну гучність</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>Зменшити основну гучність</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>Збільште обсяг програми</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>Зменшити гучність програми</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>Змінити сцену</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>Показати або приховати джерело</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>Вимкнути або ввімкнути звук введення</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>Почати трансляцію</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>Зупинити трансляцію</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>Почніть запис</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>Зупинити запис</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>Зберегти буфер відтворення</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>Перезапустіть джерело медіа</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>Запуск програми</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>Відкрити файл або папку</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>Відкрити посилання</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>Запустіть макрос клавіатури</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>Нічого не робити</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>Виконати дію</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>OBS ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>Налаштований файл, папка або програма недоступні: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>{0} не має активного аудіосеансу Windows. Почніть відтворення аудіо в програмі та повторіть спробу.</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>OBS не підключено. Запустіть OBS і перевірте налаштування WebSocket.</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS відхилив налаштовану дію. Перевірте його сцену, джерело або вхід.</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>Windows не вдалося відтворити цей аудіофайл. Перевірте його формат або кодек: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>Введіть принаймні одну комбінацію клавіш.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>Рядок {0} має недійсний формат. Використовуйте комбінацію клавіш, як-от Ctrl+Shift+S, або затримку, як-от зачекайте 250.</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>Макрос не може містити більше ніж {0} кроків.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>Адреса</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>Програма, файл або папка</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>Сцена</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>Джерело</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>OBS підключено</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>Підключення до OBS…</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>Повторне підключення до OBS…</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>Повторне підключення до OBS: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>Не вдалося підключитися до OBS</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>OBS: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>OBS відключено</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>Підключено. Сцени: {0}, джерела: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>Налаштування збережено</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Відкрийте StreamNumDeck</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>Захоплення клавіатури</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>Профілі</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>Не вдалося виконати дію з панелі</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Вихід</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>Основний профіль</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>Новий профіль</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>Редагувати профіль</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>Дубльований профіль</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>Видалити профіль</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}
+Натисніть правою кнопкою миші для дій профілю</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>Видалити профіль?</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>Профіль “{0}” і всі його призначення буде видалено.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> — копія</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> — копія {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>Введіть назву профілю.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>Профіль із такою назвою вже існує.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>Не вдалося завантажити профілі</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>Не вдалося змінити профіль</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>Вибраний профіль більше не існує.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>Не вдалося редагувати профіль</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>Не вдалося створити профіль</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>Не вдалося скопіювати профіль</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>Не вдалося видалити профіль</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>Не вдалося завантажити налаштування</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>Не вдалося зберегти налаштування</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>Не вдалося показати індикатор</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>Не вдалося відкрити сторінку підтримки</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>Немає доступної програми для відкриття цього посилання.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>Не вдалося зберегти призначення клавіші</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>Не вдалося імпортувати вибраний значок</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>Не вдалося перемкнути NumLock</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>Не вдалося змінити стан зйомки</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>Не вдалося отримати аудіосеанси Windows: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>Вкажіть крок зміни гучності.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>Запуск увімкнено політикою Windows і не може бути вимкнено програмою.</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>Запуск раніше був відключений користувачем. Дозвольте StreamNumDeck у Windows Параметри → Програми → Запуск.</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>Запуск вимкнено політикою Windows.</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>Windows не вдалося ввімкнути запуск StreamNumDeck.</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>Немає значка</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>Плюс</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>Мінус</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>Перевірте</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>Редагувати</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>зберегти</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>Копіювати</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>Вставити</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>Оновити</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>Пошук</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>Посилання</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>Поділіться</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>Надіслати</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>Замок</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>Розблокувати</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>потужність</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>Команда</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>Калькулятор</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>Інформація</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>Довідка</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>Попередження</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>заблоковано</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>грати</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>запис</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>Попередній</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>Далі</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>Перемотати назад</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>Перемотування вперед</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>Перетасувати</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>Повторіть</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>Повний екран</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>Вікно</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>Обсяг</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>Вимкнення гучності</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>Низька гучність</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>Обсяг Середній</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>Висока гучність</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>Вимкнути звук</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>Аудіо</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>Доповідачі</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>мікрофон</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>відео</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>Камера</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>Навушники</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>Трансляція</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>Перемикач</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>повідомлення</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>Чат</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>Пошта</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>Люди</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>Відеочат</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>Мегафон</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>глобус</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>WIFI</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>Хмара</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>Відкрити папку</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>документ</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>зірка</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>Заливка зіркою</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>серце</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>Заповнення серця</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>Подобається</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>Гра</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>XBOX</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>робот</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>Блискавка</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>Ефекти</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>Календар</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>Таймер</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>історія</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>додому</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>вгору</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>вниз</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>вперед</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>Шпилька на карті</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>автомобіль</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>Робота</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>Магазин</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>Щит</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>Дозволи</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>Переглянути</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>Колір</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>Пристрої</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>Клавіатура</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>Роздрукувати</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>Ліхтарик</value>
+  </data>
+</root>

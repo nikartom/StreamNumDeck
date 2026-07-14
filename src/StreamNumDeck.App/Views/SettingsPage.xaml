@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="StreamNumDeck.App.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Padding="16,12,16,24" Spacing="18">
+            <Grid ColumnSpacing="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Spacing="4">
+                    <TextBlock x:Uid="Settings_Title" Style="{StaticResource TitleTextBlockStyle}" Text="Глобальные настройки" />
+                    <TextBlock
+                        x:Uid="Settings_Subtitle"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Text="Звук, OBS Studio и поведение приложения"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+                <Button
+                    x:Uid="Common_SaveButton"
+                    Grid.Column="1"
+                    Click="SaveButton_Click"
+                    Content="Сохранить"
+                    Style="{StaticResource AccentButtonStyle}"
+                    VerticalAlignment="Center" />
+            </Grid>
+
+            <InfoBar x:Name="SaveStatus" IsClosable="True" IsOpen="False" />
+
+            <Grid ColumnSpacing="20" RowSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Border Style="{StaticResource SectionCardStyle}">
+                    <StackPanel Spacing="16">
+                        <TextBlock x:Uid="Settings_SoundSection" Style="{StaticResource SubtitleTextBlockStyle}" Text="Звук" />
+                        <ComboBox
+                            x:Uid="Settings_OutputDevice"
+                            DisplayMemberPath="Name"
+                            Header="Устройство вывода"
+                            ItemsSource="{x:Bind ViewModel.AudioOutputDevices}"
+                            SelectedItem="{x:Bind ViewModel.SelectedAudioOutputDevice, Mode=TwoWay}" />
+                        <Slider
+                            x:Uid="Settings_MasterVolume"
+                            Header="Общая громкость"
+                            Maximum="100"
+                            Value="{x:Bind ViewModel.MasterVolume, Mode=TwoWay}" />
+                        <ToggleSwitch
+                            x:Uid="Settings_ConcurrentSounds"
+                            Header="Разрешить одновременные звуки"
+                            IsOn="{x:Bind ViewModel.AllowConcurrentSounds, Mode=TwoWay}" />
+                        <ToggleSwitch
+                            x:Uid="Settings_PreloadSounds"
+                            Header="Предзагружать короткие звуки"
+                            IsOn="{x:Bind ViewModel.PreloadShortSounds, Mode=TwoWay}" />
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="1" Style="{StaticResource SectionCardStyle}">
+                    <StackPanel Spacing="16">
+                        <TextBlock x:Uid="Settings_SystemSection" Style="{StaticResource SubtitleTextBlockStyle}" Text="Система" />
+                        <ToggleSwitch
+                            x:Uid="Settings_StartWithWindows"
+                            Header="Запускать вместе с Windows"
+                            IsOn="{x:Bind ViewModel.StartWithWindows, Mode=TwoWay}" />
+                        <ToggleSwitch
+                            x:Uid="Settings_MinimizeToTray"
+                            Header="Сворачивать в область уведомлений"
+                            IsOn="{x:Bind ViewModel.MinimizeToTray, Mode=TwoWay}" />
+                        <ToggleSwitch
+                            x:Uid="Settings_CaptureOnStartup"
+                            Header="Включать перехват при запуске"
+                            IsOn="{x:Bind ViewModel.EnableCaptureOnStartup, Mode=TwoWay}" />
+                        <ComboBox
+                            x:Uid="Settings_Theme"
+                            Header="Оформление"
+                            SelectedIndex="{x:Bind ViewModel.ThemeIndex, Mode=TwoWay}">
+                            <ComboBoxItem x:Uid="Theme_System" Content="Как в Windows" />
+                            <ComboBoxItem x:Uid="Theme_Light" Content="Светлое" />
+                            <ComboBoxItem x:Uid="Theme_Dark" Content="Тёмное" />
+                        </ComboBox>
+                        <Button
+                            x:Uid="Settings_PositionOverlay"
+                            HorizontalAlignment="Left"
+                            Click="PreviewMicrophoneOverlayButton_Click"
+                            Content="Расположить индикатор микрофона" />
+                        <TextBlock
+                            x:Uid="Settings_OverlayHint"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                            Text="После нажатия перетащите индикатор мышью. Позиция сохранится."
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="2" Style="{StaticResource SectionCardStyle}">
+                    <StackPanel Spacing="16">
+                        <TextBlock x:Uid="Settings_KeyboardSection" Style="{StaticResource SubtitleTextBlockStyle}" Text="Клавиатура" />
+                        <TextBox x:Uid="Settings_EmergencyPause" Header="Аварийная пауза" IsReadOnly="True" Text="Ctrl + Alt + F12" />
+                        <TextBlock
+                            x:Uid="Settings_NumLockHint"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                            Text="Физическая клавиша NumLock переключает два слоя назначений."
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="3" Style="{StaticResource SectionCardStyle}">
+                    <StackPanel Spacing="16">
+                        <TextBlock x:Uid="Settings_ObsSection" Style="{StaticResource SubtitleTextBlockStyle}" Text="OBS Studio" />
+                        <Grid ColumnSpacing="12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Uid="Settings_ObsAddress" Header="Адрес" Text="{x:Bind ViewModel.ObsHost, Mode=TwoWay}" />
+                            <NumberBox
+                                x:Uid="Settings_ObsPort"
+                                Grid.Column="1"
+                                Header="Порт"
+                                Maximum="65535"
+                                Minimum="1"
+                                Value="{x:Bind ViewModel.ObsPort, Mode=TwoWay}" />
+                        </Grid>
+                        <PasswordBox
+                            x:Name="ObsPasswordBox"
+                            x:Uid="Settings_ObsPassword"
+                            Header="Пароль"
+                            PlaceholderText="Оставьте пустым, чтобы сохранить текущий" />
+                        <TextBlock
+                            x:Uid="Settings_PasswordStored"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                            Text="Пароль сохранён в защищённом хранилище Windows"
+                            Visibility="{x:Bind ViewModel.HasStoredObsPassword, Mode=OneWay}" />
+                        <Button
+                            x:Uid="Settings_TestObs"
+                            HorizontalAlignment="Left"
+                            Click="TestObsConnectionButton_Click"
+                            Content="Проверить подключение" />
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="4" Style="{StaticResource SectionCardStyle}">
+                    <StackPanel Spacing="12">
+                        <TextBlock
+                            x:Uid="Settings_SupportSection"
+                            Style="{StaticResource SubtitleTextBlockStyle}"
+                            Text="Поддержка автора" />
+                        <TextBlock
+                            x:Uid="Settings_SupportHint"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                            Text="Если StreamNumDeck оказался полезен, вы можете поддержать его развитие."
+                            TextWrapping="Wrap" />
+                        <Button
+                            x:Uid="Settings_SupportButton"
+                            HorizontalAlignment="Left"
+                            Click="SupportAuthorButton_Click"
+                            Content="Поддержать на DonationAlerts"
+                            Style="{StaticResource AccentButtonStyle}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

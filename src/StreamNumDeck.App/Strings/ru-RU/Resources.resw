@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Панель управления для стримеров и геймеров</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>Новый профиль</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Новый профиль</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>Новый профиль</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>Например, Игровой стрим</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>Иконка</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Глобальные настройки</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>Звук, OBS Studio и поведение приложения</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>Звук</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>Устройство вывода</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>Системное устройство по умолчанию</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>Общая громкость</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>Разрешить одновременные звуки</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>Предзагружать короткие звуки</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>Система</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>Запускать при загрузке Windows</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>Сворачивать в область уведомлений</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>Включать перехват при запуске</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>Оформление</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>Как в Windows</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>Светлое</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>Тёмное</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>Расположить индикатор микрофона</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>После нажатия перетащите индикатор мышью. Позиция сохранится.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>Клавиатура</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>Включить/выключить перехват клавиш</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>Физическая клавиша NumLock переключает два слоя назначений.</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>OBS Studio</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>Оставьте пустым, чтобы сохранить текущий</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>Пароль сохранён в защищённом хранилище Windows</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>Проверить подключение</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>Поддержка автора</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>Если StreamNumDeck оказался полезен, вы можете поддержать его развитие.</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>Поддержать на DonationAlerts</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>Перехват</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>Перехват клавиатуры</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 — аварийная пауза</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>Действие не выполнено</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Переключить слой NumLock</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>Внешний вид</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>Выбрать свою иконку…</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>Подпись</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>Необязательно</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>Скопировать назначение из другого слоя</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>Действие</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>Группа</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>Действие</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>Аудиофайл</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>Обзор…</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>Прослушать</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>Громкость</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>Приложение</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>Выберите приложение или введите имя .exe</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>Шаг изменения, %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>В списке отображаются приложения, для которых Windows уже создала аудиосессию.</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>Сцена или источник</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>Точное имя в OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>Программа, путь или адрес</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>Аргументы</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>Необязательно</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>Рабочая папка</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>Необязательно</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>Каждый шаг вводится с новой строки. Сочетание: Ctrl+Shift+S. Пауза: wait 250. Строки с # считаются комментариями.</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>Последовательность</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>включён</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>выключен</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>Свернуть</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>Аудиофайлы</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>Изображения</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>Все файлы</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>Без действия</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>Звук</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>Система и команды</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>Воспроизводить одновременно</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>Перезапускать этот звук</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>Останавливать другие звуки</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>Воспроизвести звук</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>Включить или выключить микрофон по умолчанию</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>Включить или выключить общий звук</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>Изменить общую громкость</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>Изменить громкость приложения</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>Увеличить общую громкость</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>Уменьшить общую громкость</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>Увеличить громкость приложения</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>Уменьшить громкость приложения</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>Переключить сцену</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>Показать или скрыть источник</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>Включить или выключить звук источника</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>Начать трансляцию</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>Остановить трансляцию</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>Начать запись</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>Остановить запись</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>Сохранить повтор</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>Перезапустить медиаисточник</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>Запустить программу</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>Открыть файл или папку</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>Открыть ссылку</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>Выполнить клавиатурный макрос</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>Ничего не делать</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>Выполнить действие</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>OBS ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>Указанный файл, папка или программа недоступны: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>У приложения {0} нет активной аудиосессии Windows. Запустите в нём воспроизведение звука и повторите попытку.</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>OBS не подключён. Запустите OBS и проверьте настройки WebSocket.</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS отклонил настроенное действие. Проверьте выбранную сцену, источник или аудиовход.</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>Windows не удалось воспроизвести аудиофайл. Проверьте его формат или кодек: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>Введите хотя бы одно сочетание клавиш.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>Строка {0} имеет неверный формат. Используйте сочетание вроде Ctrl+Shift+S или задержку вида wait 250.</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>Макрос не может содержать больше {0} шагов.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>Программа, файл или папка</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>Сцена</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>Источник</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>OBS подключён</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>Подключение к OBS…</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>Повторное подключение к OBS…</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>Повторное подключение к OBS: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>Не удалось подключиться к OBS</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>OBS: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>OBS отключён</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>Подключено. Сцен: {0}, источников: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>Настройки сохранены</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Открыть StreamNumDeck</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>Перехват клавиатуры</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>Профили</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>Не удалось выполнить действие из области уведомлений</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>Основной профиль</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>Новый профиль</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>Изменить профиль</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>Дублировать профиль</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>Удалить профиль</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}
+Щёлкните правой кнопкой мыши для действий с профилем</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>Удалить профиль?</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>Профиль «{0}» и все его назначения будут удалены.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> — копия</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> — копия {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>Введите название профиля.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>Профиль с таким названием уже существует.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>Не удалось загрузить профили</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>Не удалось сменить профиль</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>Выбранный профиль больше не существует.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>Не удалось изменить профиль</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>Не удалось создать профиль</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>Не удалось дублировать профиль</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>Не удалось удалить профиль</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>Не удалось загрузить настройки</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>Не удалось сохранить настройки</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>Не удалось показать индикатор</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>Не удалось открыть страницу поддержки</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>В системе нет приложения для открытия этой ссылки.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>Не удалось сохранить назначение</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>Не удалось импортировать выбранную иконку</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>Не удалось переключить NumLock</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>Не удалось изменить состояние перехвата</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>Не удалось получить аудиосессии Windows: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>Укажите шаг изменения громкости.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>Автозапуск включён политикой Windows, поэтому приложение не может его отключить.</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>Ранее вы отключили автозапуск. Разрешите StreamNumDeck в разделе «Параметры Windows → Приложения → Автозагрузка».</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>Автозапуск отключён политикой Windows.</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>Windows не удалось включить автозапуск StreamNumDeck.</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>Без иконки</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>Плюс</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>Минус</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>Готово</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>Поделиться</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>Закрепить</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>Заблокировать</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>Разблокировать</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>Питание</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>Командная строка</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>Калькулятор</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>Заблокировано</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>Запуск</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>Запись</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>Предыдущий</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>Следующий</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>Перемотать назад</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>Перемотать вперёд</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>Случайный порядок</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>Повтор</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>Полный экран</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>Оконный режим</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>Громкость</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>Громкость: 0</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>Громкость ниже</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>Средняя громкость</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>Громкость выше</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>Без звука</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>Аудио</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>Динамики</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>Микрофон</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>Видео</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>Камера</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>Наушники</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>Трансляция</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>Переключение</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>Сообщение</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>Чат</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>Почта</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>Люди</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>Видеочат</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>Объявление</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>Интернет</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>Wi-Fi</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>Облако</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>Открытая папка</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>Документ</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>Звезда</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>Избранное</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>Сердце</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>Сердце: заливка</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>Нравится</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>Игра</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>Игровая консоль</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>Робот</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>Молния</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>Эмодзи</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>Эффекты</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>Календарь</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>Таймер</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>Домой</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>Вверх</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>Вниз</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>Вперёд</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>Метка на карте</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>Автомобиль</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>Работа</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>Магазин</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>Защита</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>Доступ</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>Просмотр</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>Устройства</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>Клавиатура</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>Фонарик</value>
+  </data>
+</root>

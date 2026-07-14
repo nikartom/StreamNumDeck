@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StreamNumDeck.App (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "StreamNumDeck.App (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

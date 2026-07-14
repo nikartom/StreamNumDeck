@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>StreamNumDeck</AssemblyName>
+    <RootNamespace>StreamNumDeck.Wpf</RootNamespace>
+    <ApplicationIcon>..\StreamNumDeck.App\Assets\AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StreamNumDeck.Core\StreamNumDeck.Core.csproj" />
+    <ProjectReference Include="..\StreamNumDeck.Infrastructure\StreamNumDeck.Infrastructure.csproj" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="..\StreamNumDeck.App\Assets\AppIcon.ico" Link="Assets\AppIcon.ico" />
+    <Resource Include="..\StreamNumDeck.App\Strings\**\Resources.resw" Link="Strings\%(RecursiveDir)Resources.resw" />
+    <Compile Include="..\StreamNumDeck.App\Presentation\BuiltInIconCatalog.cs" Link="Presentation\BuiltInIconCatalog.Shared.cs" />
+  </ItemGroup>
+</Project>

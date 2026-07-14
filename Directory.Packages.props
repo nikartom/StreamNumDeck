@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageVersion Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.9" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.9" />
+    <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
+    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
+    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools.WinApp" Version="0.4.0" />
+    <PackageVersion Include="Microsoft.Windows.SDK.Contracts" Version="10.0.26100.7705" />
+    <PackageVersion Include="Microsoft.WindowsAppSDK" Version="2.2.0" />
+    <PackageVersion Include="MSTest" Version="4.3.0" />
+    <PackageVersion Include="System.Collections.Immutable" Version="10.0.9" />
+    <PackageVersion Include="System.Text.Json" Version="10.0.9" />
+    <PackageVersion Include="System.Threading.Channels" Version="10.0.9" />
+  </ItemGroup>
+</Project>

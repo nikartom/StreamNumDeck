@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>سطح التحكم لللافتات واللاعبين</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>ملف تعريف جديد</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>ملف تعريف جديد</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>ملف تعريف جديد</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>على سبيل المثال، تيار الألعاب</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>أيقونة</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>الإعدادات العالمية</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>الصوت وOBS Studio وسلوك التطبيق</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>الصوت</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>جهاز الإخراج</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>الجهاز الافتراضي للنظام</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>الحجم الرئيسي</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>السماح بالأصوات المتزامنة</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>تحميل الأصوات القصيرة مسبقًا</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>النظام</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>ابدأ مع ويندوز</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>تصغير إلى منطقة الإعلام</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>تمكين الالتقاط عند بدء التشغيل</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>المظهر</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>استخدام إعداد ويندوز</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>ضوء</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>الظلام</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>مؤشر موقف الميكروفون</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>بعد النقر، اسحب المؤشر بالماوس. سيتم حفظ موقفها.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>لوحة المفاتيح</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>تشغيل/إيقاف التقاط المفتاح</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>يقوم مفتاح NumLock الفعلي بالتبديل بين طبقتين للمهمة.</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>ستوديو او بي اس</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>ميناء</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>اتركه فارغًا للاحتفاظ بكلمة المرور الحالية</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>يتم تخزين كلمة المرور في مخزن Windows الآمن</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>اتصال الاختبار</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>دعم المؤلف</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>إذا كان StreamNumDeck مفيدًا لك، فيمكنك دعم تطويره.</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>الدعم على تنبيهات التبرع</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>التقاط</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>التقاط لوحة المفاتيح</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 - توقف مؤقت</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>فشل الإجراء</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>تبديل طبقة NumLock</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>واضح</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>المظهر</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>اختر الأيقونة الخاصة بك...</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>التسمية</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>اختياري</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>انسخ المهمة من الطبقة الأخرى</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>العمل</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>المجموعة</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>العمل</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>ملف صوتي</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>تصفح…</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>معاينة</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>الحجم</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>السلوك</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>التطبيق</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>حدد تطبيقًا أو أدخل اسمًا بتنسيق exe</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>خطوة التغيير، %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>تعرض القائمة التطبيقات التي قام Windows بالفعل بإنشاء جلسة صوتية لها.</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>المشهد أو المصدر</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>الاسم الدقيق في OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>البرنامج أو المسار أو العنوان</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>الحجج</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>اختياري</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>دليل العمل</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>اختياري</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>أدخل كل خطوة في سطر جديد. الاختصار: Ctrl+Shift+S. التأخير: انتظر 250. الأسطر التي تبدأ بـ # هي تعليقات.</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>تسلسل</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>على</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>تصغير</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>الملفات الصوتية</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>الصور</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>جميع الملفات</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>لا يوجد إجراء</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>الصوت</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>النظام والأوامر</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>العب في وقت واحد</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>أعد تشغيل هذا الصوت</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>أوقف الأصوات الأخرى</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>تشغيل الصوت</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>كتم صوت الميكروفون الافتراضي أو إلغاء كتمه</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>كتم أو إلغاء كتم الإخراج الرئيسي</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>ضبط مستوى الصوت الرئيسي</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>ضبط حجم التطبيق</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>زيادة الحجم الرئيسي</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>تقليل الحجم الرئيسي</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>زيادة حجم التطبيق</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>تقليل حجم التطبيق</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>تبديل المشهد</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>إظهار أو إخفاء المصدر</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>كتم صوت الإدخال أو إلغاء كتمه</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>ابدأ البث</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>توقف عن البث</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>ابدأ التسجيل</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>توقف عن التسجيل</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>حفظ المخزن المؤقت لإعادة التشغيل</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>أعد تشغيل مصدر الوسائط</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>إطلاق البرنامج</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>افتح الملف أو المجلد</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>فتح الرابط</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>تشغيل ماكرو لوحة المفاتيح</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>لا تفعل شيئا</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>تنفيذ الإجراء</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>OBS ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>الملف أو المجلد أو البرنامج الذي تم تكوينه غير متاح: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>ليس لدى {0} جلسة صوتية نشطة لنظام Windows. ابدأ تشغيل الصوت في التطبيق وحاول مرة أخرى.</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>OBS غير متصل. ابدأ تشغيل OBS وتحقق من إعدادات WebSocket.</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>رفض OBS الإجراء الذي تم تكوينه. تحقق من المشهد أو المصدر أو الإدخال.</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>تعذر على Windows تشغيل هذا الملف الصوتي. تحقق من التنسيق أو برنامج الترميز الخاص به: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>أدخل اختصارًا واحدًا على الأقل للوحة المفاتيح.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>يحتوي السطر {0} على تنسيق غير صالح. استخدم اختصارًا مثل Ctrl+Shift+S أو تأخيرًا مثل الانتظار 250.</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>لا يمكن أن يحتوي الماكرو على أكثر من {0} خطوة.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>برنامج أو ملف أو مجلد</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>المشهد</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>المصدر</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>متصل بنظام OBS</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>جارٍ الاتصال بـ OBS...</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>جارٍ إعادة الاتصال بـ OBS...</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>إعادة الاتصال بـ OBS: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>تعذر الاتصال بـ OBS</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>أو بي إس: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>تم قطع اتصال OBS</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>متصل. المشاهد: {0}، المصادر: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>تم حفظ الإعدادات</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>افتح ستريمنومديك</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>التقاط لوحة المفاتيح</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>الملفات الشخصية</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>فشل إجراء الدرج</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>الملف الرئيسي</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>ملف تعريف جديد</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>تحرير الملف الشخصي</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>ملف تعريف مكرر</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>حذف الملف الشخصي</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}`انقر بزر الماوس الأيمن فوق إجراءات الملف الشخصي</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>هل تريد حذف الملف الشخصي؟</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>سيتم حذف ملف التعريف "{0}" وجميع مهامه.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> — نسخ</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> — نسخ {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>أدخل اسم الملف الشخصي.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>يوجد بالفعل ملف تعريف بهذا الاسم.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>تعذر تحميل الملفات الشخصية</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>لا يمكن تغيير الملف الشخصي</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>ملف التعريف المحدد لم يعد موجودا.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>لا يمكن تعديل الملف الشخصي</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>لا يمكن إنشاء الملف الشخصي</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>لا يمكن تكرار الملف الشخصي</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>لا يمكن حذف الملف الشخصي</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>لا يمكن تحميل الإعدادات</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>لا يمكن حفظ الإعدادات</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>لا يمكن إظهار المؤشر</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>لا يمكن فتح صفحة الدعم</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>لا يوجد تطبيق متاح لفتح هذا الرابط.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>تعذر حفظ تعيين المفتاح</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>تعذر استيراد الرمز المحدد</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>تعذر تبديل NumLock</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>لا يمكن تغيير حالة الالتقاط</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>تعذر الحصول على جلسات Windows الصوتية: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>حدد خطوة تغيير الحجم.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>يتم تمكين بدء التشغيل بواسطة سياسة Windows ولا يمكن تعطيله بواسطة التطبيق.</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>تم تعطيل بدء التشغيل مسبقًا من قبل المستخدم. اسمح بـ StreamNumDeck في إعدادات Windows → التطبيقات → بدء التشغيل.</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>تم تعطيل بدء التشغيل بواسطة سياسة Windows.</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>تعذر على Windows تمكين بدء تشغيل StreamNumDeck.</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>لا يوجد رمز</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>زائد</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>ناقص</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>تحقق</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>لصق</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>رابط</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>شارك</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>أرسل</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>دبوس</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>قفل</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>فتح</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>القوة</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>الأمر</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>الكود</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>آلة حاسبة</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>مساعدة</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>تحذير</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>محظور</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>العب</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>وقفة</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>سجل</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>الترجيع</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>سريع إلى الأمام</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>خلط ورق اللعب</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>كرر</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>ملء الشاشة</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>نافذة</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>الحجم</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>إيقاف مستوى الصوت</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>حجم الصوت منخفض</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>حجم متوسط</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>حجم مرتفع</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>كتم الصوت</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>الصوت</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>مكبرات الصوت</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>ميكروفون</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>فيديو</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>الكاميرا</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>سماعات الرأس</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>بث</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>التبديل</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>رسالة</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>الدردشة</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>البريد</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>الناس</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>دردشة الفيديو</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>مكبر الصوت</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>الكرة الأرضية</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>واي فاي</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>بلوتوث</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>يو اس بي</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>سحابة</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>مجلد</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>فتح المجلد</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>وثيقة</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>صورة</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>نجمة</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>ملء النجمة</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>القلب</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>ملء القلب</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>مثل</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>لعبة</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>اكس بوكس</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>روبوت</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>البرق</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>الرموز التعبيرية</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>التأثيرات</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>التقويم</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>الموقت</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>لأعلى</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>أسفل</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>العودة</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>إلى الأمام</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>دبوس الخريطة</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>سيارة</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>العمل</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>تسوق</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>درع</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>الأذونات</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>اللون</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>الأجهزة</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>لوحة المفاتيح</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>طباعة</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>مصباح يدوي</value>
+  </data>
+</root>

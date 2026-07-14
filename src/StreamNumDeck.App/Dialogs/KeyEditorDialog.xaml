@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentDialog
+    x:Class="StreamNumDeck.App.Dialogs.KeyEditorDialog"
+    x:Uid="Editor_Dialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    MinWidth="420"
+    CloseButtonText="Отмена"
+    DefaultButton="Primary"
+    PrimaryButtonClick="PrimaryButton_Click"
+    PrimaryButtonText="Сохранить"
+    SecondaryButtonClick="SecondaryButton_Click"
+    SecondaryButtonText="Очистить"
+    mc:Ignorable="d">
+
+    <ScrollViewer MaxHeight="620" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Spacing="18">
+            <InfoBar
+                x:Name="ValidationMessage"
+                IsClosable="True"
+                IsOpen="False"
+                Severity="Error" />
+
+            <StackPanel Spacing="10">
+                <TextBlock x:Uid="Editor_Appearance" Style="{StaticResource SubtitleTextBlockStyle}" Text="Внешний вид" />
+                <Grid ColumnSpacing="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="88" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Width="88"
+                        Height="88"
+                        Style="{StaticResource SectionCardStyle}">
+                        <Grid>
+                            <FontIcon x:Name="IconPreviewGlyph" FontSize="32" />
+                            <Image
+                                x:Name="IconPreviewImage"
+                                Stretch="Uniform"
+                                Visibility="Collapsed" />
+                        </Grid>
+                    </Border>
+
+                    <StackPanel Grid.Column="1" Spacing="10">
+                        <GridView
+                            x:Name="BuiltInIconGrid"
+                            Height="112"
+                            IsItemClickEnabled="True"
+                            SelectionChanged="BuiltInIconGrid_SelectionChanged"
+                            SelectionMode="Single">
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid MaximumRowsOrColumns="8" Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid
+                                        Width="42"
+                                        Height="42"
+                                        ToolTipService.ToolTip="{Binding Name}">
+                                        <FontIcon FontSize="20" Glyph="{Binding Glyph}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <Button x:Uid="Editor_CustomIcon" Click="ChooseCustomIcon_Click" Content="Выбрать свою иконку…" />
+                            <TextBlock
+                                x:Name="CustomIconFileName"
+                                MaxWidth="220"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                TextTrimming="CharacterEllipsis"
+                                VerticalAlignment="Center" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+                <TextBox
+                    x:Name="LabelTextBox"
+                    x:Uid="Editor_Label"
+                    Header="Подпись"
+                    MaxLength="40"
+                    PlaceholderText="Необязательно" />
+                <Button
+                    x:Uid="Editor_CopyOtherLayer"
+                    HorizontalAlignment="Left"
+                    Click="CopyOtherLayer_Click"
+                    Content="Скопировать назначение из другого слоя" />
+            </StackPanel>
+
+            <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}" />
+
+            <StackPanel Spacing="12">
+                <TextBlock x:Uid="Editor_ActionSection" Style="{StaticResource SubtitleTextBlockStyle}" Text="Действие" />
+                <Grid ColumnSpacing="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox
+                        x:Name="ActionGroupComboBox"
+                        x:Uid="Editor_ActionGroup"
+                        DisplayMemberPath="Name"
+                        Header="Группа"
+                        SelectionChanged="ActionGroupComboBox_SelectionChanged" />
+                    <ComboBox
+                        x:Name="ActionTypeComboBox"
+                        x:Uid="Editor_ActionType"
+                        Grid.Column="1"
+                        DisplayMemberPath="Name"
+                        Header="Действие"
+                        SelectionChanged="ActionTypeComboBox_SelectionChanged" />
+                </Grid>
+
+                <StackPanel x:Name="SoundFields" Spacing="12" Visibility="Collapsed">
+                    <Grid ColumnSpacing="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="SoundFileTextBox" x:Uid="Editor_AudioFile" Header="Аудиофайл" />
+                        <StackPanel
+                            Grid.Column="1"
+                            Orientation="Horizontal"
+                            Spacing="8"
+                            VerticalAlignment="Bottom">
+                            <Button x:Uid="Common_BrowseButton" Click="ChooseSoundFile_Click" Content="Обзор…" />
+                            <Button x:Uid="Editor_PreviewSound" Click="PreviewSound_Click" Content="Прослушать" />
+                            <Button x:Uid="Common_StopButton" Click="StopSound_Click" Content="Стоп" />
+                        </StackPanel>
+                    </Grid>
+                    <Slider
+                        x:Name="SoundVolumeSlider"
+                        x:Uid="Editor_Volume"
+                        Header="Громкость"
+                        Maximum="100"
+                        Value="80" />
+                    <ComboBox
+                        x:Name="SoundBehaviorComboBox"
+                        x:Uid="Editor_Behavior"
+                        DisplayMemberPath="Name"
+                        Header="Поведение" />
+                </StackPanel>
+
+                <StackPanel x:Name="SystemAudioFields" Spacing="12" Visibility="Collapsed">
+                    <ComboBox
+                        x:Name="AudioApplicationComboBox"
+                        x:Uid="Editor_Application"
+                        DisplayMemberPath="Name"
+                        Header="Приложение"
+                        IsEditable="True"
+                        PlaceholderText="Выберите приложение или введите имя .exe" />
+                    <NumberBox
+                        x:Name="VolumeStepNumberBox"
+                        x:Uid="Editor_VolumeStep"
+                        Header="Шаг изменения, %"
+                        Maximum="100"
+                        Minimum="1"
+                        SmallChange="1"
+                        Value="5" />
+                    <TextBlock
+                        x:Name="AudioApplicationHint"
+                        x:Uid="Editor_AudioSessionHint"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Text="В списке отображаются приложения, у которых Windows уже создала аудиосессию."
+                        TextWrapping="Wrap" />
+                </StackPanel>
+
+                <StackPanel x:Name="ObsFields" Spacing="12" Visibility="Collapsed">
+                    <ComboBox
+                        x:Name="ObsTargetComboBox"
+                        x:Uid="Editor_ObsTarget"
+                        Header="Сцена или источник"
+                        IsEditable="True"
+                        PlaceholderText="Точное имя в OBS" />
+                </StackPanel>
+
+                <StackPanel x:Name="SystemFields" Spacing="12" Visibility="Collapsed">
+                    <Grid ColumnSpacing="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="SystemTargetTextBox" x:Uid="Editor_SystemTarget" Header="Программа, путь или адрес" />
+                        <Button
+                            x:Name="SystemBrowseButton"
+                            x:Uid="Common_BrowseButton"
+                            Grid.Column="1"
+                            Click="ChooseSystemTarget_Click"
+                            Content="Обзор…"
+                            VerticalAlignment="Bottom" />
+                    </Grid>
+                    <TextBox x:Name="ArgumentsTextBox" x:Uid="Editor_Arguments" Header="Аргументы" PlaceholderText="Необязательно" />
+                    <TextBox x:Name="WorkingDirectoryTextBox" x:Uid="Editor_WorkingDirectory" Header="Рабочая папка" PlaceholderText="Необязательно" />
+                </StackPanel>
+
+                <StackPanel x:Name="MacroFields" Spacing="8" Visibility="Collapsed">
+                    <TextBlock
+                        x:Uid="Editor_MacroHint"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Text="Каждый шаг вводится с новой строки. Сочетание: Ctrl+Shift+S. Пауза: wait 250. Строки с # считаются комментариями."
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="MacroTextBox"
+                        x:Uid="Editor_MacroSequence"
+                        AcceptsReturn="True"
+                        FontFamily="Consolas"
+                        Header="Последовательность"
+                        Height="150"
+                        PlaceholderText="Ctrl+Shift+S&#x0a;wait 250&#x0a;Alt+Tab"
+                        TextWrapping="NoWrap" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</ContentDialog>

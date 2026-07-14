@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Kontrolldäck för streamers och spelare</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>Ny profil</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ny profil</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Skapa</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>Ny profil</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>Till exempel Gaming stream</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>Ikon</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Globala inställningar</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>Ljud, OBS Studio och applikationsbeteende</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>Ljud</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>Utgångsenhet</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>Systemets standardenhet</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>Mastervolym</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>Tillåt samtidiga ljud</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>Förladda korta ljud</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>Börja med Windows</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>Minimera till meddelandeområdet</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>Aktivera infångning vid start</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>Utseende</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>Använd Windows-inställningen</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>Ljus</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>Mörkt</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>Positionera mikrofonindikator</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>Efter att ha klickat, dra indikatorn med musen. Dess position kommer att sparas.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>Tangentbord</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>Slå på/av nyckelfångst</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>Den fysiska NumLock-tangenten växlar mellan två tilldelningslager.</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>OBS Studio</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>Adress</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>Lösenord</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>Lämna tomt för att behålla det aktuella lösenordet</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>Lösenordet lagras i Windows säker lagring</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>Testa anslutningen</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>Stöd författaren</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>Om StreamNumDeck är användbart för dig kan du stödja dess utveckling.</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>Support på DonationAlerts</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>Fånga</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>Tangentbord fånga</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 — nödpaus</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>Åtgärden misslyckades</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Byt NumLock-lager</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>Rensa</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>Utseende</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>Välj din ikon...</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>Etikett</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>Valfritt</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>Kopiera uppgiften från det andra lagret</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>Åtgärd</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>Grupp</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>Åtgärd</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>Ljudfil</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>Bläddra...</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>Förhandsgranska</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>Sluta</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>Volym</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>Beteende</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>Ansökan</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>Välj ett program eller ange ett .exe-namn</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>Ändra steg, %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>Listan visar program som Windows redan har skapat en ljudsession för.</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>Scen eller källa</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>Exakt namn i OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>Program, sökväg eller adress</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>Argument</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>Valfritt</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>Arbetskatalog</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>Valfritt</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>Ange varje steg på en ny rad. Genväg: Ctrl+Skift+S. Fördröjning: vänta 250. Rader som börjar med # är kommentarer.</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>Sekvens</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>På</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Av</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Skapa</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>Minimera</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>Ljudfiler</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>Bilder</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>Alla filer</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>Ingen åtgärd</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>Ljud</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>System och kommandon</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>Spela samtidigt</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>Starta om detta ljud</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>Stoppa andra ljud</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>Spela upp ljud</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>Stäng av eller slå på ljudet för standardmikrofonen</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>Stäng av eller slå på ljudet för masterutgång</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>Justera huvudvolymen</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>Justera appliceringsvolymen</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>Öka huvudvolymen</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>Minska huvudvolymen</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>Öka appliceringsvolymen</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>Minska appliceringsvolymen</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>Byt scen</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>Visa eller dölj källa</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>Stäng av eller slå på ljudet för ingång</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>Börja streama</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>Sluta streama</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>Börja spela in</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>Sluta spela in</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>Spara Replay Buffer</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>Starta om Media Source</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>Starta programmet</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>Öppna fil eller mapp</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>Öppna länken</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>Kör tangentbordsmakro</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>Gör ingenting</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>Utför åtgärd</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>OBS ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>Den konfigurerade filen, mappen eller programmet är inte tillgängligt: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>{0} har ingen aktiv Windows-ljudsession. Starta ljuduppspelning i programmet och försök igen.</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>OBS är inte ansluten. Starta OBS och kontrollera WebSocket-inställningarna.</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS avvisade den konfigurerade åtgärden. Kontrollera dess scen, källa eller ingång.</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>Windows kunde inte spela upp den här ljudfilen. Kontrollera dess format eller codec: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>Ange minst ett kortkommando.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>Rad {0} har ett ogiltigt format. Använd en genväg som Ctrl+Skift+S eller en fördröjning som vänta 250.</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>Ett makro kan inte innehålla mer än {0} steg.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>Adress</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>Program, fil eller mapp</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>Scen</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>Källa</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>OBS ansluten</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>Ansluter till OBS...</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>Återansluter till OBS...</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>Återansluter till OBS: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>Kunde inte ansluta till OBS</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>OBS: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>OBS frånkopplad</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>Ansluten. Scener: {0}, källor: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>Inställningar sparade</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Öppna StreamNumDeck</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>Tangentbord fånga</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>Profiler</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>Fackåtgärd misslyckades</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Avsluta</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>Huvudprofil</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>Ny profil</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>Redigera profil</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>Duplicera profil</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>Ta bort profil</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}
+Högerklicka för profilåtgärder</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>Ta bort profil?</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>Profilen "{0}" och alla dess tilldelningar kommer att raderas.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> — kopia</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> — kopiera {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>Ange ett profilnamn.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>En profil med detta namn finns redan.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>Det gick inte att läsa in profiler</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>Kunde inte ändra profil</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>Den valda profilen finns inte längre.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>Det gick inte att redigera profilen</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>Det gick inte att skapa profil</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>Det gick inte att duplicera profilen</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>Det gick inte att ta bort profilen</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>Det gick inte att ladda inställningarna</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>Det gick inte att spara inställningarna</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>Det gick inte att visa indikatorn</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>Kunde inte öppna supportsidan</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>Det finns ingen applikation tillgänglig för att öppna denna länk.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>Det gick inte att spara tangenttilldelningen</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>Det gick inte att importera den valda ikonen</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>Kunde inte byta NumLock</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>Det gick inte att ändra fångststatus</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>Kunde inte hämta Windows-ljudsessioner: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>Ange ett steg för volymändring.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>Starten är aktiverad av Windows-policyn och kan inte inaktiveras av programmet.</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>Starten har tidigare inaktiverats av användaren. Tillåt StreamNumDeck i Windows-inställningar → Appar → Start.</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>Starten är inaktiverad av Windows-policyn.</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>Windows kunde inte aktivera StreamNumDeck-start.</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>Ingen ikon</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>Kontrollera</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>Redigera</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>Kopiera</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>Klistra in</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>Uppdatera</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>Sök</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>Länk</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>Dela</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>Skicka</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>Lås</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>Lås upp</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>Kraft</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>Kommando</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>Kod</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>Miniräknare</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>Hjälp</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>Varning</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>Blockerad</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>Spela</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>Sluta</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>Spela in</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>Föregående</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>Nästa</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>Spola tillbaka</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>Snabbspolning framåt</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>Blanda</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>Upprepa</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>Helskärm</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>Fönster</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>Volym</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>Volym av</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>Låg volym</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>Volym Medium</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>Volym hög</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>Ljud av</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>Ljud</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>Högtalare</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>Mikrofon</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>Kamera</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>Hörlurar</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>Sändning</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>Växla</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>Meddelande</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>Chatta</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>Människor</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>Videochatt</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>Megafon</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>Globe</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>WIFI</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>Moln</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>Ladda ner</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>Ladda upp</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>Mapp</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>Mapp Öppna</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>Dokument</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>Stjärna</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>Stjärnfyllning</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>Hjärta</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>Hjärtfyllning</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>Gillar</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>Spel</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>XBOX</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>Robot</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>Blixtnedslag</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>Effekter</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>Kalender</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>Historia</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>Hem</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>Upp</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>Ner</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>Tillbaka</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>Framåt</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>Kartnål</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>Bil</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>Arbete</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>Handla</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>Sköld</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>Behörigheter</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>Visa</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>Färg</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>Enheter</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>Tangentbord</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>Skriv ut</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>Ficklampa</value>
+  </data>
+</root>

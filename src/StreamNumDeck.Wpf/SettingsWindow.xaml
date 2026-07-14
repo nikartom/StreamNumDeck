@@ -1,0 +1,280 @@
+<Window x:Class="StreamNumDeck.Wpf.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="clr-namespace:StreamNumDeck.Wpf.Localization"
+        Title="{localization:Loc Settings_Title.Text, Fallback=Settings}"
+        Width="660" Height="760"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None" AllowsTransparency="True"
+        ResizeMode="NoResize" Background="Transparent"
+        Foreground="#F5F5F5" ShowInTaskbar="False"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="SettingsCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="#252525" />
+            <Setter Property="BorderBrush" Value="#414141" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="16" />
+            <Setter Property="Margin" Value="0,0,0,14" />
+        </Style>
+
+        <Style x:Key="SettingsIconStyle" TargetType="Border">
+            <Setter Property="Width" Value="36" />
+            <Setter Property="Height" Value="36" />
+            <Setter Property="Background" Value="#34435E" />
+            <Setter Property="BorderBrush" Value="#526789" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Margin" Value="0,0,12,0" />
+        </Style>
+
+        <Style x:Key="ToggleSwitchStyle" TargetType="CheckBox">
+            <Setter Property="Width" Value="42" />
+            <Setter Property="Height" Value="22" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Border x:Name="Track" Width="42" Height="22"
+                                Background="#3A3A3A" BorderBrush="#666666"
+                                BorderThickness="1" CornerRadius="11">
+                            <Ellipse x:Name="Thumb" Width="16" Height="16"
+                                     Margin="2" HorizontalAlignment="Left"
+                                     Fill="#D8D8D8" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Track" Property="BorderBrush" Value="#888888" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Track" Property="Background" Value="{StaticResource AccentBrush}" />
+                                <Setter TargetName="Track" Property="BorderBrush" Value="{StaticResource AccentBrush}" />
+                                <Setter TargetName="Thumb" Property="Fill" Value="#172033" />
+                                <Setter TargetName="Thumb" Property="HorizontalAlignment" Value="Right" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.45" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border Margin="10" Background="#202020" BorderBrush="#4B4B4B" BorderThickness="1" CornerRadius="12">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="22" ShadowDepth="5" Opacity="0.55" Color="#000000" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="64" />
+            </Grid.RowDefinitions>
+
+            <Border Background="#262626" CornerRadius="12,12,0,0" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid Margin="18,0,0,0">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="{localization:Loc Settings_Title.Text, Fallback=Global settings}"
+                                   FontSize="15" FontWeight="SemiBold" />
+                        <TextBlock Text="{localization:Loc Settings_Subtitle.Text, Fallback=Application behavior and integrations}"
+                                   FontSize="11" Foreground="{StaticResource SecondaryTextBrush}" Margin="0,2,0,0" />
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Width="44" Height="44"
+                            Background="Transparent" BorderThickness="0"
+                            Click="Close_Click" ToolTip="{localization:Loc Common_Cancel, Fallback=Cancel}">
+                        <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE8BB;" FontSize="12" />
+                    </Button>
+                </Grid>
+            </Border>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel Margin="20,16,20,20">
+                    <Border x:Name="StatusBorder" Visibility="Collapsed"
+                            Background="#243425" BorderBrush="#5B8F5D" BorderThickness="1"
+                            CornerRadius="7" Padding="12,9" Margin="0,0,0,14">
+                        <DockPanel>
+                            <TextBlock x:Name="StatusIcon" FontFamily="Segoe Fluent Icons" Text="&#xE73E;"
+                                       Foreground="#9DDB9F" Margin="0,0,9,0" />
+                            <TextBlock x:Name="StatusText" TextWrapping="Wrap" />
+                        </DockPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingsCardStyle}">
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <Border Style="{StaticResource SettingsIconStyle}">
+                                <TextBlock Text="&#xEB51;" FontFamily="Segoe Fluent Icons" FontSize="18"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,12,0">
+                                <TextBlock Text="{localization:Loc Settings_SupportSection.Text, Fallback=Support the author}"
+                                           FontSize="14" FontWeight="SemiBold" />
+                                <TextBlock Text="{localization:Loc Settings_SupportHint.Text, Fallback=Support StreamNumDeck development.}"
+                                           FontSize="11" Foreground="{StaticResource SecondaryTextBrush}" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <Button Grid.Column="2" Content="{localization:Loc Settings_SupportButton.Content, Fallback=DonationAlerts}"
+                                    Click="Support_Click" />
+                        </Grid>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingsCardStyle}">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,15">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                                <Border Style="{StaticResource SettingsIconStyle}">
+                                    <TextBlock Text="&#xE767;" FontFamily="Segoe Fluent Icons" FontSize="18"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="{localization:Loc Settings_SoundSection.Text, Fallback=Sound}"
+                                               FontSize="15" FontWeight="SemiBold" />
+                                    <TextBlock Text="{localization:Loc Settings_OutputDevice.Header, Fallback=Playback and output device}"
+                                               FontSize="11" Foreground="{StaticResource SecondaryTextBrush}" />
+                                </StackPanel>
+                            </Grid>
+
+                            <TextBlock Text="{localization:Loc Settings_OutputDevice.Header, Fallback=Output device}" Margin="0,0,0,6" />
+                            <ComboBox x:Name="AudioDeviceComboBox" Height="34" DisplayMemberPath="Name" SelectedValuePath="Id" />
+                            <DockPanel Margin="0,14,0,0">
+                                <TextBlock Text="{localization:Loc Settings_MasterVolume.Header, Fallback=Application sound volume}" />
+                                <TextBlock x:Name="MasterVolumeText" DockPanel.Dock="Right" HorizontalAlignment="Right" />
+                            </DockPanel>
+                            <Slider x:Name="MasterVolumeSlider" Margin="0,4,0,7" Minimum="0" Maximum="100"
+                                    ValueChanged="MasterVolumeSlider_ValueChanged" />
+
+                            <Border Height="1" Background="#3D3D3D" Margin="0,4" />
+                            <Grid Margin="0,8,0,6">
+                                <TextBlock Text="{localization:Loc Settings_ConcurrentSounds.Header, Fallback=Allow sounds to play simultaneously}" VerticalAlignment="Center" />
+                                <CheckBox x:Name="ConcurrentSoundsCheckBox" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" />
+                            </Grid>
+                            <Grid Margin="0,6,0,0">
+                                <TextBlock Text="{localization:Loc Settings_PreloadSounds.Header, Fallback=Preload short sounds}" VerticalAlignment="Center" />
+                                <CheckBox x:Name="PreloadSoundsCheckBox" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingsCardStyle}">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,12">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                                <Border Style="{StaticResource SettingsIconStyle}">
+                                    <TextBlock Text="&#xE713;" FontFamily="Segoe Fluent Icons" FontSize="18"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="{localization:Loc Settings_SystemSection.Text, Fallback=Application}"
+                                               FontSize="15" FontWeight="SemiBold" />
+                                    <TextBlock Text="StreamNumDeck" FontSize="11" Foreground="{StaticResource SecondaryTextBrush}" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Margin="0,5">
+                                <TextBlock Text="{localization:Loc Settings_StartWithWindows.Header, Fallback=Start with Windows}" VerticalAlignment="Center" />
+                                <CheckBox x:Name="StartWithWindowsCheckBox" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" />
+                            </Grid>
+                            <Grid Margin="0,5">
+                                <TextBlock Text="{localization:Loc Settings_MinimizeToTray.Header, Fallback=Keep in notification area}" VerticalAlignment="Center" />
+                                <CheckBox x:Name="MinimizeToTrayCheckBox" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" />
+                            </Grid>
+                            <Grid Margin="0,5">
+                                <TextBlock Text="{localization:Loc Settings_CaptureOnStartup.Header, Fallback=Enable key capture on startup}" VerticalAlignment="Center" />
+                                <CheckBox x:Name="CaptureOnStartupCheckBox" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" />
+                            </Grid>
+
+                            <Border Height="1" Background="#3D3D3D" Margin="0,10" />
+                            <Button Content="{localization:Loc Settings_PositionOverlay.Content, Fallback=Position microphone indicator}"
+                                    HorizontalAlignment="Left" Click="PositionOverlay_Click">
+                                <Button.ToolTip>
+                                    <TextBlock Text="{localization:Loc Settings_OverlayHint.Text, Fallback=Drag the indicator to the required monitor. Its position will be saved.}"
+                                               MaxWidth="320" TextWrapping="Wrap" />
+                                </Button.ToolTip>
+                            </Button>
+                            <TextBlock Text="{localization:Loc Settings_OverlayHint.Text, Fallback=Drag the indicator to the required monitor. Its position will be saved.}"
+                                       Margin="0,7,0,0" FontSize="11" Foreground="{StaticResource SecondaryTextBrush}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingsCardStyle}">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,12">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                                <Border Style="{StaticResource SettingsIconStyle}">
+                                    <TextBlock Text="&#xE765;" FontFamily="Segoe Fluent Icons" FontSize="18"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="{localization:Loc Settings_KeyboardSection.Text, Fallback=Keyboard}"
+                                               FontSize="15" FontWeight="SemiBold" />
+                                    <TextBlock Text="{localization:Loc Settings_NumLockHint.Text, Fallback=Physical NumLock switches two assignment layers.}"
+                                               FontSize="11" Foreground="{StaticResource SecondaryTextBrush}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <TextBlock Text="{localization:Loc Settings_EmergencyPause.Header, Fallback=Turn key capture on/off}" VerticalAlignment="Center" />
+                                <Border HorizontalAlignment="Right" Background="#303030" BorderBrush="#4C4C4C"
+                                        BorderThickness="1" CornerRadius="6" Padding="10,5">
+                                    <TextBlock Text="Ctrl + Alt + F12" FontFamily="Consolas" />
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource SettingsCardStyle}">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,15">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                                <Border Style="{StaticResource SettingsIconStyle}">
+                                    <TextBlock Text="&#xE95A;" FontFamily="Segoe Fluent Icons" FontSize="18"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="{localization:Loc Settings_ObsSection.Text, Fallback=OBS Studio}"
+                                               FontSize="15" FontWeight="SemiBold" />
+                                    <TextBlock Text="WebSocket" FontSize="11" Foreground="{StaticResource SecondaryTextBrush}" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="120" /></Grid.ColumnDefinitions>
+                                <StackPanel Margin="0,0,12,0">
+                                    <TextBlock Text="{localization:Loc Settings_ObsAddress.Header, Fallback=Host}" Margin="0,0,0,6" />
+                                    <TextBox x:Name="ObsHostTextBox" Height="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="{localization:Loc Settings_ObsPort.Header, Fallback=Port}" Margin="0,0,0,6" />
+                                    <TextBox x:Name="ObsPortTextBox" Height="34" />
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Text="{localization:Loc Settings_ObsPassword.Header, Fallback=Password}" Margin="0,12,0,6" />
+                            <PasswordBox x:Name="ObsPasswordBox" Height="34" />
+                            <TextBlock x:Name="PasswordStoredText"
+                                       Text="{localization:Loc Settings_PasswordStored.Text, Fallback=Password is stored in Windows protected storage}"
+                                       Margin="0,7,0,0" FontSize="11" Foreground="{StaticResource SecondaryTextBrush}"
+                                       Visibility="Collapsed" />
+                            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                                <Button x:Name="TestObsButton"
+                                        Content="{localization:Loc Settings_TestObs.Content, Fallback=Test connection}"
+                                        Height="32" Click="TestObs_Click" />
+                                <TextBlock x:Name="ObsTestResultText" Margin="12,0,0,0" VerticalAlignment="Center"
+                                           Foreground="#9DDB9F" TextWrapping="Wrap" Visibility="Collapsed" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <Border Grid.Row="2" Background="#262626" BorderBrush="#3C3C3C" BorderThickness="0,1,0,0" CornerRadius="0,0,12,12">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="18,0">
+                    <Button Content="{localization:Loc Common_Cancel, Fallback=Cancel}" MinWidth="84" Margin="0,0,8,0" IsCancel="True" />
+                    <Button x:Name="SaveButton" Content="{localization:Loc Common_Save, Fallback=Save}"
+                            MinWidth="88" IsDefault="True" Click="Save_Click" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
