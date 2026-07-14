@@ -2,7 +2,7 @@
 
 <https://polyformproject.org/licenses/noncommercial/1.0.0>
 
-Required Notice: Copyright 2026 Nikolay Karchevskiy.
+Required Notice: Copyright 2026 nikartom.
 
 ## Acceptance
 

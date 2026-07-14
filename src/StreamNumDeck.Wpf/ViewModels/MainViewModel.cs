@@ -43,7 +43,8 @@ public sealed class MainViewModel : ObservableObject, IDisposable
     private readonly Dictionary<string, DateTimeOffset> recentErrorNotifications = new(StringComparer.Ordinal);
     private DeckProfile? selectedProfile;
     private bool isNumLockOn;
-    private bool isCaptureEnabled;
+    private bool captureNumpad = true;
+    private bool captureNavigationBlock = true;
     private string obsStatusText = AppStrings.Get("Obs_Disconnected", "OBS disconnected");
     private Brush obsStatusBrush = ObsDisconnectedBrush;
     private string errorTitle = AppStrings.Get("Deck_ActionError.Title", "Action failed");
@@ -107,7 +108,8 @@ public sealed class MainViewModel : ObservableObject, IDisposable
     }
 
     public Brush NumLockBackground => IsNumLockOn ? NumLockOnBrush : NumLockOffBrush;
-    public bool IsCaptureEnabled { get => isCaptureEnabled; private set => SetProperty(ref isCaptureEnabled, value); }
+    public bool CaptureNumpad { get => captureNumpad; private set => SetProperty(ref captureNumpad, value); }
+    public bool CaptureNavigationBlock { get => captureNavigationBlock; private set => SetProperty(ref captureNavigationBlock, value); }
     public string ObsStatusText { get => obsStatusText; private set => SetProperty(ref obsStatusText, value); }
     public Brush ObsStatusBrush { get => obsStatusBrush; private set => SetProperty(ref obsStatusBrush, value); }
     public string ErrorTitle { get => errorTitle; private set => SetProperty(ref errorTitle, value); }
@@ -138,18 +140,17 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         ReplaceProfiles(configuration, configuration.ActiveProfileId);
         await RefreshPreloadedSoundsAsync(configuration, cancellationToken).ConfigureAwait(true);
 
-        runtimeService.CaptureStateChanged += RuntimeService_CaptureStateChanged;
         runtimeService.NumLockStateChanged += RuntimeService_NumLockStateChanged;
         runtimeService.ActionExecutionFailed += RuntimeService_ActionExecutionFailed;
         obsController.StateChanged += ObsController_StateChanged;
 
         IsNumLockOn = runtimeService.IsNumLockOn;
+        await ApplyCaptureTargetsAsync(configuration.Settings, cancellationToken).ConfigureAwait(true);
         if (configuration.Settings.EnableCaptureOnStartup)
         {
             await runtimeService.StartAsync(cancellationToken).ConfigureAwait(true);
         }
 
-        ApplyCaptureState(runtimeService.CaptureState);
         if (!string.IsNullOrWhiteSpace(obsController.LastError))
         {
             AppLogger.Error("OBS connection", new InvalidOperationException(obsController.LastError));
@@ -172,7 +173,30 @@ public sealed class MainViewModel : ObservableObject, IDisposable
             await runtimeService.StopAsync().ConfigureAwait(true);
         }
 
-        ApplyCaptureState(runtimeService.CaptureState);
+    }
+
+    public async Task ToggleCaptureTargetAsync(KeyboardCaptureTargets target)
+    {
+        if (target is not KeyboardCaptureTargets.Numpad and not KeyboardCaptureTargets.NavigationBlock)
+        {
+            throw new ArgumentOutOfRangeException(nameof(target), target, "A single capture target is required.");
+        }
+
+        var configuration = await configurationService.UpdateAsync(current =>
+        {
+            var settings = current.Settings;
+            return current.WithSettings(settings with
+            {
+                CaptureNumpad = target == KeyboardCaptureTargets.Numpad
+                    ? !settings.CaptureNumpad
+                    : settings.CaptureNumpad,
+                CaptureNavigationBlock = target == KeyboardCaptureTargets.NavigationBlock
+                    ? !settings.CaptureNavigationBlock
+                    : settings.CaptureNavigationBlock,
+            });
+        }).ConfigureAwait(true);
+
+        await ApplyCaptureTargetsAsync(configuration.Settings).ConfigureAwait(true);
     }
 
     public async Task SelectProfileAsync(Guid profileId)
@@ -308,6 +332,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         }
 
         await RefreshPreloadedSoundsAsync(updatedConfiguration, cancellationToken).ConfigureAwait(true);
+        await ApplyCaptureTargetsAsync(updatedConfiguration.Settings, cancellationToken).ConfigureAwait(true);
 
         try
         {
@@ -400,7 +425,6 @@ public sealed class MainViewModel : ObservableObject, IDisposable
 
     public void Dispose()
     {
-        runtimeService.CaptureStateChanged -= RuntimeService_CaptureStateChanged;
         runtimeService.NumLockStateChanged -= RuntimeService_NumLockStateChanged;
         runtimeService.ActionExecutionFailed -= RuntimeService_ActionExecutionFailed;
         obsController.StateChanged -= ObsController_StateChanged;
@@ -442,9 +466,6 @@ public sealed class MainViewModel : ObservableObject, IDisposable
             pair.Value.Update(layer.GetAssignment((DeckKey)Enum.Parse(typeof(DeckKey), pair.Key)), iconAssetStore);
         }
     }
-
-    private void RuntimeService_CaptureStateChanged(object? sender, KeyboardCaptureStateChangedEventArgs e) =>
-        OnUi(() => ApplyCaptureState(e.State));
 
     private void RuntimeService_NumLockStateChanged(object? sender, NumLockStateChangedEventArgs e) =>
         OnUi(() => IsNumLockOn = e.IsOn);
@@ -494,8 +515,25 @@ public sealed class MainViewModel : ObservableObject, IDisposable
             ApplyObsState(e.State);
         });
 
-    private void ApplyCaptureState(KeyboardCaptureState state) =>
-        IsCaptureEnabled = state != KeyboardCaptureState.Stopped;
+    private async Task ApplyCaptureTargetsAsync(
+        GlobalSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        var targets = KeyboardCaptureTargets.None;
+        if (settings.CaptureNumpad)
+        {
+            targets |= KeyboardCaptureTargets.Numpad;
+        }
+
+        if (settings.CaptureNavigationBlock)
+        {
+            targets |= KeyboardCaptureTargets.NavigationBlock;
+        }
+
+        await runtimeService.SetCaptureTargetsAsync(targets, cancellationToken).ConfigureAwait(true);
+        CaptureNumpad = settings.CaptureNumpad;
+        CaptureNavigationBlock = settings.CaptureNavigationBlock;
+    }
 
     private void ApplyObsState(ObsConnectionState state)
     {

@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>起動時にキャプチャを有効にする</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>テンキー</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>6キーブロック</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>NumPad キーをインターセプトする</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Insert、Home、Page Up、Delete、End、および Page Down キーをインターセプトします</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>外観</value>
   </data>

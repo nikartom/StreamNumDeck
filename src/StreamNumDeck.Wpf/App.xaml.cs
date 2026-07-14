@@ -140,14 +140,22 @@ public partial class App : System.Windows.Application
         tray.Initialize(
             () => Dispatcher.Invoke(window.ShowFromTray),
             () => Dispatcher.InvokeAsync(viewModel.ToggleCaptureAsync).Task.Unwrap(),
+            () => Dispatcher.InvokeAsync(() => viewModel.ToggleCaptureTargetAsync(KeyboardCaptureTargets.Numpad)).Task.Unwrap(),
+            () => Dispatcher.InvokeAsync(() => viewModel.ToggleCaptureTargetAsync(KeyboardCaptureTargets.NavigationBlock)).Task.Unwrap(),
             profileId => Dispatcher.InvokeAsync(() => viewModel.SelectProfileAsync(profileId)).Task.Unwrap(),
             () => Dispatcher.Invoke(window.ExitFromTray));
         provider.GetRequiredService<ConfigurationService>().Changed += (_, args) =>
-            Dispatcher.BeginInvoke(new Action(() => tray.SetProfiles(
-                args.Configuration.Profiles.Select(profile => new TrayProfileOption(profile.Id, profile.Name)),
-                args.Configuration.ActiveProfileId)));
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                tray.SetProfiles(
+                    args.Configuration.Profiles.Select(profile => new TrayProfileOption(profile.Id, profile.Name)),
+                    args.Configuration.ActiveProfileId);
+                tray.SetCaptureTargets(
+                    args.Configuration.Settings.CaptureNumpad,
+                    args.Configuration.Settings.CaptureNavigationBlock);
+            }));
         provider.GetRequiredService<DeckRuntimeService>().CaptureStateChanged += (_, args) =>
-            Dispatcher.BeginInvoke(new Action(() => tray.SetCaptureEnabled(args.State != KeyboardCaptureState.Stopped)));
+            Dispatcher.BeginInvoke(new Action(() => tray.SetCaptureEnabled(args.State == KeyboardCaptureState.Running)));
         viewModel.UserErrorRaised += (title, message) =>
             Dispatcher.BeginInvoke(new Action(() =>
             {
@@ -169,7 +177,10 @@ public partial class App : System.Windows.Application
             {
                 window.MinimizeToTray = configuration.Settings.MinimizeToTray;
                 tray.SetVisible(configuration.Settings.MinimizeToTray);
-                tray.SetCaptureEnabled(provider.GetRequiredService<DeckRuntimeService>().CaptureState != KeyboardCaptureState.Stopped);
+                tray.SetCaptureEnabled(provider.GetRequiredService<DeckRuntimeService>().CaptureState == KeyboardCaptureState.Running);
+                tray.SetCaptureTargets(
+                    configuration.Settings.CaptureNumpad,
+                    configuration.Settings.CaptureNavigationBlock);
                 tray.SetProfiles(
                     configuration.Profiles.Select(profile => new TrayProfileOption(profile.Id, profile.Name)),
                     configuration.ActiveProfileId);

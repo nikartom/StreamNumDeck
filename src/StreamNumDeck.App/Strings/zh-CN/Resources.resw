@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>启动时启用捕获</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>数字键盘</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>6键块</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>拦截数字键盘按键</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>拦截 Insert、Home、Page Up、Delete、End 和 Page Down 键</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>外观</value>
   </data>

@@ -150,7 +150,24 @@ public sealed class JsonConfigurationStore : IConfigurationStore, IDisposable
             throw new InvalidDataException("The configuration document is empty.");
         }
 
-        return envelope.Configuration ?? throw new InvalidDataException("The configuration payload is missing.");
+        var configuration = envelope.Configuration
+            ?? throw new InvalidDataException("The configuration payload is missing.");
+
+        var settingsDocument = document.RootElement
+            .GetProperty("configuration")
+            .GetProperty("settings");
+        var hasCaptureNumpad = settingsDocument.TryGetProperty("captureNumpad", out _);
+        var hasCaptureNavigationBlock = settingsDocument.TryGetProperty("captureNavigationBlock", out _);
+        if (!hasCaptureNumpad || !hasCaptureNavigationBlock)
+        {
+            configuration = configuration.WithSettings(configuration.Settings with
+            {
+                CaptureNumpad = !hasCaptureNumpad || configuration.Settings.CaptureNumpad,
+                CaptureNavigationBlock = !hasCaptureNavigationBlock || configuration.Settings.CaptureNavigationBlock,
+            });
+        }
+
+        return configuration;
     }
 
     private async Task WriteAsync(

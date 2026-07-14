@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>시작 시 캡처 활성화</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>숫자패드</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>6키 블록</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>NumPad 키 가로채기</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Insert, Home, Page Up, Delete, End 및 Page Down 키를 가로채세요.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>외관</value>
   </data>

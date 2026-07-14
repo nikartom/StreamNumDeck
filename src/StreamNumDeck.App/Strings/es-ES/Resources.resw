@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Habilitar captura al inicio</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>Teclado numérico</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>bloque de 6 teclas</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Interceptar teclas del teclado numérico</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Intercepta las teclas Insertar, Inicio, Re Pág, Eliminar, Fin y Av Pág</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Apariencia</value>
   </data>

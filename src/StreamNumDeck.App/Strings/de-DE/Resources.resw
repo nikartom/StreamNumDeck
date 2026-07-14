@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Aktivieren Sie die Erfassung beim Start</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>6-Tasten-Block</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>NumPad-Tasten abfangen</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Fangen Sie die Tasten „Einfügen“, „Pos1“, „Bild auf“, „Löschen“, „Ende“ und „Bild ab“ ab</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Aussehen</value>
   </data>

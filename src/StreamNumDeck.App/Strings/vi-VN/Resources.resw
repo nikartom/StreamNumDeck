@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Bật chụp khi khởi động</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>bàn phím số</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Khối 6 phím</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Chặn các phím NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Chặn các phím Chèn, Trang chủ, Lên trang, Xóa, Kết thúc và Xuống trang</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Ngoại hình</value>
   </data>

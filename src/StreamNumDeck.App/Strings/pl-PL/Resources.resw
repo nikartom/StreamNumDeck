@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Włącz przechwytywanie przy uruchomieniu</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Blok 6-klawiszowy</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Przechwytuj klawisze NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Przechwyć klawisze Insert, Home, Page Up, Delete, End i Page Down</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Wygląd</value>
   </data>

@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Aktifkan pengambilan saat startup</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>Papan Angka</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Blok 6 kunci</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Mencegat tombol NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Cegat tombol Sisipkan, Beranda, Halaman Atas, Hapus, Akhiri, dan Halaman Bawah</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Penampilan</value>
   </data>

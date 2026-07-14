@@ -217,11 +217,11 @@ StreamNumDeck использует интерфейс OBS WebSocket 5.x, вст�
 
 ## Author and license / Автор и лицензия
 
-Created by **Nikolay Karchevskiy**. Copyright © 2026 Nikolay Karchevskiy.
+Created by **nikartom**. Copyright © 2026 nikartom.
 
 StreamNumDeck is free for permitted personal and other noncommercial use and is distributed under the [PolyForm Noncommercial License 1.0.0](LICENSE.md). The source code is publicly available; commercial use requires separate permission from the author.
 
-Автор — **Nikolay Karchevskiy**. Copyright © 2026 Nikolay Karchevskiy.
+Автор — **nikartom**. Copyright © 2026 nikartom.
 
 StreamNumDeck бесплатно распространяется для разрешённого личного и другого некоммерческого использования по лицензии [PolyForm Noncommercial 1.0.0](LICENSE.md). Исходный код открыт для просмотра; для коммерческого использования необходимо отдельное разрешение автора.
 

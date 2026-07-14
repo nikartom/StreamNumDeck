@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>เปิดใช้งานการจับภาพเมื่อเริ่มต้น</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>นัมแพด</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>บล็อก 6 ปุ่ม</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>สกัดกั้นปุ่ม NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>สกัดกั้นปุ่มแทรก หน้าแรก เลื่อนหน้าขึ้น ลบ สิ้นสุด และเลื่อนหน้าลง</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>ลักษณะที่ปรากฏ</value>
   </data>

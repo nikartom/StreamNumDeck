@@ -42,6 +42,7 @@ public sealed class WindowsKeyboardCaptureService : IKeyboardCaptureService
     private nint hookHandle;
     private uint hookThreadId;
     private volatile bool numLockOn;
+    private int captureTargets = (int)KeyboardCaptureTargets.All;
     private long suppressNumLockPollingUntil;
     private bool numLockKeyDown;
     private bool controlDown;
@@ -64,6 +65,9 @@ public sealed class WindowsKeyboardCaptureService : IKeyboardCaptureService
     public KeyboardCaptureState State => state;
 
     public bool IsNumLockOn => numLockOn;
+
+    public KeyboardCaptureTargets CaptureTargets =>
+        (KeyboardCaptureTargets)Volatile.Read(ref captureTargets);
 
     public event EventHandler<KeyboardCaptureStateChangedEventArgs>? StateChanged;
 
@@ -118,6 +122,21 @@ public sealed class WindowsKeyboardCaptureService : IKeyboardCaptureService
 
     public IAsyncEnumerable<CapturedKeyPress> ReadAllAsync(CancellationToken cancellationToken = default) =>
         channel.Reader.ReadAllAsync(cancellationToken);
+
+    public Task SetCaptureTargetsAsync(
+        KeyboardCaptureTargets targets,
+        CancellationToken cancellationToken = default)
+    {
+        Guard.NotDisposed(disposed, this);
+        cancellationToken.ThrowIfCancellationRequested();
+        if ((targets & ~KeyboardCaptureTargets.All) != 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(targets), targets, "Unknown keyboard capture target.");
+        }
+
+        Volatile.Write(ref captureTargets, (int)targets);
+        return Task.CompletedTask;
+    }
 
     public Task SetNumLockAsync(bool isOn, CancellationToken cancellationToken = default)
     {
@@ -268,16 +287,24 @@ public sealed class WindowsKeyboardCaptureService : IKeyboardCaptureService
                 return CallNextHookEx(hookHandle, code, wParam, lParam);
             }
 
-            if (isDown && pressedKeys.Add(key))
+            if (isUp)
+            {
+                return pressedKeys.Remove(key)
+                    ? 1
+                    : CallNextHookEx(hookHandle, code, wParam, lParam);
+            }
+
+            if (!CaptureTargets.Includes(key))
+            {
+                return CallNextHookEx(hookHandle, code, wParam, lParam);
+            }
+
+            if (pressedKeys.Add(key))
             {
                 channel.Writer.TryWrite(new CapturedKeyPress(
                     key,
                     numLockOn ? NumLockLayer.On : NumLockLayer.Off,
                     DateTimeOffset.UtcNow));
-            }
-            else if (isUp)
-            {
-                pressedKeys.Remove(key);
             }
 
             return 1;

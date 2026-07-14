@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Activați capturarea la pornire</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Bloc cu 6 taste</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Interceptați tastele NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Interceptați tastele Inserare, Acasă, Pagină în sus, Ștergere, Sfârșit și Pagină în jos</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Aspectul</value>
   </data>

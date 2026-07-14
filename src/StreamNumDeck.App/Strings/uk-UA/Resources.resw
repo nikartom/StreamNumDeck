@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Увімкнути захоплення під час запуску</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>6-клавішний блок</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Перехоплення клавіш NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Перехопити клавіші Insert, Home, Page Up, Delete, End і Page Down</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Зовнішній вигляд</value>
   </data>

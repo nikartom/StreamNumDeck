@@ -19,6 +19,8 @@ public sealed class DeckRuntimeService(
 
     public bool IsNumLockOn => keyboardCapture.IsNumLockOn;
 
+    public KeyboardCaptureTargets CaptureTargets => keyboardCapture.CaptureTargets;
+
     public event EventHandler<KeyboardCaptureStateChangedEventArgs>? CaptureStateChanged
     {
         add => keyboardCapture.StateChanged += value;
@@ -35,6 +37,11 @@ public sealed class DeckRuntimeService(
 
     public Task SetNumLockAsync(bool isOn, CancellationToken cancellationToken = default) =>
         keyboardCapture.SetNumLockAsync(isOn, cancellationToken);
+
+    public Task SetCaptureTargetsAsync(
+        KeyboardCaptureTargets targets,
+        CancellationToken cancellationToken = default) =>
+        keyboardCapture.SetCaptureTargetsAsync(targets, cancellationToken);
 
     public async Task StartAsync(CancellationToken cancellationToken = default)
     {

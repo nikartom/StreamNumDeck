@@ -1,4 +1,6 @@
 using System.Collections.Immutable;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Configuration;
 using StreamNumDeck.Core.Deck;
@@ -138,6 +140,43 @@ public sealed class JsonConfigurationStoreTests
         Assert.AreEqual("msedge.exe", loadedAction.ApplicationId);
         Assert.AreEqual(VolumeAdjustmentDirection.Decrease, loadedAction.Direction);
         Assert.AreEqual(8, loadedAction.StepPercent);
+    }
+
+    [TestMethod]
+    public async Task SaveAndLoad_PreservesIndependentCaptureTargets()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault();
+        configuration = configuration.WithSettings(configuration.Settings with
+        {
+            CaptureNumpad = false,
+            CaptureNavigationBlock = true,
+        });
+
+        await store.SaveAsync(configuration);
+        var loaded = await store.LoadAsync();
+
+        Assert.IsFalse(loaded.Settings.CaptureNumpad);
+        Assert.IsTrue(loaded.Settings.CaptureNavigationBlock);
+    }
+
+    [TestMethod]
+    public async Task LoadAsync_OldConfigurationWithoutCaptureTargets_EnablesBothGroups()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        await store.SaveAsync(AppConfiguration.CreateDefault());
+        var root = JsonNode.Parse(await File.ReadAllTextAsync(paths.ConfigurationFilePath))!.AsObject();
+        var settings = root["configuration"]!["settings"]!.AsObject();
+        settings.Remove("captureNumpad");
+        settings.Remove("captureNavigationBlock");
+        await File.WriteAllTextAsync(
+            paths.ConfigurationFilePath,
+            root.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+
+        var loaded = await store.LoadAsync();
+
+        Assert.IsTrue(loaded.Settings.CaptureNumpad);
+        Assert.IsTrue(loaded.Settings.CaptureNavigationBlock);
     }
 
     [TestMethod]

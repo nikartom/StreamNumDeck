@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.ComponentModel;
 using StreamNumDeck.Core.Deck;
+using StreamNumDeck.Core.Input;
 using StreamNumDeck.Wpf.ViewModels;
 using StreamNumDeck.Wpf.Services;
 using StreamNumDeck.App.Localization;
@@ -84,11 +85,17 @@ public partial class MainWindow : Window
         }
     }
 
-    private async void Capture_Click(object sender, RoutedEventArgs e)
+    private async void CaptureNumpad_Click(object sender, RoutedEventArgs e) =>
+        await ToggleCaptureTargetAsync(KeyboardCaptureTargets.Numpad);
+
+    private async void CaptureNavigationBlock_Click(object sender, RoutedEventArgs e) =>
+        await ToggleCaptureTargetAsync(KeyboardCaptureTargets.NavigationBlock);
+
+    private async Task ToggleCaptureTargetAsync(KeyboardCaptureTargets target)
     {
         try
         {
-            await viewModel.ToggleCaptureAsync();
+            await viewModel.ToggleCaptureTargetAsync(target);
         }
         catch (Exception exception)
         {

@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Abilita l'acquisizione all'avvio</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>Tastierino numerico</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Blocco a 6 chiavi</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Intercetta i tasti del tastierino numerico</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Intercetta i tasti Inserisci, Home, Pagina su, Elimina, Fine e Pagina giù</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Aspetto</value>
   </data>

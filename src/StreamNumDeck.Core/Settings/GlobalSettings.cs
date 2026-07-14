@@ -85,6 +85,10 @@ public sealed record GlobalSettings
 
     public bool EnableCaptureOnStartup { get; }
 
+    public bool CaptureNumpad { get; init; } = true;
+
+    public bool CaptureNavigationBlock { get; init; } = true;
+
     public AppTheme Theme { get; }
 
     public ObsConnectionSettings Obs { get; }

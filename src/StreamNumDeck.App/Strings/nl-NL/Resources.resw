@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Schakel vastleggen bij opstarten in</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Blok met 6 toetsen</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Onderschep NumPad-toetsen</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Onderschep de toetsen Invoegen, Home, Pagina omhoog, Verwijderen, Einde en Pagina omlaag</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Uiterlijk</value>
   </data>

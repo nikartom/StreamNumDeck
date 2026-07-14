@@ -12,7 +12,7 @@
 #endif
 
 #define MyAppName "StreamNumDeck"
-#define MyAppPublisher "Nikolay Karchevskiy"
+#define MyAppPublisher "nikartom"
 #define MyAppExeName "StreamNumDeck.exe"
 
 [Setup]

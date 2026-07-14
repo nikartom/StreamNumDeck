@@ -13,10 +13,10 @@
     <Version>1.0.1</Version>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
-    <Authors>Nikolay Karchevskiy</Authors>
+    <Authors>nikartom</Authors>
     <Product>StreamNumDeck</Product>
     <Description>Custom control deck for streamers and gamers</Description>
-    <Copyright>Copyright © 2026 Nikolay Karchevskiy</Copyright>
+    <Copyright>Copyright © 2026 nikartom</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

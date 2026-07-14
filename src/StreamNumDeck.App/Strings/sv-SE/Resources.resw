@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Aktivera infångning vid start</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>Numpad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>6-nyckelsblock</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Snäpp upp NumPad-tangenterna</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Avlyssna knapparna Infoga, Hem, Sida upp, Ta bort, Avsluta och Sida ner</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Utseende</value>
   </data>

@@ -49,6 +49,8 @@ public partial class SettingsWindow : Window
             StartWithWindowsCheckBox.IsChecked = snapshot.Settings.StartWithWindows;
             MinimizeToTrayCheckBox.IsChecked = snapshot.Settings.MinimizeToTray;
             CaptureOnStartupCheckBox.IsChecked = snapshot.Settings.EnableCaptureOnStartup;
+            CaptureNumpadCheckBox.IsChecked = snapshot.Settings.CaptureNumpad;
+            CaptureNavigationBlockCheckBox.IsChecked = snapshot.Settings.CaptureNavigationBlock;
             ObsHostTextBox.Text = snapshot.Settings.Obs.Host;
             ObsPortTextBox.Text = snapshot.Settings.Obs.Port.ToString();
             ObsPasswordBox.Password = string.Empty;
@@ -95,7 +97,11 @@ public partial class SettingsWindow : Window
                 MinimizeToTrayCheckBox.IsChecked == true,
                 CaptureOnStartupCheckBox.IsChecked == true,
                 originalSettings.Theme,
-                new ObsConnectionSettings(ObsHostTextBox.Text, port, originalSettings.Obs.CredentialKey));
+                new ObsConnectionSettings(ObsHostTextBox.Text, port, originalSettings.Obs.CredentialKey))
+            {
+                CaptureNumpad = CaptureNumpadCheckBox.IsChecked == true,
+                CaptureNavigationBlock = CaptureNavigationBlockCheckBox.IsChecked == true,
+            };
 
             var startupChanged = settings.StartWithWindows != originalSettings.StartWithWindows;
             if (startupChanged)

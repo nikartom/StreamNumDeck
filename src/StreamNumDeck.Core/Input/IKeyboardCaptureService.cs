@@ -6,6 +6,8 @@ public interface IKeyboardCaptureService : IAsyncDisposable
 
     bool IsNumLockOn { get; }
 
+    KeyboardCaptureTargets CaptureTargets { get; }
+
     event EventHandler<KeyboardCaptureStateChangedEventArgs>? StateChanged;
 
     event EventHandler<NumLockStateChangedEventArgs>? NumLockStateChanged;
@@ -13,6 +15,10 @@ public interface IKeyboardCaptureService : IAsyncDisposable
     Task StartAsync(CancellationToken cancellationToken = default);
 
     Task StopAsync(CancellationToken cancellationToken = default);
+
+    Task SetCaptureTargetsAsync(
+        KeyboardCaptureTargets targets,
+        CancellationToken cancellationToken = default);
 
     Task SetNumLockAsync(bool isOn, CancellationToken cancellationToken = default);
 

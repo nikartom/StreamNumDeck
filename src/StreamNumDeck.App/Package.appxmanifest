@@ -9,15 +9,15 @@
   IgnorableNamespaces="uap uap5 rescap">
 
   <Identity
-    Name="NikolayKarchevskiy.StreamNumDeck"
-    Publisher="CN=Nikolay Karchevskiy"
+    Name="nikartom.StreamNumDeck"
+    Publisher="CN=nikartom"
     Version="0.1.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="1A760D0C-E30F-4003-9810-3968B07E6328" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>ms-resource:AppDisplayName</DisplayName>
-    <PublisherDisplayName>Nikolay Karchevskiy</PublisherDisplayName>
+    <PublisherDisplayName>nikartom</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

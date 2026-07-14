@@ -11,12 +11,16 @@ internal sealed class TrayIconService : IDisposable
 {
     private NotifyIcon? notifyIcon;
     private ToolStripMenuItem? captureItem;
+    private ToolStripMenuItem? captureNumpadItem;
+    private ToolStripMenuItem? captureNavigationBlockItem;
     private ToolStripMenuItem? profilesItem;
     private Func<Guid, Task>? selectProfile;
 
     public void Initialize(
         Action showWindow,
         Func<Task> toggleCapture,
+        Func<Task> toggleCaptureNumpad,
+        Func<Task> toggleCaptureNavigationBlock,
         Func<Guid, Task> selectProfile,
         Action exitApplication)
     {
@@ -25,6 +29,10 @@ internal sealed class TrayIconService : IDisposable
         showItem.Click += (_, _) => showWindow();
         captureItem = new ToolStripMenuItem(AppStrings.Get("Tray_Capture", "Capture keys"));
         captureItem.Click += async (_, _) => await ExecuteAsync(toggleCapture, captureItem);
+        captureNumpadItem = new ToolStripMenuItem(AppStrings.Get("Capture_NumPadHint", "Intercept numeric keypad keys"));
+        captureNumpadItem.Click += async (_, _) => await ExecuteAsync(toggleCaptureNumpad, captureNumpadItem);
+        captureNavigationBlockItem = new ToolStripMenuItem(AppStrings.Get("Capture_NavigationBlockHint", "Intercept the six-key navigation block"));
+        captureNavigationBlockItem.Click += async (_, _) => await ExecuteAsync(toggleCaptureNavigationBlock, captureNavigationBlockItem);
         profilesItem = new ToolStripMenuItem(AppStrings.Get("Tray_Profiles", "Profiles")) { Enabled = false };
         var exitItem = new ToolStripMenuItem(AppStrings.Get("Tray_Exit", "Exit"));
         exitItem.Click += (_, _) => exitApplication();
@@ -33,6 +41,8 @@ internal sealed class TrayIconService : IDisposable
         menu.Items.Add(showItem);
         menu.Items.Add(new ToolStripSeparator());
         menu.Items.Add(captureItem);
+        menu.Items.Add(captureNumpadItem);
+        menu.Items.Add(captureNavigationBlockItem);
         menu.Items.Add(profilesItem);
         menu.Items.Add(new ToolStripSeparator());
         menu.Items.Add(exitItem);
@@ -72,6 +82,19 @@ internal sealed class TrayIconService : IDisposable
         if (captureItem is not null)
         {
             captureItem.Checked = enabled;
+        }
+    }
+
+    public void SetCaptureTargets(bool captureNumpad, bool captureNavigationBlock)
+    {
+        if (captureNumpadItem is not null)
+        {
+            captureNumpadItem.Checked = captureNumpad;
+        }
+
+        if (captureNavigationBlockItem is not null)
+        {
+            captureNavigationBlockItem.Checked = captureNavigationBlock;
         }
     }
 

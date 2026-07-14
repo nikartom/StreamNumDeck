@@ -33,7 +33,7 @@ internal static class ConfigurationMigration
         }
 
         var legacyLocalState = Directory
-            .EnumerateDirectories(packagesRoot, "NikolayKarchevskiy.StreamNumDeck_*")
+            .EnumerateDirectories(packagesRoot, "*.StreamNumDeck_*")
             .Select(path => Path.Combine(path, "LocalState"))
             .Where(Directory.Exists)
             .OrderByDescending(path => Directory.GetLastWriteTimeUtc(path))

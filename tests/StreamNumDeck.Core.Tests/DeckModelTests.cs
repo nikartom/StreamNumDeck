@@ -2,6 +2,7 @@ using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Configuration;
 using StreamNumDeck.Core.Deck;
 using StreamNumDeck.Core.Icons;
+using StreamNumDeck.Core.Input;
 using System.Collections.Immutable;
 
 namespace StreamNumDeck.Core.Tests;
@@ -9,6 +10,20 @@ namespace StreamNumDeck.Core.Tests;
 [TestClass]
 public sealed class DeckModelTests
 {
+    [TestMethod]
+    public void CaptureTargets_SeparateNavigationBlockFromNumpad()
+    {
+        foreach (var key in DeckKeyCatalog.AssignableKeys)
+        {
+            var isNavigationKey = key is
+                DeckKey.Insert or DeckKey.Home or DeckKey.PageUp or
+                DeckKey.Delete or DeckKey.End or DeckKey.PageDown;
+
+            Assert.AreEqual(isNavigationKey, KeyboardCaptureTargets.NavigationBlock.Includes(key), key.ToString());
+            Assert.AreEqual(!isNavigationKey, KeyboardCaptureTargets.Numpad.Includes(key), key.ToString());
+        }
+    }
+
     [TestMethod]
     public void AssignableKeyCatalog_ContainsTwentyTwoUniquePhysicalKeys()
     {

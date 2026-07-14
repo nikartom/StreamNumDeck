@@ -84,6 +84,18 @@
   <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
     <value>Activer la capture au démarrage</value>
   </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>Pavé numérique</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Bloc à 6 touches</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Intercepter les touches du pavé numérique</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Interceptez les touches Insertion, Accueil, Page précédente, Supprimer, Fin et Page suivante</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Apparence</value>
   </data>

@@ -112,7 +112,11 @@ public partial class SettingsPageViewModel(
             new ObsConnectionSettings(
                 ObsHost,
                 checked((int)ObsPort),
-                currentSettings.Obs.CredentialKey));
+                currentSettings.Obs.CredentialKey))
+        {
+            CaptureNumpad = currentSettings.CaptureNumpad,
+            CaptureNavigationBlock = currentSettings.CaptureNavigationBlock,
+        };
 
         var updated = await configurationService.UpdateAsync(
             current => current.WithSettings(settings),
