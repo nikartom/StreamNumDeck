@@ -1,6 +1,16 @@
 <h1 align="center">StreamNumDeck</h1>
 
 <p align="center">
+  <strong>Turn the numpad you already own into a control deck for streaming, gaming, and everyday shortcuts.</strong>
+</p>
+
+<p align="center">
+  <a href="#english">🇬🇧 English</a>
+  &nbsp;•&nbsp;
+  <a href="#russian">🇷🇺 Русский</a>
+</p>
+
+<p align="center">
   <img src="https://flagcdn.com/24x18/us.png" width="24" height="18" alt="English" title="English">
   <img src="https://flagcdn.com/24x18/ru.png" width="24" height="18" alt="Русский" title="Русский">
   <img src="https://flagcdn.com/24x18/de.png" width="24" height="18" alt="Deutsch" title="Deutsch">
@@ -30,203 +40,191 @@
 </p>
 
 <p align="center">
-  <strong>Turn the keyboard you already own into a configurable control deck for streaming, gaming, and everyday automation.</strong>
+  <a href="https://github.com/nikartom/StreamNumDeck/releases/latest"><strong>Download StreamNumDeck</strong></a>
+  &nbsp;•&nbsp;
+  <a href="https://www.donationalerts.com/r/kventinburatino">Support the author</a>
 </p>
-
-<p align="center">
-  <a href="https://github.com/nikartom/StreamNumDeck/releases/latest"><strong>Download the latest release</strong></a>
-</p>
-
-## English
-
-StreamNumDeck is a native Windows 11 application that assigns actions and macros to the numeric keypad and the six-key navigation block (`Insert`, `Home`, `Page Up`, `Delete`, `End`, and `Page Down`). While the application is running, it captures those keys globally and executes the actions configured in the active profile.
-
-The physical `NumLock` state selects one of two independent assignment layers. The remaining 22 keys can therefore hold up to **44 actions per profile**, without adding another device to the desk.
-
-### Highlights
-
-- Two action layers controlled by the physical `NumLock` key and synchronized with the real keyboard state.
-- Multiple named profiles with custom icons, quick switching from the navigation rail, and profile selection from the system tray.
-- A visual key editor with a large built-in icon catalog and support for user-provided images.
-- Global key capture with a `Ctrl+Alt+F12` emergency pause.
-- Minimize-to-tray behavior, capture control, profile switching, and exit commands in the tray menu.
-- Light, dark, and Windows-controlled themes.
-- Optional launch at Windows startup.
-- Local configuration storage and protected OBS credentials through Windows Password Vault.
-- A draggable microphone-mute indicator that can be placed on any monitor.
-
-### Actions
-
-| Group | Available actions |
-| --- | --- |
-| **OBS Studio** | Switch scenes; show or hide sources; mute or unmute inputs; start or stop streaming; start or stop recording; save the replay buffer; restart a media source. |
-| **Sound** | Play an audio file; mute or unmute the default microphone; mute system audio; raise or lower master volume; control the volume of a selected application. |
-| **System** | Launch a program; open a file or folder; open an HTTP/HTTPS link; execute a multi-step keyboard macro with shortcuts and timed delays. |
-
-StreamNumDeck communicates with OBS through the OBS WebSocket 5.x protocol. Enable the WebSocket server in OBS, then enter its address, port, and optional password in the application settings. Starting a stream or recording always requires an explicitly assigned action; connection tests never start either one.
-
-### Localization
-
-The interface follows the Windows display language automatically. Resources are included for:
-
-English, Russian, German, French, Spanish, Brazilian Portuguese, Italian, Polish, Ukrainian, Turkish, Dutch, Swedish, Czech, Romanian, Simplified Chinese, Japanese, Korean, Hindi, Arabic, Indonesian, Vietnamese, and Thai.
-
-English and Russian have been manually reviewed. The remaining translations are currently machine-generated and welcome native-speaker review.
-
-### Download and install
-
-The current beta is available as a self-contained **Windows 11 x64 MSIX** on the [GitHub Releases page](https://github.com/nikartom/StreamNumDeck/releases). It includes .NET and Windows App SDK runtime files, so users do not need to install them separately.
-
-The beta package is test-signed. Before installing the MSIX, an administrator must import the public `.cer` file included with the release into **Local Computer → Trusted People**. Only trust the certificate downloaded from this repository and compare its thumbprint with the value published in the release notes. Detailed bilingual instructions are included in [the MSIX installation guide](docs/install-msix.md).
-
-### Technology and architecture
-
-- .NET 10 and C# 14
-- WinUI 3 and Windows App SDK
-- Single-project MSIX packaging
-- Layered `Core`, `Infrastructure`, and `App` projects
-- MSTest coverage for the domain model, persistence, keyboard capture, macros, audio actions, and OBS protocol
-
-The application does not send telemetry. Profiles, assignments, and settings remain on the local computer; the OBS password is stored separately in Windows Password Vault.
-
-### Build from source
-
-Requirements:
-
-- Windows 11
-- .NET SDK 10.0.301 or a compatible .NET 10 patch selected by `global.json`
-- .NET Desktop Runtime 10.0.9 or a compatible .NET 10 patch
-- Windows Developer Mode for registering the unpackaged debug layout
-
-Build and test the solution:
-
-```powershell
-./scripts/build.ps1
-```
-
-Register the freshly built application layout:
-
-```powershell
-./scripts/deploy.ps1
-```
-
-Create a tested, self-contained x64 MSIX for a beta release:
-
-```powershell
-./scripts/package-msix.ps1 -CreateDevelopmentCertificate
-```
-
-After registration, launch StreamNumDeck from the Start menu. The deployment script preserves application data when replacing the current development package.
-
-The repository layout and current implementation stages are documented in [the architecture notes](docs/architecture.md) and [the roadmap](docs/roadmap.md).
-
-### Project status
-
-StreamNumDeck is under active development. The main control-deck workflow, profiles, keyboard capture, action editor, audio integration, OBS integration, tray controls, overlays, localization, and persistent settings are implemented. A test-signed MSIX beta is available; broader stabilization and production-trusted signing remain in progress.
-
-If the application is useful to you, you can [support its development on DonationAlerts](https://www.donationalerts.com/r/kventinburatino).
 
 ---
 
+<a id="english"></a>
+
+## English
+
+### Your keyboard can be your Stream Deck
+
+StreamNumDeck turns the numeric keypad and the six navigation keys above it into customizable buttons. Keep playing or streaming while a single key switches an OBS scene, mutes your microphone, plays a sound effect, changes an application's volume, opens a link, or runs a keyboard macro.
+
+There is no extra device to buy and no need to leave the game or hunt through open windows.
+
+The physical `NumLock` key switches between two independent layers. That gives you up to **44 actions in every profile**. The key background in StreamNumDeck always shows which layer is active.
+
+### What can I do with it?
+
+- Switch OBS scenes and show or hide sources without using `Alt+Tab`.
+- Mute the microphone and keep a visible crossed-microphone indicator on any monitor.
+- Start or stop recording or streaming, and save the replay buffer from the keyboard.
+- Play music, jingles, and sound effects with individual volume and playback behavior.
+- Mute Windows audio or adjust master and per-application volume.
+- Open a game, browser, folder, file, or website.
+- Run multi-step keyboard macros with shortcuts and timed delays.
+- Create separate profiles for streaming, gaming, editing, work, or any other setup.
+
+Each key can have a label, one of the included icons, or your own image. Profiles have their own icons and can be switched from the side panel or the system tray.
+
+### Download
+
+StreamNumDeck is made for **Windows 11**. Choose either file on the [Releases page](https://github.com/nikartom/StreamNumDeck/releases/latest):
+
+- **Setup — recommended:** a regular per-user installer. It does not require administrator rights and adds StreamNumDeck to the Start menu. An optional desktop shortcut is available during installation.
+- **Portable ZIP:** extract the `StreamNumDeck` folder anywhere and run `StreamNumDeck.exe`. No installation is required.
+
+Both packages are small because Windows 11 already includes the required .NET Framework runtime. The application does not download additional components.
+
+> [!NOTE]
+> The current installer is not digitally signed, so Microsoft Defender SmartScreen may show an “unrecognized app” warning. If you downloaded it from this official repository, select **More info → Run anyway**. We do not ask you to install a certificate or disable Windows security.
+
+The portable build stores profiles and settings in `%LocalAppData%\StreamNumDeck`, just like the installed version. This keeps your configuration when switching between the two packages.
+
+### Quick start
+
+1. Start StreamNumDeck and click any key in the on-screen keyboard.
+2. Choose an icon, label, action group, and action.
+3. Configure the action and save it.
+4. Press the same physical key while StreamNumDeck is running.
+5. Press `NumLock` to configure and use the second layer.
+
+Key capture can be turned on or off from the main window or tray menu. `Ctrl+Alt+F12` always toggles capture, so you can quickly return the keyboard to normal input.
+
+### OBS Studio
+
+StreamNumDeck uses the OBS WebSocket 5.x interface built into current OBS Studio versions. Enable the WebSocket server in OBS, then copy its address, port, and optional password into StreamNumDeck settings.
+
+The connection test only checks access and loads scene/source names. It never starts a stream or recording. Those operations occur only when you explicitly assign and press the corresponding action.
+
+| Group | Actions |
+| --- | --- |
+| **OBS Studio** | Switch scene; show/hide source; mute/unmute input; start/stop streaming; start/stop recording; save replay buffer; restart media source. |
+| **Sound** | Play an audio file; mute/unmute the default microphone; mute Windows audio; adjust master volume; adjust a selected application's volume. |
+| **System** | Launch a program; open a file, folder, or web link; run a keyboard macro. |
+
+### Languages and privacy
+
+The interface automatically follows the Windows display language. StreamNumDeck includes English, Russian, German, French, Spanish, Brazilian Portuguese, Italian, Polish, Ukrainian, Turkish, Dutch, Swedish, Czech, Romanian, Simplified Chinese, Japanese, Korean, Hindi, Arabic, Indonesian, Vietnamese, and Thai.
+
+English and Russian are manually maintained. The other translations are machine-generated and native-speaker corrections are welcome.
+
+StreamNumDeck has no telemetry or advertising. Profiles, assignments, icons, settings, and logs stay on your computer. The OBS password is kept separately in Windows Password Vault.
+
+### Build from source
+
+For users, the files on the [Releases page](https://github.com/nikartom/StreamNumDeck/releases/latest) are the easiest option. Developers need Windows 11 and the .NET SDK selected by `global.json`.
+
+```powershell
+./scripts/build.ps1 -Configuration Release
+```
+
+Create the portable ZIP and Setup executable (Inno Setup 6 is required for Setup):
+
+```powershell
+./scripts/package-wpf.ps1 -Version 1.0.0
+```
+
+---
+
+<a id="russian"></a>
+
 ## Русский
 
-StreamNumDeck — нативное приложение для Windows 11, которое назначает действия и макросы на цифровой блок клавиатуры и шесть клавиш навигации: `Insert`, `Home`, `Page Up`, `Delete`, `End` и `Page Down`. Пока приложение работает, оно глобально перехватывает эти клавиши и выполняет команды активного профиля.
+### Ваша клавиатура может стать стрим-деком
 
-Физическое состояние `NumLock` выбирает один из двух независимых слоёв. Поэтому на оставшиеся 22 клавиши можно назначить до **44 действий в каждом профиле**, не покупая отдельное устройство.
+StreamNumDeck превращает цифровой блок и шесть навигационных клавиш над ним в настраиваемую панель управления. Не выходя из игры или трансляции, одной клавишей можно переключить сцену OBS, выключить микрофон, запустить звуковой эффект, изменить громкость приложения, открыть ссылку или выполнить макрос.
 
-### Основные возможности
+Не нужно покупать отдельное устройство, сворачивать игру или искать нужное окно среди открытых программ.
 
-- Два слоя действий, переключаемые физической клавишей `NumLock` и синхронизированные с реальным состоянием клавиатуры.
-- Несколько пользовательских профилей с иконками, переключением на боковой панели и выбором из меню в области уведомлений.
-- Визуальный редактор клавиш с большим набором встроенных иконок и загрузкой собственных изображений.
-- Глобальный перехват клавиш с аварийной паузой по `Ctrl+Alt+F12`.
-- Сворачивание в область уведомлений, включение перехвата, выбор профиля и выход через меню значка в трее.
-- Светлое, тёмное и системное оформление Windows.
-- Необязательный запуск вместе с Windows.
-- Локальное хранение конфигурации и защищённое хранение пароля OBS в Windows Password Vault.
-- Перетаскиваемый индикатор выключенного микрофона, который можно разместить на любом мониторе.
+Физическая клавиша `NumLock` переключает два независимых слоя. В каждом профиле можно назначить до **44 действий**. Фон клавиши в StreamNumDeck всегда показывает, какой слой сейчас активен.
 
-### Действия
+### Что можно делать?
 
-| Группа | Доступные действия |
+- Переключать сцены OBS и показывать или скрывать источники без `Alt+Tab`.
+- Выключать микрофон и видеть поверх всех окон перечёркнутый микрофон на любом мониторе.
+- Запускать и останавливать запись или трансляцию и сохранять буфер повтора с клавиатуры.
+- Воспроизводить музыку, джинглы и звуковые эффекты с отдельной громкостью и режимом запуска.
+- Отключать общий звук Windows и менять громкость системы или конкретного приложения.
+- Открывать игру, браузер, папку, файл или сайт.
+- Выполнять многошаговые макросы с сочетаниями клавиш и задержками.
+- Создавать отдельные профили для стрима, игр, монтажа, работы и любых других задач.
+
+На клавише можно оставить подпись, выбрать одну из встроенных иконок или загрузить собственное изображение. Для профилей также выбираются иконки, а переключаться между ними можно на боковой панели или через меню в трее.
+
+### Скачать
+
+StreamNumDeck предназначен для **Windows 11**. На [странице последнего релиза](https://github.com/nikartom/StreamNumDeck/releases/latest) доступны два варианта:
+
+- **Setup — рекомендуется:** обычный установщик для текущего пользователя. Права администратора не нужны. Приложение появится в меню «Пуск», а во время установки можно добавить ярлык на рабочий стол.
+- **Portable ZIP:** распакуйте папку `StreamNumDeck` в любое удобное место и запустите `StreamNumDeck.exe`. Установка не требуется.
+
+Оба файла имеют небольшой размер, потому что необходимый .NET Framework уже входит в Windows 11. Приложение не скачивает дополнительные компоненты.
+
+> [!NOTE]
+> Установщик пока не имеет цифровой подписи, поэтому Microsoft Defender SmartScreen может показать предупреждение о неизвестном приложении. Если файл скачан из этого официального репозитория, нажмите **Подробнее → Выполнить в любом случае**. Устанавливать сертификаты или отключать защиту Windows не требуется.
+
+Portable-версия хранит профили и настройки в `%LocalAppData%\StreamNumDeck`, как и установленная версия. Поэтому при переходе между двумя вариантами конфигурация сохраняется.
+
+### Быстрый старт
+
+1. Запустите StreamNumDeck и нажмите на любую клавишу экранной клавиатуры.
+2. Выберите иконку, подпись, группу и нужное действие.
+3. Настройте действие и сохраните его.
+4. Нажмите соответствующую физическую клавишу, пока StreamNumDeck работает.
+5. Нажмите `NumLock`, чтобы настроить и использовать второй слой.
+
+Перехват клавиш включается и выключается в главном окне или через меню в трее. Сочетание `Ctrl+Alt+F12` всегда переключает перехват, поэтому цифровую клавиатуру можно быстро вернуть в обычный режим.
+
+### OBS Studio
+
+StreamNumDeck использует интерфейс OBS WebSocket 5.x, встроенный в современные версии OBS Studio. Включите WebSocket-сервер в OBS, затем перенесите его адрес, порт и пароль при необходимости в настройки StreamNumDeck.
+
+Проверка подключения только проверяет доступ и загружает названия сцен и источников. Она никогда не запускает трансляцию или запись. Эти операции выполняются только при явном назначении действия и нажатии соответствующей клавиши.
+
+| Группа | Действия |
 | --- | --- |
-| **OBS Studio** | Переключение сцен; показ и скрытие источников; выключение звука входов; запуск и остановка трансляции или записи; сохранение буфера повтора; перезапуск медиаисточника. |
-| **Звук** | Воспроизведение аудиофайла; включение и выключение микрофона по умолчанию; отключение общего звука; изменение системной громкости; управление громкостью выбранного приложения. |
-| **Система** | Запуск программы; открытие файла или папки; открытие HTTP/HTTPS-ссылки; выполнение многошагового клавиатурного макроса с сочетаниями клавиш и задержками. |
+| **OBS Studio** | Переключить сцену; показать или скрыть источник; включить или выключить звук входа; запустить или остановить трансляцию и запись; сохранить буфер повтора; перезапустить медиаисточник. |
+| **Звук** | Воспроизвести аудиофайл; включить или выключить микрофон по умолчанию; отключить звук Windows; изменить общую громкость или громкость выбранного приложения. |
+| **Система** | Запустить программу; открыть файл, папку или ссылку; выполнить клавиатурный макрос. |
 
-StreamNumDeck взаимодействует с OBS по протоколу OBS WebSocket 5.x. Включите WebSocket-сервер в OBS, затем укажите в настройках приложения его адрес, порт и пароль при необходимости. Запуск трансляции или записи происходит только по явно назначенному действию — проверка подключения их никогда не запускает.
+### Языки и конфиденциальность
 
-### Локализация
+Язык интерфейса автоматически выбирается по языку Windows. В комплект входят английский, русский, немецкий, французский, испанский, бразильский португальский, итальянский, польский, украинский, турецкий, нидерландский, шведский, чешский, румынский, упрощённый китайский, японский, корейский, хинди, арабский, индонезийский, вьетнамский и тайский языки.
 
-Язык интерфейса автоматически выбирается по языку Windows. В комплект входят ресурсы для следующих языков:
+Английский и русский переводы поддерживаются вручную. Остальные переводы сгенерированы автоматически — исправления от носителей языка приветствуются.
 
-английский, русский, немецкий, французский, испанский, бразильский португальский, итальянский, польский, украинский, турецкий, нидерландский, шведский, чешский, румынский, упрощённый китайский, японский, корейский, хинди, арабский, индонезийский, вьетнамский и тайский.
-
-Английский и русский переводы вычитаны вручную. Остальные переводы пока сгенерированы автоматически и нуждаются в проверке носителями языка.
-
-### Загрузка и установка
-
-Текущая beta-версия опубликована в виде автономного **MSIX для Windows 11 x64** на странице [GitHub Releases](https://github.com/nikartom/StreamNumDeck/releases). В пакет уже входят компоненты .NET и Windows App SDK, поэтому пользователю не нужно устанавливать их отдельно.
-
-Beta-пакет подписан тестовым сертификатом. Перед установкой MSIX администратор должен импортировать приложенный публичный файл `.cer` в хранилище **Локальный компьютер → Доверенные лица**. Доверяйте только сертификату, загруженному из этого репозитория, и сравните его отпечаток со значением в примечаниях к выпуску. Подробная инструкция на русском и английском находится в [руководстве по установке MSIX](docs/install-msix.md).
-
-### Технологии и архитектура
-
-- .NET 10 и C# 14
-- WinUI 3 и Windows App SDK
-- MSIX-упаковка в одном проекте приложения
-- Разделение решения на проекты `Core`, `Infrastructure` и `App`
-- Автоматические тесты доменной модели, сохранения конфигурации, перехвата клавиатуры, макросов, звуковых действий и протокола OBS
-
-Приложение не отправляет телеметрию. Профили, назначения и настройки остаются на компьютере пользователя, а пароль OBS хранится отдельно в Windows Password Vault.
+В StreamNumDeck нет телеметрии и рекламы. Профили, назначения, иконки, настройки и журналы ошибок остаются на вашем компьютере. Пароль OBS хранится отдельно в защищённом хранилище Windows Password Vault.
 
 ### Сборка из исходников
 
-Потребуются:
-
-- Windows 11
-- .NET SDK 10.0.301 или совместимое обновление .NET 10, выбранное через `global.json`
-- .NET Desktop Runtime 10.0.9 или совместимое обновление .NET 10
-- режим разработчика Windows для регистрации отладочной сборки
-
-Сборка и запуск тестов:
+Обычным пользователям проще скачать готовые файлы на [странице релиза](https://github.com/nikartom/StreamNumDeck/releases/latest). Для самостоятельной сборки потребуются Windows 11 и версия .NET SDK, указанная в `global.json`.
 
 ```powershell
-./scripts/build.ps1
+./scripts/build.ps1 -Configuration Release
 ```
 
-Регистрация свежей сборки приложения:
+Создание portable ZIP и установщика Setup (для Setup потребуется Inno Setup 6):
 
 ```powershell
-./scripts/deploy.ps1
+./scripts/package-wpf.ps1 -Version 1.0.0
 ```
-
-Создание протестированного автономного MSIX x64 для beta-релиза:
-
-```powershell
-./scripts/package-msix.ps1 -CreateDevelopmentCertificate
-```
-
-После регистрации запустите StreamNumDeck из меню «Пуск». Скрипт развёртывания сохраняет пользовательские данные при замене текущей отладочной версии.
-
-Структура решения и этапы разработки описаны в [документе об архитектуре](docs/architecture.md) и [плане разработки](docs/roadmap.md).
-
-### Состояние проекта
-
-StreamNumDeck находится в активной разработке. Основная панель, профили, перехват клавиш, редактор действий, управление звуком, интеграция с OBS, меню трея, оверлей, локализация и сохранение настроек уже реализованы. Тестово подписанный MSIX beta уже доступен; дополнительная стабилизация и переход на доверенную производственную подпись продолжаются.
-
-Если приложение оказалось полезным, вы можете [поддержать разработку на DonationAlerts](https://www.donationalerts.com/r/kventinburatino).
 
 ## Author and license / Автор и лицензия
 
 Created by **Nikolay Karchevskiy**. Copyright © 2026 Nikolay Karchevskiy.
 
-StreamNumDeck is distributed under the [PolyForm Noncommercial License 1.0.0](LICENSE.md). You may use, study, modify, and redistribute the software for permitted noncommercial purposes. Commercial use requires separate permission from the author.
-
-Because the license restricts commercial use, StreamNumDeck is source-available rather than OSI-approved Open Source software.
+StreamNumDeck is free for permitted personal and other noncommercial use and is distributed under the [PolyForm Noncommercial License 1.0.0](LICENSE.md). The source code is publicly available; commercial use requires separate permission from the author.
 
 Автор — **Nikolay Karchevskiy**. Copyright © 2026 Nikolay Karchevskiy.
 
-StreamNumDeck распространяется по лицензии [PolyForm Noncommercial 1.0.0](LICENSE.md). Приложение и исходный код можно использовать, изучать, изменять и распространять в разрешённых некоммерческих целях. Для коммерческого использования необходимо отдельное разрешение автора.
+StreamNumDeck бесплатно распространяется для разрешённого личного и другого некоммерческого использования по лицензии [PolyForm Noncommercial 1.0.0](LICENSE.md). Исходный код открыт для просмотра; для коммерческого использования необходимо отдельное разрешение автора.
 
-Из-за ограничения коммерческого использования проект относится к source-available, а не к Open Source в определении OSI.
+If StreamNumDeck is useful to you, you can [support development on DonationAlerts](https://www.donationalerts.com/r/kventinburatino).
+
+Если StreamNumDeck оказался полезен, вы можете [поддержать разработку на DonationAlerts](https://www.donationalerts.com/r/kventinburatino).
