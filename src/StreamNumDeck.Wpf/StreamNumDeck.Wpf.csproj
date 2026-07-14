@@ -10,6 +10,13 @@
     <AssemblyName>StreamNumDeck</AssemblyName>
     <RootNamespace>StreamNumDeck.Wpf</RootNamespace>
     <ApplicationIcon>..\StreamNumDeck.App\Assets\AppIcon.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Authors>Nikolay Karchevskiy</Authors>
+    <Product>StreamNumDeck</Product>
+    <Description>Custom control deck for streamers and gamers</Description>
+    <Copyright>Copyright © 2026 Nikolay Karchevskiy</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,62 +1,141 @@
+[CmdletBinding()]
 param(
-    [string]$Configuration = "Release",
-    [string]$Version = "0.2.0-alpha.1",
-    [switch]$SkipInstaller
+    [ValidatePattern('^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$')]
+    [string] $Version = '1.0.0',
+
+    [switch] $SkipInstaller
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = 'Stop'
+Set-StrictMode -Version Latest
+
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
-$dotnet = Join-Path $env:LOCALAPPDATA "Microsoft\dotnet\dotnet.exe"
-if (-not (Test-Path $dotnet)) {
-    $dotnet = "dotnet"
+$project = Join-Path $repositoryRoot 'src\StreamNumDeck.Wpf\StreamNumDeck.Wpf.csproj'
+$license = Join-Path $repositoryRoot 'LICENSE.md'
+$artifactsRoot = Join-Path $repositoryRoot 'artifacts'
+$releaseRoot = Join-Path $artifactsRoot 'release'
+$stagingRoot = Join-Path $artifactsRoot ".package-wpf-$PID"
+$portableRoot = Join-Path $stagingRoot 'StreamNumDeck'
+$zipPath = Join-Path $releaseRoot "StreamNumDeck-$Version-portable.zip"
+$setupPath = Join-Path $releaseRoot "StreamNumDeck-$Version-Setup.exe"
+
+function Assert-ChildPath([string] $path, [string] $parent) {
+    $resolvedPath = [System.IO.Path]::GetFullPath($path)
+    $resolvedParent = [System.IO.Path]::GetFullPath($parent).TrimEnd(
+        [System.IO.Path]::DirectorySeparatorChar,
+        [System.IO.Path]::AltDirectorySeparatorChar) + [System.IO.Path]::DirectorySeparatorChar
+    if (-not $resolvedPath.StartsWith($resolvedParent, [System.StringComparison]::OrdinalIgnoreCase)) {
+        throw "Packaging path escaped the artifacts directory: $resolvedPath"
+    }
 }
 
-$project = Join-Path $repositoryRoot "src\StreamNumDeck.Wpf\StreamNumDeck.Wpf.csproj"
-$buildOutput = Join-Path $repositoryRoot "src\StreamNumDeck.Wpf\bin\$Configuration\net48"
-$artifacts = Join-Path $repositoryRoot "artifacts\wpf"
-$portableRoot = Join-Path $artifacts "StreamNumDeck-$Version-portable"
-$artifactsFullPath = [System.IO.Path]::GetFullPath($artifacts).TrimEnd([System.IO.Path]::DirectorySeparatorChar) + [System.IO.Path]::DirectorySeparatorChar
-$portableFullPath = [System.IO.Path]::GetFullPath($portableRoot)
-if (-not $portableFullPath.StartsWith($artifactsFullPath, [System.StringComparison]::OrdinalIgnoreCase)) {
-    throw "Portable staging path escaped the repository artifacts directory."
+function Find-DotNet {
+    $localDotNet = Join-Path $env:LOCALAPPDATA 'Microsoft\dotnet\dotnet.exe'
+    if (Test-Path -LiteralPath $localDotNet) {
+        return $localDotNet
+    }
+
+    return (Get-Command dotnet -ErrorAction Stop).Source
 }
 
-& $dotnet build $project -c $Configuration
-if ($LASTEXITCODE -ne 0) {
-    throw "WPF build failed."
+function Find-InnoCompiler {
+    $candidates = @(
+        (Join-Path $env:LOCALAPPDATA 'Programs\Inno Setup 6\ISCC.exe'),
+        (Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'),
+        (Join-Path $env:ProgramFiles 'Inno Setup 6\ISCC.exe')
+    ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+
+    return $candidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
 }
 
-if (Test-Path $portableRoot) {
-    Remove-Item -LiteralPath $portableRoot -Recurse -Force
+Assert-ChildPath $releaseRoot $artifactsRoot
+Assert-ChildPath $stagingRoot $artifactsRoot
+
+$numericVersion = ($Version -split '-', 2)[0]
+$fileVersion = "$numericVersion.0"
+$dotnet = Find-DotNet
+
+Get-Process StreamNumDeck -ErrorAction SilentlyContinue | Stop-Process -Force
+
+if (Test-Path -LiteralPath $releaseRoot) {
+    Remove-Item -LiteralPath $releaseRoot -Recurse -Force
 }
+if (Test-Path -LiteralPath $stagingRoot) {
+    Remove-Item -LiteralPath $stagingRoot -Recurse -Force
+}
+
 New-Item -ItemType Directory -Path $portableRoot -Force | Out-Null
+New-Item -ItemType Directory -Path $releaseRoot -Force | Out-Null
 
-Get-ChildItem -LiteralPath $buildOutput -File |
-    Where-Object Extension -NotIn ".pdb", ".xml" |
-    Copy-Item -Destination $portableRoot
-
-$zipPath = Join-Path $artifacts "StreamNumDeck-$Version-portable.zip"
-if (Test-Path $zipPath) {
-    Remove-Item -LiteralPath $zipPath -Force
-}
-Compress-Archive -Path (Join-Path $portableRoot "*") -DestinationPath $zipPath -CompressionLevel Optimal
-
-if (-not $SkipInstaller) {
-    $compiler = Join-Path $env:LOCALAPPDATA "Programs\Inno Setup 6\ISCC.exe"
-    if (-not (Test-Path $compiler)) {
-        throw "Inno Setup 6 is required to build Setup.exe."
-    }
-
-    & $compiler "/DMyAppVersion=$Version" "/DMySourceDir=$portableRoot" (Join-Path $repositoryRoot "installer\StreamNumDeck.Wpf.iss")
+try {
+    & $dotnet publish $project `
+        --configuration Release `
+        --no-restore `
+        --output $portableRoot `
+        -p:Version=$Version `
+        -p:AssemblyVersion=$fileVersion `
+        -p:FileVersion=$fileVersion `
+        -p:DebugSymbols=false `
+        -p:DebugType=None
     if ($LASTEXITCODE -ne 0) {
-        throw "Installer build failed."
+        throw 'WPF publish failed.'
+    }
+
+    Get-ChildItem -LiteralPath $portableRoot -File |
+        Where-Object Extension -In '.pdb', '.xml' |
+        Remove-Item -Force
+    Copy-Item -LiteralPath $license -Destination (Join-Path $portableRoot 'LICENSE.md')
+
+    $applicationPath = Join-Path $portableRoot 'StreamNumDeck.exe'
+    if (-not (Test-Path -LiteralPath $applicationPath)) {
+        throw "Published application was not found: $applicationPath"
+    }
+
+    $publishedVersion = (Get-Item -LiteralPath $applicationPath).VersionInfo.FileVersion
+    if (-not $publishedVersion.StartsWith($numericVersion, [System.StringComparison]::Ordinal)) {
+        throw "Published application version '$publishedVersion' does not match '$numericVersion'."
+    }
+
+    Compress-Archive `
+        -LiteralPath $portableRoot `
+        -DestinationPath $zipPath `
+        -CompressionLevel Optimal
+
+    if (-not $SkipInstaller) {
+        $compiler = Find-InnoCompiler
+        if ([string]::IsNullOrWhiteSpace($compiler)) {
+            throw 'Inno Setup 6 is required to build Setup.exe.'
+        }
+
+        & $compiler `
+            "/DMyAppVersion=$Version" `
+            "/DMyFileVersion=$fileVersion" `
+            "/DMySourceDir=$portableRoot" `
+            "/DMyOutputDir=$releaseRoot" `
+            (Join-Path $repositoryRoot 'installer\StreamNumDeck.Wpf.iss')
+        if ($LASTEXITCODE -ne 0) {
+            throw 'Installer build failed.'
+        }
+    }
+
+    $artifacts = @($zipPath)
+    if (-not $SkipInstaller) {
+        $artifacts += $setupPath
+    }
+
+    foreach ($artifact in $artifacts) {
+        if (-not (Test-Path -LiteralPath $artifact)) {
+            throw "Expected artifact was not created: $artifact"
+        }
+
+        $item = Get-Item -LiteralPath $artifact
+        $hash = (Get-FileHash -LiteralPath $artifact -Algorithm SHA256).Hash
+        Write-Host ("{0} ({1:N2} MB)" -f $item.FullName, ($item.Length / 1MB))
+        Write-Host "SHA256: $hash"
     }
 }
-
-$portableSize = [math]::Round((Get-Item $zipPath).Length / 1MB, 2)
-Write-Host "Portable: $zipPath ($portableSize MB)"
-if (-not $SkipInstaller) {
-    $setupPath = Join-Path $artifacts "StreamNumDeck-$Version-Setup.exe"
-    $setupSize = [math]::Round((Get-Item $setupPath).Length / 1MB, 2)
-    Write-Host "Installer: $setupPath ($setupSize MB)"
+finally {
+    if (Test-Path -LiteralPath $stagingRoot) {
+        Remove-Item -LiteralPath $stagingRoot -Recurse -Force
+    }
 }
