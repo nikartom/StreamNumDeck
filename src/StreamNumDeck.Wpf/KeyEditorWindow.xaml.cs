@@ -8,7 +8,8 @@ using System.Windows.Media.Imaging;
 using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Deck;
 using StreamNumDeck.Core.Icons;
-using StreamNumDeck.App.Localization;
+using StreamNumDeck.Wpf.Localization;
+using StreamNumDeck.Wpf.Presentation;
 using StreamNumDeck.Core.Audio;
 using StreamNumDeck.Core.Obs;
 using StreamNumDeck.Wpf.Services;
@@ -49,11 +50,21 @@ public partial class KeyEditorWindow : Window
         new ActionOption("obs-scene", AppStrings.Get("Action_ObsSwitchScene", "OBS: switch scene"), AppStrings.Get("Field_Scene", "Scene"), false, false),
         new ActionOption("obs-source", AppStrings.Get("Action_ObsToggleSource", "OBS: toggle source"), AppStrings.Get("Field_Source", "Source"), false, false),
         new ActionOption("obs-input-mute", AppStrings.Get("Action_ObsToggleMute", "OBS: toggle input mute"), AppStrings.Get("Editor_ObsTarget.Header", "Input"), false, false),
+        new ActionOption("obs-stream-toggle", AppStrings.Get("Action_ObsToggleStream", "Streaming: On/Off"), null, false, false),
         new ActionOption("obs-stream-start", AppStrings.Get("Action_ObsStartStream", "OBS: start streaming"), null, false, false),
         new ActionOption("obs-stream-stop", AppStrings.Get("Action_ObsStopStream", "OBS: stop streaming"), null, false, false),
+        new ActionOption("obs-record-toggle", AppStrings.Get("Action_ObsToggleRecord", "Recording: On/Off"), null, false, false),
+        new ActionOption("obs-record-pause-toggle", AppStrings.Get("Action_ObsToggleRecordPause", "Recording pause: On/Off"), null, false, false),
         new ActionOption("obs-record-start", AppStrings.Get("Action_ObsStartRecord", "OBS: start recording"), null, false, false),
         new ActionOption("obs-record-stop", AppStrings.Get("Action_ObsStopRecord", "OBS: stop recording"), null, false, false),
+        new ActionOption("obs-replay-start", AppStrings.Get("Action_ObsStartReplayBuffer", "OBS: start replay buffer"), null, false, false),
+        new ActionOption("obs-replay-stop", AppStrings.Get("Action_ObsStopReplayBuffer", "OBS: stop replay buffer"), null, false, false),
         new ActionOption("obs-replay", AppStrings.Get("Action_ObsSaveReplay", "OBS: save replay buffer"), null, false, false),
+        new ActionOption("obs-virtual-camera-toggle", AppStrings.Get("Action_ObsToggleVirtualCamera", "Virtual camera: On/Off"), null, false, false),
+        new ActionOption("obs-studio-mode-toggle", AppStrings.Get("Action_ObsToggleStudioMode", "Studio mode: On/Off"), null, false, false),
+        new ActionOption("obs-studio-transition", AppStrings.Get("Action_ObsStudioTransition", "OBS: trigger studio transition"), null, false, false),
+        new ActionOption("obs-media-toggle", AppStrings.Get("Action_ObsToggleMedia", "Media: play/pause"), AppStrings.Get("Field_Source", "Source"), false, false),
+        new ActionOption("obs-media-stop", AppStrings.Get("Action_ObsStopMedia", "OBS: stop media source"), AppStrings.Get("Field_Source", "Source"), false, false),
         new ActionOption("obs-media-restart", AppStrings.Get("Action_ObsRestartMedia", "OBS: restart media source"), AppStrings.Get("Field_Source", "Source"), false, false),
         new ActionOption("automation", AppStrings.Get("Action_Automation", "Automation"), null, false, false),
     };
@@ -101,8 +112,8 @@ public partial class KeyEditorWindow : Window
             currentLayerName);
         CopyOtherLayerButton.Content = $"← NumLock {otherLayerName}";
         CopyOtherLayerButton.ToolTip = $"{AppStrings.Get("Editor_CopyOtherLayer.Content", "Copy assignment from the other layer")} — NumLock {otherLayerName}";
-        IconListBox.ItemsSource = new[] { StreamNumDeck.App.Presentation.BuiltInIconCatalog.BlankOption }
-            .Concat(StreamNumDeck.App.Presentation.BuiltInIconCatalog.Options.Where(option => option.Id != "square"))
+        IconListBox.ItemsSource = new[] { BuiltInIconCatalog.BlankOption }
+            .Concat(BuiltInIconCatalog.Options.Where(option => option.Id != "square"))
             .ToArray();
         AutomationStepsItemsControl.ItemsSource = automationSteps;
         ActionGroupListBox.ItemsSource = actionOnlyMode
@@ -205,7 +216,7 @@ public partial class KeyEditorWindow : Window
 
     private void IconListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (IconListBox.SelectedItem is not StreamNumDeck.App.Presentation.BuiltInIconOption option)
+        if (IconListBox.SelectedItem is not BuiltInIconOption option)
         {
             return;
         }
@@ -475,9 +486,9 @@ public partial class KeyEditorWindow : Window
 
         var hasParameter = option.ParameterLabel is not null;
         var isAutomation = option.Id == "automation";
-        var usesSuggestions = option.Id.StartsWith("obs-", StringComparison.Ordinal)
-                              && option.Id is not ("obs-stream-start" or "obs-stream-stop" or "obs-record-start" or "obs-record-stop" or "obs-replay")
-                              || option.Id.StartsWith("app-volume-", StringComparison.Ordinal);
+        var usesSuggestions = hasParameter
+                              && (option.Id.StartsWith("obs-", StringComparison.Ordinal)
+                                  || option.Id.StartsWith("app-volume-", StringComparison.Ordinal));
         ParameterLabel.Visibility = hasParameter ? Visibility.Visible : Visibility.Collapsed;
         ParameterTextBox.Visibility = hasParameter && !usesSuggestions ? Visibility.Visible : Visibility.Collapsed;
         ParameterComboBox.Visibility = hasParameter && usesSuggestions ? Visibility.Visible : Visibility.Collapsed;
@@ -552,7 +563,7 @@ public partial class KeyEditorWindow : Window
         selectedIcon = icon;
         if (icon.Kind == IconKind.BuiltIn)
         {
-            var option = StreamNumDeck.App.Presentation.BuiltInIconCatalog.Get(
+            var option = BuiltInIconCatalog.Get(
                 string.Equals(icon.Value, "square", StringComparison.Ordinal) ? "plus" : icon.Value);
             IconListBox.SelectedItem = option;
             ShowBuiltInIcon(option);
@@ -570,12 +581,12 @@ public partial class KeyEditorWindow : Window
 
         IconPreviewImage.Source = null;
         IconPreviewImage.Visibility = Visibility.Collapsed;
-        IconPreviewGlyph.Text = StreamNumDeck.App.Presentation.BuiltInIconCatalog.Get("image").Glyph;
+        IconPreviewGlyph.Text = BuiltInIconCatalog.Get("image").Glyph;
         IconPreviewGlyph.Visibility = Visibility.Visible;
         CustomIconFileName.Text = icon.Value;
     }
 
-    private void ShowBuiltInIcon(StreamNumDeck.App.Presentation.BuiltInIconOption option)
+    private void ShowBuiltInIcon(BuiltInIconOption option)
     {
         IconPreviewImage.Source = null;
         IconPreviewImage.Visibility = Visibility.Collapsed;
@@ -631,13 +642,13 @@ public partial class KeyEditorWindow : Window
                     .Select(application => application.Id)
                     .ToArray();
             }
-            else if (actionId is "obs-scene" or "obs-source" or "obs-input-mute" or "obs-media-restart")
+            else if (actionId.StartsWith("obs-", StringComparison.Ordinal))
             {
                 var catalog = await getObsCatalog(cancellation.Token);
                 values = actionId switch
                 {
                     "obs-scene" => catalog.Scenes,
-                    "obs-input-mute" => catalog.Inputs,
+                    "obs-input-mute" or "obs-media-toggle" or "obs-media-stop" or "obs-media-restart" => catalog.Inputs,
                     _ => catalog.Sources,
                 };
             }
@@ -693,11 +704,21 @@ public partial class KeyEditorWindow : Window
         "obs-scene" => new ObsActionDefinition(ObsActionKind.SwitchScene, parameter),
         "obs-source" => new ObsActionDefinition(ObsActionKind.ToggleSourceVisibility, parameter),
         "obs-input-mute" => new ObsActionDefinition(ObsActionKind.ToggleInputMute, parameter),
+        "obs-stream-toggle" => new ObsActionDefinition(ObsActionKind.ToggleStreaming),
         "obs-stream-start" => new ObsActionDefinition(ObsActionKind.StartStreaming),
         "obs-stream-stop" => new ObsActionDefinition(ObsActionKind.StopStreaming),
+        "obs-record-toggle" => new ObsActionDefinition(ObsActionKind.ToggleRecording),
+        "obs-record-pause-toggle" => new ObsActionDefinition(ObsActionKind.ToggleRecordingPause),
         "obs-record-start" => new ObsActionDefinition(ObsActionKind.StartRecording),
         "obs-record-stop" => new ObsActionDefinition(ObsActionKind.StopRecording),
+        "obs-replay-start" => new ObsActionDefinition(ObsActionKind.StartReplayBuffer),
+        "obs-replay-stop" => new ObsActionDefinition(ObsActionKind.StopReplayBuffer),
         "obs-replay" => new ObsActionDefinition(ObsActionKind.SaveReplayBuffer),
+        "obs-virtual-camera-toggle" => new ObsActionDefinition(ObsActionKind.ToggleVirtualCamera),
+        "obs-studio-mode-toggle" => new ObsActionDefinition(ObsActionKind.ToggleStudioMode),
+        "obs-studio-transition" => new ObsActionDefinition(ObsActionKind.TriggerStudioModeTransition),
+        "obs-media-toggle" => new ObsActionDefinition(ObsActionKind.ToggleMediaPlayPause, parameter),
+        "obs-media-stop" => new ObsActionDefinition(ObsActionKind.StopMediaSource, parameter),
         "obs-media-restart" => new ObsActionDefinition(ObsActionKind.RestartMediaSource, parameter),
         "automation" => CreateAutomationAction(),
         _ => throw new ArgumentOutOfRangeException(nameof(id)),
@@ -743,11 +764,21 @@ public partial class KeyEditorWindow : Window
         ObsActionKind.SwitchScene => new ActionState("obs-scene", obs.TargetName, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionKind.ToggleSourceVisibility => new ActionState("obs-source", obs.TargetName, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionKind.ToggleInputMute => new ActionState("obs-input-mute", obs.TargetName, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.ToggleStreaming => new ActionState("obs-stream-toggle", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionKind.StartStreaming => new ActionState("obs-stream-start", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionKind.StopStreaming => new ActionState("obs-stream-stop", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.ToggleRecording => new ActionState("obs-record-toggle", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.ToggleRecordingPause => new ActionState("obs-record-pause-toggle", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionKind.StartRecording => new ActionState("obs-record-start", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionKind.StopRecording => new ActionState("obs-record-stop", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.StartReplayBuffer => new ActionState("obs-replay-start", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.StopReplayBuffer => new ActionState("obs-replay-stop", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionKind.SaveReplayBuffer => new ActionState("obs-replay", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.ToggleVirtualCamera => new ActionState("obs-virtual-camera-toggle", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.ToggleStudioMode => new ActionState("obs-studio-mode-toggle", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.TriggerStudioModeTransition => new ActionState("obs-studio-transition", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.ToggleMediaPlayPause => new ActionState("obs-media-toggle", obs.TargetName, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        ObsActionKind.StopMediaSource => new ActionState("obs-media-stop", obs.TargetName, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionKind.RestartMediaSource => new ActionState("obs-media-restart", obs.TargetName, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         _ => new ActionState("none", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
     };
@@ -789,9 +820,13 @@ public partial class KeyEditorWindow : Window
             "obs-scene" => "\uE8AB",
             "obs-source" => "\uE890",
             "obs-input-mute" => "\uE74F",
-            "obs-stream-start" => "\uE95A",
-            "obs-stream-stop" or "obs-record-stop" => "\uE71A",
-            "obs-record-start" => "\uE7C8",
+            "obs-stream-start" or "obs-stream-toggle" => "\uE95A",
+            "obs-stream-stop" or "obs-record-stop" or "obs-media-stop" or "obs-replay-stop" => "\uE71A",
+            "obs-record-start" or "obs-record-toggle" => "\uE7C8",
+            "obs-record-pause-toggle" or "obs-media-toggle" => "\uE769",
+            "obs-replay-start" or "obs-replay" => "\uE7C4",
+            "obs-virtual-camera-toggle" => "\uE714",
+            "obs-studio-mode-toggle" or "obs-studio-transition" => "\uE8AB",
             "automation" => "\uE945",
             _ => "\uE72C",
         };

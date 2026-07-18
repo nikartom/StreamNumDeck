@@ -7,7 +7,7 @@ from PIL import Image, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSETS = ROOT / "src" / "StreamNumDeck.App" / "Assets"
+ASSETS = ROOT / "src" / "StreamNumDeck.Wpf" / "Assets"
 
 
 def extract_flat_mark(source: Path) -> Image.Image:
@@ -34,16 +34,8 @@ def compose(mark: Image.Image, width: int, height: int, height_ratio: float) -> 
     return Image.merge("RGB", (canvas, canvas, canvas))
 
 
-def save_png(mark: Image.Image, name: str, width: int, height: int, height_ratio: float) -> None:
-    compose(mark, width, height, height_ratio).save(
-        ASSETS / name,
-        format="PNG",
-        optimize=True,
-    )
-
-
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate the StreamNumDeck Windows icon set.")
+    parser = argparse.ArgumentParser(description="Generate the StreamNumDeck WPF application icon.")
     parser.add_argument(
         "source",
         nargs="?",
@@ -58,15 +50,6 @@ def main() -> None:
 
     master = compose(mark, 1024, 1024, 0.76)
     master.save(ASSETS / "AppIconMaster.png", format="PNG", optimize=True)
-
-    save_png(mark, "Square150x150Logo.scale-200.png", 300, 300, 0.76)
-    save_png(mark, "Square44x44Logo.scale-200.png", 88, 88, 0.76)
-    save_png(mark, "Square44x44Logo.targetsize-24_altform-unplated.png", 24, 24, 0.76)
-    save_png(mark, "Square44x44Logo.targetsize-48_altform-lightunplated.png", 48, 48, 0.76)
-    save_png(mark, "StoreLogo.png", 50, 50, 0.76)
-    save_png(mark, "LockScreenLogo.scale-200.png", 48, 48, 0.76)
-    save_png(mark, "Wide310x150Logo.scale-200.png", 620, 300, 0.64)
-    save_png(mark, "SplashScreen.scale-200.png", 1240, 600, 0.52)
 
     ico_source = master.convert("RGBA")
     ico_source.save(

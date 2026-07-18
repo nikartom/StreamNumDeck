@@ -1,3 +1,4 @@
+using System.Text;
 using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Settings;
 using StreamNumDeck.Infrastructure.Audio;
@@ -54,10 +55,10 @@ public sealed class WindowsAudioPlaybackServiceTests
 
         using var stream = File.Create(path);
         using var writer = new BinaryWriter(stream);
-        writer.Write("RIFF"u8);
+        writer.Write(Encoding.ASCII.GetBytes("RIFF"));
         writer.Write(36 + dataLength);
-        writer.Write("WAVE"u8);
-        writer.Write("fmt "u8);
+        writer.Write(Encoding.ASCII.GetBytes("WAVE"));
+        writer.Write(Encoding.ASCII.GetBytes("fmt "));
         writer.Write(16);
         writer.Write((short)1);
         writer.Write(channels);
@@ -65,7 +66,7 @@ public sealed class WindowsAudioPlaybackServiceTests
         writer.Write(sampleRate * channels * bitsPerSample / 8);
         writer.Write((short)(channels * bitsPerSample / 8));
         writer.Write(bitsPerSample);
-        writer.Write("data"u8);
+        writer.Write(Encoding.ASCII.GetBytes("data"));
         writer.Write(dataLength);
         writer.Write(new byte[dataLength]);
     }

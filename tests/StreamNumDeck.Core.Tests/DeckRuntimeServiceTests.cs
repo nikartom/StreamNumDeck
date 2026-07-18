@@ -139,7 +139,7 @@ public sealed class DeckRuntimeServiceTests
                 if (currentStart == 1)
                 {
                     FirstStarted.TrySetResult(true);
-                    await ReleaseFirst.Task.WaitAsync(cancellationToken);
+                    await WaitWithCancellationAsync(ReleaseFirst.Task, cancellationToken);
                 }
                 else
                 {
@@ -161,6 +161,16 @@ public sealed class DeckRuntimeServiceTests
                 {
                     return;
                 }
+            }
+        }
+
+        private static async Task WaitWithCancellationAsync(Task task, CancellationToken cancellationToken)
+        {
+            var cancellation = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+            using (cancellationToken.Register(() => cancellation.TrySetCanceled()))
+            {
+                var completed = await Task.WhenAny(task, cancellation.Task);
+                await completed;
             }
         }
     }
@@ -210,7 +220,7 @@ public sealed class DeckRuntimeServiceTests
         public IAsyncEnumerable<CapturedKeyPress> ReadAllAsync(CancellationToken cancellationToken = default) =>
             channel.Reader.ReadAllAsync(cancellationToken);
 
-        public ValueTask DisposeAsync() => ValueTask.CompletedTask;
+        public ValueTask DisposeAsync() => default;
 
         public void Publish(DeckKey key) => channel.Writer.TryWrite(
             new CapturedKeyPress(key, NumLockLayer.Off, DateTimeOffset.UtcNow));

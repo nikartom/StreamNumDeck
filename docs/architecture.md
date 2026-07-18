@@ -10,15 +10,15 @@ work directly.
 ## Dependency direction
 
 ```text
-StreamNumDeck.App ──────────────┐
+StreamNumDeck.Wpf ──────────────┐
         │                       │
         ▼                       ▼
 StreamNumDeck.Infrastructure → StreamNumDeck.Core
 ```
 
-`StreamNumDeck.Core` has no dependency on WinUI, Win32, audio libraries or OBS
+`StreamNumDeck.Core` has no dependency on WPF, Win32, audio libraries or OBS
 client implementations. Infrastructure implements contracts owned by Core. The
-App project composes services and owns presentation concerns only.
+WPF project composes services and owns presentation concerns only.
 
 ## Planned modules
 
@@ -44,14 +44,14 @@ node so overlap, same-file restart and stop-others policies remain explicit.
 The graph is recreated after an unrecoverable endpoint error or a default-device
 change.
 
-Configuration files live under the packaged application's
-`ApplicationData.LocalFolder`. This avoids implicit AppData virtualization and
-allows MSIX to manage application data consistently. OBS passwords are never
-written to the JSON document; only a secure credential identifier is stored.
+Configuration files live under `%LOCALAPPDATA%\StreamNumDeck\Configuration`.
+Portable and installer builds therefore use the same predictable storage location.
+OBS passwords are never written to the JSON document; only a secure credential
+identifier is stored.
 
-### App
+### WPF desktop application
 
-- WinUI pages, dialogs and view models.
+- WPF windows, dialogs and view models.
 - Dependency injection and application lifetime.
 - Tray integration, notifications and error presentation.
 

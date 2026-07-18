@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Controledeck voor streamers en gamers</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>Nieuw profiel</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Nieuw profiel</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Creëer</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>Nieuw profiel</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>Bijvoorbeeld Gamingstream</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>Icoon</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Globale instellingen</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>Geluid, OBS Studio en applicatiegedrag</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>Geluid</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>Uitvoerapparaat</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>Systeemstandaardapparaat</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>Hoofdvolume</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>Laat gelijktijdige geluiden toe</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>Korte geluiden vooraf laden</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>Systeem</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>Begin met Windows</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>Minimaliseren naar meldingsgebied</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>Schakel vastleggen bij opstarten in</value>
+  </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Blok met 6 toetsen</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Onderschep NumPad-toetsen</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Onderschep de toetsen Invoegen, Home, Pagina omhoog, Verwijderen, Einde en Pagina omlaag</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>Uiterlijk</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>Gebruik de Windows-instelling</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>Licht</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>Donker</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>Positie microfoonindicator</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>Na het klikken sleept u de indicator met de muis. Zijn positie wordt opgeslagen.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>Toetsenbord</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>Schakel sleutelregistratie in/uit</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>De fysieke NumLock-sleutel schakelt tussen twee toewijzingslagen.</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>OBS-studio</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>Haven</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>Wachtwoord</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>Laat dit leeg om het huidige wachtwoord te behouden</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>Het wachtwoord wordt opgeslagen in de beveiligde Windows-opslag</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>Verbinding testen</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>Steun de auteur</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>Als StreamNumDeck nuttig voor u is, kunt u de ontwikkeling ervan ondersteunen.</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>Ondersteuning op DonationAlerts</value>
+  </data>
+  <data name="Settings_UpdatesTitle.Text" xml:space="preserve">
+    <value>Blijf op de hoogte</value>
+  </data>
+  <data name="Settings_UpdatesHint.Text" xml:space="preserve">
+    <value>Volg StreamNumDeck op GitHub voor nieuwe versies, oplossingen en functies.</value>
+  </data>
+  <data name="Settings_ReleasesButton.Content" xml:space="preserve">
+    <value>Nieuwste uitgave</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>Vastleggen</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>Toetsenbord vastleggen</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 — noodpauze</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>Actie mislukt</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Schakel over naar NumLock-laag</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>Duidelijk</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>Uiterlijk</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>Kies uw pictogram…</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>Etiket</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>Optioneel</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>Kopieer opdracht uit de andere laag</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>Actie</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>Groep</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>Actie</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>Audiobestand</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>Blader…</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>Voorbeeld</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>Gedrag</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>Toepassing</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>Selecteer een applicatie of voer een .exe-naam in</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>Stap wijzigen, %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>De lijst toont applicaties waarvoor Windows al een audiosessie heeft aangemaakt.</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>Scène of bron</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>Exacte naam in OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>Programma, pad of adres</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>Argumenten</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>Optioneel</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>Werkmap</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>Optioneel</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>Voer elke stap op een nieuwe regel in. Sneltoets: Ctrl+Shift+S. Vertraging: wacht 250. Regels die beginnen met # zijn commentaar.</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>Volgorde</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Aan</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Uit</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Creëer</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>Minimaliseer</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>Audio files</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>Afbeeldingen</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>All files</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>Geen actie</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>Geluid</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>Systeem en commando's</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Automatisering</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>Speel tegelijkertijd</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>Start dit geluid opnieuw</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>Stop andere geluiden</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>Speel geluid af</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>De standaardmicrofoon dempen of dempen opheffen</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>Master-uitvoer dempen of dempen opheffen</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>Pas het hoofdvolume aan</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>Pas het applicatievolume aan</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>Verhoog het hoofdvolume</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>Verlaag het hoofdvolume</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>Verhoog het applicatievolume</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>Verlaag het applicatievolume</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>Van scène wisselen</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>Bron tonen of verbergen</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>Ingang dempen of dempen opheffen</value>
+  </data>
+  <data name="Action_ObsToggleStream" xml:space="preserve">
+    <value>Streamen: aan/uit</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>Begin met streamen</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>Stop met streamen</value>
+  </data>
+  <data name="Action_ObsToggleRecord" xml:space="preserve">
+    <value>Opname: aan/uit</value>
+  </data>
+  <data name="Action_ObsToggleRecordPause" xml:space="preserve">
+    <value>Opnamepauze: aan/uit</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>Begin met opnemen</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>Stop met opnemen</value>
+  </data>
+  <data name="Action_ObsStartReplayBuffer" xml:space="preserve">
+    <value>Start de afspeelbuffer</value>
+  </data>
+  <data name="Action_ObsStopReplayBuffer" xml:space="preserve">
+    <value>Stop de afspeelbuffer</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>Bewaar de herhalingsbuffer</value>
+  </data>
+  <data name="Action_ObsToggleVirtualCamera" xml:space="preserve">
+    <value>Virtuele camera: aan/uit</value>
+  </data>
+  <data name="Action_ObsToggleStudioMode" xml:space="preserve">
+    <value>Studiomodus: aan/uit</value>
+  </data>
+  <data name="Action_ObsStudioTransition" xml:space="preserve">
+    <value>Activeer de overgang naar de studiomodus</value>
+  </data>
+  <data name="Action_ObsToggleMedia" xml:space="preserve">
+    <value>Media: afspelen/pauzeren</value>
+  </data>
+  <data name="Action_ObsStopMedia" xml:space="preserve">
+    <value>Mediabron stoppen</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>Start de mediabron opnieuw</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>Programma starten</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>Bestand of map openen</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>Link openen</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>Voer een toetsenbordmacro uit</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Automatisering</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Voeg actie toe aan automatisering</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Stap toevoegen</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Actie</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pauze</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Wacht met de volgende stap</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Afwerking</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Sla alle resterende stappen over en voltooi de automatisering</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>seconden</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Ga omhoog</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Ga naar beneden</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Macrostappen: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Stap: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Voer een pauze in tussen 0,1 en 3600 seconden.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Voeg minimaal één element toe aan de automatisering.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Een automatisering kan niet meer dan {0} stappen bevatten.</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>Doe niets</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>Actie uitvoeren</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>OBS ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>Het geconfigureerde bestand, de geconfigureerde map of het programma is niet beschikbaar: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>{0} heeft geen actieve Windows-audiosessie. Start het afspelen van audio in de applicatie en probeer het opnieuw.</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>OBS is niet verbonden. Start OBS en controleer de WebSocket-instellingen.</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS heeft de geconfigureerde actie afgewezen. Controleer de scène, bron of ingang ervan.</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>Windows kon dit audiobestand niet afspelen. Controleer het formaat of de codec: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>Voer ten minste één sneltoets in.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>Regel {0} heeft een ongeldig formaat. Gebruik een sneltoets zoals Ctrl+Shift+S of een vertraging zoals wacht 250.</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>Een macro kan niet meer dan {0} stappen bevatten.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>Programma, bestand of map</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>Scène</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>Bron</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>OBS aangesloten</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>Verbinding maken met OBS...</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>Opnieuw verbinding maken met OBS...</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>Opnieuw verbinding maken met OBS: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>Kan geen verbinding maken met OBS</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>OBS: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>OBS-verbinding verbroken</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>Verbonden. Scènes: {0}, bronnen: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>Instellingen opgeslagen</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Open StreamNumDeck</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>Toetsenbord vastleggen</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>Profielen</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>Ladeactie mislukt</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Afsluiten</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>Hoofdprofiel</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>Nieuw profiel</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>Profiel bewerken</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>Dubbel profiel</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>Profiel verwijderen</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}
+Klik met de rechtermuisknop voor profielacties</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>Profiel verwijderen?</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>Het profiel “{0}” en al zijn toewijzingen worden verwijderd.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> – kopiëren</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> — kopieer {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>Voer een profielnaam in.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>Er bestaat al een profiel met deze naam.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>Kan profielen niet laden</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>Kan profiel niet wijzigen</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>Het geselecteerde profiel bestaat niet meer.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>Kan profiel niet bewerken</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>Kan profiel niet aanmaken</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>Kan profiel niet dupliceren</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>Kan profiel niet verwijderen</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>Kan instellingen niet laden</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>Kan instellingen niet opslaan</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>Kan indicator niet weergeven</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>Kan de ondersteuningspagina niet openen</value>
+  </data>
+  <data name="Error_OpenReleasesLink" xml:space="preserve">
+    <value>Kan de releasepagina niet openen</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>Er is geen applicatie beschikbaar om deze link te openen.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>Toetstoewijzing kon niet worden opgeslagen</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>Kan het geselecteerde pictogram niet importeren</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>Kan NumLock niet omschakelen</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>Kan de opnamestatus niet wijzigen</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>Kan geen Windows-audiosessies ophalen: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>Geef een volumewijzigingsstap op.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>Opstarten wordt ingeschakeld door het Windows-beleid en kan niet worden uitgeschakeld door de toepassing.</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>Opstarten was eerder uitgeschakeld door de gebruiker. Sta StreamNumDeck toe in Windows Instellingen → Apps → Opstarten.</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>Opstarten is uitgeschakeld door Windows-beleid.</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>Windows kan het opstarten van StreamNumDeck niet inschakelen.</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>Geen pictogram</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>Controleer</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>Kopieer</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>Plakken</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>Vernieuwen</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>Zoeken</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>Koppeling</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>Deel</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>Verzenden</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>Vastzetten</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>Vergrendelen</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>Ontgrendelen</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>Macht</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>Commando</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>Codeer</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>Rekenmachine</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>Hulp</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>Waarschuwing</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>Geblokkeerd</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>Spelen</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>Pauze</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>Opnemen</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>Vorige</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>Volgende</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>Terugspoelen</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>Snel vooruit</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>Schudden</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>Herhaal</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>Volledig scherm</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>Venster</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>Volume uit</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>Volume laag</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>Volume Gemiddeld</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>Volume hoog</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>Dempen</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>Luidsprekers</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>Microfoon</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>Camera</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>Koptelefoon</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>Uitzending</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>Schakel</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>Chatten</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>Telefoon</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>Mensen</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>Videochat</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>Megafoon</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>Wereldbol</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>WIFI</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>Wolk</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>Downloaden</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>Uploaden</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>Map geopend</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>Documenteren</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>Afbeelding</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>Ster</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>Ster vulling</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>Hart</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>Hart vulling</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>Zoals</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>Spel</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>XBOX</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>Robot</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>Bliksem</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>Effecten</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>Kalender</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>Geschiedenis</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>Thuis</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>Op</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>Naar beneden</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>Terug</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>Vooruit</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>Kaartspeld</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>Werk</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>Winkel</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>Machtigingen</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>Bekijk</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>Kleur</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>Apparaten</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>Toetsenbord</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>Afdrukken</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>Zaklamp</value>
+  </data>
+</root>

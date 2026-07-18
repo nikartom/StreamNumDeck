@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Dek kontrol untuk streamer dan gamer</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>Profil baru</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Profil baru</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>Batalkan</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Buat</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>Profil baru</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>Misalnya saja aliran Gaming</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>Ikon</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Pengaturan global</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>Suara, OBS Studio, dan perilaku aplikasi</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>Suara</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>Perangkat keluaran</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>Perangkat default sistem</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>Volume utama</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>Izinkan suara simultan</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>Pramuat suara pendek</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>Sistem</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>Mulailah dengan Windows</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>Minimalkan ke area notifikasi</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>Aktifkan pengambilan saat startup</value>
+  </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>Papan Angka</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Blok 6 kunci</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Mencegat tombol NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Cegat tombol Sisipkan, Beranda, Halaman Atas, Hapus, Akhiri, dan Halaman Bawah</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>Penampilan</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>Gunakan pengaturan Windows</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>Ringan</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>Gelap</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>Indikator posisi mikrofon</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>Setelah mengklik, seret indikator dengan mouse. Posisinya akan disimpan.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>papan ketik</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>Mengaktifkan/menonaktifkan pengambilan kunci</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>Kunci fisik NumLock beralih di antara dua lapisan penetapan.</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>OBS Studio</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>Alamat</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>Pelabuhan</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>Kata sandi</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>Biarkan kosong untuk menyimpan kata sandi saat ini</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>Kata sandi disimpan di penyimpanan aman Windows</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>Uji koneksi</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>Dukung penulisnya</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>Jika StreamNumDeck bermanfaat bagi Anda, Anda dapat mendukung pengembangannya.</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>Dukungan pada Peringatan Donasi</value>
+  </data>
+  <data name="Settings_UpdatesTitle.Text" xml:space="preserve">
+    <value>Tetap up to date</value>
+  </data>
+  <data name="Settings_UpdatesHint.Text" xml:space="preserve">
+    <value>Ikuti StreamNumDeck di GitHub untuk versi, perbaikan, dan fitur baru.</value>
+  </data>
+  <data name="Settings_ReleasesButton.Content" xml:space="preserve">
+    <value>Rilis terbaru</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>Tangkap</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>Pengambilan papan ketik</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 — jeda darurat</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>Tindakan gagal</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ganti lapisan NumLock</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>Batalkan</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>Jelas</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>Penampilan</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>Pilih ikon Anda…</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>Opsional</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>Salin tugas dari lapisan lain</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>Kelompok</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>berkas audio</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>Jelajahi…</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>Pratinjau</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>Berhenti</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>Perilaku</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>Aplikasi</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>Pilih aplikasi atau masukkan nama .exe</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>Ubah langkah, %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>Daftar tersebut menunjukkan aplikasi yang sesi audionya telah dibuat oleh Windows.</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>Adegan atau sumber</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>Nama persisnya di OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>Program, jalur, atau alamat</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>Argumen</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>Opsional</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>Direktori kerja</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>Opsional</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>Masukkan setiap langkah pada baris baru. Pintasan: Ctrl+Shift+S. Penundaan: tunggu 250. Baris yang dimulai dengan # adalah komentar.</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>Urutan</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Mati</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Buat</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Sunting</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Batalkan</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>Minimalkan</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>File audio</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>Semua file</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>Tidak ada tindakan</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>Suara</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>Sistem dan perintah</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Otomatisasi</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>Mainkan secara bersamaan</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>Mulai ulang suara ini</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>Hentikan suara lainnya</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>Putar suara</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>Menonaktifkan atau mengaktifkan mikrofon default</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>Menonaktifkan atau mengaktifkan output master</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>Sesuaikan volume utama</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>Sesuaikan volume aplikasi</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>Tingkatkan volume utama</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>Kurangi volume utama</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>Tingkatkan volume aplikasi</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>Kurangi volume aplikasi</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>Beralih adegan</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>Tampilkan atau sembunyikan sumber</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>Menonaktifkan atau mengaktifkan input</value>
+  </data>
+  <data name="Action_ObsToggleStream" xml:space="preserve">
+    <value>Streaming: hidup/mati</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>Mulai streaming</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>Hentikan streaming</value>
+  </data>
+  <data name="Action_ObsToggleRecord" xml:space="preserve">
+    <value>Perekaman: hidup/mati</value>
+  </data>
+  <data name="Action_ObsToggleRecordPause" xml:space="preserve">
+    <value>Jeda perekaman: hidup/mati</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>Mulai merekam</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>Berhenti merekam</value>
+  </data>
+  <data name="Action_ObsStartReplayBuffer" xml:space="preserve">
+    <value>Mulai memutar ulang buffer</value>
+  </data>
+  <data name="Action_ObsStopReplayBuffer" xml:space="preserve">
+    <value>Hentikan buffer pemutaran ulang</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>Simpan Buffer Putar Ulang</value>
+  </data>
+  <data name="Action_ObsToggleVirtualCamera" xml:space="preserve">
+    <value>Kamera virtual: hidup/mati</value>
+  </data>
+  <data name="Action_ObsToggleStudioMode" xml:space="preserve">
+    <value>Mode studio: hidup/mati</value>
+  </data>
+  <data name="Action_ObsStudioTransition" xml:space="preserve">
+    <value>Memicu transisi mode studio</value>
+  </data>
+  <data name="Action_ObsToggleMedia" xml:space="preserve">
+    <value>Media: putar/jeda</value>
+  </data>
+  <data name="Action_ObsStopMedia" xml:space="preserve">
+    <value>Hentikan sumber media</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>Mulai ulang Sumber Media</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>Peluncuran program</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>Buka file atau folder</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>Buka tautan</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>Jalankan makro keyboard</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Otomatisasi</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Tambahkan tindakan ke otomatisasi</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Tambahkan langkah</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Jeda</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Tunggu sebelum langkah berikutnya</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Selesai</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Lewati semua langkah selanjutnya dan selesaikan otomatisasi</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>detik</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Naik</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Pindah ke bawah</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Langkah makro: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Langkah: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Masukkan jeda antara 0,1 dan 3600 detik.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Tambahkan setidaknya satu elemen ke otomatisasi.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Otomatisasi tidak boleh berisi lebih dari {0} langkah.</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>Jangan lakukan apa pun</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>Jalankan tindakan</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>OBS ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>File, folder, atau program yang dikonfigurasi tidak tersedia: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>{0} tidak memiliki sesi audio Windows yang aktif. Mulai pemutaran audio di aplikasi dan coba lagi.</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>OBS tidak terhubung. Mulai OBS dan periksa pengaturan WebSocket.</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS menolak tindakan yang dikonfigurasi. Periksa adegan, sumber, atau masukannya.</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>Windows tidak dapat memutar file audio ini. Periksa format atau codecnya: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>Masukkan setidaknya satu pintasan keyboard.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>Baris {0} memiliki format yang tidak valid. Gunakan pintasan seperti Ctrl+Shift+S atau penundaan seperti tunggu 250.</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>Makro tidak boleh berisi lebih dari {0} langkah.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>Alamat</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>Program, file, atau folder</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>Adegan</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>Sumber</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>OBS terhubung</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>Menghubungkan ke OBS…</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>Menghubungkan kembali ke OBS…</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>Menyambungkan kembali ke OBS: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>Tidak dapat terhubung ke OBS</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>OBS: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>OBS terputus</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>Terhubung. Adegan: {0}, sumber: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>Pengaturan disimpan</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Buka StreamNumDeck</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>Pengambilan papan ketik</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>Tindakan baki gagal</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>Profil utama</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>Profil baru</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>Sunting profil</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>Profil duplikat</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>Hapus profil</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}
+Klik kanan untuk tindakan profil</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>Hapus profil?</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>Profil “{0}” dan semua tugasnya akan dihapus.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> — salin</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> — salin {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>Masukkan nama profil.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>Profil dengan nama ini sudah ada.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>Tidak dapat memuat profil</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>Tidak dapat mengubah profil</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>Profil yang dipilih sudah tidak ada lagi.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>Tidak dapat mengedit profil</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>Tidak dapat membuat profil</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>Tidak dapat menduplikasi profil</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>Tidak dapat menghapus profil</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>Tidak dapat memuat pengaturan</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>Tidak dapat menyimpan setelan</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>Tidak dapat menampilkan indikator</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>Tidak dapat membuka halaman dukungan</value>
+  </data>
+  <data name="Error_OpenReleasesLink" xml:space="preserve">
+    <value>Tidak dapat membuka halaman rilis</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>Tidak ada aplikasi yang tersedia untuk membuka tautan ini.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>Tidak dapat menyimpan penetapan tombol</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>Tidak dapat mengimpor ikon yang dipilih</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>Tidak dapat mengganti NumLock</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>Tidak dapat mengubah status pengambilan</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>Tidak dapat memperoleh sesi audio Windows: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>Tentukan langkah perubahan volume.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>Startup diaktifkan berdasarkan kebijakan Windows dan tidak dapat dinonaktifkan oleh aplikasi.</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>Startup sebelumnya dinonaktifkan oleh pengguna. Izinkan StreamNumDeck di Pengaturan Windows → Aplikasi → Startup.</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>Startup dinonaktifkan oleh kebijakan Windows.</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>Windows tidak dapat mengaktifkan startup StreamNumDeck.</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>Tidak ada ikon</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>Ditambah lagi</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>dikurangi</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>Periksa</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>Batalkan</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>Sunting</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>Salin</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>Tempel</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>Tautan</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>Bagikan</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>Kirim</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>Sematkan</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>Kunci</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>Buka kunci</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>Kekuatan</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>Perintah</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>Kode</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>Kalkulator</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>Informasi</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>Bantuan</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>Peringatan</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>Diblokir</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>Mainkan</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>Jeda</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>Berhenti</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>Rekam</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>Sebelumnya</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>Selanjutnya</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>Mundur</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>Maju Cepat</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>Acak</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>Ulangi</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>Layar penuh</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>Jendela</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>Volume Mati</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>Volume Rendah</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>Volume Sedang</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>Volume Tinggi</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>Bisu</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>Pembicara</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>Mikrofon</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>Kamera</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>Headphone</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>Siaran</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>Beralih</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>Pesan</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>Obrolan</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>Surat</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>Telepon</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>Orang-orang</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>Obrolan Video</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>Megafon</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>Bola dunia</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>WIFI</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>Awan</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>Unduh</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>Unggah</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>Folder Terbuka</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>Dokumen</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>Bintang</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>Isi Bintang</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>Hati</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>Isi Hati</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>Suka</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>Permainan</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>XBOX</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>robot</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>Petir</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>emoji</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>Efek</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>Kalender</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>pengatur waktu</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>Sejarah</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>Rumah</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>Naik</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>Turun</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>Maju</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>Pin Peta</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>Mobil</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>Bekerja</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>Berbelanja</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>Perisai</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>Izin</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>Lihat</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>Warna</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>Perangkat</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>papan ketik</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>Cetak</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>Senter</value>
+  </data>
+</root>

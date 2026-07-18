@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>สำรับการควบคุมสำหรับสตรีมเมอร์และเกมเมอร์</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>โปรไฟล์ใหม่</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>โปรไฟล์ใหม่</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>การตั้งค่า</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>สร้าง</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>โปรไฟล์ใหม่</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>ชื่อ</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>เช่น สตรีมเกม</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>ไอคอน</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>การตั้งค่าส่วนกลาง</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>เสียง, OBS Studio และลักษณะการทำงานของแอปพลิเคชัน</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>เสียง</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>อุปกรณ์เอาท์พุต</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>อุปกรณ์เริ่มต้นของระบบ</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>ระดับเสียงหลัก</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>อนุญาตให้มีเสียงพร้อมกัน</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>โหลดเสียงสั้นไว้ล่วงหน้า</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>ระบบ</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>เริ่มต้นด้วยวินโดวส์</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>ย่อเล็กสุดไปยังพื้นที่แจ้งเตือน</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>เปิดใช้งานการจับภาพเมื่อเริ่มต้น</value>
+  </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>นัมแพด</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>บล็อก 6 ปุ่ม</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>สกัดกั้นปุ่ม NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>สกัดกั้นปุ่มแทรก หน้าแรก เลื่อนหน้าขึ้น ลบ สิ้นสุด และเลื่อนหน้าลง</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>ลักษณะที่ปรากฏ</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>ใช้การตั้งค่าวินโดวส์</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>เบา</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>มืด</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>ตัวบ่งชี้ตำแหน่งไมโครโฟน</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>หลังจากคลิกแล้ว ให้ลากตัวบ่งชี้ด้วยเมาส์ ตำแหน่งของมันจะถูกบันทึกไว้</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>คีย์บอร์ด</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>เปิด/ปิดการบันทึกคีย์</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>ปุ่ม NumLock ทางกายภาพจะสลับระหว่างเลเยอร์การกำหนดสองชั้น</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>โอบีเอส สตูดิโอ</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>ที่อยู่</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>ท่าเรือ</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>รหัสผ่าน</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>เว้นว่างไว้เพื่อเก็บรหัสผ่านปัจจุบัน</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>รหัสผ่านจะถูกจัดเก็บไว้ในที่เก็บข้อมูลที่ปลอดภัยของ Windows</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>ทดสอบการเชื่อมต่อ</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>สนับสนุนผู้เขียน</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>หาก StreamNumDeck มีประโยชน์สำหรับคุณ คุณสามารถสนับสนุนการพัฒนาได้</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>การสนับสนุนการแจ้งเตือนการบริจาค</value>
+  </data>
+  <data name="Settings_UpdatesTitle.Text" xml:space="preserve">
+    <value>ติดตามข่าวสารอยู่เสมอ</value>
+  </data>
+  <data name="Settings_UpdatesHint.Text" xml:space="preserve">
+    <value>ติดตาม StreamNumDeck บน GitHub เพื่อดูเวอร์ชัน การแก้ไข และฟีเจอร์ใหม่ๆ</value>
+  </data>
+  <data name="Settings_ReleasesButton.Content" xml:space="preserve">
+    <value>รุ่นล่าสุด</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>จับภาพ</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>การจับภาพแป้นพิมพ์</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 — หยุดชั่วคราวฉุกเฉิน</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>การดำเนินการล้มเหลว</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>สลับเลเยอร์ NumLock</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>ชัดเจน</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>ลักษณะที่ปรากฏ</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>เลือกไอคอนของคุณ...</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>ป้ายกำกับ</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>ไม่จำเป็น</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>คัดลอกงานจากอีกชั้นหนึ่ง</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>กลุ่ม</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>ไฟล์เสียง</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>เรียกดู...</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>ดูตัวอย่าง</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>หยุด</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>ปริมาณ</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>พฤติกรรม</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>ใบสมัคร</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>เลือกแอปพลิเคชันหรือป้อนชื่อ .exe</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>เปลี่ยนขั้นตอน %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>รายการแสดงแอปพลิเคชันที่ Windows ได้สร้างเซสชันเสียงไว้แล้ว</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>ฉากหรือแหล่งที่มา</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>ชื่อที่แน่นอนใน OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>โปรแกรม เส้นทาง หรือที่อยู่</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>ข้อโต้แย้ง</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>ไม่จำเป็น</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>ไดเร็กทอรีการทำงาน</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>ไม่จำเป็น</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>ป้อนแต่ละขั้นตอนในบรรทัดใหม่ ทางลัด: Ctrl+Shift+S ดีเลย์: รอ 250 บรรทัดที่ขึ้นต้นด้วย # คือความคิดเห็น</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>ลำดับ</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>เปิด</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>สร้าง</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>แก้ไข</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>ย่อเล็กสุด</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>ไฟล์เสียง</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>รูปภาพ</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>ไฟล์ทั้งหมด</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>ไม่มีการดำเนินการ</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>เสียง</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>ระบบและคำสั่ง</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>ระบบอัตโนมัติ</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>เล่นพร้อมกัน</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>รีสตาร์ทเสียงนี้</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>หยุดเสียงอื่นๆ</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>เล่นเสียง</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>ปิดหรือเปิดเสียงไมโครโฟนเริ่มต้น</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>ปิดเสียงหรือเปิดเสียงเอาต์พุตหลัก</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>ปรับระดับเสียงหลัก</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>ปรับระดับเสียงแอปพลิเคชัน</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>เพิ่มระดับเสียงหลัก</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>ลดระดับเสียงหลัก</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>เพิ่มปริมาณการใช้งาน</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>ลดปริมาณการสมัคร</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>สลับฉาก</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>แสดงหรือซ่อนแหล่งที่มา</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>ปิดเสียงหรือเปิดเสียงอินพุต</value>
+  </data>
+  <data name="Action_ObsToggleStream" xml:space="preserve">
+    <value>สตรีมมิ่ง: เปิด/ปิด</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>เริ่มการสตรีม</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>หยุดการสตรีม</value>
+  </data>
+  <data name="Action_ObsToggleRecord" xml:space="preserve">
+    <value>การบันทึก: เปิด/ปิด</value>
+  </data>
+  <data name="Action_ObsToggleRecordPause" xml:space="preserve">
+    <value>หยุดการบันทึกชั่วคราว: เปิด/ปิด</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>เริ่มการบันทึก</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>หยุดการบันทึก</value>
+  </data>
+  <data name="Action_ObsStartReplayBuffer" xml:space="preserve">
+    <value>เริ่มเล่นซ้ำบัฟเฟอร์</value>
+  </data>
+  <data name="Action_ObsStopReplayBuffer" xml:space="preserve">
+    <value>หยุดบัฟเฟอร์การเล่นซ้ำ</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>บันทึกบัฟเฟอร์เล่นซ้ำ</value>
+  </data>
+  <data name="Action_ObsToggleVirtualCamera" xml:space="preserve">
+    <value>กล้องเสมือน: เปิด/ปิด</value>
+  </data>
+  <data name="Action_ObsToggleStudioMode" xml:space="preserve">
+    <value>โหมดสตูดิโอ: เปิด/ปิด</value>
+  </data>
+  <data name="Action_ObsStudioTransition" xml:space="preserve">
+    <value>ทริกเกอร์การเปลี่ยนโหมดสตูดิโอ</value>
+  </data>
+  <data name="Action_ObsToggleMedia" xml:space="preserve">
+    <value>สื่อ: เล่น/หยุดชั่วคราว</value>
+  </data>
+  <data name="Action_ObsStopMedia" xml:space="preserve">
+    <value>หยุดแหล่งสื่อ</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>รีสตาร์ทแหล่งสื่อ</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>เปิดตัวโปรแกรม</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>เปิดไฟล์หรือโฟลเดอร์</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>เปิดลิงก์</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>เรียกใช้แมโครแป้นพิมพ์</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>ระบบอัตโนมัติ</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>เพิ่มการดำเนินการให้กับระบบอัตโนมัติ</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>เพิ่มขั้นตอน</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>หยุดชั่วคราว</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>รอก่อนขั้นตอนต่อไป</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>เสร็จสิ้น</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>ข้ามขั้นตอนที่เหลือทั้งหมดและดำเนินการอัตโนมัติให้เสร็จสิ้น</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>วินาที</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>เลื่อนขึ้น</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>เลื่อนลง</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>ขั้นตอนมาโคร: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>ขั้นตอน: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>ป้อนการหยุดชั่วคราวระหว่าง 0.1 ถึง 3600 วินาที</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>เพิ่มอย่างน้อยหนึ่งองค์ประกอบให้กับระบบอัตโนมัติ</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>ระบบอัตโนมัติไม่สามารถมีมากกว่า {0} ขั้นตอน</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>ไม่ต้องทำอะไรเลย</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>ดำเนินการ</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>โอบีเอส ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>ไฟล์ โฟลเดอร์ หรือโปรแกรมที่กำหนดค่าไว้ไม่พร้อมใช้งาน: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>{0} ไม่มีเซสชันเสียงของ Windows ที่ทำงานอยู่ เริ่มเล่นเสียงในแอปพลิเคชันแล้วลองอีกครั้ง</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>ไม่ได้เชื่อมต่อ OBS เริ่ม OBS และตรวจสอบการตั้งค่า WebSocket</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS ปฏิเสธการดำเนินการที่กำหนดค่าไว้ ตรวจสอบฉาก แหล่งที่มา หรืออินพุต</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>Windows ไม่สามารถเล่นไฟล์เสียงนี้ได้ ตรวจสอบรูปแบบหรือตัวแปลงสัญญาณ: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>ป้อนแป้นพิมพ์ลัดอย่างน้อยหนึ่งรายการ</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>บรรทัด {0} มีรูปแบบที่ไม่ถูกต้อง ใช้ทางลัด เช่น Ctrl+Shift+S หรือการหน่วงเวลา เช่น รอ 250</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>มาโครไม่สามารถมีมากกว่า {0} ขั้นตอน</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>ที่อยู่</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>โปรแกรม ไฟล์ หรือโฟลเดอร์</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>ฉาก</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>แหล่งที่มา</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>เชื่อมต่อ OBS แล้ว</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>กำลังเชื่อมต่อกับ OBS...</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>กำลังเชื่อมต่อกับ OBS อีกครั้ง...</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>กำลังเชื่อมต่อกับ OBS อีกครั้ง: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>ไม่สามารถเชื่อมต่อกับ OBS ได้</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>โอบีเอส: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>OBS ถูกตัดการเชื่อมต่อ</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>เชื่อมต่อแล้ว ฉาก: {0} แหล่งที่มา: {1}</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>บันทึกการตั้งค่าแล้ว</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>เปิด StreamNumDeck</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>การจับภาพแป้นพิมพ์</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>โปรไฟล์</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>การทำงานของถาดล้มเหลว</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>ออก</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>โปรไฟล์หลัก</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>โปรไฟล์ใหม่</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>แก้ไขโปรไฟล์</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>โปรไฟล์ที่ซ้ำกัน</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>ลบโปรไฟล์</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}
+คลิกขวาเพื่อดำเนินการกับโปรไฟล์</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>ลบโปรไฟล์ใช่ไหม</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>โปรไฟล์ “{0}” และการมอบหมายทั้งหมดจะถูกลบ</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> — สำเนา</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> — คัดลอก {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>ป้อนชื่อโปรไฟล์</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>มีโปรไฟล์ชื่อนี้อยู่แล้ว</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>ไม่สามารถโหลดโปรไฟล์ได้</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนโปรไฟล์ได้</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>โปรไฟล์ที่เลือกไม่มีอยู่อีกต่อไป</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>ไม่สามารถแก้ไขโปรไฟล์ได้</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>ไม่สามารถสร้างโปรไฟล์ได้</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>ไม่สามารถทำซ้ำโปรไฟล์ได้</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>ไม่สามารถลบโปรไฟล์ได้</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>ไม่สามารถโหลดการตั้งค่าได้</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>ไม่สามารถบันทึกการตั้งค่าได้</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>ไม่สามารถแสดงตัวบ่งชี้ได้</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าสนับสนุนได้</value>
+  </data>
+  <data name="Error_OpenReleasesLink" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าเผยแพร่ได้</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>ไม่มีแอปพลิเคชันสำหรับเปิดลิงก์นี้</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>ไม่สามารถบันทึกการกำหนดปุ่มได้</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>ไม่สามารถนำเข้าไอคอนที่เลือกได้</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>ไม่สามารถสลับ NumLock ได้</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนสถานะการจับภาพได้</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>ไม่สามารถรับเซสชันเสียงของ Windows: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>ระบุขั้นตอนการเปลี่ยนแปลงระดับเสียง</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>การเริ่มต้นเปิดใช้งานโดยนโยบาย Windows และแอปพลิเคชันไม่สามารถปิดใช้งานได้</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>ก่อนหน้านี้ผู้ใช้ปิดใช้งานการเริ่มต้นระบบ อนุญาต StreamNumDeck ในการตั้งค่า Windows → แอพ → เริ่มต้น</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>การเริ่มต้นถูกปิดใช้งานโดยนโยบาย Windows</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>Windows ไม่สามารถเปิดใช้งานการเริ่มต้น StreamNumDeck ได้</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>ไม่มีไอคอน</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>บวก</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>ตรวจสอบ</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>แก้ไข</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>คัดลอก</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>วาง</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>รีเฟรช</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>ค้นหา</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>ลิงค์</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>แบ่งปัน</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>ส่ง</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>พิน</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>ล็อค</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>ปลดล็อค</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>การตั้งค่า</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>พลัง</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>คำสั่ง</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>รหัส</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>เครื่องคิดเลข</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>ข้อมูล</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>ช่วยด้วย</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>คำเตือน</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>ถูกบล็อก</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>เล่น</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>หยุดชั่วคราว</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>หยุด</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>ก่อนหน้า</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>ถัดไป</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>กรอกลับ</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>กรอไปข้างหน้า</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>สับเปลี่ยน</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>ทำซ้ำ</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>เต็มจอ</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>หน้าต่าง</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>ปริมาณ</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>ปิดระดับเสียง</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>ปริมาณต่ำ</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>ปริมาณปานกลาง</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>ปริมาณสูง</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>ปิดเสียง</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>เสียง</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>ลำโพง</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>ไมโครโฟน</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>วีดีโอ</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>กล้อง</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>หูฟัง</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>ออกอากาศ</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>สวิตช์</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>ข้อความ</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>แชท</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>จดหมาย</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>โทรศัพท์</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>ผู้คน</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>วิดีโอแชท</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>โทรโข่ง</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>ลูกโลก</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>อินเตอร์เน็ตไร้สาย</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>บลูทูธ</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>ยูเอสบี</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>เมฆ</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>ดาวน์โหลด</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>อัปโหลด</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>โฟลเดอร์</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>เปิดโฟลเดอร์</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>เอกสาร</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>รูปภาพ</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>ดาว</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>เติมดาว</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>หัวใจ</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>เติมหัวใจ</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>ชอบ</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>เกม</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>เอกซ์บอกซ์</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>หุ่นยนต์</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>สายฟ้า</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>อิโมจิ</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>ผลกระทบ</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>ปฏิทิน</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>ตัวจับเวลา</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>ประวัติศาสตร์</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>บ้าน</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>ขึ้น</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>ลง</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>กลับ</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>ไปข้างหน้า</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>หมุดแผนที่</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>รถ</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>ทำงาน</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>ร้านค้า</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>โล่</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>สิทธิ์</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>ดู</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>สี</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>อุปกรณ์</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>คีย์บอร์ด</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>พิมพ์</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>ไฟฉาย</value>
+  </data>
+</root>

@@ -31,7 +31,7 @@ public sealed class FileSystemIconAssetStoreTests
     public async Task ImportAsync_CopiesAssetByContentHashAndDeduplicatesIt()
     {
         var sourcePath = Path.Combine(testDirectory, "source.png");
-        await File.WriteAllBytesAsync(sourcePath, [0x89, 0x50, 0x4E, 0x47, 1, 2, 3, 4]);
+        File.WriteAllBytes(sourcePath, [0x89, 0x50, 0x4E, 0x47, 1, 2, 3, 4]);
         var store = new FileSystemIconAssetStore(Path.Combine(testDirectory, "assets"));
 
         var first = await store.ImportAsync(sourcePath);
@@ -47,7 +47,7 @@ public sealed class FileSystemIconAssetStoreTests
     public async Task ImportAsync_RejectsUnsupportedFormats()
     {
         var sourcePath = Path.Combine(testDirectory, "icon.gif");
-        await File.WriteAllBytesAsync(sourcePath, [1, 2, 3]);
+        File.WriteAllBytes(sourcePath, [1, 2, 3]);
         var store = new FileSystemIconAssetStore(Path.Combine(testDirectory, "assets"));
 
         await Assert.ThrowsAsync<InvalidDataException>(() => store.ImportAsync(sourcePath));

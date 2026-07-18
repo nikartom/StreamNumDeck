@@ -44,6 +44,19 @@ public sealed class DeckModelTests
     }
 
     [TestMethod]
+    public void NoActionAssignment_DiscardsStalePresentation()
+    {
+        var assignment = new KeyAssignment(
+            "Старая подпись",
+            IconReference.CustomAsset("icons/stale.png"),
+            new NoActionDefinition());
+
+        Assert.AreEqual(string.Empty, assignment.Label);
+        Assert.AreEqual(IconReference.BuiltIn("square"), assignment.Icon);
+        Assert.IsInstanceOfType<NoActionDefinition>(assignment.Action);
+    }
+
+    [TestMethod]
     public void AddProfile_AppendsAndCanMakeProfileActive()
     {
         var configuration = AppConfiguration.CreateDefault();

@@ -11,7 +11,7 @@ using StreamNumDeck.Core.Obs;
 using StreamNumDeck.Core.Audio;
 using StreamNumDeck.Core.Security;
 using StreamNumDeck.Core.Settings;
-using StreamNumDeck.App.Localization;
+using StreamNumDeck.Wpf.Localization;
 using StreamNumDeck.Wpf.Overlays;
 using StreamNumDeck.Wpf.Services;
 

@@ -32,5 +32,5 @@ internal static class DeckPresentation
     };
 
     public static string GetGlyph(string id) =>
-        StreamNumDeck.App.Presentation.BuiltInIconCatalog.Get(id).Glyph;
+        BuiltInIconCatalog.Get(id).Glyph;
 }

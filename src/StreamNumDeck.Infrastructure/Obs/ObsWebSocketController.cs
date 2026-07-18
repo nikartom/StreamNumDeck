@@ -14,7 +14,6 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
     private static readonly TimeSpan ConnectTimeout = TimeSpan.FromSeconds(5);
     private static readonly TimeSpan RequestTimeout = TimeSpan.FromSeconds(8);
     private static readonly TimeSpan KeepAliveInterval = TimeSpan.FromSeconds(2);
-    private static readonly TimeSpan KeepAliveTimeout = TimeSpan.FromSeconds(3);
     private static readonly TimeSpan[] ReconnectDelays =
     [
         TimeSpan.FromSeconds(1),
@@ -173,6 +172,18 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
             return;
         }
 
+        if (action.Action is ObsActionKind.ToggleStudioMode)
+        {
+            await ToggleStudioModeAsync(cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
+        if (action.Action is ObsActionKind.ToggleMediaPlayPause)
+        {
+            await ToggleMediaPlayPauseAsync(action.TargetName!, cancellationToken).ConfigureAwait(false);
+            return;
+        }
+
         var (requestType, requestData) = ObsProtocol.MapActionRequest(action);
         await SendRequestAsync(requestType, requestData, cancellationToken).ConfigureAwait(false);
     }
@@ -240,9 +251,6 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
 
         var candidate = new ClientWebSocket();
         candidate.Options.KeepAliveInterval = KeepAliveInterval;
-#if !NETFRAMEWORK
-        candidate.Options.KeepAliveTimeout = KeepAliveTimeout;
-#endif
         using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         timeout.CancelAfter(ConnectTimeout);
 
@@ -515,6 +523,38 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
         await SendRequestAsync(
             "SetSceneItemEnabled",
             JsonSerializer.SerializeToElement(new { sceneName, sceneItemId, sceneItemEnabled = !enabled }),
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task ToggleStudioModeAsync(CancellationToken cancellationToken)
+    {
+        var response = await SendRequestAsync(
+            "GetStudioModeEnabled",
+            null,
+            cancellationToken).ConfigureAwait(false);
+        var enabled = response.GetProperty("studioModeEnabled").GetBoolean();
+
+        await SendRequestAsync(
+            "SetStudioModeEnabled",
+            JsonSerializer.SerializeToElement(new { studioModeEnabled = !enabled }),
+            cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task ToggleMediaPlayPauseAsync(string inputName, CancellationToken cancellationToken)
+    {
+        var response = await SendRequestAsync(
+            "GetMediaInputStatus",
+            JsonSerializer.SerializeToElement(new { inputName }),
+            cancellationToken).ConfigureAwait(false);
+        var mediaState = response.GetProperty("mediaState").GetString()
+                         ?? throw new InvalidDataException("OBS did not return the media input state.");
+        var request = ObsProtocol.MapMediaInputAction(
+            inputName,
+            ObsProtocol.GetMediaPlayPauseAction(mediaState));
+
+        await SendRequestAsync(
+            request.RequestType,
+            request.RequestData,
             cancellationToken).ConfigureAwait(false);
     }
 

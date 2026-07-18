@@ -11,6 +11,16 @@ public enum ObsActionKind
     StopRecording,
     SaveReplayBuffer,
     RestartMediaSource,
+    ToggleStreaming,
+    ToggleRecording,
+    ToggleRecordingPause,
+    StartReplayBuffer,
+    StopReplayBuffer,
+    ToggleVirtualCamera,
+    ToggleStudioMode,
+    TriggerStudioModeTransition,
+    ToggleMediaPlayPause,
+    StopMediaSource,
 }
 
 public sealed record ObsActionDefinition : ActionDefinition
@@ -21,6 +31,8 @@ public sealed record ObsActionDefinition : ActionDefinition
         ObsActionKind.ToggleSourceVisibility,
         ObsActionKind.ToggleInputMute,
         ObsActionKind.RestartMediaSource,
+        ObsActionKind.ToggleMediaPlayPause,
+        ObsActionKind.StopMediaSource,
     ];
 
     public ObsActionDefinition(ObsActionKind action, string? targetName = null)

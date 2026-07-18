@@ -119,6 +119,28 @@ public sealed class JsonConfigurationStoreTests
     }
 
     [TestMethod]
+    public async Task SaveAndLoad_PreservesNewObsActions()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault();
+        var profile = configuration.ActiveProfile.WithAssignment(
+            NumLockLayer.Off,
+            DeckKey.Numpad2,
+            new KeyAssignment(
+                "Медиа",
+                IconReference.BuiltIn("play"),
+                new ObsActionDefinition(ObsActionKind.ToggleMediaPlayPause, "Заставка")));
+
+        await store.SaveAsync(configuration.ReplaceProfile(profile));
+        var loaded = await store.LoadAsync();
+
+        var action = Assert.IsInstanceOfType<ObsActionDefinition>(
+            loaded.ActiveProfile.NumLockOff.GetAssignment(DeckKey.Numpad2).Action);
+        Assert.AreEqual(ObsActionKind.ToggleMediaPlayPause, action.Action);
+        Assert.AreEqual("Заставка", action.TargetName);
+    }
+
+    [TestMethod]
     public async Task SaveAndLoad_PreservesAutomationStepsAndNestedActions()
     {
         using var store = new JsonConfigurationStore(paths);
@@ -199,11 +221,11 @@ public sealed class JsonConfigurationStoreTests
     {
         using var store = new JsonConfigurationStore(paths);
         await store.SaveAsync(AppConfiguration.CreateDefault());
-        var root = JsonNode.Parse(await File.ReadAllTextAsync(paths.ConfigurationFilePath))!.AsObject();
+        var root = JsonNode.Parse(File.ReadAllText(paths.ConfigurationFilePath))!.AsObject();
         var settings = root["configuration"]!["settings"]!.AsObject();
         settings.Remove("captureNumpad");
         settings.Remove("captureNavigationBlock");
-        await File.WriteAllTextAsync(
+        File.WriteAllText(
             paths.ConfigurationFilePath,
             root.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
 
@@ -211,6 +233,27 @@ public sealed class JsonConfigurationStoreTests
 
         Assert.IsTrue(loaded.Settings.CaptureNumpad);
         Assert.IsTrue(loaded.Settings.CaptureNavigationBlock);
+    }
+
+    [TestMethod]
+    public async Task LoadAsync_NoActionAssignment_DiscardsStalePresentation()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        await store.SaveAsync(AppConfiguration.CreateDefault());
+        var root = JsonNode.Parse(File.ReadAllText(paths.ConfigurationFilePath))!.AsObject();
+        var assignment = root["configuration"]!["profiles"]![0]!["numLockOff"]!["assignments"]!["insert"]!;
+        assignment["label"] = "Старая подпись";
+        assignment["icon"]!["value"] = "play";
+        File.WriteAllText(
+            paths.ConfigurationFilePath,
+            root.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+
+        var loaded = await store.LoadAsync();
+        var normalized = loaded.ActiveProfile.NumLockOff.GetAssignment(DeckKey.Insert);
+
+        Assert.AreEqual(string.Empty, normalized.Label);
+        Assert.AreEqual(IconReference.BuiltIn("square"), normalized.Icon);
+        Assert.IsInstanceOfType<NoActionDefinition>(normalized.Action);
     }
 
     [TestMethod]
@@ -234,7 +277,7 @@ public sealed class JsonConfigurationStoreTests
             original.ActiveProfile.NumLockOff,
             original.ActiveProfile.NumLockOn);
         await store.SaveAsync(original.ReplaceProfile(latestProfile));
-        await File.WriteAllTextAsync(paths.ConfigurationFilePath, "{ invalid json");
+        File.WriteAllText(paths.ConfigurationFilePath, "{ invalid json");
 
         var recovered = await store.LoadAsync();
         var loadedAgain = await store.LoadAsync();
@@ -248,7 +291,7 @@ public sealed class JsonConfigurationStoreTests
     public async Task LoadAsync_WhenSchemaIsUnsupported_ReportsVersionFailure()
     {
         Directory.CreateDirectory(paths.DirectoryPath);
-        await File.WriteAllTextAsync(
+        File.WriteAllText(
             paths.ConfigurationFilePath,
             """
             {

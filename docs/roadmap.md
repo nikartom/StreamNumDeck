@@ -8,9 +8,9 @@ A later stage does not compensate for an unstable earlier one.
 Status: complete.
 
 - Pin the .NET and NuGet toolchain.
-- Create Core, Infrastructure, App and test projects.
+- Create Core, Infrastructure, WPF and test projects.
 - Establish dependency direction and architecture rules.
-- Build the WinUI shell with Mica, navigation and global settings.
+- Build the WPF desktop shell, navigation and global settings.
 - Render the six-key block above the numeric keypad.
 - Represent both NumLock editing layers in the interface.
 - Verify restore, zero-warning build, tests and packaged debug launch.
@@ -77,5 +77,5 @@ Status: in progress.
 - Surface background action failures in the main interface. Complete.
 - Complete accessibility, localization and keyboard navigation.
 - Run long-duration and rapid-input tests.
-- Produce signed MSIX packages and upgrade tests.
+- Produce portable ZIP and Inno Setup packages and verify upgrades.
 - Finalize user and developer documentation.

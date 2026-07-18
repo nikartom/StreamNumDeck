@@ -1,4 +1,3 @@
-#if NETFRAMEWORK
 namespace System.Threading.Tasks;
 
 internal static class TaskCompatibilityExtensions
@@ -21,4 +20,3 @@ internal static class TaskCompatibilityExtensions
         }
     }
 }
-#endif

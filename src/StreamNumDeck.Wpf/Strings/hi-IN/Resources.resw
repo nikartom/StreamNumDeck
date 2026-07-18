@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>स्ट्रीमनमडेक</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>स्ट्रीमर्स और गेमर्स के लिए नियंत्रण डेक</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>नई प्रोफ़ाइल</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>नई प्रोफ़ाइल</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>सेटिंग्स</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>बनाएँ</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>नई प्रोफ़ाइल</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>उदाहरण के लिए, गेमिंग स्ट्रीम</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>चिह्न</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>वैश्विक सेटिंग्स</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>ध्वनि, ओबीएस स्टूडियो और अनुप्रयोग व्यवहार</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>सहेजें</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>ध्वनि</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>आउटपुट डिवाइस</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>सिस्टम डिफ़ॉल्ट डिवाइस</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>मास्टर वॉल्यूम</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>एक साथ ध्वनि की अनुमति दें</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>लघु ध्वनियाँ प्रीलोड करें</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>सिस्टम</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>विंडोज़ से शुरुआत करें</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>अधिसूचना क्षेत्र को छोटा करें</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>स्टार्टअप पर कैप्चर सक्षम करें</value>
+  </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>नमपैड</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>6-कुंजी ब्लॉक</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>NumPad कुंजियों को अवरोधित करें</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>इन्सर्ट, होम, पेज अप, डिलीट, एंड और पेज डाउन कीज़ को इंटरसेप्ट करें</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>दिखावट</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>विंडोज़ सेटिंग का उपयोग करें</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>रोशनी</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>अंधेरा</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>स्थिति माइक्रोफ़ोन संकेतक</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>क्लिक करने के बाद इंडिकेटर को माउस से खींचें. इसकी स्थिति सुरक्षित रहेगी.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>कीबोर्ड</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>कुंजी कैप्चर चालू/बंद करें</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>भौतिक NumLock कुंजी दो असाइनमेंट परतों के बीच स्विच करती है।</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>ओबीएस स्टूडियो</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>पता</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>बंदरगाह</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>पासवर्ड</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>वर्तमान पासवर्ड रखने के लिए इसे खाली छोड़ दें</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>पासवर्ड विंडोज़ सुरक्षित स्टोरेज में संग्रहीत है</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>कनेक्शन का परीक्षण करें</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>लेखक का समर्थन करें</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>यदि स्ट्रीमनमडेक आपके लिए उपयोगी है, तो आप इसके विकास का समर्थन कर सकते हैं।</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>DonationAlerts पर सहायता</value>
+  </data>
+  <data name="Settings_UpdatesTitle.Text" xml:space="preserve">
+    <value>अद्यतित रहें</value>
+  </data>
+  <data name="Settings_UpdatesHint.Text" xml:space="preserve">
+    <value>नए संस्करणों, सुधारों और सुविधाओं के लिए GitHub पर StreamNumDeck का अनुसरण करें।</value>
+  </data>
+  <data name="Settings_ReleasesButton.Content" xml:space="preserve">
+    <value>नवीनतम रिलीज</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>कब्जा</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>कीबोर्ड कैप्चर</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 - आपातकालीन विराम</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>कार्रवाई विफल रही</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>NumLock परत स्विच करें</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>सहेजें</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>स्पष्ट</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>दिखावट</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>अपना आइकन चुनें...</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>लेबल</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>वैकल्पिक</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>दूसरी परत से असाइनमेंट कॉपी करें</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>कार्रवाई</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>समूह</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>कार्रवाई</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>ऑडियो फ़ाइल</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>ब्राउज़ करें...</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>पूर्वावलोकन</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>रुकें</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>आयतन</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>व्यवहार</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>आवेदन</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>एक एप्लिकेशन चुनें या एक .exe नाम दर्ज करें</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>चरण बदलें, %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>सूची उन अनुप्रयोगों को दिखाती है जिनके लिए विंडोज़ ने पहले ही एक ऑडियो सत्र बना लिया है।</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>दृश्य या स्रोत</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>ओबीएस में सटीक नाम</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>कार्यक्रम, पथ, या पता</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>तर्क</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>वैकल्पिक</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>कार्यशील निर्देशिका</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>वैकल्पिक</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>प्रत्येक चरण को एक नई पंक्ति में दर्ज करें। शॉर्टकट: Ctrl+Shift+S. विलंब: 250 प्रतीक्षा करें। # से प्रारंभ होने वाली पंक्तियाँ टिप्पणियाँ हैं।</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>अनुक्रम</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>पर</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>बंद</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>सहेजें</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>बनाएँ</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>संपादित करें</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>न्यूनतम करें</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>ऑडियो फ़ाइलें</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>छवियाँ</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>सभी फ़ाइलें</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>कोई कार्रवाई नहीं</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>ध्वनि</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>सिस्टम और आदेश</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>स्वचालन</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>एक साथ खेलें</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>इस ध्वनि को पुनः प्रारंभ करें</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>अन्य ध्वनियाँ बंद करो</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · न्यूमलॉक {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>ध्वनि बजाओ</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>डिफ़ॉल्ट माइक्रोफ़ोन को म्यूट या अनम्यूट करें</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>मास्टर आउटपुट को म्यूट या अनम्यूट करें</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>मास्टर वॉल्यूम समायोजित करें</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>एप्लिकेशन वॉल्यूम समायोजित करें</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>मास्टर वॉल्यूम बढ़ाएँ</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>मास्टर वॉल्यूम कम करें</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>एप्लिकेशन की मात्रा बढ़ाएँ</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>एप्लिकेशन की मात्रा कम करें</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>दृश्य बदलें</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>स्रोत दिखाएँ या छुपाएँ</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>इनपुट म्यूट या अनम्यूट करें</value>
+  </data>
+  <data name="Action_ObsToggleStream" xml:space="preserve">
+    <value>स्ट्रीमिंग: चालू/बंद</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>स्ट्रीमिंग प्रारंभ करें</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>स्ट्रीमिंग बंद करो</value>
+  </data>
+  <data name="Action_ObsToggleRecord" xml:space="preserve">
+    <value>रिकॉर्डिंग: चालू/बंद</value>
+  </data>
+  <data name="Action_ObsToggleRecordPause" xml:space="preserve">
+    <value>रिकॉर्डिंग रोकें: चालू/बंद</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>रिकॉर्डिंग प्रारंभ करें</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>रिकॉर्डिंग बंद करो</value>
+  </data>
+  <data name="Action_ObsStartReplayBuffer" xml:space="preserve">
+    <value>रीप्ले बफ़र प्रारंभ करें</value>
+  </data>
+  <data name="Action_ObsStopReplayBuffer" xml:space="preserve">
+    <value>रीप्ले बफ़र बंद करें</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>रीप्ले बफ़र सहेजें</value>
+  </data>
+  <data name="Action_ObsToggleVirtualCamera" xml:space="preserve">
+    <value>वर्चुअल कैमरा: चालू/बंद</value>
+  </data>
+  <data name="Action_ObsToggleStudioMode" xml:space="preserve">
+    <value>स्टूडियो मोड: चालू/बंद</value>
+  </data>
+  <data name="Action_ObsStudioTransition" xml:space="preserve">
+    <value>ट्रिगर स्टूडियो मोड संक्रमण</value>
+  </data>
+  <data name="Action_ObsToggleMedia" xml:space="preserve">
+    <value>मीडिया: चलाएं/रोकें</value>
+  </data>
+  <data name="Action_ObsStopMedia" xml:space="preserve">
+    <value>मीडिया स्रोत बंद करो</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>मीडिया स्रोत पुनः प्रारंभ करें</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>प्रोग्राम लॉन्च करें</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>फ़ाइल या फ़ोल्डर खोलें</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>लिंक खोलें</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>कीबोर्ड मैक्रो चलाएँ</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>स्वचालन</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>स्वचालन में क्रिया जोड़ें</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>चरण जोड़ें</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>कार्रवाई</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>विराम</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>अगले चरण से पहले प्रतीक्षा करें</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>ख़त्म करो</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>शेष सभी चरणों को छोड़ें और स्वचालन समाप्त करें</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>सेकंड</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>ऊपर बढ़ो</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>नीचे जाएँ</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>मैक्रो चरण: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>चरण: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>0.1 और 3600 सेकंड के बीच विराम दर्ज करें।</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>स्वचालन में कम से कम एक तत्व जोड़ें.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>एक स्वचालन में {0} से अधिक चरण नहीं हो सकते।</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>कुछ मत करो</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>कार्रवाई निष्पादित करें</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>ओबीएस ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>कॉन्फ़िगर की गई फ़ाइल, फ़ोल्डर या प्रोग्राम अनुपलब्ध है: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>{0} में कोई सक्रिय विंडोज़ ऑडियो सत्र नहीं है। एप्लिकेशन में ऑडियो प्लेबैक प्रारंभ करें और पुनः प्रयास करें।</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>ओबीएस कनेक्ट नहीं है. ओबीएस प्रारंभ करें और वेबसॉकेट सेटिंग्स जांचें।</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS ने कॉन्फ़िगर की गई कार्रवाई को अस्वीकार कर दिया. इसके दृश्य, स्रोत या इनपुट की जाँच करें।</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>विंडोज़ इस ऑडियो फ़ाइल को नहीं चला सका। इसका प्रारूप या कोडेक जांचें: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>कम से कम एक कीबोर्ड शॉर्टकट दर्ज करें.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>पंक्ति {0} का प्रारूप अमान्य है. Ctrl+Shift+S जैसे शॉर्टकट या प्रतीक्षा 250 जैसे विलंब का उपयोग करें।</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>किसी मैक्रो में {0} से अधिक चरण नहीं हो सकते.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>पता</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>प्रोग्राम, फ़ाइल, या फ़ोल्डर</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>दृश्य</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>स्रोत</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>ओबीएस जुड़ा</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>ओबीएस से कनेक्ट हो रहा है...</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>ओबीएस से पुनः कनेक्ट हो रहा है...</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>ओबीएस से पुनः कनेक्ट हो रहा है: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>ओबीएस से कनेक्ट नहीं हो सका</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>ओबीएस: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>ओबीएस डिस्कनेक्ट हो गया</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>जुड़ा हुआ. दृश्य: {0}, स्रोत: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>सेटिंग्स सहेजी गईं</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>स्ट्रीमनमडेक खोलें</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>कीबोर्ड कैप्चर</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>प्रोफाइल</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>ट्रे कार्रवाई विफल रही</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>बाहर निकलें</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>मुख्य प्रोफ़ाइल</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>नई प्रोफ़ाइल</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>प्रोफ़ाइल संपादित करें</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>डुप्लिकेट प्रोफ़ाइल</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>प्रोफ़ाइल हटाएँ</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}`प्रोफ़ाइल क्रियाओं के लिए राइट-क्लिक करें</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>प्रोफ़ाइल हटाएं?</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>प्रोफ़ाइल "{0}" और उसके सभी असाइनमेंट हटा दिए जाएंगे.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> - प्रतिलिपि</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> - कॉपी करें {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>प्रोफ़ाइल नाम दर्ज करें.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>इस नाम की एक प्रोफ़ाइल पहले से मौजूद है.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>प्रोफ़ाइल लोड नहीं हो सकीं</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>प्रोफ़ाइल नहीं बदल सका</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>चयनित प्रोफ़ाइल अब मौजूद नहीं है.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>प्रोफ़ाइल संपादित नहीं किया जा सका</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>प्रोफ़ाइल नहीं बनाई जा सकी</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>प्रोफ़ाइल का डुप्लिकेट नहीं बनाया जा सका</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>प्रोफ़ाइल हटाई नहीं जा सकी</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>सेटिंग्स लोड नहीं हो सकीं</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>सेटिंग्स सहेजी नहीं जा सकीं</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>संकेतक नहीं दिखा सका</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>सहायता पृष्ठ नहीं खुल सका</value>
+  </data>
+  <data name="Error_OpenReleasesLink" xml:space="preserve">
+    <value>रिलीज़ पृष्ठ नहीं खुल सका</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>इस लिंक को खोलने के लिए कोई एप्लिकेशन उपलब्ध नहीं है.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>कुंजी असाइनमेंट सहेजा नहीं जा सका</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>चयनित आइकन आयात नहीं किया जा सका</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>NumLock स्विच नहीं किया जा सका</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>कैप्चर स्थिति नहीं बदली जा सकी</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>Windows ऑडियो सत्र नहीं मिल सका: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>वॉल्यूम परिवर्तन चरण निर्दिष्ट करें.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>स्टार्टअप विंडोज़ नीति द्वारा सक्षम है और इसे एप्लिकेशन द्वारा अक्षम नहीं किया जा सकता है।</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>स्टार्टअप को पहले उपयोगकर्ता द्वारा अक्षम कर दिया गया था। विंडोज़ सेटिंग्स → ऐप्स → स्टार्टअप में StreamNumDeck को अनुमति दें।</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>विंडोज़ नीति द्वारा स्टार्टअप अक्षम है।</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>विंडोज़ स्ट्रीमनमडेक स्टार्टअप को सक्षम नहीं कर सका।</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>कोई आइकन नहीं</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>प्लस</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>माइनस</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>जांचें</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>संपादित करें</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>सहेजें</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>प्रतिलिपि</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>चिपकाएँ</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>ताज़ा करें</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>खोजें</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>लिंक</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>साझा करें</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>भेजें</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>पिन</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>ताला</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>अनलॉक</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>सेटिंग्स</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>शक्ति</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>आदेश</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>कोड</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>कैलकुलेटर</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>जानकारी</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>मदद</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>चेतावनी</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>अवरुद्ध</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>खेलो</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>विराम</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>रुकें</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>अभिलेख</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>पिछला</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>अगला</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>रिवाइंड करें</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>तेजी से आगे बढ़ें</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>फेरबदल</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>दोहराएँ</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>फ़ुलस्क्रीन</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>खिड़की</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>आयतन</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>वॉल्यूम बंद</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>आवाज़ कम</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>वॉल्यूम माध्यम</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>वॉल्यूम उच्च</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>मूक</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>ऑडियो</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>वक्ता</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>माइक्रोफ़ोन</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>वीडियो</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>कैमरा</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>हेडफोन</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>प्रसारण</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>स्विच करें</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>संदेश</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>बातचीत</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>मेल</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>फ़ोन</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>लोग</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>वीडियो चैट</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>मेगाफोन</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>ग्लोब</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>वाईफ़ाई</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>ब्लूटूथ</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>यूएसबी</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>बादल</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>डाउनलोड करें</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>फ़ोल्डर</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>फ़ोल्डर खुला</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>दस्तावेज़</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>छवि</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>सितारा</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>स्टार भरण</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>दिल</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>हृदय भरना</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>जैसे</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>खेल</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>एक्सबॉक्स</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>रोबोट</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>आकाशीय बिजली</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>इमोजी</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>प्रभाव</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>कैलेंडर</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>टाइमर</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>इतिहास</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>घर</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>ऊपर</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>नीचे</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>वापस</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>आगे</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>मानचित्र पिन</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>कार</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>काम</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>दुकान</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>ढाल</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>अनुमतियाँ</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>देखें</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>रंग</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>उपकरण</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>कीबोर्ड</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>प्रिंट करें</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>टॉर्च</value>
+  </data>
+</root>

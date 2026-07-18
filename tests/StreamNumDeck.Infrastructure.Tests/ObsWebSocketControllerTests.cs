@@ -35,6 +35,42 @@ public sealed class ObsWebSocketControllerTests
 
     [TestMethod]
     [Timeout(15_000)]
+    public async Task ToggleStudioModeAsync_InvertsCurrentObsState()
+    {
+        var port = ReservePort();
+        using var listener = new HttpListener();
+        listener.Prefixes.Add($"http://127.0.0.1:{port}/");
+        listener.Start();
+
+        var serverTask = RunStudioModeServerAsync(listener);
+        await using var controller = new ObsWebSocketController(new NullCredentialStore());
+
+        await controller.ConnectAsync(new ObsConnectionSettings("127.0.0.1", port, "test"));
+        await controller.ExecuteAsync(new ObsActionDefinition(ObsActionKind.ToggleStudioMode));
+
+        Assert.IsFalse(await serverTask);
+    }
+
+    [TestMethod]
+    [Timeout(15_000)]
+    public async Task ToggleMediaPlayPauseAsync_PausesPlayingInput()
+    {
+        var port = ReservePort();
+        using var listener = new HttpListener();
+        listener.Prefixes.Add($"http://127.0.0.1:{port}/");
+        listener.Start();
+
+        var serverTask = RunMediaToggleServerAsync(listener);
+        await using var controller = new ObsWebSocketController(new NullCredentialStore());
+
+        await controller.ConnectAsync(new ObsConnectionSettings("127.0.0.1", port, "test"));
+        await controller.ExecuteAsync(new ObsActionDefinition(ObsActionKind.ToggleMediaPlayPause, "Заставка"));
+
+        Assert.AreEqual("OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PAUSE", await serverTask);
+    }
+
+    [TestMethod]
+    [Timeout(15_000)]
     public async Task ServerDisconnectAsync_LeavesConnectedState()
     {
         var port = ReservePort();
@@ -44,14 +80,14 @@ public sealed class ObsWebSocketControllerTests
 
         var serverTask = RunServerAndDisconnectAsync(listener);
         await using var controller = new ObsWebSocketController(new NullCredentialStore());
-        var connected = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        var connected = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
         var connectionLost = new TaskCompletionSource<ObsConnectionStateChangedEventArgs>(
             TaskCreationOptions.RunContinuationsAsynchronously);
         controller.StateChanged += (_, args) =>
         {
             if (args.State is ObsConnectionState.Connected)
             {
-                connected.TrySetResult();
+                connected.TrySetResult(true);
             }
             else if (args.State is ObsConnectionState.Reconnecting or ObsConnectionState.Disconnected)
             {
@@ -60,10 +96,10 @@ public sealed class ObsWebSocketControllerTests
         };
 
         await controller.ConnectAsync(new ObsConnectionSettings("127.0.0.1", port, "test"));
-        await connected.Task.WaitAsync(TimeSpan.FromSeconds(3));
+        await WaitAsync(connected.Task, TimeSpan.FromSeconds(3));
 
         await serverTask;
-        var state = await connectionLost.Task.WaitAsync(TimeSpan.FromSeconds(3));
+        var state = await WaitAsync(connectionLost.Task, TimeSpan.FromSeconds(3));
 
         Assert.AreNotEqual(ObsConnectionState.Connected, state.State);
         Assert.AreNotEqual(ObsConnectionState.Connected, controller.State);
@@ -81,18 +117,18 @@ public sealed class ObsWebSocketControllerTests
         var serverTask = RunServerDisconnectThenCatalogAsync(listener);
         await using var controller = new ObsWebSocketController(new NullCredentialStore());
         var connectedCount = 0;
-        var reconnected = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        var reconnected = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
         controller.StateChanged += (_, args) =>
         {
             if (args.State is ObsConnectionState.Connected
                 && Interlocked.Increment(ref connectedCount) >= 2)
             {
-                reconnected.TrySetResult();
+                reconnected.TrySetResult(true);
             }
         };
 
         await controller.ConnectAsync(new ObsConnectionSettings("127.0.0.1", port, "test"));
-        await reconnected.Task.WaitAsync(TimeSpan.FromSeconds(5));
+        await WaitAsync(reconnected.Task, TimeSpan.FromSeconds(5));
 
         var catalog = await controller.GetCatalogAsync();
         await serverTask;
@@ -164,6 +200,36 @@ public sealed class ObsWebSocketControllerTests
         socket.Abort();
     }
 
+    private static async Task<bool> RunStudioModeServerAsync(HttpListener listener)
+    {
+        using var socket = await AcceptAndIdentifyAsync(listener);
+        var getRequest = await ReceiveRequestAsync(socket);
+        Assert.AreEqual("GetStudioModeEnabled", getRequest.RequestType);
+        await SendSuccessAsync(socket, getRequest, new { studioModeEnabled = true });
+
+        var setRequest = await ReceiveRequestAsync(socket);
+        Assert.AreEqual("SetStudioModeEnabled", setRequest.RequestType);
+        var enabled = setRequest.RequestData!.Value.GetProperty("studioModeEnabled").GetBoolean();
+        await SendSuccessAsync(socket, setRequest);
+        return enabled;
+    }
+
+    private static async Task<string> RunMediaToggleServerAsync(HttpListener listener)
+    {
+        using var socket = await AcceptAndIdentifyAsync(listener);
+        var statusRequest = await ReceiveRequestAsync(socket);
+        Assert.AreEqual("GetMediaInputStatus", statusRequest.RequestType);
+        Assert.AreEqual("Заставка", statusRequest.RequestData!.Value.GetProperty("inputName").GetString());
+        await SendSuccessAsync(socket, statusRequest, new { mediaState = "OBS_MEDIA_STATE_PLAYING" });
+
+        var actionRequest = await ReceiveRequestAsync(socket);
+        Assert.AreEqual("TriggerMediaInputAction", actionRequest.RequestType);
+        Assert.AreEqual("Заставка", actionRequest.RequestData!.Value.GetProperty("inputName").GetString());
+        var mediaAction = actionRequest.RequestData.Value.GetProperty("mediaAction").GetString()!;
+        await SendSuccessAsync(socket, actionRequest);
+        return mediaAction;
+    }
+
     private static async Task RunServerDisconnectThenCatalogAsync(HttpListener listener)
     {
         using (var firstSocket = await AcceptAndIdentifyAsync(listener))
@@ -220,10 +286,48 @@ public sealed class ObsWebSocketControllerTests
         return socket;
     }
 
+    private static async Task<ObsRequest> ReceiveRequestAsync(WebSocket socket)
+    {
+        using var request = JsonDocument.Parse(await ReceiveAsync(socket));
+        var data = request.RootElement.GetProperty("d");
+        return new ObsRequest(
+            data.GetProperty("requestType").GetString()!,
+            data.GetProperty("requestId").GetString()!,
+            data.TryGetProperty("requestData", out var requestData) ? requestData.Clone() : null);
+    }
+
+    private static Task SendSuccessAsync(WebSocket socket, ObsRequest request, object? responseData = null) =>
+        responseData is null
+            ? SendAsync(socket, new
+            {
+                op = 7,
+                d = new
+                {
+                    requestType = request.RequestType,
+                    requestId = request.RequestId,
+                    requestStatus = new { result = true, code = 100 },
+                },
+            })
+            : SendAsync(socket, new
+            {
+                op = 7,
+                d = new
+                {
+                    requestType = request.RequestType,
+                    requestId = request.RequestId,
+                    requestStatus = new { result = true, code = 100 },
+                    responseData,
+                },
+            });
+
     private static async Task SendAsync(WebSocket socket, object payload)
     {
         var bytes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(payload));
-        await socket.SendAsync(bytes, WebSocketMessageType.Text, true, CancellationToken.None);
+        await socket.SendAsync(
+            new ArraySegment<byte>(bytes),
+            WebSocketMessageType.Text,
+            true,
+            CancellationToken.None);
     }
 
     private static async Task<string> ReceiveAsync(WebSocket socket)
@@ -233,7 +337,7 @@ public sealed class ObsWebSocketControllerTests
         WebSocketReceiveResult result;
         do
         {
-            result = await socket.ReceiveAsync(buffer, CancellationToken.None);
+            result = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
             stream.Write(buffer, 0, result.Count);
         }
         while (!result.EndOfMessage);
@@ -243,9 +347,27 @@ public sealed class ObsWebSocketControllerTests
 
     private static int ReservePort()
     {
-        using var listener = new TcpListener(IPAddress.Loopback, 0);
-        listener.Start();
-        return ((IPEndPoint)listener.LocalEndpoint).Port;
+        var listener = new TcpListener(IPAddress.Loopback, 0);
+        try
+        {
+            listener.Start();
+            return ((IPEndPoint)listener.LocalEndpoint).Port;
+        }
+        finally
+        {
+            listener.Stop();
+        }
+    }
+
+    private static async Task<T> WaitAsync<T>(Task<T> task, TimeSpan timeout)
+    {
+        var completed = await Task.WhenAny(task, Task.Delay(timeout));
+        if (!ReferenceEquals(completed, task))
+        {
+            throw new TimeoutException($"The operation did not complete within {timeout}.");
+        }
+
+        return await task;
     }
 
     private sealed class NullCredentialStore : IProtectedCredentialStore
@@ -259,4 +381,6 @@ public sealed class ObsWebSocketControllerTests
         public Task DeleteAsync(string key, CancellationToken cancellationToken = default) =>
             Task.CompletedTask;
     }
+
+    private sealed record ObsRequest(string RequestType, string RequestId, JsonElement? RequestData);
 }

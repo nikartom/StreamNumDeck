@@ -1,7 +1,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Resources;
-using StreamNumDeck.App.Localization;
+using StreamNumDeck.Wpf.Localization;
 
 namespace StreamNumDeck.Wpf.Services;
 

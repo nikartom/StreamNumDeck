@@ -18,7 +18,7 @@ using StreamNumDeck.Infrastructure.Security;
 using StreamNumDeck.Wpf.Services;
 using StreamNumDeck.Wpf.ViewModels;
 using StreamNumDeck.Wpf.Overlays;
-using StreamNumDeck.App.Localization;
+using StreamNumDeck.Wpf.Localization;
 
 namespace StreamNumDeck.Wpf;
 
@@ -174,6 +174,15 @@ public partial class App : System.Windows.Application
         {
             var provider = services ?? throw new InvalidOperationException("Application services are not initialized.");
             var configuration = await provider.GetRequiredService<ConfigurationService>().GetAsync();
+            try
+            {
+                WindowsStartupService.SetEnabled(configuration.Settings.StartWithWindows);
+            }
+            catch (Exception exception)
+            {
+                AppLogger.Error("Synchronize Windows startup setting", exception);
+            }
+
             await Dispatcher.InvokeAsync(() =>
             {
                 window.MinimizeToTray = configuration.Settings.MinimizeToTray;

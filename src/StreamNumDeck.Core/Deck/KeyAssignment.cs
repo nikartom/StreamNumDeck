@@ -12,6 +12,14 @@ public sealed record KeyAssignment
         Guard.NotNull(icon, nameof(icon));
         Guard.NotNull(action, nameof(action));
 
+        if (action is NoActionDefinition)
+        {
+            Label = string.Empty;
+            Icon = IconReference.BuiltIn("square");
+            Action = action;
+            return;
+        }
+
         label = label?.Trim() ?? string.Empty;
 
         if (label.Length > MaxLabelLength)

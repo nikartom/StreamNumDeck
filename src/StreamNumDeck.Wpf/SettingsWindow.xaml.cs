@@ -5,12 +5,15 @@ using System.Windows.Media;
 using StreamNumDeck.Core.Settings;
 using StreamNumDeck.Wpf.Services;
 using StreamNumDeck.Wpf.ViewModels;
-using StreamNumDeck.App.Localization;
+using StreamNumDeck.Wpf.Localization;
 
 namespace StreamNumDeck.Wpf;
 
 public partial class SettingsWindow : Window
 {
+    private static readonly Uri SupportUri = new("https://www.donationalerts.com/r/kventinburatino");
+    private static readonly Uri LatestReleaseUri = new("https://github.com/nikartom/StreamNumDeck/releases/latest");
+
     private readonly MainViewModel viewModel;
     private GlobalSettings? originalSettings;
 
@@ -103,11 +106,8 @@ public partial class SettingsWindow : Window
                 CaptureNavigationBlock = CaptureNavigationBlockCheckBox.IsChecked == true,
             };
 
-            var startupChanged = settings.StartWithWindows != originalSettings.StartWithWindows;
-            if (startupChanged)
-            {
-                WindowsStartupService.SetEnabled(settings.StartWithWindows);
-            }
+            var previousStartupState = WindowsStartupService.IsEnabled();
+            WindowsStartupService.SetEnabled(settings.StartWithWindows);
 
             try
             {
@@ -115,16 +115,13 @@ public partial class SettingsWindow : Window
             }
             catch
             {
-                if (startupChanged)
+                try
                 {
-                    try
-                    {
-                        WindowsStartupService.SetEnabled(originalSettings.StartWithWindows);
-                    }
-                    catch (Exception rollbackException)
-                    {
-                        AppLogger.Error("Restore Windows startup setting", rollbackException);
-                    }
+                    WindowsStartupService.SetEnabled(previousStartupState);
+                }
+                catch (Exception rollbackException)
+                {
+                    AppLogger.Error("Restore Windows startup setting", rollbackException);
                 }
 
                 throw;
@@ -185,17 +182,33 @@ public partial class SettingsWindow : Window
 
     private void Support_Click(object sender, RoutedEventArgs e)
     {
+        OpenExternalUri(
+            SupportUri,
+            "Error_OpenSupportLink",
+            "Could not open the support page");
+    }
+
+    private void Releases_Click(object sender, RoutedEventArgs e)
+    {
+        OpenExternalUri(
+            LatestReleaseUri,
+            "Error_OpenReleasesLink",
+            "Could not open the releases page");
+    }
+
+    private void OpenExternalUri(Uri uri, string errorResourceKey, string errorFallback)
+    {
         try
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://www.donationalerts.com/r/kventinburatino",
+                FileName = uri.AbsoluteUri,
                 UseShellExecute = true,
             });
         }
         catch (Exception exception)
         {
-            ShowErrorStatus("Error_OpenSupportLink", "Could not open the support page", exception);
+            ShowErrorStatus(errorResourceKey, errorFallback, exception);
         }
     }
 

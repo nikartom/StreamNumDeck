@@ -1,8 +1,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using StreamNumDeck.App.Localization;
-using StreamNumDeck.App.Presentation;
+using StreamNumDeck.Wpf.Localization;
+using StreamNumDeck.Wpf.Presentation;
 using StreamNumDeck.Core.Deck;
 using StreamNumDeck.Core.Icons;
 

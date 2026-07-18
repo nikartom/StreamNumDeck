@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Platforma kontrolna dla streamerów i graczy</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>Nowy profil</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Nowy profil</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Utwórz</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>Nowy profil</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>Na przykład strumień gier</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>Ikona</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Ustawienia globalne</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>Dźwięk, OBS Studio i zachowanie aplikacji</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>Dźwięk</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>Urządzenie wyjściowe</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>Domyślne urządzenie systemowe</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>Głośność główna</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>Zezwalaj na jednoczesne dźwięki</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>Wstępnie załaduj krótkie dźwięki</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>Systemu</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>Zacznij od Windowsa</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>Minimalizuj do obszaru powiadomień</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>Włącz przechwytywanie przy uruchomieniu</value>
+  </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>Blok 6-klawiszowy</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Przechwytuj klawisze NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Przechwyć klawisze Insert, Home, Page Up, Delete, End i Page Down</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>Wygląd</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>Użyj ustawień systemu Windows</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>Światło</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>Ciemny</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>Wskaźnik położenia mikrofonu</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>Po kliknięciu przeciągnij wskaźnik myszką. Jego pozycja zostanie zapisana.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>Klawiatura</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>Włącz/wyłącz przechwytywanie klawiszy</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>Fizyczny klawisz NumLock przełącza pomiędzy dwiema warstwami przypisań.</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>Studio OBS</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>Portu</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>Pozostaw puste, aby zachować bieżące hasło</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>Hasło jest przechowywane w bezpiecznym magazynie systemu Windows</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>Połączenie testowe</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>Wspieraj autora</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>Jeśli StreamNumDeck jest dla Ciebie przydatny, możesz wesprzeć jego rozwój.</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>Wsparcie w zakresie powiadomień o darowiznach</value>
+  </data>
+  <data name="Settings_UpdatesTitle.Text" xml:space="preserve">
+    <value>Bądź na bieżąco</value>
+  </data>
+  <data name="Settings_UpdatesHint.Text" xml:space="preserve">
+    <value>Śledź StreamNumDeck na GitHub, aby uzyskać nowe wersje, poprawki i funkcje.</value>
+  </data>
+  <data name="Settings_ReleasesButton.Content" xml:space="preserve">
+    <value>Najnowsze wydanie</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>Przechwytywanie</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>Przechwytywanie klawiatury</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 — pauza awaryjna</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>Akcja nie powiodła się</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Przełącz warstwę NumLock</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>Jasne</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>Wygląd</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>Wybierz swoją ikonę…</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>Etykieta</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>Opcjonalne</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>Skopiuj zadanie z drugiej warstwy</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>Akcja</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>Grupa</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>Akcja</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>Plik audio</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>Przeglądaj…</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>Podgląd</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>Zatrzymaj się</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>Objętość</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>Zachowanie</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>Zastosowanie</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>Wybierz aplikację lub wprowadź nazwę .exe</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>Zmień krok,%</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>Na liście znajdują się aplikacje, dla których system Windows utworzył już sesję audio.</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>Scena lub źródło</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>Dokładna nazwa w OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>Program, ścieżka lub adres</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>Argumenty</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>Opcjonalne</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>Katalog roboczy</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>Opcjonalne</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>Wprowadź każdy krok w nowej linii. Skrót: Ctrl+Shift+S. Opóźnienie: poczekaj 250. Linie zaczynające się od # to komentarze.</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>Sekwencja</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Włączone</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Wyłączone</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Utwórz</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>Minimalizuj</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>Pliki audio</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>Obrazy</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>Wszystkie pliki</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>Brak działania</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>Dźwięk</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>System i polecenia</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>Automatyzacja</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>Graj jednocześnie</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>Uruchom ponownie ten dźwięk</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>Zatrzymaj inne dźwięki</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>Odtwórz dźwięk</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>Wycisz lub włącz wyciszenie domyślnego mikrofonu</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>Wycisz lub wyłącz wyciszenie wyjścia głównego</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>Dostosuj głośność główną</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>Dostosuj głośność aplikacji</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>Zwiększ głośność główną</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>Zmniejsz głośność główną</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>Zwiększ głośność aplikacji</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>Zmniejsz objętość aplikacji</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>Zmień scenę</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>Pokaż lub ukryj źródło</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>Wycisz lub włącz wyciszenie wejścia</value>
+  </data>
+  <data name="Action_ObsToggleStream" xml:space="preserve">
+    <value>Przesyłanie strumieniowe: wł./wył</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>Rozpocznij transmisję strumieniową</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>Zatrzymaj transmisję strumieniową</value>
+  </data>
+  <data name="Action_ObsToggleRecord" xml:space="preserve">
+    <value>Nagrywanie: wł./wył</value>
+  </data>
+  <data name="Action_ObsToggleRecordPause" xml:space="preserve">
+    <value>Pauza w nagrywaniu: wł./wył</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>Rozpocznij nagrywanie</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>Zatrzymaj nagrywanie</value>
+  </data>
+  <data name="Action_ObsStartReplayBuffer" xml:space="preserve">
+    <value>Uruchom bufor powtórek</value>
+  </data>
+  <data name="Action_ObsStopReplayBuffer" xml:space="preserve">
+    <value>Zatrzymaj bufor odtwarzania</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>Zapisz bufor powtórek</value>
+  </data>
+  <data name="Action_ObsToggleVirtualCamera" xml:space="preserve">
+    <value>Kamera wirtualna: wł./wył</value>
+  </data>
+  <data name="Action_ObsToggleStudioMode" xml:space="preserve">
+    <value>Tryb studyjny: wł./wył</value>
+  </data>
+  <data name="Action_ObsStudioTransition" xml:space="preserve">
+    <value>Wyzwalaj przejście do trybu studyjnego</value>
+  </data>
+  <data name="Action_ObsToggleMedia" xml:space="preserve">
+    <value>Media: odtwarzanie/pauza</value>
+  </data>
+  <data name="Action_ObsStopMedia" xml:space="preserve">
+    <value>Zatrzymaj źródło multimediów</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>Uruchom ponownie źródło multimediów</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>Uruchom program</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>Otwórz plik lub folder</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>Otwórz łącze</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>Uruchom makro klawiatury</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>Automatyzacja</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Dodaj akcję do automatyzacji</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Dodaj krok</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Akcja</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Poczekaj przed następnym krokiem</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Zakończ</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Pomiń wszystkie pozostałe kroki i zakończ automatyzację</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>sekundy</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Przesuń się w górę</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Przesuń w dół</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Kroki makra: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Krok: {0}%</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Wprowadź pauzę o długości od 0,1 do 3600 sekund.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Dodaj chociaż jeden element do automatyzacji.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Automatyzacja nie może zawierać więcej niż {0} kroków.</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>Nie rób nic</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>Wykonaj akcję</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>OBS ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>Skonfigurowany plik, folder lub program jest niedostępny: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>{0} nie ma aktywnej sesji audio systemu Windows. Rozpocznij odtwarzanie dźwięku w aplikacji i spróbuj ponownie.</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>OBS nie jest podłączony. Uruchom OBS i sprawdź ustawienia WebSocket.</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS odrzucił skonfigurowaną akcję. Sprawdź scenę, źródło lub wejście.</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>System Windows nie mógł odtworzyć tego pliku audio. Sprawdź jego format lub kodek: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>Wpisz co najmniej jeden skrót klawiaturowy.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>Linia {0} ma nieprawidłowy format. Użyj skrótu, takiego jak Ctrl+Shift+S, lub opóźnienia, takiego jak czekanie 250.</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>Makro nie może zawierać więcej niż {0} kroków.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>Program, plik lub folder</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>Scena</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>Źródło</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>Podłączony OBS</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>Łączę się z OBS-em…</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>Ponowne łączenie z OBS…</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>Ponowne łączenie z OBS: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>Nie można połączyć się z OBS</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>Uwaga: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>OBS rozłączony</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>Połączono. Sceny: {0}, źródła: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>Ustawienia zostały zapisane</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Otwórz StreamNumDeck</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>Przechwytywanie klawiatury</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>Akcja tacy nie powiodła się</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Wyjdź</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>Główny profil</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>Nowy profil</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>Edytuj profil</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>Zduplikowany profil</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>Usuń profil</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}
+Kliknij prawym przyciskiem myszy, aby wyświetlić czynności w profilu</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>Usunąć profil?</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>Profil „{0}” i wszystkie jego przypisania zostaną usunięte.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> — kopia</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> — skopiuj {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>Wprowadź nazwę profilu.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>Profil o tej nazwie już istnieje.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>Nie udało się załadować profili</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>Nie można zmienić profilu</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>Wybrany profil już nie istnieje.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>Nie można edytować profilu</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>Nie można utworzyć profilu</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>Nie można zduplikować profilu</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>Nie można usunąć profilu</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>Nie udało się wczytać ustawień</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>Nie udało się zapisać ustawień</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>Nie można wyświetlić wskaźnika</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>Nie można otworzyć strony pomocy technicznej</value>
+  </data>
+  <data name="Error_OpenReleasesLink" xml:space="preserve">
+    <value>Nie można otworzyć strony z wersjami</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>Nie jest dostępna żadna aplikacja umożliwiająca otwarcie tego łącza.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>Nie udało się zapisać przypisania klawisza</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>Nie można zaimportować wybranej ikony</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>Nie można przełączyć NumLocka</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>Nie można zmienić stanu przechwytywania</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>Nie można uzyskać sesji audio systemu Windows: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>Określ krok zmiany głośności.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>Uruchamianie jest włączone przez zasady systemu Windows i nie może zostać wyłączone przez aplikację.</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>Uruchamianie zostało wcześniej wyłączone przez użytkownika. Zezwól na StreamNumDeck w Ustawieniach Windows → Aplikacje → Uruchamianie.</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>Uruchamianie jest wyłączone przez zasady systemu Windows.</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>System Windows nie mógł włączyć uruchamiania StreamNumDeck.</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>Brak ikony</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>Dodatkowo</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>Sprawdź</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>Kopiuj</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>Wklej</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>Odśwież</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>Szukaj</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>Udostępnij</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>Przypnij</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>Blokada</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>Odblokuj</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>Moc</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>Polecenie</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>Kod</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>Kalkulator</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>Informacje</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>Ostrzeżenie</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>Zablokowany</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>Zagraj</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>Zatrzymaj się</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>Nagraj</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>Poprzedni</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>Następny</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>Przewiń do tyłu</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>Szybkie przewijanie do przodu</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>Przetasuj</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>Powtórz</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>Pełny ekran</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>Okno</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>Objętość</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>Głośność wyłączona</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>Głośność niska</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>Średnia objętość</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>Poziom głośności wysoki</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>Wycisz</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>Dźwięk</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>Głośniki</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>Mikrofon</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>Wideo</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>Kamera</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>Słuchawki</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>Transmisja</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>Przełącznik</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>Wiadomość</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>Czat</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>Poczta</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>Ludzie</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>Czat wideo</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>Megafon</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>Glob</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>Wi-Fi</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>Chmura</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>Pobierz</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>Prześlij</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>Folder otwarty</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>Dokument</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>Obraz</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>Gwiazda</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>Wypełnienie gwiazdą</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>Serce</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>Wypełnienie Serca</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>Jak</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>Gra</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>XBOX</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>Robota</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>Błyskawica</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>Efekty</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>Kalendarz</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>Historia</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>Dom</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>W górę</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>W dół</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>Powrót</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>Naprzód</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>Przypinka do mapy</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>Samochód</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>Praca</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>Sklep</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>Tarcza</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>Uprawnienia</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>Zobacz</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>Kolor</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>Urządzenia</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>Klawiatura</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>Wydrukuj</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>Latarka</value>
+  </data>
+</root>

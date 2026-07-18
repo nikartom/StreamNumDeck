@@ -1,6 +1,5 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/StreamNumDeck.App/StreamNumDeck.App.csproj" />
     <Project Path="src/StreamNumDeck.Core/StreamNumDeck.Core.csproj" />
     <Project Path="src/StreamNumDeck.Infrastructure/StreamNumDeck.Infrastructure.csproj" />
     <Project Path="src/StreamNumDeck.Wpf/StreamNumDeck.Wpf.csproj" />
@@ -8,5 +7,6 @@
   <Folder Name="/tests/">
     <Project Path="tests/StreamNumDeck.Core.Tests/StreamNumDeck.Core.Tests.csproj" />
     <Project Path="tests/StreamNumDeck.Infrastructure.Tests/StreamNumDeck.Infrastructure.Tests.csproj" />
+    <Project Path="tests/StreamNumDeck.Wpf.Tests/StreamNumDeck.Wpf.Tests.csproj" />
   </Folder>
 </Solution>

@@ -35,10 +35,7 @@ public sealed class DeckKeyTileViewModel(DeckKey key) : ObservableObject
     public void Update(KeyAssignment assignment, IIconAssetStore iconAssetStore)
     {
         var hasUserLabel = !string.IsNullOrWhiteSpace(assignment.Label);
-        var isEmpty = !hasUserLabel
-                      && assignment.Action is NoActionDefinition
-                      && assignment.Icon.Kind == IconKind.BuiltIn
-                      && string.Equals(assignment.Icon.Value, "square", StringComparison.Ordinal);
+        var isEmpty = assignment.Action is NoActionDefinition;
         var hasVisibleIcon = assignment.Icon.Kind != IconKind.BuiltIn
                              || !string.Equals(assignment.Icon.Value, "blank", StringComparison.Ordinal);
         var isIconOnly = !isEmpty && !hasUserLabel && hasVisibleIcon;

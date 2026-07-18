@@ -1,8 +1,8 @@
 #ifndef MyAppVersion
-  #define MyAppVersion "1.2.0"
+  #define MyAppVersion "1.2.5"
 #endif
 #ifndef MyFileVersion
-  #define MyFileVersion "1.2.0.0"
+  #define MyFileVersion "1.2.5.0"
 #endif
 #ifndef MySourceDir
   #error MySourceDir must point to the portable application directory.
@@ -33,7 +33,7 @@ DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 OutputDir={#MyOutputDir}
 OutputBaseFilename=StreamNumDeck-{#MyAppVersion}-Setup
-SetupIconFile=..\src\StreamNumDeck.App\Assets\AppIcon.ico
+SetupIconFile=..\src\StreamNumDeck.Wpf\Assets\AppIcon.ico
 LicenseFile={#MySourceDir}\LICENSE.md
 UninstallDisplayIcon={app}\{#MyAppExeName}
 Compression=lzma2/max
@@ -59,7 +59,7 @@ Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Registry]
-Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: none; ValueName: "StreamNumDeck"; Flags: uninsdeletevalue
+Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: none; ValueName: "StreamNumDeck"; Flags: uninsdeletevalue dontcreatekey
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent

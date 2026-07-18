@@ -1,6 +1,6 @@
 using System.Reflection;
 using System.Text.RegularExpressions;
-using StreamNumDeck.App.Localization;
+using StreamNumDeck.Wpf.Localization;
 using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Execution;
 

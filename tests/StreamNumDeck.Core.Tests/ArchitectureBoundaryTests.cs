@@ -7,8 +7,10 @@ public sealed class ArchitectureBoundaryTests
 {
     private static readonly HashSet<string> ForbiddenReferences =
     [
-        "Microsoft.UI.Xaml",
-        "Microsoft.WindowsAppSDK",
+        "PresentationCore",
+        "PresentationFramework",
+        "System.Xaml",
+        "WindowsBase",
         "StreamNumDeck.Infrastructure",
     ];
 
@@ -23,7 +25,10 @@ public sealed class ArchitectureBoundaryTests
             .Cast<string>()
             .ToHashSet(StringComparer.Ordinal);
 
-        var violations = references.Intersect(ForbiddenReferences).Order().ToArray();
+        var violations = references
+            .Intersect(ForbiddenReferences)
+            .OrderBy(static reference => reference)
+            .ToArray();
 
         Assert.HasCount(0, violations, $"Forbidden Core references: {string.Join(", ", violations)}");
     }

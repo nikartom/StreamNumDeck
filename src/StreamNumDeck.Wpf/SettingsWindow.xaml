@@ -120,6 +120,28 @@
                         </Grid>
                     </Border>
 
+                    <Border Background="#202D3D" BorderBrush="#3F638A" BorderThickness="1"
+                            CornerRadius="10" Padding="16" Margin="0,0,0,14">
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <Border Width="36" Height="36" Background="#294361" BorderBrush="#527AA5"
+                                    BorderThickness="1" CornerRadius="8" Margin="0,0,12,0">
+                                <TextBlock Text="&#xE895;" FontFamily="Segoe Fluent Icons" FontSize="18"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,12,0">
+                                <TextBlock Text="{localization:Loc Settings_UpdatesTitle.Text, Fallback=Stay up to date}"
+                                           FontSize="14" FontWeight="SemiBold" />
+                                <TextBlock Text="{localization:Loc Settings_UpdatesHint.Text, Fallback=Follow StreamNumDeck on GitHub for new versions and fixes.}"
+                                           FontSize="11" Foreground="{StaticResource SecondaryTextBrush}"
+                                           TextWrapping="Wrap" />
+                            </StackPanel>
+                            <Button Grid.Column="2"
+                                    Content="{localization:Loc Settings_ReleasesButton.Content, Fallback=Latest release}"
+                                    Click="Releases_Click" />
+                        </Grid>
+                    </Border>
+
                     <Border Style="{StaticResource SettingsCardStyle}">
                         <StackPanel>
                             <Grid Margin="0,0,0,15">

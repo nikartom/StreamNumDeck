@@ -6,7 +6,7 @@ using StreamNumDeck.Core.Deck;
 using StreamNumDeck.Core.Input;
 using StreamNumDeck.Wpf.ViewModels;
 using StreamNumDeck.Wpf.Services;
-using StreamNumDeck.App.Localization;
+using StreamNumDeck.Wpf.Localization;
 
 namespace StreamNumDeck.Wpf;
 

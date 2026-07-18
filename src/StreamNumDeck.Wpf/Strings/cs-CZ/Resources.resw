@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>StreamNumDeck</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Ovládací panel pro streamery a hráče</value>
+  </data>
+  <data name="Nav_NewProfile.Content" xml:space="preserve">
+    <value>Nový profil</value>
+  </data>
+  <data name="Nav_NewProfile.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Nový profil</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="ProfileDialog.CloseButtonText" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="ProfileDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Vytvořit</value>
+  </data>
+  <data name="ProfileDialog.Title" xml:space="preserve">
+    <value>Nový profil</value>
+  </data>
+  <data name="ProfileName.Header" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="ProfileName.PlaceholderText" xml:space="preserve">
+    <value>Například Gaming stream</value>
+  </data>
+  <data name="ProfileIcon.Text" xml:space="preserve">
+    <value>ikona</value>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Globální nastavení</value>
+  </data>
+  <data name="Settings_Subtitle.Text" xml:space="preserve">
+    <value>Zvuk, OBS Studio a chování aplikací</value>
+  </data>
+  <data name="Common_SaveButton.Content" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Settings_SoundSection.Text" xml:space="preserve">
+    <value>Zvuk</value>
+  </data>
+  <data name="Settings_OutputDevice.Header" xml:space="preserve">
+    <value>Výstupní zařízení</value>
+  </data>
+  <data name="Audio_SystemDefaultDevice" xml:space="preserve">
+    <value>Výchozí zařízení systému</value>
+  </data>
+  <data name="Settings_MasterVolume.Header" xml:space="preserve">
+    <value>Hlavní hlasitost</value>
+  </data>
+  <data name="Settings_ConcurrentSounds.Header" xml:space="preserve">
+    <value>Povolit simultánní zvuky</value>
+  </data>
+  <data name="Settings_PreloadSounds.Header" xml:space="preserve">
+    <value>Předem načíst krátké zvuky</value>
+  </data>
+  <data name="Settings_SystemSection.Text" xml:space="preserve">
+    <value>Systém</value>
+  </data>
+  <data name="Settings_StartWithWindows.Header" xml:space="preserve">
+    <value>Začněte s Windows</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>Minimalizovat do oznamovací oblasti</value>
+  </data>
+  <data name="Settings_CaptureOnStartup.Header" xml:space="preserve">
+    <value>Povolit snímání při spuštění</value>
+  </data>
+  <data name="Capture_NumPad" xml:space="preserve">
+    <value>NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlock" xml:space="preserve">
+    <value>6-klávesový blok</value>
+  </data>
+  <data name="Capture_NumPadHint" xml:space="preserve">
+    <value>Zachyťte klávesy NumPad</value>
+  </data>
+  <data name="Capture_NavigationBlockHint" xml:space="preserve">
+    <value>Zachyťte klávesy Insert, Home, Page Up, Delete, End a Page Down</value>
+  </data>
+  <data name="Settings_Theme.Header" xml:space="preserve">
+    <value>Vzhled</value>
+  </data>
+  <data name="Theme_System.Content" xml:space="preserve">
+    <value>Použijte nastavení Windows</value>
+  </data>
+  <data name="Theme_Light.Content" xml:space="preserve">
+    <value>Světlo</value>
+  </data>
+  <data name="Theme_Dark.Content" xml:space="preserve">
+    <value>Tmavý</value>
+  </data>
+  <data name="Settings_PositionOverlay.Content" xml:space="preserve">
+    <value>Indikátor polohy mikrofonu</value>
+  </data>
+  <data name="Settings_OverlayHint.Text" xml:space="preserve">
+    <value>Po kliknutí přetáhněte ukazatel myší. Jeho poloha bude uložena.</value>
+  </data>
+  <data name="Settings_KeyboardSection.Text" xml:space="preserve">
+    <value>klávesnice</value>
+  </data>
+  <data name="Settings_EmergencyPause.Header" xml:space="preserve">
+    <value>Zapnutí/vypnutí snímání klíčů</value>
+  </data>
+  <data name="Settings_NumLockHint.Text" xml:space="preserve">
+    <value>Fyzická klávesa NumLock přepíná mezi dvěma vrstvami přiřazení.</value>
+  </data>
+  <data name="Settings_ObsSection.Text" xml:space="preserve">
+    <value>Studio OBS</value>
+  </data>
+  <data name="Settings_ObsAddress.Header" xml:space="preserve">
+    <value>Adresa</value>
+  </data>
+  <data name="Settings_ObsPort.Header" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Settings_ObsPassword.Header" xml:space="preserve">
+    <value>Heslo</value>
+  </data>
+  <data name="Settings_ObsPassword.PlaceholderText" xml:space="preserve">
+    <value>Chcete-li zachovat aktuální heslo, ponechte prázdné</value>
+  </data>
+  <data name="Settings_PasswordStored.Text" xml:space="preserve">
+    <value>Heslo je uloženo v zabezpečeném úložišti Windows</value>
+  </data>
+  <data name="Settings_TestObs.Content" xml:space="preserve">
+    <value>Test připojení</value>
+  </data>
+  <data name="Settings_SupportSection.Text" xml:space="preserve">
+    <value>Podpořte autora</value>
+  </data>
+  <data name="Settings_SupportHint.Text" xml:space="preserve">
+    <value>Pokud je pro vás StreamNumDeck užitečný, můžete jeho vývoj podpořit.</value>
+  </data>
+  <data name="Settings_SupportButton.Content" xml:space="preserve">
+    <value>Podpora na DonationAlerts</value>
+  </data>
+  <data name="Settings_UpdatesTitle.Text" xml:space="preserve">
+    <value>Zůstaňte v obraze</value>
+  </data>
+  <data name="Settings_UpdatesHint.Text" xml:space="preserve">
+    <value>Sledujte StreamNumDeck na GitHubu pro nové verze, opravy a funkce.</value>
+  </data>
+  <data name="Settings_ReleasesButton.Content" xml:space="preserve">
+    <value>Nejnovější vydání</value>
+  </data>
+  <data name="Deck_Capture.Text" xml:space="preserve">
+    <value>Zachyťte</value>
+  </data>
+  <data name="Deck_CaptureToggle.AutomationProperties.Name" xml:space="preserve">
+    <value>Snímání klávesnice</value>
+  </data>
+  <data name="Deck_CaptureToggle.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ctrl+Alt+F12 — nouzové pozastavení</value>
+  </data>
+  <data name="Deck_ActionError.Title" xml:space="preserve">
+    <value>Akce se nezdařila</value>
+  </data>
+  <data name="Deck_NumLock.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Přepněte vrstvu NumLock</value>
+  </data>
+  <data name="Editor_Dialog.CloseButtonText" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="Editor_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Editor_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>Jasný</value>
+  </data>
+  <data name="Editor_Appearance.Text" xml:space="preserve">
+    <value>Vzhled</value>
+  </data>
+  <data name="Editor_CustomIcon.Content" xml:space="preserve">
+    <value>Vyberte si ikonu…</value>
+  </data>
+  <data name="Editor_Label.Header" xml:space="preserve">
+    <value>Štítek</value>
+  </data>
+  <data name="Editor_Label.PlaceholderText" xml:space="preserve">
+    <value>Volitelné</value>
+  </data>
+  <data name="Editor_CopyOtherLayer.Content" xml:space="preserve">
+    <value>Zkopírujte úkol z jiné vrstvy</value>
+  </data>
+  <data name="Editor_ActionSection.Text" xml:space="preserve">
+    <value>Akce</value>
+  </data>
+  <data name="Editor_ActionGroup.Header" xml:space="preserve">
+    <value>Skupina</value>
+  </data>
+  <data name="Editor_ActionType.Header" xml:space="preserve">
+    <value>Akce</value>
+  </data>
+  <data name="Editor_AudioFile.Header" xml:space="preserve">
+    <value>Zvukový soubor</value>
+  </data>
+  <data name="Common_BrowseButton.Content" xml:space="preserve">
+    <value>Procházet…</value>
+  </data>
+  <data name="Editor_PreviewSound.Content" xml:space="preserve">
+    <value>Náhled</value>
+  </data>
+  <data name="Common_StopButton.Content" xml:space="preserve">
+    <value>Přestaň</value>
+  </data>
+  <data name="Editor_Volume.Header" xml:space="preserve">
+    <value>Hlasitost</value>
+  </data>
+  <data name="Editor_Behavior.Header" xml:space="preserve">
+    <value>Chování</value>
+  </data>
+  <data name="Editor_Application.Header" xml:space="preserve">
+    <value>Aplikace</value>
+  </data>
+  <data name="Editor_Application.PlaceholderText" xml:space="preserve">
+    <value>Vyberte aplikaci nebo zadejte název .exe</value>
+  </data>
+  <data name="Editor_VolumeStep.Header" xml:space="preserve">
+    <value>Změnit krok, %</value>
+  </data>
+  <data name="Editor_AudioSessionHint.Text" xml:space="preserve">
+    <value>Seznam zobrazuje aplikace, pro které systém Windows již vytvořil zvukovou relaci.</value>
+  </data>
+  <data name="Editor_ObsTarget.Header" xml:space="preserve">
+    <value>Scéna nebo zdroj</value>
+  </data>
+  <data name="Editor_ObsTarget.PlaceholderText" xml:space="preserve">
+    <value>Přesný název v OBS</value>
+  </data>
+  <data name="Editor_SystemTarget.Header" xml:space="preserve">
+    <value>Program, cesta nebo adresa</value>
+  </data>
+  <data name="Editor_Arguments.Header" xml:space="preserve">
+    <value>Argumenty</value>
+  </data>
+  <data name="Editor_Arguments.PlaceholderText" xml:space="preserve">
+    <value>Volitelné</value>
+  </data>
+  <data name="Editor_WorkingDirectory.Header" xml:space="preserve">
+    <value>Pracovní adresář</value>
+  </data>
+  <data name="Editor_WorkingDirectory.PlaceholderText" xml:space="preserve">
+    <value>Volitelné</value>
+  </data>
+  <data name="Editor_MacroHint.Text" xml:space="preserve">
+    <value>Zadejte každý krok na nový řádek. Klávesová zkratka: Ctrl+Shift+S. Zpoždění: počkejte 250. Řádky začínající # jsou komentáře.</value>
+  </data>
+  <data name="Editor_MacroSequence.Header" xml:space="preserve">
+    <value>Sekvence</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Zapnuto</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Vypnuto</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Vytvořit</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Smazat</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Upravit</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Zavřít</value>
+  </data>
+  <data name="Common_Minimize" xml:space="preserve">
+    <value>Minimalizovat</value>
+  </data>
+  <data name="FileFilter_Audio" xml:space="preserve">
+    <value>Zvukové soubory</value>
+  </data>
+  <data name="FileFilter_Images" xml:space="preserve">
+    <value>Obrázky</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>Všechny soubory</value>
+  </data>
+  <data name="ActionGroup_None" xml:space="preserve">
+    <value>Žádná akce</value>
+  </data>
+  <data name="ActionGroup_Sound" xml:space="preserve">
+    <value>Zvuk</value>
+  </data>
+  <data name="ActionGroup_System" xml:space="preserve">
+    <value>Systém a příkazy</value>
+  </data>
+  <data name="ActionGroup_Automation" xml:space="preserve">
+    <value>automatizace</value>
+  </data>
+  <data name="SoundBehavior_Alongside" xml:space="preserve">
+    <value>Hrajte současně</value>
+  </data>
+  <data name="SoundBehavior_Restart" xml:space="preserve">
+    <value>Restartujte tento zvuk</value>
+  </data>
+  <data name="SoundBehavior_StopOthers" xml:space="preserve">
+    <value>Zastavte ostatní zvuky</value>
+  </data>
+  <data name="Editor_Title" xml:space="preserve">
+    <value>{0} · NumLock {1}</value>
+  </data>
+  <data name="Action_PlaySound" xml:space="preserve">
+    <value>Přehrát zvuk</value>
+  </data>
+  <data name="Action_ToggleMicrophoneMute" xml:space="preserve">
+    <value>Ztlumit nebo zrušit ztlumení výchozího mikrofonu</value>
+  </data>
+  <data name="Action_ToggleMasterMute" xml:space="preserve">
+    <value>Ztlumit nebo zapnout hlavní výstup</value>
+  </data>
+  <data name="Action_AdjustMasterVolume" xml:space="preserve">
+    <value>Upravte hlavní hlasitost</value>
+  </data>
+  <data name="Action_AdjustApplicationVolume" xml:space="preserve">
+    <value>Upravte hlasitost aplikace</value>
+  </data>
+  <data name="Action_IncreaseMasterVolume" xml:space="preserve">
+    <value>Zvyšte hlavní hlasitost</value>
+  </data>
+  <data name="Action_DecreaseMasterVolume" xml:space="preserve">
+    <value>Snížit hlavní hlasitost</value>
+  </data>
+  <data name="Action_IncreaseApplicationVolume" xml:space="preserve">
+    <value>Zvyšte objem aplikace</value>
+  </data>
+  <data name="Action_DecreaseApplicationVolume" xml:space="preserve">
+    <value>Snižte objem aplikace</value>
+  </data>
+  <data name="Action_ObsSwitchScene" xml:space="preserve">
+    <value>Přepnout scénu</value>
+  </data>
+  <data name="Action_ObsToggleSource" xml:space="preserve">
+    <value>Zobrazit nebo skrýt zdroj</value>
+  </data>
+  <data name="Action_ObsToggleMute" xml:space="preserve">
+    <value>Ztlumit nebo zapnout zvuk vstupu</value>
+  </data>
+  <data name="Action_ObsToggleStream" xml:space="preserve">
+    <value>Streamování: zapnuto/vypnuto</value>
+  </data>
+  <data name="Action_ObsStartStream" xml:space="preserve">
+    <value>Začněte streamovat</value>
+  </data>
+  <data name="Action_ObsStopStream" xml:space="preserve">
+    <value>Zastavit streamování</value>
+  </data>
+  <data name="Action_ObsToggleRecord" xml:space="preserve">
+    <value>Nahrávání: zapnuto/vypnuto</value>
+  </data>
+  <data name="Action_ObsToggleRecordPause" xml:space="preserve">
+    <value>Pauza nahrávání: zapnuto/vypnuto</value>
+  </data>
+  <data name="Action_ObsStartRecord" xml:space="preserve">
+    <value>Spusťte nahrávání</value>
+  </data>
+  <data name="Action_ObsStopRecord" xml:space="preserve">
+    <value>Zastavit nahrávání</value>
+  </data>
+  <data name="Action_ObsStartReplayBuffer" xml:space="preserve">
+    <value>Spusťte vyrovnávací paměť přehrávání</value>
+  </data>
+  <data name="Action_ObsStopReplayBuffer" xml:space="preserve">
+    <value>Zastavit vyrovnávací paměť přehrávání</value>
+  </data>
+  <data name="Action_ObsSaveReplay" xml:space="preserve">
+    <value>Uložit vyrovnávací paměť pro opakované přehrávání</value>
+  </data>
+  <data name="Action_ObsToggleVirtualCamera" xml:space="preserve">
+    <value>Virtuální kamera: zapnuto/vypnuto</value>
+  </data>
+  <data name="Action_ObsToggleStudioMode" xml:space="preserve">
+    <value>Režim Studio: zapnuto/vypnuto</value>
+  </data>
+  <data name="Action_ObsStudioTransition" xml:space="preserve">
+    <value>Spustit přechod do režimu studia</value>
+  </data>
+  <data name="Action_ObsToggleMedia" xml:space="preserve">
+    <value>Média: přehrávání/pauza</value>
+  </data>
+  <data name="Action_ObsStopMedia" xml:space="preserve">
+    <value>Zastavit zdroj médií</value>
+  </data>
+  <data name="Action_ObsRestartMedia" xml:space="preserve">
+    <value>Restartujte zdroj médií</value>
+  </data>
+  <data name="Action_LaunchProcess" xml:space="preserve">
+    <value>Spusťte program</value>
+  </data>
+  <data name="Action_OpenPath" xml:space="preserve">
+    <value>Otevřete soubor nebo složku</value>
+  </data>
+  <data name="Action_OpenUri" xml:space="preserve">
+    <value>Otevřít odkaz</value>
+  </data>
+  <data name="Action_KeyboardMacro" xml:space="preserve">
+    <value>Spusťte makro klávesnice</value>
+  </data>
+  <data name="Action_Automation" xml:space="preserve">
+    <value>automatizace</value>
+  </data>
+  <data name="Automation_ActionPickerTitle" xml:space="preserve">
+    <value>Přidejte k automatizaci akci</value>
+  </data>
+  <data name="Automation_AddStep" xml:space="preserve">
+    <value>Přidat krok</value>
+  </data>
+  <data name="Automation_AddAction" xml:space="preserve">
+    <value>Akce</value>
+  </data>
+  <data name="Automation_Pause" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Automation_PauseHint" xml:space="preserve">
+    <value>Před dalším krokem počkejte</value>
+  </data>
+  <data name="Automation_Finish" xml:space="preserve">
+    <value>Dokončit</value>
+  </data>
+  <data name="Automation_FinishHint" xml:space="preserve">
+    <value>Přeskočte všechny zbývající kroky a dokončete automatizaci</value>
+  </data>
+  <data name="Automation_Seconds" xml:space="preserve">
+    <value>sekund</value>
+  </data>
+  <data name="Automation_MoveUp" xml:space="preserve">
+    <value>Posuňte se nahoru</value>
+  </data>
+  <data name="Automation_MoveDown" xml:space="preserve">
+    <value>Posuňte se dolů</value>
+  </data>
+  <data name="Automation_MacroSteps" xml:space="preserve">
+    <value>Kroky makra: {0}</value>
+  </data>
+  <data name="Automation_VolumeStep" xml:space="preserve">
+    <value>Krok: {0} %</value>
+  </data>
+  <data name="Automation_InvalidPause" xml:space="preserve">
+    <value>Zadejte pauzu mezi 0,1 a 3600 sekundami.</value>
+  </data>
+  <data name="Automation_Empty" xml:space="preserve">
+    <value>Přidejte do automatizace alespoň jeden prvek.</value>
+  </data>
+  <data name="Automation_TooManySteps" xml:space="preserve">
+    <value>Automatizace nemůže obsahovat více než {0} kroků.</value>
+  </data>
+  <data name="Action_None" xml:space="preserve">
+    <value>Nedělejte nic</value>
+  </data>
+  <data name="Action_Execute" xml:space="preserve">
+    <value>Proveďte akci</value>
+  </data>
+  <data name="Action_ObsFormat" xml:space="preserve">
+    <value>OBS ({0})</value>
+  </data>
+  <data name="ActionError_Message" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="ActionError_TargetUnavailable" xml:space="preserve">
+    <value>Nakonfigurovaný soubor, složka nebo program není k dispozici: {0}</value>
+  </data>
+  <data name="ActionError_AudioSessionUnavailable" xml:space="preserve">
+    <value>{0} nemá žádnou aktivní relaci zvuku Windows. Spusťte přehrávání zvuku v aplikaci a zkuste to znovu.</value>
+  </data>
+  <data name="ActionError_ObsUnavailable" xml:space="preserve">
+    <value>OBS není připojen. Spusťte OBS a zkontrolujte nastavení WebSocket.</value>
+  </data>
+  <data name="ActionError_ObsActionRejected" xml:space="preserve">
+    <value>OBS odmítl nakonfigurovanou akci. Zkontrolujte jeho scénu, zdroj nebo vstup.</value>
+  </data>
+  <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
+    <value>Systém Windows nemohl přehrát tento zvukový soubor. Zkontrolujte jeho formát nebo kodek: {0}</value>
+  </data>
+  <data name="ActionError_MacroEmpty" xml:space="preserve">
+    <value>Zadejte alespoň jednu klávesovou zkratku.</value>
+  </data>
+  <data name="ActionError_MacroInvalidLine" xml:space="preserve">
+    <value>Řádek {0} má neplatný formát. Použijte zkratku, jako je Ctrl+Shift+S, nebo zpoždění, jako je čekejte 250.</value>
+  </data>
+  <data name="ActionError_MacroTooManySteps" xml:space="preserve">
+    <value>Makro nemůže obsahovat více než {0} kroků.</value>
+  </data>
+  <data name="Field_Address" xml:space="preserve">
+    <value>Adresa</value>
+  </data>
+  <data name="Field_ProgramFileFolder" xml:space="preserve">
+    <value>Program, soubor nebo složka</value>
+  </data>
+  <data name="Field_Scene" xml:space="preserve">
+    <value>Scéna</value>
+  </data>
+  <data name="Field_Source" xml:space="preserve">
+    <value>Zdroj</value>
+  </data>
+  <data name="Obs_Connected" xml:space="preserve">
+    <value>OBS připojeno</value>
+  </data>
+  <data name="Obs_Connecting" xml:space="preserve">
+    <value>Připojování k OBS…</value>
+  </data>
+  <data name="Obs_Reconnecting" xml:space="preserve">
+    <value>Opětovné připojování k OBS…</value>
+  </data>
+  <data name="Obs_ReconnectingError" xml:space="preserve">
+    <value>Opětovné připojení k OBS: {0}</value>
+  </data>
+  <data name="Obs_ConnectionFailed" xml:space="preserve">
+    <value>Nelze se připojit k OBS</value>
+  </data>
+  <data name="Obs_Error" xml:space="preserve">
+    <value>OBS: {0}</value>
+  </data>
+  <data name="Obs_Disconnected" xml:space="preserve">
+    <value>OBS odpojeno</value>
+  </data>
+  <data name="Obs_TestResult" xml:space="preserve">
+    <value>Připojeno. Scény: {0}, zdroje: {1}.</value>
+  </data>
+  <data name="Settings_Saved" xml:space="preserve">
+    <value>Nastavení uloženo</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Otevřete StreamNumDeck</value>
+  </data>
+  <data name="Tray_Capture" xml:space="preserve">
+    <value>Snímání klávesnice</value>
+  </data>
+  <data name="Tray_Profiles" xml:space="preserve">
+    <value>Profily</value>
+  </data>
+  <data name="Tray_ActionFailed" xml:space="preserve">
+    <value>Akce zásobníku se nezdařila</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Konec</value>
+  </data>
+  <data name="Profile_DefaultName" xml:space="preserve">
+    <value>Hlavní profil</value>
+  </data>
+  <data name="Profile_New" xml:space="preserve">
+    <value>Nový profil</value>
+  </data>
+  <data name="Profile_Edit" xml:space="preserve">
+    <value>Upravit profil</value>
+  </data>
+  <data name="Profile_Duplicate" xml:space="preserve">
+    <value>Duplicitní profil</value>
+  </data>
+  <data name="Profile_Delete" xml:space="preserve">
+    <value>Smazat profil</value>
+  </data>
+  <data name="Profile_ContextHint" xml:space="preserve">
+    <value>{0}
+Kliknutím pravým tlačítkem zobrazíte akce profilu</value>
+  </data>
+  <data name="Profile_DeleteTitle" xml:space="preserve">
+    <value>Smazat profil?</value>
+  </data>
+  <data name="Profile_DeleteMessage" xml:space="preserve">
+    <value>Profil „{0}“ a všechna jeho přiřazení budou smazána.</value>
+  </data>
+  <data name="Profile_CopySuffix" xml:space="preserve">
+    <value> — kopie</value>
+  </data>
+  <data name="Profile_NumberedCopySuffix" xml:space="preserve">
+    <value> – zkopírovat {0}</value>
+  </data>
+  <data name="Profile_NameRequired" xml:space="preserve">
+    <value>Zadejte název profilu.</value>
+  </data>
+  <data name="Profile_NameExists" xml:space="preserve">
+    <value>Profil s tímto názvem již existuje.</value>
+  </data>
+  <data name="Error_LoadProfiles" xml:space="preserve">
+    <value>Profily se nepodařilo načíst</value>
+  </data>
+  <data name="Error_ChangeProfile" xml:space="preserve">
+    <value>Profil nelze změnit</value>
+  </data>
+  <data name="Error_ProfileNotFound" xml:space="preserve">
+    <value>Vybraný profil již neexistuje.</value>
+  </data>
+  <data name="Error_EditProfile" xml:space="preserve">
+    <value>Profil nelze upravit</value>
+  </data>
+  <data name="Error_CreateProfile" xml:space="preserve">
+    <value>Profil nelze vytvořit</value>
+  </data>
+  <data name="Error_DuplicateProfile" xml:space="preserve">
+    <value>Profil nelze duplikovat</value>
+  </data>
+  <data name="Error_DeleteProfile" xml:space="preserve">
+    <value>Profil se nepodařilo smazat</value>
+  </data>
+  <data name="Error_LoadSettings" xml:space="preserve">
+    <value>Nastavení nelze načíst</value>
+  </data>
+  <data name="Error_SaveSettings" xml:space="preserve">
+    <value>Nastavení se nepodařilo uložit</value>
+  </data>
+  <data name="Error_ShowOverlay" xml:space="preserve">
+    <value>Indikátor nelze zobrazit</value>
+  </data>
+  <data name="Error_OpenSupportLink" xml:space="preserve">
+    <value>Stránku podpory nelze otevřít</value>
+  </data>
+  <data name="Error_OpenReleasesLink" xml:space="preserve">
+    <value>Stránku vydání nelze otevřít</value>
+  </data>
+  <data name="Error_NoUriHandler" xml:space="preserve">
+    <value>Pro otevření tohoto odkazu není k dispozici žádná aplikace.</value>
+  </data>
+  <data name="Error_SaveAssignment" xml:space="preserve">
+    <value>Nepodařilo se uložit přiřazení klávesy</value>
+  </data>
+  <data name="Error_ImportIcon" xml:space="preserve">
+    <value>Vybranou ikonu nelze importovat</value>
+  </data>
+  <data name="Error_ToggleNumLock" xml:space="preserve">
+    <value>Nelze přepnout NumLock</value>
+  </data>
+  <data name="Error_ChangeCapture" xml:space="preserve">
+    <value>Stav zachycení se nepodařilo změnit</value>
+  </data>
+  <data name="Error_GetAudioSessions" xml:space="preserve">
+    <value>Nelze získat zvukové relace systému Windows: {0}</value>
+  </data>
+  <data name="Error_VolumeStepRequired" xml:space="preserve">
+    <value>Zadejte krok změny hlasitosti.</value>
+  </data>
+  <data name="Error_AutostartPolicyEnabled" xml:space="preserve">
+    <value>Spouštění je povoleno zásadami systému Windows a aplikace jej nelze zakázat.</value>
+  </data>
+  <data name="Error_AutostartDisabledByUser" xml:space="preserve">
+    <value>Spouštění bylo dříve zakázáno uživatelem. Povolte StreamNumDeck v Nastavení Windows → Aplikace → Po spuštění.</value>
+  </data>
+  <data name="Error_AutostartPolicyDisabled" xml:space="preserve">
+    <value>Spouštění je zakázáno zásadami systému Windows.</value>
+  </data>
+  <data name="Error_AutostartEnable" xml:space="preserve">
+    <value>Windows nemohl povolit spuštění StreamNumDeck.</value>
+  </data>
+  <data name="Icon_square" xml:space="preserve">
+    <value>Žádná ikona</value>
+  </data>
+  <data name="Icon_plus" xml:space="preserve">
+    <value>Navíc</value>
+  </data>
+  <data name="Icon_minus" xml:space="preserve">
+    <value>Mínus</value>
+  </data>
+  <data name="Icon_check" xml:space="preserve">
+    <value>Zkontrolujte</value>
+  </data>
+  <data name="Icon_cancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="Icon_edit" xml:space="preserve">
+    <value>Upravit</value>
+  </data>
+  <data name="Icon_delete" xml:space="preserve">
+    <value>Smazat</value>
+  </data>
+  <data name="Icon_save" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Icon_copy" xml:space="preserve">
+    <value>Kopírovat</value>
+  </data>
+  <data name="Icon_paste" xml:space="preserve">
+    <value>Vložit</value>
+  </data>
+  <data name="Icon_refresh" xml:space="preserve">
+    <value>Obnovit</value>
+  </data>
+  <data name="Icon_search" xml:space="preserve">
+    <value>Hledat</value>
+  </data>
+  <data name="Icon_link" xml:space="preserve">
+    <value>Odkaz</value>
+  </data>
+  <data name="Icon_share" xml:space="preserve">
+    <value>Sdílejte</value>
+  </data>
+  <data name="Icon_send" xml:space="preserve">
+    <value>Odeslat</value>
+  </data>
+  <data name="Icon_pin" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="Icon_lock" xml:space="preserve">
+    <value>Zámek</value>
+  </data>
+  <data name="Icon_unlock" xml:space="preserve">
+    <value>Odemknout</value>
+  </data>
+  <data name="Icon_settings" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="Icon_power" xml:space="preserve">
+    <value>Moc</value>
+  </data>
+  <data name="Icon_command" xml:space="preserve">
+    <value>Příkaz</value>
+  </data>
+  <data name="Icon_code" xml:space="preserve">
+    <value>kód</value>
+  </data>
+  <data name="Icon_calculator" xml:space="preserve">
+    <value>Kalkulačka</value>
+  </data>
+  <data name="Icon_info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Icon_help" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="Icon_warning" xml:space="preserve">
+    <value>Varování</value>
+  </data>
+  <data name="Icon_blocked" xml:space="preserve">
+    <value>Blokováno</value>
+  </data>
+  <data name="Icon_play" xml:space="preserve">
+    <value>hrát</value>
+  </data>
+  <data name="Icon_pause" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Icon_stop" xml:space="preserve">
+    <value>Přestaň</value>
+  </data>
+  <data name="Icon_record" xml:space="preserve">
+    <value>Záznam</value>
+  </data>
+  <data name="Icon_previous" xml:space="preserve">
+    <value>Předchozí</value>
+  </data>
+  <data name="Icon_next" xml:space="preserve">
+    <value>Další</value>
+  </data>
+  <data name="Icon_rewind" xml:space="preserve">
+    <value>Přetočit zpět</value>
+  </data>
+  <data name="Icon_fast_forward" xml:space="preserve">
+    <value>Rychle vpřed</value>
+  </data>
+  <data name="Icon_shuffle" xml:space="preserve">
+    <value>Zamíchat</value>
+  </data>
+  <data name="Icon_repeat" xml:space="preserve">
+    <value>Opakujte</value>
+  </data>
+  <data name="Icon_fullscreen" xml:space="preserve">
+    <value>Celá obrazovka</value>
+  </data>
+  <data name="Icon_window" xml:space="preserve">
+    <value>okno</value>
+  </data>
+  <data name="Icon_volume" xml:space="preserve">
+    <value>Hlasitost</value>
+  </data>
+  <data name="Icon_volume_off" xml:space="preserve">
+    <value>Hlasitost vypnuta</value>
+  </data>
+  <data name="Icon_volume_low" xml:space="preserve">
+    <value>Nízká hlasitost</value>
+  </data>
+  <data name="Icon_volume_medium" xml:space="preserve">
+    <value>Objem Střední</value>
+  </data>
+  <data name="Icon_volume_high" xml:space="preserve">
+    <value>Hlasitost vysoká</value>
+  </data>
+  <data name="Icon_mute" xml:space="preserve">
+    <value>Ztlumit</value>
+  </data>
+  <data name="Icon_audio" xml:space="preserve">
+    <value>Zvuk</value>
+  </data>
+  <data name="Icon_speakers" xml:space="preserve">
+    <value>Reproduktory</value>
+  </data>
+  <data name="Icon_microphone" xml:space="preserve">
+    <value>Mikrofon</value>
+  </data>
+  <data name="Icon_video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Icon_camera" xml:space="preserve">
+    <value>Fotoaparát</value>
+  </data>
+  <data name="Icon_headphones" xml:space="preserve">
+    <value>Sluchátka</value>
+  </data>
+  <data name="Icon_broadcast" xml:space="preserve">
+    <value>Vysílání</value>
+  </data>
+  <data name="Icon_switch" xml:space="preserve">
+    <value>Přepnout</value>
+  </data>
+  <data name="Icon_message" xml:space="preserve">
+    <value>Zpráva</value>
+  </data>
+  <data name="Icon_chat" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="Icon_mail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="Icon_phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Icon_people" xml:space="preserve">
+    <value>Lidé</value>
+  </data>
+  <data name="Icon_video_chat" xml:space="preserve">
+    <value>Videochat</value>
+  </data>
+  <data name="Icon_megaphone" xml:space="preserve">
+    <value>Megafon</value>
+  </data>
+  <data name="Icon_globe" xml:space="preserve">
+    <value>Zeměkoule</value>
+  </data>
+  <data name="Icon_wifi" xml:space="preserve">
+    <value>WIFI</value>
+  </data>
+  <data name="Icon_bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="Icon_usb" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Icon_cloud" xml:space="preserve">
+    <value>Cloud</value>
+  </data>
+  <data name="Icon_download" xml:space="preserve">
+    <value>Stáhnout</value>
+  </data>
+  <data name="Icon_upload" xml:space="preserve">
+    <value>Nahrát</value>
+  </data>
+  <data name="Icon_folder" xml:space="preserve">
+    <value>Složka</value>
+  </data>
+  <data name="Icon_folder_open" xml:space="preserve">
+    <value>Složka Otevřít</value>
+  </data>
+  <data name="Icon_document" xml:space="preserve">
+    <value>Dokument</value>
+  </data>
+  <data name="Icon_image" xml:space="preserve">
+    <value>Obrázek</value>
+  </data>
+  <data name="Icon_star" xml:space="preserve">
+    <value>hvězda</value>
+  </data>
+  <data name="Icon_star_fill" xml:space="preserve">
+    <value>Hvězdná výplň</value>
+  </data>
+  <data name="Icon_heart" xml:space="preserve">
+    <value>srdce</value>
+  </data>
+  <data name="Icon_heart_fill" xml:space="preserve">
+    <value>Výplň srdce</value>
+  </data>
+  <data name="Icon_like" xml:space="preserve">
+    <value>Jako</value>
+  </data>
+  <data name="Icon_game" xml:space="preserve">
+    <value>Hra</value>
+  </data>
+  <data name="Icon_xbox" xml:space="preserve">
+    <value>XBOX</value>
+  </data>
+  <data name="Icon_robot" xml:space="preserve">
+    <value>Robot</value>
+  </data>
+  <data name="Icon_lightning" xml:space="preserve">
+    <value>Blesk</value>
+  </data>
+  <data name="Icon_emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="Icon_effects" xml:space="preserve">
+    <value>Efekty</value>
+  </data>
+  <data name="Icon_calendar" xml:space="preserve">
+    <value>Kalendář</value>
+  </data>
+  <data name="Icon_timer" xml:space="preserve">
+    <value>Časovač</value>
+  </data>
+  <data name="Icon_history" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="Icon_home" xml:space="preserve">
+    <value>Domů</value>
+  </data>
+  <data name="Icon_up" xml:space="preserve">
+    <value>Nahoru</value>
+  </data>
+  <data name="Icon_down" xml:space="preserve">
+    <value>Dolů</value>
+  </data>
+  <data name="Icon_back" xml:space="preserve">
+    <value>Zpět</value>
+  </data>
+  <data name="Icon_forward" xml:space="preserve">
+    <value>Vpřed</value>
+  </data>
+  <data name="Icon_map_pin" xml:space="preserve">
+    <value>Pin mapy</value>
+  </data>
+  <data name="Icon_car" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="Icon_work" xml:space="preserve">
+    <value>Práce</value>
+  </data>
+  <data name="Icon_shop" xml:space="preserve">
+    <value>Obchod</value>
+  </data>
+  <data name="Icon_shield" xml:space="preserve">
+    <value>Štít</value>
+  </data>
+  <data name="Icon_permissions" xml:space="preserve">
+    <value>Oprávnění</value>
+  </data>
+  <data name="Icon_view" xml:space="preserve">
+    <value>Zobrazit</value>
+  </data>
+  <data name="Icon_color" xml:space="preserve">
+    <value>Barva</value>
+  </data>
+  <data name="Icon_devices" xml:space="preserve">
+    <value>Zařízení</value>
+  </data>
+  <data name="Icon_keyboard" xml:space="preserve">
+    <value>klávesnice</value>
+  </data>
+  <data name="Icon_print" xml:space="preserve">
+    <value>Tisk</value>
+  </data>
+  <data name="Icon_flashlight" xml:space="preserve">
+    <value>Svítilna</value>
+  </data>
+</root>

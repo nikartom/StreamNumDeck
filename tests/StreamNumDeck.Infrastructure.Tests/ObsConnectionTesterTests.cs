@@ -74,7 +74,11 @@ public sealed class ObsConnectionTesterTests
     private static async Task SendAsync(WebSocket socket, object payload)
     {
         var bytes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(payload));
-        await socket.SendAsync(bytes, WebSocketMessageType.Text, true, CancellationToken.None);
+        await socket.SendAsync(
+            new ArraySegment<byte>(bytes),
+            WebSocketMessageType.Text,
+            true,
+            CancellationToken.None);
     }
 
     private static async Task<string> ReceiveAsync(WebSocket socket)
@@ -84,7 +88,7 @@ public sealed class ObsConnectionTesterTests
         WebSocketReceiveResult result;
         do
         {
-            result = await socket.ReceiveAsync(buffer, CancellationToken.None);
+            result = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
             stream.Write(buffer, 0, result.Count);
         }
         while (!result.EndOfMessage);
@@ -94,8 +98,15 @@ public sealed class ObsConnectionTesterTests
 
     private static int ReservePort()
     {
-        using var listener = new TcpListener(IPAddress.Loopback, 0);
-        listener.Start();
-        return ((IPEndPoint)listener.LocalEndpoint).Port;
+        var listener = new TcpListener(IPAddress.Loopback, 0);
+        try
+        {
+            listener.Start();
+            return ((IPEndPoint)listener.LocalEndpoint).Port;
+        }
+        finally
+        {
+            listener.Stop();
+        }
     }
 }

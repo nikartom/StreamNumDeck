@@ -1,5 +1,4 @@
 using System.Windows.Markup;
-using StreamNumDeck.App.Localization;
 
 namespace StreamNumDeck.Wpf.Localization;
 

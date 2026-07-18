@@ -24,6 +24,8 @@ public sealed class ObsProtocolTests
             new ObsActionDefinition(ObsActionKind.SwitchScene, "Игра"));
         var media = ObsProtocol.MapActionRequest(
             new ObsActionDefinition(ObsActionKind.RestartMediaSource, "Заставка"));
+        var stopMedia = ObsProtocol.MapActionRequest(
+            new ObsActionDefinition(ObsActionKind.StopMediaSource, "Заставка"));
 
         Assert.AreEqual("SetCurrentProgramScene", scene.RequestType);
         Assert.AreEqual("Игра", scene.RequestData!.Value.GetProperty("sceneName").GetString());
@@ -32,6 +34,9 @@ public sealed class ObsProtocolTests
         Assert.AreEqual(
             "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_RESTART",
             media.RequestData.Value.GetProperty("mediaAction").GetString());
+        Assert.AreEqual(
+            "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_STOP",
+            stopMedia.RequestData!.Value.GetProperty("mediaAction").GetString());
     }
 
     [TestMethod]
@@ -40,11 +45,27 @@ public sealed class ObsProtocolTests
     [DataRow(ObsActionKind.StartRecording, "StartRecord")]
     [DataRow(ObsActionKind.StopRecording, "StopRecord")]
     [DataRow(ObsActionKind.SaveReplayBuffer, "SaveReplayBuffer")]
+    [DataRow(ObsActionKind.ToggleStreaming, "ToggleStream")]
+    [DataRow(ObsActionKind.ToggleRecording, "ToggleRecord")]
+    [DataRow(ObsActionKind.ToggleRecordingPause, "ToggleRecordPause")]
+    [DataRow(ObsActionKind.StartReplayBuffer, "StartReplayBuffer")]
+    [DataRow(ObsActionKind.StopReplayBuffer, "StopReplayBuffer")]
+    [DataRow(ObsActionKind.ToggleVirtualCamera, "ToggleVirtualCam")]
+    [DataRow(ObsActionKind.TriggerStudioModeTransition, "TriggerStudioModeTransition")]
     public void MapActionRequest_MapsTargetlessActions(ObsActionKind actionKind, string expectedRequest)
     {
         var request = ObsProtocol.MapActionRequest(new ObsActionDefinition(actionKind));
 
         Assert.AreEqual(expectedRequest, request.RequestType);
         Assert.IsNull(request.RequestData);
+    }
+
+    [TestMethod]
+    [DataRow("OBS_MEDIA_STATE_PLAYING", "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PAUSE")]
+    [DataRow("OBS_MEDIA_STATE_PAUSED", "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PLAY")]
+    [DataRow("OBS_MEDIA_STATE_STOPPED", "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PLAY")]
+    public void GetMediaPlayPauseAction_MapsCurrentState(string state, string expectedAction)
+    {
+        Assert.AreEqual(expectedAction, ObsProtocol.GetMediaPlayPauseAction(state));
     }
 }
