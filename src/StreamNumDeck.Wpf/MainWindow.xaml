@@ -23,7 +23,7 @@
                       Height="{Binding IconDimension}"
                       Visibility="{Binding IconAreaVisibility}">
                     <TextBlock Text="{Binding Glyph}"
-                               FontFamily="Segoe Fluent Icons"
+                               FontFamily="{Binding GlyphFontFamily}"
                                FontSize="{Binding GlyphFontSize}"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"

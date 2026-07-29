@@ -11,6 +11,7 @@ using StreamNumDeck.Core.Obs;
 using StreamNumDeck.Core.Audio;
 using StreamNumDeck.Core.Security;
 using StreamNumDeck.Core.Settings;
+using StreamNumDeck.Core.VTubeStudio;
 using StreamNumDeck.Wpf.Localization;
 using StreamNumDeck.Wpf.Overlays;
 using StreamNumDeck.Wpf.Services;
@@ -39,6 +40,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
     private readonly IAudioPlaybackService audioPlaybackService;
     private readonly IProtectedCredentialStore credentialStore;
     private readonly ISystemAudioControlService systemAudioControlService;
+    private readonly IVTubeStudioController vTubeStudioController;
     private readonly MicrophoneMuteOverlayController microphoneMuteOverlay;
     private readonly Dictionary<string, DateTimeOffset> recentErrorNotifications = new(StringComparer.Ordinal);
     private DeckProfile? selectedProfile;
@@ -60,6 +62,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         IAudioPlaybackService audioPlaybackService,
         IProtectedCredentialStore credentialStore,
         ISystemAudioControlService systemAudioControlService,
+        IVTubeStudioController vTubeStudioController,
         MicrophoneMuteOverlayController microphoneMuteOverlay)
     {
         this.configurationService = configurationService;
@@ -70,6 +73,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         this.audioPlaybackService = audioPlaybackService;
         this.credentialStore = credentialStore;
         this.systemAudioControlService = systemAudioControlService;
+        this.vTubeStudioController = vTubeStudioController;
         this.microphoneMuteOverlay = microphoneMuteOverlay;
 
         Tiles = DeckKeyCatalog.AssignableKeys.ToDictionary(
@@ -269,6 +273,23 @@ public sealed class MainViewModel : ObservableObject, IDisposable
     public Task<ObsCatalog> GetObsCatalogAsync(CancellationToken cancellationToken = default) =>
         obsController.GetCatalogAsync(cancellationToken);
 
+    public async Task<VTubeStudioCatalog> GetVTubeStudioCatalogAsync(CancellationToken cancellationToken = default)
+    {
+        var configuration = await configurationService.GetAsync(cancellationToken).ConfigureAwait(true);
+        return await vTubeStudioController
+            .GetCatalogAsync(configuration.Settings.VTubeStudio, cancellationToken)
+            .ConfigureAwait(true);
+    }
+
+    public async Task<bool> IsVTubeStudioAuthorizedAsync(CancellationToken cancellationToken = default)
+    {
+        var configuration = await configurationService.GetAsync(cancellationToken).ConfigureAwait(true);
+        var token = await credentialStore
+            .GetAsync(configuration.Settings.VTubeStudio.CredentialKey, cancellationToken)
+            .ConfigureAwait(true);
+        return !string.IsNullOrWhiteSpace(token);
+    }
+
     public Task<IReadOnlyList<AudioApplication>> GetAudioApplicationsAsync(CancellationToken cancellationToken = default) =>
         systemAudioControlService.GetApplicationsAsync(cancellationToken);
 
@@ -364,6 +385,26 @@ public sealed class MainViewModel : ObservableObject, IDisposable
             .TestAsync(host, port, password, cancellationToken)
             .ConfigureAwait(true);
         return AppStrings.Format("Obs_TestResult", catalog.Scenes.Count, catalog.Sources.Count);
+    }
+
+    public async Task<string> TestVTubeStudioConnectionAsync(
+        string host,
+        int port,
+        CancellationToken cancellationToken = default)
+    {
+        var configuration = await configurationService.GetAsync(cancellationToken).ConfigureAwait(true);
+        var settings = new VTubeStudioConnectionSettings(
+            host,
+            port,
+            configuration.Settings.VTubeStudio.CredentialKey);
+        var catalog = await vTubeStudioController
+            .GetCatalogAsync(settings, cancellationToken)
+            .ConfigureAwait(true);
+        return AppStrings.Format(
+            "VTubeStudio_TestResult",
+            catalog.CurrentModelName ?? AppStrings.Get("VTubeStudio_NoModel", "no model"),
+            catalog.Hotkeys.Count,
+            catalog.Models.Count);
     }
 
     private async Task RestoreCredentialAsync(string credentialKey, string? password)
@@ -570,6 +611,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         KeyboardMacroActionDefinition => AppStrings.Get("Action_KeyboardMacro", "Keyboard macro"),
         AutomationActionDefinition => AppStrings.Get("Action_Automation", "Automation"),
         ObsActionDefinition => "OBS",
+        VTubeStudioActionDefinition => "VTube Studio",
         _ => AppStrings.Get("Action_Execute", "Action"),
     };
 

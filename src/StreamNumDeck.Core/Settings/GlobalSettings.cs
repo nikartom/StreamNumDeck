@@ -40,6 +40,42 @@ public sealed record ObsConnectionSettings
     public static ObsConnectionSettings Default { get; } = new("127.0.0.1", 4455, "obs.default");
 }
 
+public sealed record VTubeStudioConnectionSettings
+{
+    public VTubeStudioConnectionSettings(string host, int port, string credentialKey)
+    {
+        if (string.IsNullOrWhiteSpace(host))
+        {
+            throw new ArgumentException("A VTube Studio host is required.", nameof(host));
+        }
+
+        if (port is < 1 or > 65535)
+        {
+            throw new ArgumentOutOfRangeException(nameof(port), "The VTube Studio port must be between 1 and 65535.");
+        }
+
+        if (string.IsNullOrWhiteSpace(credentialKey))
+        {
+            throw new ArgumentException("A secure credential key is required.", nameof(credentialKey));
+        }
+
+        Host = host.Trim();
+        Port = port;
+        CredentialKey = credentialKey.Trim();
+    }
+
+    public string Host { get; }
+
+    public int Port { get; }
+
+    public string CredentialKey { get; }
+
+    public static VTubeStudioConnectionSettings Default { get; } = new(
+        "127.0.0.1",
+        8001,
+        "vtube-studio.default");
+}
+
 public sealed record GlobalSettings
 {
     public GlobalSettings(
@@ -92,6 +128,8 @@ public sealed record GlobalSettings
     public AppTheme Theme { get; }
 
     public ObsConnectionSettings Obs { get; }
+
+    public VTubeStudioConnectionSettings VTubeStudio { get; init; } = VTubeStudioConnectionSettings.Default;
 
     public static GlobalSettings Default { get; } = new(
         null,

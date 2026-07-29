@@ -315,6 +315,12 @@
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Automation</value>
   </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Symbols</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Play alongside other sounds</value>
   </data>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS rejected the configured action. Check its scene, source, or input.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio is not connected. Start it and check the Plugin API settings.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio rejected the configured action. Check its hotkey or model.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows could not play this audio file. Check its format or codec: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>Source</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>active</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS connected</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Connected. Scenes: {0}, sources: {1}.</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Enable Allow Plugin API access in VTube Studio before connecting.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>After clicking the button, approve the StreamNumDeck request in the VTube Studio window.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Authorize and test</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Waiting for approval in VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Connect VTube Studio before assigning this action. Authorize the plugin below and save the settings.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Connected · {0} · {1} hotkeys · {2} models</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>no model</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Could not connect to VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Trigger hotkey</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Load model</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Settings saved</value>

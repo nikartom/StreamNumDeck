@@ -148,7 +148,7 @@
     <value>Yazarı destekleyin</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>StreamNumDeck işinize yarayacaksa geliştirilmesine destek olabilirsiniz.</value>
+    <value>StreamNumDeck'i faydalı buluyorsanız geliştirilmesine destek olabilirsiniz.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>DonationAlerts Desteği</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Otomasyon</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Semboller</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Eş zamanlı oyna</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS yapılandırılan eylemi reddetti. Sahnesini, kaynağını veya girişini kontrol edin.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio bağlı değil. Başlatın ve Eklenti API ayarlarını kontrol edin.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio yapılandırılmış eylemi reddetti. Kısayol tuşunu veya modelini kontrol edin.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows bu ses dosyasını oynatamadı. Biçimini veya codec bileşenini kontrol edin: {0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>Kaynak</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Kısayol tuşu</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Modeli</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>aktif</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS bağlandı</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Bağlı. Sahneler: {0}, kaynaklar: {1}.</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Sunucu</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Liman</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Bağlanmadan önce VTube Studio içinde Eklenti API erişimine izin ver seçeneğini etkinleştirin.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Butona tıkladıktan sonra VTube Studio penceresinde StreamNumDeck isteğini onaylayın.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Yetkilendirin ve test edin</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>VTube Studio'de onay bekleniyor…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Bu eylemi atamadan önce VTube Studio'e bağlanın. Aşağıdaki eklentiyi yetkilendirin ve ayarları kaydedin.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Bağlı · {0} · {1} kısayol tuşu · {2} model</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>model yok</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>VTube Studio'ye bağlanılamadı</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Tetikleyici kısayol tuşu</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Modeli yükle</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Ayarlar kaydedildi</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>StreamNumDeck'i açın</value>
+    <value>StreamNumDeck'yi açın</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>Klavye yakalama</value>
@@ -665,7 +722,7 @@ Profil işlemleri için sağ tıklayın</value>
     <value>Başlangıç, Windows ilkesi tarafından devre dışı bırakıldı.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows, StreamNumDeck başlatmayı etkinleştiremedi.</value>
+    <value>Windows başlangıçta StreamNumDeck'yi etkinleştiremedi.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Simge yok</value>

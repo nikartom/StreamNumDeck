@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using StreamNumDeck.Core.Configuration;
+using StreamNumDeck.Core.Settings;
 
 namespace StreamNumDeck.Infrastructure.Configuration;
 
@@ -158,12 +159,17 @@ public sealed class JsonConfigurationStore : IConfigurationStore, IDisposable
             .GetProperty("settings");
         var hasCaptureNumpad = settingsDocument.TryGetProperty("captureNumpad", out _);
         var hasCaptureNavigationBlock = settingsDocument.TryGetProperty("captureNavigationBlock", out _);
-        if (!hasCaptureNumpad || !hasCaptureNavigationBlock)
+        var hasVTubeStudio = settingsDocument.TryGetProperty("vTubeStudio", out _);
+        if (!hasCaptureNumpad ||
+            !hasCaptureNavigationBlock ||
+            !hasVTubeStudio ||
+            configuration.Settings.VTubeStudio is null)
         {
             configuration = configuration.WithSettings(configuration.Settings with
             {
                 CaptureNumpad = !hasCaptureNumpad || configuration.Settings.CaptureNumpad,
                 CaptureNavigationBlock = !hasCaptureNavigationBlock || configuration.Settings.CaptureNavigationBlock,
+                VTubeStudio = configuration.Settings.VTubeStudio ?? VTubeStudioConnectionSettings.Default,
             });
         }
 

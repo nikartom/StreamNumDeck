@@ -4,6 +4,7 @@ public enum IconKind
 {
     BuiltIn,
     CustomAsset,
+    Emoji,
 }
 
 public sealed record IconReference
@@ -40,4 +41,6 @@ public sealed record IconReference
     public static IconReference BuiltIn(string iconName) => new(IconKind.BuiltIn, iconName);
 
     public static IconReference CustomAsset(string relativePath) => new(IconKind.CustomAsset, relativePath);
+
+    public static IconReference Emoji(string emoji) => new(IconKind.Emoji, emoji);
 }

@@ -148,7 +148,7 @@
     <value>สนับสนุนผู้เขียน</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>หาก StreamNumDeck มีประโยชน์สำหรับคุณ คุณสามารถสนับสนุนการพัฒนาได้</value>
+    <value>If you find StreamNumDeck useful, you can support its development.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>การสนับสนุนการแจ้งเตือนการบริจาค</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>ระบบอัตโนมัติ</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>สัญลักษณ์</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>อิโมจิ</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>เล่นพร้อมกัน</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS ปฏิเสธการดำเนินการที่กำหนดค่าไว้ ตรวจสอบฉาก แหล่งที่มา หรืออินพุต</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio ไม่ได้เชื่อมต่อ เริ่มต้นและตรวจสอบการตั้งค่า Plugin API</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio rejected the configured action. ตรวจสอบปุ่มลัดหรือรุ่นของมัน</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows ไม่สามารถเล่นไฟล์เสียงนี้ได้ ตรวจสอบรูปแบบหรือตัวแปลงสัญญาณ: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>แหล่งที่มา</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>ปุ่มลัด</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>รุ่น</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>ใช้งานอยู่</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>เชื่อมต่อ OBS แล้ว</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>เชื่อมต่อแล้ว ฉาก: {0} แหล่งที่มา: {1}</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>โฮสต์</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>ท่าเรือ</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Enable Allow Plugin API access in VTube Studio before connecting.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>หลังจากคลิกปุ่ม ให้อนุมัติคำขอ StreamNumDeck ในหน้าต่าง VTube Studio</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>อนุญาตและทดสอบ</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>กำลังรอการอนุมัติใน VTube Studio...</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Connect VTube Studio before assigning this action. อนุญาตปลั๊กอินด้านล่างและบันทึกการตั้งค่า</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>เชื่อมต่อแล้ว · {0} · {1} ปุ่มลัด · {2} รุ่น</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>ไม่มีรุ่น</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>ไม่สามารถเชื่อมต่อกับ VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>เรียกใช้ปุ่มลัด</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>โหลดโมเดล</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>บันทึกการตั้งค่าแล้ว</value>
@@ -665,7 +722,7 @@
     <value>การเริ่มต้นถูกปิดใช้งานโดยนโยบาย Windows</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows ไม่สามารถเปิดใช้งานการเริ่มต้น StreamNumDeck ได้</value>
+    <value>Windows could not enable StreamNumDeck at startup.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>ไม่มีไอคอน</value>

@@ -90,7 +90,8 @@
                 </Grid>
             </Border>
 
-            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <ScrollViewer x:Name="SettingsScrollViewer" Grid.Row="1"
+                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <StackPanel Margin="20,16,20,20">
                     <Border x:Name="StatusBorder" Visibility="Collapsed"
                             Background="#243425" BorderBrush="#5B8F5D" BorderThickness="1"
@@ -293,6 +294,62 @@
                                         Height="32" Click="TestObs_Click" />
                                 <TextBlock x:Name="ObsTestResultText" Margin="12,0,0,0" VerticalAlignment="Center"
                                            Foreground="#9DDB9F" TextWrapping="Wrap" Visibility="Collapsed" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="VTubeStudioCard" Style="{StaticResource SettingsCardStyle}">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,15">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                                <Border Style="{StaticResource SettingsIconStyle}">
+                                    <TextBlock Text="&#xE714;" FontFamily="Segoe Fluent Icons" FontSize="18"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="VTube Studio" FontSize="15" FontWeight="SemiBold" />
+                                    <TextBlock Text="Plugin API · WebSocket" FontSize="11"
+                                               Foreground="{StaticResource SecondaryTextBrush}" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Border x:Name="VTubeStudioSetupNotice" Visibility="Collapsed"
+                                    Margin="0,0,0,12" Padding="10,8" CornerRadius="6"
+                                    Background="#332E22" BorderBrush="#866B2E" BorderThickness="1">
+                                <DockPanel>
+                                    <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE7BA;"
+                                               Foreground="#FFD166" Margin="0,0,8,0" />
+                                    <TextBlock Text="{localization:Loc VTubeStudio_SetupRequired, Fallback=Connect VTube Studio before assigning this action. Authorize the plugin below and save the settings.}"
+                                               Foreground="#FFE5A3" TextWrapping="Wrap" />
+                                </DockPanel>
+                            </Border>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="120" /></Grid.ColumnDefinitions>
+                                <StackPanel Margin="0,0,12,0">
+                                    <TextBlock Text="{localization:Loc Settings_VTubeStudioAddress.Header, Fallback=Host}"
+                                               Margin="0,0,0,6" />
+                                    <TextBox x:Name="VTubeStudioHostTextBox" Height="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="{localization:Loc Settings_VTubeStudioPort.Header, Fallback=Port}"
+                                               Margin="0,0,0,6" />
+                                    <TextBox x:Name="VTubeStudioPortTextBox" Height="34" />
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Text="{localization:Loc Settings_VTubeStudioHint.Text, Fallback=Enable Allow Plugin API access in VTube Studio before connecting.}"
+                                       Margin="0,9,0,0" FontSize="11"
+                                       Foreground="{StaticResource SecondaryTextBrush}" TextWrapping="Wrap" />
+                            <TextBlock Text="{localization:Loc Settings_VTubeStudioApprovalHint.Text, Fallback='After clicking the button, approve the StreamNumDeck request in the VTube Studio window.'}"
+                                       Margin="0,5,0,0" FontSize="11"
+                                       Foreground="#FFD166" TextWrapping="Wrap" />
+                            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                                <Button x:Name="TestVTubeStudioButton"
+                                        Content="{localization:Loc Settings_AuthorizeVTubeStudio.Content, Fallback=Authorize and test}"
+                                        Height="32" Click="TestVTubeStudio_Click" />
+                                <TextBlock x:Name="VTubeStudioTestResultText" Margin="12,0,0,0"
+                                           VerticalAlignment="Center" Foreground="#9DDB9F"
+                                           TextWrapping="Wrap" Visibility="Collapsed" />
                             </StackPanel>
                         </StackPanel>
                     </Border>

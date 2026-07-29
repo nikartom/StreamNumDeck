@@ -148,7 +148,7 @@
     <value>Підтримайте автора</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Якщо StreamNumDeck вам корисний, ви можете підтримати його розвиток.</value>
+    <value>Якщо ви вважаєте StreamNumDeck корисним, ви можете підтримати його розробку.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Підтримка на DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>автоматизація</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Символи</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Грати одночасно</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS відхилив налаштовану дію. Перевірте його сцену, джерело або вхід.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio не підключено. Запустіть його та перевірте налаштування Plugin API.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio відхилив налаштовану дію. Перевірте його гарячу клавішу або модель.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows не вдалося відтворити цей аудіофайл. Перевірте його формат або кодек: {0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>Джерело</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Гаряча клавіша</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>активний</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS підключено</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Підключено. Сцени: {0}, джерела: {1}.</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Хост</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Увімкніть дозвіл на доступ до API плагіна в VTube Studio перед підключенням.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Після натискання кнопки підтвердьте запит StreamNumDeck у вікні VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Авторизуйтесь і тестуйте</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Очікування на підтвердження в VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Підключіться до VTube Studio, перш ніж призначати цю дію. Авторизуйте плагін нижче та збережіть налаштування.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Підключено · {0} · {1} гарячих клавіш · {2} моделей</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>немає моделі</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Не вдалося підключитися до VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Активувати гарячу клавішу</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Завантажити модель</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Налаштування збережено</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>Відкрийте StreamNumDeck</value>
+    <value>Відкрити StreamNumDeck</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>Захоплення клавіатури</value>
@@ -665,7 +722,7 @@
     <value>Запуск вимкнено політикою Windows.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows не вдалося ввімкнути запуск StreamNumDeck.</value>
+    <value>Windows не вдалося ввімкнути StreamNumDeck під час запуску.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Немає значка</value>

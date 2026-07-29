@@ -148,7 +148,7 @@
     <value>Susține autorul</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Dacă StreamNumDeck vă este util, puteți sprijini dezvoltarea acestuia.</value>
+    <value>Dacă găsiți StreamNumDeck utilă, puteți sprijini dezvoltarea acestuia.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Sprijin pentru DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Automatizare</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Simboluri</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Joacă simultan</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS a respins acțiunea configurată. Verificați scena, sursa sau intrarea acesteia.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio nu este conectat. Porniți-l și verificați setările Plugin API.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio a respins acțiunea configurată. Verificați tasta rapidă sau modelul acesteia.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows nu a putut reda acest fișier audio. Verificați formatul sau codecul acestuia: {0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>Sursa</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Tasta rapidă</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>activ</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS conectat</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Conectat. Scene: {0}, surse: {1}.</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Gazdă</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Activați Allow Plugin API access în VTube Studio înainte de a vă conecta.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>După ce faceți clic pe butonul, aprobați cererea StreamNumDeck în fereastra VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Autorizați și testați</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Se așteaptă aprobarea în VTube Studio...</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Conectați VTube Studio înainte de a atribui această acțiune. Autorizați pluginul de mai jos și salvați setările.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Conectat · {0} · {1} taste rapide · {2} modele</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>nici un model</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Nu s-a putut conecta la VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Declanșați tasta rapidă</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Încărcați modelul</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Setările au fost salvate</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>Deschideți StreamNumDeck</value>
+    <value>Deschide StreamNumDeck</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>Captură de la tastatură</value>
@@ -665,7 +722,7 @@ Clic dreapta pentru acțiunile profilului</value>
     <value>Pornirea este dezactivată de politica Windows.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows nu a putut activa pornirea StreamNumDeck.</value>
+    <value>Windows nu a putut activa StreamNumDeck la pornire.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Fără pictogramă</value>

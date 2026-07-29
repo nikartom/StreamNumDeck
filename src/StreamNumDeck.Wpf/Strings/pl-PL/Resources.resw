@@ -148,7 +148,7 @@
     <value>Wspieraj autora</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Jeśli StreamNumDeck jest dla Ciebie przydatny, możesz wesprzeć jego rozwój.</value>
+    <value>Jeśli uznasz StreamNumDeck za przydatny, możesz wesprzeć jego rozwój.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Wsparcie w zakresie powiadomień o darowiznach</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Automatyzacja</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Symbole</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Graj jednocześnie</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS odrzucił skonfigurowaną akcję. Sprawdź scenę, źródło lub wejście.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio nie jest podłączony. Uruchom go i sprawdź ustawienia API wtyczki.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio odrzucił skonfigurowaną akcję. Sprawdź jego skrót lub model.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>System Windows nie mógł odtworzyć tego pliku audio. Sprawdź jego format lub kodek: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>Źródło</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Klawisz skrótu</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Modelka</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>aktywny</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>Podłączony OBS</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Połączono. Sceny: {0}, źródła: {1}.</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Gospodarz</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Portu</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Włącz opcję Zezwalaj na dostęp do interfejsu API wtyczek w VTube Studio przed połączeniem.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Po kliknięciu przycisku zatwierdź żądanie StreamNumDeck w oknie VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Autoryzuj i testuj</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Oczekiwanie na zatwierdzenie w VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Połącz VTube Studio przed przypisaniem tej akcji. Autoryzuj wtyczkę poniżej i zapisz ustawienia.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Połączono · {0} · {1} klawisze skrótu · {2} modele</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>żadnego modelu</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Nie można połączyć się z VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Skrót wyzwalający</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Załaduj model</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Ustawienia zostały zapisane</value>
@@ -665,7 +722,7 @@ Kliknij prawym przyciskiem myszy, aby wyświetlić czynności w profilu</value>
     <value>Uruchamianie jest wyłączone przez zasady systemu Windows.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>System Windows nie mógł włączyć uruchamiania StreamNumDeck.</value>
+    <value>System Windows nie mógł włączyć StreamNumDeck podczas uruchamiania.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Brak ikony</value>

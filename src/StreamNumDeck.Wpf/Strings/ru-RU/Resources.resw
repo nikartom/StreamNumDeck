@@ -310,10 +310,16 @@
     <value>Звук</value>
   </data>
   <data name="ActionGroup_System" xml:space="preserve">
-    <value>Система и команды</value>
+    <value>Системные</value>
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Автоматизация</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Символы</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Эмодзи</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Воспроизводить одновременно</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS отклонил настроенное действие. Проверьте выбранную сцену, источник или аудиовход.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio не подключена. Запустите её и проверьте настройки Plugin API.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio отклонила настроенное действие. Проверьте хоткей или модель.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows не удалось воспроизвести аудиофайл. Проверьте его формат или кодек: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>Источник</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Хоткей</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>активна</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS подключён</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Подключено. Сцен: {0}, источников: {1}.</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Перед подключением включите Allow Plugin API access в VTube Studio.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>После нажатия кнопки подтвердите запрос StreamNumDeck в окне VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Авторизовать и проверить</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Ожидание подтверждения в VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Перед назначением действия подключите VTube Studio. Авторизуйте плагин ниже и сохраните настройки.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Подключено · {0} · хоткеев: {1} · моделей: {2}</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>модель не загружена</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Не удалось подключиться к VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Запустить хоткей</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Загрузить модель</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Настройки сохранены</value>

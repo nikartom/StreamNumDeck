@@ -109,6 +109,8 @@ $strings = [ordered]@{
     ActionGroup_Sound = 'Sound'
     ActionGroup_System = 'System and commands'
     ActionGroup_Automation = 'Automation'
+    Editor_IconKindSymbols = 'Symbols'
+    Editor_IconKindEmoji = 'Emoji'
     SoundBehavior_Alongside = 'Play alongside other sounds'
     SoundBehavior_Restart = 'Restart if already playing'
     SoundBehavior_StopOthers = 'Stop all other sounds'
@@ -169,6 +171,8 @@ $strings = [ordered]@{
     ActionError_AudioSessionUnavailable = '{0} has no active Windows audio session. Start audio playback in the application and try again.'
     ActionError_ObsUnavailable = 'OBS is not connected. Start OBS and check the WebSocket settings.'
     ActionError_ObsActionRejected = 'OBS rejected the configured action. Check its scene, source, or input.'
+    ActionError_VTubeStudioUnavailable = 'VTube Studio is not connected. Start it and check the Plugin API settings.'
+    ActionError_VTubeStudioActionRejected = 'VTube Studio rejected the configured action. Check its hotkey or model.'
     ActionError_AudioFileUnsupported = 'Windows could not play this audio file. Check its format or codec: {0}'
     ActionError_MacroEmpty = 'Enter at least one keyboard shortcut.'
     ActionError_MacroInvalidLine = 'Line {0} has an invalid format. Use a shortcut such as Ctrl+Shift+S or a delay such as wait 250.'
@@ -177,6 +181,9 @@ $strings = [ordered]@{
     Field_ProgramFileFolder = 'Program, file, or folder'
     Field_Scene = 'Scene'
     Field_Source = 'Source'
+    Field_Hotkey = 'Hotkey'
+    Field_Model = 'Model'
+    Common_Active = 'active'
     Obs_Connected = 'OBS connected'
     Obs_Connecting = 'Connecting to OBS…'
     Obs_Reconnecting = 'Reconnecting to OBS…'
@@ -185,6 +192,18 @@ $strings = [ordered]@{
     Obs_Error = 'OBS: {0}'
     Obs_Disconnected = 'OBS disconnected'
     Obs_TestResult = 'Connected. Scenes: {0}, sources: {1}.'
+    'Settings_VTubeStudioAddress.Header' = 'Host'
+    'Settings_VTubeStudioPort.Header' = 'Port'
+    'Settings_VTubeStudioHint.Text' = 'Enable Allow Plugin API access in VTube Studio before connecting.'
+    'Settings_VTubeStudioApprovalHint.Text' = 'After clicking the button, approve the StreamNumDeck request in the VTube Studio window.'
+    'Settings_AuthorizeVTubeStudio.Content' = 'Authorize and test'
+    VTubeStudio_WaitingForApproval = 'Waiting for approval in VTube Studio…'
+    VTubeStudio_SetupRequired = 'Connect VTube Studio before assigning this action. Authorize the plugin below and save the settings.'
+    VTubeStudio_TestResult = 'Connected · {0} · {1} hotkeys · {2} models'
+    VTubeStudio_NoModel = 'no model'
+    VTubeStudio_ConnectionFailed = 'Could not connect to VTube Studio'
+    Action_VTubeStudioHotkey = 'Trigger hotkey'
+    Action_VTubeStudioLoadModel = 'Load model'
     Settings_Saved = 'Settings saved'
     Tray_Open = 'Open StreamNumDeck'
     Tray_Capture = 'Key capture'
@@ -331,8 +350,10 @@ $russianStrings = [ordered]@{
     FileFilter_AllFiles = 'Все файлы'
     ActionGroup_None = 'Без действия'
     ActionGroup_Sound = 'Звук'
-    ActionGroup_System = 'Система и команды'
+    ActionGroup_System = 'Системные'
     ActionGroup_Automation = 'Автоматизация'
+    Editor_IconKindSymbols = 'Символы'
+    Editor_IconKindEmoji = 'Эмодзи'
     SoundBehavior_Alongside = 'Воспроизводить одновременно'
     SoundBehavior_Restart = 'Перезапускать этот звук'
     SoundBehavior_StopOthers = 'Останавливать другие звуки'
@@ -393,6 +414,8 @@ $russianStrings = [ordered]@{
     ActionError_AudioSessionUnavailable = 'У приложения {0} нет активной аудиосессии Windows. Запустите в нём воспроизведение звука и повторите попытку.'
     ActionError_ObsUnavailable = 'OBS не подключён. Запустите OBS и проверьте настройки WebSocket.'
     ActionError_ObsActionRejected = 'OBS отклонил настроенное действие. Проверьте выбранную сцену, источник или аудиовход.'
+    ActionError_VTubeStudioUnavailable = 'VTube Studio не подключена. Запустите её и проверьте настройки Plugin API.'
+    ActionError_VTubeStudioActionRejected = 'VTube Studio отклонила настроенное действие. Проверьте хоткей или модель.'
     ActionError_AudioFileUnsupported = 'Windows не удалось воспроизвести аудиофайл. Проверьте его формат или кодек: {0}'
     ActionError_MacroEmpty = 'Введите хотя бы одно сочетание клавиш.'
     ActionError_MacroInvalidLine = 'Строка {0} имеет неверный формат. Используйте сочетание вроде Ctrl+Shift+S или задержку вида wait 250.'
@@ -401,6 +424,9 @@ $russianStrings = [ordered]@{
     Field_ProgramFileFolder = 'Программа, файл или папка'
     Field_Scene = 'Сцена'
     Field_Source = 'Источник'
+    Field_Hotkey = 'Хоткей'
+    Field_Model = 'Модель'
+    Common_Active = 'активна'
     Obs_Connected = 'OBS подключён'
     Obs_Connecting = 'Подключение к OBS…'
     Obs_Reconnecting = 'Повторное подключение к OBS…'
@@ -409,6 +435,18 @@ $russianStrings = [ordered]@{
     Obs_Error = 'OBS: {0}'
     Obs_Disconnected = 'OBS отключён'
     Obs_TestResult = 'Подключено. Сцен: {0}, источников: {1}.'
+    'Settings_VTubeStudioAddress.Header' = 'Адрес'
+    'Settings_VTubeStudioPort.Header' = 'Порт'
+    'Settings_VTubeStudioHint.Text' = 'Перед подключением включите Allow Plugin API access в VTube Studio.'
+    'Settings_VTubeStudioApprovalHint.Text' = 'После нажатия кнопки подтвердите запрос StreamNumDeck в окне VTube Studio.'
+    'Settings_AuthorizeVTubeStudio.Content' = 'Авторизовать и проверить'
+    VTubeStudio_WaitingForApproval = 'Ожидание подтверждения в VTube Studio…'
+    VTubeStudio_SetupRequired = 'Перед назначением действия подключите VTube Studio. Авторизуйте плагин ниже и сохраните настройки.'
+    VTubeStudio_TestResult = 'Подключено · {0} · хоткеев: {1} · моделей: {2}'
+    VTubeStudio_NoModel = 'модель не загружена'
+    VTubeStudio_ConnectionFailed = 'Не удалось подключиться к VTube Studio'
+    Action_VTubeStudioHotkey = 'Запустить хоткей'
+    Action_VTubeStudioLoadModel = 'Загрузить модель'
     Settings_Saved = 'Настройки сохранены'
     Tray_Open = 'Открыть StreamNumDeck'
     Tray_Capture = 'Перехват клавиатуры'
@@ -559,7 +597,11 @@ function Write-Resw([string] $path, [System.Collections.IDictionary] $values) {
 
 function Translate-Batch([string[]] $texts, [string] $targetLanguage) {
     $separator = "`n<<<SND_RESOURCE_SEPARATOR>>>`n"
-    $source = $texts -join $separator
+    $protectedTexts = @($texts | ForEach-Object {
+        $protectedText = $_.Replace('StreamNumDeck', 'ZXQ0QXZ')
+        $protectedText.Replace('VTube Studio', 'ZXQ1QXZ')
+    })
+    $source = $protectedTexts -join $separator
     $uri = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=' +
         [uri]::EscapeDataString($targetLanguage) + '&dt=t&q=' + [uri]::EscapeDataString($source)
     $response = Invoke-RestMethod -Uri $uri -Method Get -TimeoutSec 45
@@ -568,7 +610,10 @@ function Translate-Batch([string[]] $texts, [string] $targetLanguage) {
     if ($parts.Count -ne $texts.Count) {
         throw "Translation service returned $($parts.Count) items instead of $($texts.Count) for $targetLanguage."
     }
-    return $parts
+    return @($parts | ForEach-Object {
+        $restoredText = $_.Replace('ZXQ0QXZ', 'StreamNumDeck')
+        $restoredText.Replace('ZXQ1QXZ', 'VTube Studio')
+    })
 }
 
 New-Item -ItemType Directory -Force -Path $stringsRoot | Out-Null

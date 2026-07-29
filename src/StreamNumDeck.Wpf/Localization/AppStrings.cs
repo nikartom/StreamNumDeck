@@ -6,16 +6,9 @@ namespace StreamNumDeck.Wpf.Localization;
 
 public static class AppStrings
 {
-    private static readonly string[] SupportedCultures =
-    {
-        "ar-SA", "cs-CZ", "de-DE", "en-US", "es-ES", "fr-FR", "hi-IN", "id-ID",
-        "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl-PL", "pt-BR", "ro-RO", "ru-RU",
-        "sv-SE", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-CN",
-    };
-
     private static readonly Lazy<IReadOnlyDictionary<string, string>> Strings = new(LoadStrings);
 
-    public static string CultureName { get; } = ResolveCultureName(CultureInfo.CurrentUICulture);
+    public static string CultureName { get; } = ApplicationCulture.ResolveCultureName(CultureInfo.CurrentUICulture);
 
     public static string Get(string key, string? fallback = null) =>
         Strings.Value.TryGetValue(key, out var value) && !string.IsNullOrEmpty(value)
@@ -53,19 +46,5 @@ public static class AppStrings
                        element => element.Element("value")?.Value ?? string.Empty,
                        StringComparer.Ordinal)
                ?? new Dictionary<string, string>(StringComparer.Ordinal);
-    }
-
-    private static string ResolveCultureName(CultureInfo culture)
-    {
-        var exact = SupportedCultures.FirstOrDefault(candidate =>
-            candidate.Equals(culture.Name, StringComparison.OrdinalIgnoreCase));
-        if (exact is not null)
-        {
-            return exact;
-        }
-
-        return SupportedCultures.FirstOrDefault(candidate =>
-                   candidate.StartsWith(culture.TwoLetterISOLanguageName + "-", StringComparison.OrdinalIgnoreCase))
-               ?? "en-US";
     }
 }

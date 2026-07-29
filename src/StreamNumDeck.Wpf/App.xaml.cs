@@ -8,6 +8,7 @@ using StreamNumDeck.Core.Icons;
 using StreamNumDeck.Core.Input;
 using StreamNumDeck.Core.Obs;
 using StreamNumDeck.Core.Security;
+using StreamNumDeck.Core.VTubeStudio;
 using StreamNumDeck.Infrastructure.Audio;
 using StreamNumDeck.Infrastructure.Configuration;
 using StreamNumDeck.Infrastructure.Execution;
@@ -15,6 +16,7 @@ using StreamNumDeck.Infrastructure.Icons;
 using StreamNumDeck.Infrastructure.Input;
 using StreamNumDeck.Infrastructure.Obs;
 using StreamNumDeck.Infrastructure.Security;
+using StreamNumDeck.Infrastructure.VTubeStudio;
 using StreamNumDeck.Wpf.Services;
 using StreamNumDeck.Wpf.ViewModels;
 using StreamNumDeck.Wpf.Overlays;
@@ -29,6 +31,7 @@ public partial class App : System.Windows.Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
+        ApplicationCulture.ApplyCommandLineOverride(e.Args);
         base.OnStartup(e);
 
         DispatcherUnhandledException += (_, args) =>
@@ -85,6 +88,8 @@ public partial class App : System.Windows.Application
         collection.AddSingleton<IObsController, ObsWebSocketController>();
         collection.AddSingleton<IObsConnectionTester, ObsConnectionTester>();
         collection.AddSingleton<IActionExecutor, ObsActionExecutor>();
+        collection.AddSingleton<IVTubeStudioController, VTubeStudioWebSocketController>();
+        collection.AddSingleton<IActionExecutor, VTubeStudioActionExecutor>();
         collection.AddSingleton<ActionDispatcher>();
         collection.AddSingleton<DeckRuntimeService>();
         collection.AddSingleton<OverlayPositionStore>();

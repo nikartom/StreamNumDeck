@@ -148,7 +148,7 @@
     <value>Sostieni l'autore</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Se StreamNumDeck ti è utile, puoi supportarne lo sviluppo.</value>
+    <value>Se ritieni utile StreamNumDeck, puoi supportarne lo sviluppo.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Supporto su DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Automazione</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Simboli</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Gioca contemporaneamente</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS ha rifiutato l'azione configurata. Controlla la scena, la sorgente o l'input.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio non è connesso. Avvialo e controlla le impostazioni dell'API del plugin.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio ha rifiutato l'azione configurata. Controlla il tasto di scelta rapida o il modello.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows non è riuscito a riprodurre questo file audio. Controlla il formato o il codec: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>Fonte</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Tasto di scelta rapida</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Modello</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>attivo</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS connesso</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Connesso. Scene: {0}, fonti: {1}.</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Ospite</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Porto</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Abilita Consenti accesso API plugin in VTube Studio prima della connessione.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Dopo aver fatto clic sul pulsante, approva la richiesta StreamNumDeck nella finestra VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Autorizza e prova</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>In attesa di approvazione in VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Connetti VTube Studio prima di assegnare questa azione. Autorizza il plugin qui sotto e salva le impostazioni.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Connesso · {0} · {1} tasti di scelta rapida · {2} modelli</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>nessun modello</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Impossibile connettersi a VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Attiva il tasto di scelta rapida</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Carica modello</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Impostazioni salvate</value>
@@ -665,7 +722,7 @@ Fare clic con il pulsante destro del mouse per le azioni del profilo</value>
     <value>L'avvio è disabilitato dai criteri di Windows.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows non è riuscito ad abilitare l'avvio di StreamNumDeck.</value>
+    <value>Impossibile abilitare StreamNumDeck all'avvio di Windows.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Nessuna icona</value>

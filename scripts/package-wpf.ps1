@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [ValidatePattern('^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$')]
-    [string] $Version = '1.2.5',
+    [string] $Version = '1.3.0',
 
     [switch] $SkipInstaller
 )
@@ -12,6 +12,7 @@ Set-StrictMode -Version Latest
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
 $project = Join-Path $repositoryRoot 'src\StreamNumDeck.Wpf\StreamNumDeck.Wpf.csproj'
 $license = Join-Path $repositoryRoot 'LICENSE.md'
+$thirdPartyNotices = Join-Path $repositoryRoot 'THIRD-PARTY-NOTICES.md'
 $artifactsRoot = Join-Path $repositoryRoot 'artifacts'
 $releaseRoot = Join-Path $artifactsRoot 'release'
 $stagingRoot = Join-Path $artifactsRoot ".package-wpf-$PID"
@@ -86,6 +87,7 @@ try {
         Where-Object Extension -In '.pdb', '.xml' |
         Remove-Item -Force
     Copy-Item -LiteralPath $license -Destination (Join-Path $portableRoot 'LICENSE.md')
+    Copy-Item -LiteralPath $thirdPartyNotices -Destination (Join-Path $portableRoot 'THIRD-PARTY-NOTICES.md')
 
     $applicationPath = Join-Path $portableRoot 'StreamNumDeck.exe'
     if (-not (Test-Path -LiteralPath $applicationPath)) {

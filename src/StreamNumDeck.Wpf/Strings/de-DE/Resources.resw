@@ -148,7 +148,7 @@
     <value>Unterstützen Sie den Autor</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Wenn StreamNumDeck für Sie nützlich ist, können Sie seine Entwicklung unterstützen.</value>
+    <value>Wenn Sie StreamNumDeck nützlich finden, können Sie seine Entwicklung unterstützen.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Unterstützung bei DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Automatisierung</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Symbole</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Play simultaneously</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS hat die konfigurierte Aktion abgelehnt. Überprüfen Sie die Szene, Quelle oder Eingabe.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio ist nicht verbunden. Starten Sie es und überprüfen Sie die Plugin-API-Einstellungen.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio hat die konfigurierte Aktion abgelehnt. Überprüfen Sie den Hotkey oder das Modell.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows konnte diese Audiodatei nicht abspielen. Überprüfen Sie das Format oder den Codec: {0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>Quelle</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Modell</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>aktiv</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS verbunden</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Verbunden. Szenen: {0}, Quellen: {1}.</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Gastgeber</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Hafen</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Aktivieren Sie „Plugin-API-Zugriff zulassen“ in VTube Studio, bevor Sie eine Verbindung herstellen.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Nachdem Sie auf die Schaltfläche geklickt haben, genehmigen Sie die StreamNumDeck-Anfrage im Fenster VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Autorisieren und testen</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Warten auf Genehmigung in VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Verbinden Sie VTube Studio, bevor Sie diese Aktion zuweisen. Autorisieren Sie das Plugin unten und speichern Sie die Einstellungen.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Verbunden · {0} · {1} Hotkeys · {2} Modelle</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>kein Modell</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Es konnte keine Verbindung zu VTube Studio hergestellt werden.</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Hotkey auslösen</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Modell laden</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Einstellungen gespeichert</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>Öffnen Sie StreamNumDeck</value>
+    <value>StreamNumDeck öffnen</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>Tastaturerfassung</value>
@@ -665,7 +722,7 @@ Rechtsklick für Profilaktionen</value>
     <value>Der Start ist durch die Windows-Richtlinie deaktiviert.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows konnte den StreamNumDeck-Start nicht aktivieren.</value>
+    <value>Windows konnte StreamNumDeck beim Start nicht aktivieren.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Kein Symbol</value>

@@ -13,7 +13,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
   </resheader>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>ストリーム番号デッキ</value>
+    <value>StreamNumDeck</value>
   </data>
   <data name="AppDescription" xml:space="preserve">
     <value>ストリーマーとゲーマー向けのコントロール デッキ</value>
@@ -148,7 +148,7 @@
     <value>作者をサポートする</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>StreamNumDeck が役立つ場合は、その開発をサポートできます。</value>
+    <value>StreamNumDeck が役立つと思われる場合は、その開発をサポートできます。</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>DonationAlert のサポート</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>自動化</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>記号</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>絵文字</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>同時にプレイする</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS は構成されたアクションを拒否しました。シーン、ソース、または入力を確認してください。</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio は接続されていません。起動してプラグインAPIの設定を確認してください。</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio は構成されたアクションを拒否しました。ホットキーまたはモデルを確認してください。</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows はこのオーディオ ファイルを再生できませんでした。形式またはコーデックを確認してください: {0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>ソース</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>ホットキー</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>モデル</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>アクティブな</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS接続済み</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>接続されました。シーン: {0}、ソース: {1}。</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>ホスト</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>港</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>接続する前に、VTube Studio で [プラグイン API アクセスを許可する] を有効にします。</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>ボタンをクリックした後、VTube Studio ウィンドウで StreamNumDeck リクエストを承認します。</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>承認とテスト</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>VTube Studio で承認を待っています…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>このアクションを割り当てる前に、VTube Studio を接続してください。以下のプラグインを認証し、設定を保存します。</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>接続済み · {0} · {1} ホットキー · {2} モデル</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>モデルなし</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>VTube Studio に接続できませんでした</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>ホットキーをトリガーする</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>モデルをロードする</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>設定が保存されました</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>StreamNumDeckを開く</value>
+    <value>StreamNumDeck を開く</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>キーボードキャプチャ</value>
@@ -665,7 +722,7 @@
     <value>Windows ポリシーによりスタートアップが無効になっています。</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows は StreamNumDeck の起動を有効にできませんでした。</value>
+    <value>Windows は起動時に StreamNumDeck を有効にできませんでした。</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>アイコンなし</value>

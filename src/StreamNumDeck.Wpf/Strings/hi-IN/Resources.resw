@@ -13,7 +13,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
   </resheader>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>स्ट्रीमनमडेक</value>
+    <value>StreamNumDeck</value>
   </data>
   <data name="AppDescription" xml:space="preserve">
     <value>स्ट्रीमर्स और गेमर्स के लिए नियंत्रण डेक</value>
@@ -148,7 +148,7 @@
     <value>लेखक का समर्थन करें</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>यदि स्ट्रीमनमडेक आपके लिए उपयोगी है, तो आप इसके विकास का समर्थन कर सकते हैं।</value>
+    <value>यदि आपको StreamNumDeck उपयोगी लगता है, तो आप इसके विकास का समर्थन कर सकते हैं।</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>DonationAlerts पर सहायता</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>स्वचालन</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>प्रतीक</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>इमोजी</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>एक साथ खेलें</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS ने कॉन्फ़िगर की गई कार्रवाई को अस्वीकार कर दिया. इसके दृश्य, स्रोत या इनपुट की जाँच करें।</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio कनेक्ट नहीं है. इसे प्रारंभ करें और प्लगइन एपीआई सेटिंग्स जांचें।</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio ने कॉन्फ़िगर की गई कार्रवाई को अस्वीकार कर दिया। इसकी हॉटकी या मॉडल जांचें।</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>विंडोज़ इस ऑडियो फ़ाइल को नहीं चला सका। इसका प्रारूप या कोडेक जांचें: {0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>स्रोत</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>हॉटकी</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>मॉडल</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>सक्रिय</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>ओबीएस जुड़ा</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>जुड़ा हुआ. दृश्य: {0}, स्रोत: {1}.</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>मेज़बान</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>बंदरगाह</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>कनेक्ट करने से पहले VTube Studio में प्लगइन एपीआई एक्सेस की अनुमति दें सक्षम करें।</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>बटन पर क्लिक करने के बाद, VTube Studio विंडो में StreamNumDeck अनुरोध को स्वीकृत करें।</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>अधिकृत करें और परीक्षण करें</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>VTube Studio में अनुमोदन की प्रतीक्षा की जा रही है…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>यह क्रिया निर्दिष्ट करने से पहले VTube Studio कनेक्ट करें। नीचे प्लगइन को अधिकृत करें और सेटिंग्स सहेजें।</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>कनेक्टेड · {0} · {1} हॉटकीज़ · {2} मॉडल</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>कोई मॉडल नहीं</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>VTube Studio से कनेक्ट नहीं हो सका</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>ट्रिगर हॉटकी</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>मॉडल लोड करें</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>सेटिंग्स सहेजी गईं</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>स्ट्रीमनमडेक खोलें</value>
+    <value>StreamNumDeck खोलें</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>कीबोर्ड कैप्चर</value>
@@ -664,7 +721,7 @@
     <value>विंडोज़ नीति द्वारा स्टार्टअप अक्षम है।</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>विंडोज़ स्ट्रीमनमडेक स्टार्टअप को सक्षम नहीं कर सका।</value>
+    <value>विंडोज़ स्टार्टअप पर StreamNumDeck को सक्षम नहीं कर सका।</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>कोई आइकन नहीं</value>

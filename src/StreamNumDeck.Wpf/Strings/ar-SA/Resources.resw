@@ -148,7 +148,7 @@
     <value>دعم المؤلف</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>إذا كان StreamNumDeck مفيدًا لك، فيمكنك دعم تطويره.</value>
+    <value>إذا وجدت StreamNumDeck مفيدًا، فيمكنك دعم تطويره.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>الدعم على تنبيهات التبرع</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>الأتمتة</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>الرموز</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>الرموز التعبيرية</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>العب في وقت واحد</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>رفض OBS الإجراء الذي تم تكوينه. تحقق من المشهد أو المصدر أو الإدخال.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio غير متصل. ابدأ تشغيله وتحقق من إعدادات Plugin API.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio رفض الإجراء الذي تم تكوينه. تحقق من مفتاح التشغيل السريع أو الطراز الخاص به.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>تعذر على Windows تشغيل هذا الملف الصوتي. تحقق من التنسيق أو برنامج الترميز الخاص به: {0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>المصدر</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>مفتاح الاختصار</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>نموذج</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>نشط</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>متصل بنظام OBS</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>متصل. المشاهد: {0}، المصادر: {1}.</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>المضيف</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>ميناء</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>قم بتمكين السماح بالوصول إلى Plugin API في VTube Studio قبل الاتصال.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>بعد النقر على الزر، قم بالموافقة على طلب StreamNumDeck في نافذة VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>التفويض والاختبار</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>في انتظار الموافقة في VTube Studio...</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>قم بتوصيل VTube Studio قبل تعيين هذا الإجراء. قم بتفويض البرنامج المساعد أدناه وحفظ الإعدادات.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>متصل · {0} · {1} مفاتيح التشغيل السريع · {2} نماذج</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>لا يوجد نموذج</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>تعذر الاتصال بـ VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>تشغيل مفتاح التشغيل السريع</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>نموذج التحميل</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>تم حفظ الإعدادات</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>افتح ستريمنومديك</value>
+    <value>افتح StreamNumDeck</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>التقاط لوحة المفاتيح</value>
@@ -664,7 +721,7 @@
     <value>تم تعطيل بدء التشغيل بواسطة سياسة Windows.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>تعذر على Windows تمكين بدء تشغيل StreamNumDeck.</value>
+    <value>تعذر على Windows تمكين StreamNumDeck عند بدء التشغيل.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>لا يوجد رمز</value>

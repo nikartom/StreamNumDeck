@@ -148,7 +148,7 @@
     <value>支持作者</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>如果StreamNumDeck对您有用，您可以支持它的开发。</value>
+    <value>如果您发现 StreamNumDeck 有用，您可以支持它的开发。</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>支持 DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>自动化</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>符号</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>表情符号</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>同时播放</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS 拒绝了配置的操作。检查其场景、来源或输入。</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio 未连接。启动它并检查插件 API 设置。</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio 拒绝了配置的操作。检查其热键或型号。</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows 无法播放该音频文件。检查其格式或编解码器：{0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>来源</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>热键</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>型号</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>活跃的</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>已连接OBS</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>已连接。场景：{0}，来源：{1}。</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>主持人</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>港口</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>连接前启用允许在 VTube Studio 中访问插件 API。</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>单击按钮后，在 VTube Studio 窗口中批准 StreamNumDeck 请求。</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>授权并测试</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>等待 VTube Studio 批准...</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>在分配此操作之前连接 VTube Studio。授权下面的插件并保存设置。</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>已连接 · {0} · {1} 热键 · {2} 型号</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>没有型号</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>无法连接到 VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>触发热键</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>负载模型</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>设置已保存</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>打开 StreamNumDeck</value>
+    <value>打开StreamNumDeck</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>键盘捕获</value>
@@ -665,7 +722,7 @@
     <value>Windows 策略禁用启动。</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows 无法启用 StreamNumDeck 启动。</value>
+    <value>Windows 无法在启动时启用 StreamNumDeck。</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>无图标</value>

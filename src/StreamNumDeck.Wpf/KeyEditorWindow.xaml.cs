@@ -12,6 +12,7 @@ using StreamNumDeck.Wpf.Localization;
 using StreamNumDeck.Wpf.Presentation;
 using StreamNumDeck.Core.Audio;
 using StreamNumDeck.Core.Obs;
+using StreamNumDeck.Core.VTubeStudio;
 using StreamNumDeck.Wpf.Services;
 
 namespace StreamNumDeck.Wpf;
@@ -23,6 +24,7 @@ public partial class KeyEditorWindow : Window
         new ActionGroupOption("none", AppStrings.Get("ActionGroup_None", "None"), "\uE710"),
         new ActionGroupOption("sound", AppStrings.Get("ActionGroup_Sound", "Sound"), "\uE767"),
         new ActionGroupOption("obs", "OBS Studio", "\uE95A"),
+        new ActionGroupOption("vtube-studio", "VTube Studio", "\uE714"),
         new ActionGroupOption("system", AppStrings.Get("ActionGroup_System", "System"), "\uE756"),
         new ActionGroupOption("automation", AppStrings.Get("ActionGroup_Automation", "Automation"), "\uE945"),
     };
@@ -66,12 +68,17 @@ public partial class KeyEditorWindow : Window
         new ActionOption("obs-media-toggle", AppStrings.Get("Action_ObsToggleMedia", "Media: play/pause"), AppStrings.Get("Field_Source", "Source"), false, false),
         new ActionOption("obs-media-stop", AppStrings.Get("Action_ObsStopMedia", "OBS: stop media source"), AppStrings.Get("Field_Source", "Source"), false, false),
         new ActionOption("obs-media-restart", AppStrings.Get("Action_ObsRestartMedia", "OBS: restart media source"), AppStrings.Get("Field_Source", "Source"), false, false),
+        new ActionOption("vts-hotkey", AppStrings.Get("Action_VTubeStudioHotkey", "VTube Studio: trigger hotkey"), AppStrings.Get("Field_Hotkey", "Hotkey"), false, false),
+        new ActionOption("vts-model", AppStrings.Get("Action_VTubeStudioLoadModel", "VTube Studio: load model"), AppStrings.Get("Field_Model", "Model"), false, false),
         new ActionOption("automation", AppStrings.Get("Action_Automation", "Automation"), null, false, false),
     };
 
     private readonly Func<string, CancellationToken, Task<IconReference>> importIcon;
     private readonly Func<IconReference, string?> resolveIconPath;
     private readonly Func<CancellationToken, Task<ObsCatalog>> getObsCatalog;
+    private readonly Func<CancellationToken, Task<VTubeStudioCatalog>> getVTubeStudioCatalog;
+    private readonly Func<CancellationToken, Task<bool>> isVTubeStudioAuthorized;
+    private readonly Func<Window, bool> openVTubeStudioSettings;
     private readonly Func<CancellationToken, Task<IReadOnlyList<AudioApplication>>> getAudioApplications;
     private readonly KeyAssignment otherLayerAssignment;
     private readonly Func<string, int, SoundPlaybackBehavior, CancellationToken, Task> previewSound;
@@ -80,7 +87,10 @@ public partial class KeyEditorWindow : Window
     private readonly bool actionOnlyMode;
     private CancellationTokenSource? parameterSuggestionsCancellation;
     private int parameterSuggestionsRequestVersion;
+    private bool actionGroupSelectionReady;
+    private bool checkingVTubeStudioSetup;
     private IconReference selectedIcon = IconReference.BuiltIn("plus");
+    private bool iconPickerInitialized;
 
     public KeyEditorWindow(
         DeckKey key,
@@ -89,6 +99,9 @@ public partial class KeyEditorWindow : Window
         Func<string, CancellationToken, Task<IconReference>> importIcon,
         Func<IconReference, string?> resolveIconPath,
         Func<CancellationToken, Task<ObsCatalog>> getObsCatalog,
+        Func<CancellationToken, Task<VTubeStudioCatalog>> getVTubeStudioCatalog,
+        Func<CancellationToken, Task<bool>> isVTubeStudioAuthorized,
+        Func<Window, bool> openVTubeStudioSettings,
         Func<CancellationToken, Task<IReadOnlyList<AudioApplication>>> getAudioApplications,
         Func<string, int, SoundPlaybackBehavior, CancellationToken, Task> previewSound,
         Func<CancellationToken, Task> stopSounds,
@@ -98,6 +111,9 @@ public partial class KeyEditorWindow : Window
         this.resolveIconPath = resolveIconPath;
         this.otherLayerAssignment = otherLayerAssignment;
         this.getObsCatalog = getObsCatalog;
+        this.getVTubeStudioCatalog = getVTubeStudioCatalog;
+        this.isVTubeStudioAuthorized = isVTubeStudioAuthorized;
+        this.openVTubeStudioSettings = openVTubeStudioSettings;
         this.getAudioApplications = getAudioApplications;
         this.previewSound = previewSound;
         this.stopSounds = stopSounds;
@@ -112,12 +128,17 @@ public partial class KeyEditorWindow : Window
             currentLayerName);
         CopyOtherLayerButton.Content = $"← NumLock {otherLayerName}";
         CopyOtherLayerButton.ToolTip = $"{AppStrings.Get("Editor_CopyOtherLayer.Content", "Copy assignment from the other layer")} — NumLock {otherLayerName}";
-        IconListBox.ItemsSource = new[] { BuiltInIconCatalog.BlankOption }
-            .Concat(BuiltInIconCatalog.Options.Where(option => option.Id != "square"))
-            .ToArray();
+        IconKindComboBox.ItemsSource = new[]
+        {
+            new IconKindOption(IconKind.BuiltIn, AppStrings.Get("Editor_IconKindSymbols", "Symbols")),
+            new IconKindOption(IconKind.Emoji, AppStrings.Get("Editor_IconKindEmoji", "Emoji")),
+        };
+        IconKindComboBox.SelectedValue = IconKind.BuiltIn;
+        PopulateIconChoices(IconKind.BuiltIn);
+        iconPickerInitialized = true;
         AutomationStepsItemsControl.ItemsSource = automationSteps;
         ActionGroupListBox.ItemsSource = actionOnlyMode
-            ? ActionGroups.Where(group => group.Id is "sound" or "obs" or "system").ToArray()
+            ? ActionGroups.Where(group => group.Id is "sound" or "obs" or "vtube-studio" or "system").ToArray()
             : ActionGroups;
         SoundBehaviorComboBox.ItemsSource = new[]
         {
@@ -145,6 +166,9 @@ public partial class KeyEditorWindow : Window
         {
             ApplyAssignment(current);
         }
+
+        actionGroupSelectionReady = true;
+        Loaded += KeyEditorWindow_Loaded;
     }
 
     public KeyAssignment Assignment { get; private set; } = KeyAssignment.Empty;
@@ -167,16 +191,76 @@ public partial class KeyEditorWindow : Window
         base.OnClosed(e);
     }
 
-    private void ActionGroupListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void ActionGroupListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (ActionGroupListBox.SelectedItem is not ActionGroupOption group)
         {
             return;
         }
 
+        if (actionGroupSelectionReady
+            && group.Id == "vtube-studio"
+            && !await EnsureVTubeStudioSetupAsync())
+        {
+            ActionGroupListBox.SelectedItem = e.RemovedItems
+                .OfType<ActionGroupOption>()
+                .FirstOrDefault()
+                ?? ActionGroups.First(option => option.Id == "none");
+            return;
+        }
+
         var currentId = (ActionListBox.SelectedItem as ActionOption)?.Id;
         PopulateActions(group.Id, currentId);
         ActionListBox.Visibility = group.Id == "automation" ? Visibility.Collapsed : Visibility.Visible;
+    }
+
+    private async void KeyEditorWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+        Loaded -= KeyEditorWindow_Loaded;
+        if (ActionGroupListBox.SelectedItem is ActionGroupOption { Id: "vtube-studio" }
+            && !await EnsureVTubeStudioSetupAsync())
+        {
+            ActionGroupListBox.SelectedItem = ActionGroups.First(option => option.Id == "none");
+        }
+    }
+
+    private async Task<bool> EnsureVTubeStudioSetupAsync()
+    {
+        if (checkingVTubeStudioSetup)
+        {
+            return false;
+        }
+
+        checkingVTubeStudioSetup = true;
+        ActionGroupListBox.IsEnabled = false;
+        try
+        {
+            if (await isVTubeStudioAuthorized(CancellationToken.None))
+            {
+                return true;
+            }
+
+            if (!openVTubeStudioSettings(this))
+            {
+                return false;
+            }
+
+            return await isVTubeStudioAuthorized(CancellationToken.None);
+        }
+        catch (Exception exception)
+        {
+            AppLogger.Error("Open VTube Studio setup from key editor", exception);
+            ValidationText.Text = UserErrorFormatter.Format(
+                AppStrings.Get("VTubeStudio_ConnectionFailed", "Could not connect to VTube Studio"),
+                exception);
+            ValidationBorder.Visibility = Visibility.Visible;
+            return false;
+        }
+        finally
+        {
+            ActionGroupListBox.IsEnabled = true;
+            checkingVTubeStudioSetup = false;
+        }
     }
 
     private void ActionListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -216,13 +300,31 @@ public partial class KeyEditorWindow : Window
 
     private void IconListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (IconListBox.SelectedItem is not BuiltInIconOption option)
+        switch (IconListBox.SelectedItem)
+        {
+            case BuiltInIconOption option:
+                selectedIcon = IconReference.BuiltIn(option.Id);
+                ShowBuiltInIcon(option);
+                break;
+
+            case EmojiOption option:
+                selectedIcon = IconReference.Emoji(option.Emoji);
+                ShowEmoji(option.Emoji);
+                break;
+        }
+    }
+
+    private void IconKindComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (!iconPickerInitialized || IconKindComboBox.SelectedValue is not IconKind kind)
         {
             return;
         }
 
-        selectedIcon = IconReference.BuiltIn(option.Id);
-        ShowBuiltInIcon(option);
+        PopulateIconChoices(kind);
+        IconListBox.SelectedItem = kind == selectedIcon.Kind
+            ? FindIconChoice(selectedIcon)
+            : null;
     }
 
     private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -418,6 +520,9 @@ public partial class KeyEditorWindow : Window
             importIcon,
             resolveIconPath,
             getObsCatalog,
+            getVTubeStudioCatalog,
+            isVTubeStudioAuthorized,
+            openVTubeStudioSettings,
             getAudioApplications,
             previewSound,
             stopSounds,
@@ -488,6 +593,7 @@ public partial class KeyEditorWindow : Window
         var isAutomation = option.Id == "automation";
         var usesSuggestions = hasParameter
                               && (option.Id.StartsWith("obs-", StringComparison.Ordinal)
+                                  || option.Id.StartsWith("vts-", StringComparison.Ordinal)
                                   || option.Id.StartsWith("app-volume-", StringComparison.Ordinal));
         ParameterLabel.Visibility = hasParameter ? Visibility.Visible : Visibility.Collapsed;
         ParameterTextBox.Visibility = hasParameter && !usesSuggestions ? Visibility.Visible : Visibility.Collapsed;
@@ -563,10 +669,19 @@ public partial class KeyEditorWindow : Window
         selectedIcon = icon;
         if (icon.Kind == IconKind.BuiltIn)
         {
+            SelectIconKind(IconKind.BuiltIn);
             var option = BuiltInIconCatalog.Get(
                 string.Equals(icon.Value, "square", StringComparison.Ordinal) ? "plus" : icon.Value);
             IconListBox.SelectedItem = option;
             ShowBuiltInIcon(option);
+            return;
+        }
+
+        if (icon.Kind == IconKind.Emoji)
+        {
+            SelectIconKind(IconKind.Emoji);
+            IconListBox.SelectedItem = EmojiCatalog.Find(icon.Value);
+            ShowEmoji(icon.Value);
             return;
         }
 
@@ -581,6 +696,7 @@ public partial class KeyEditorWindow : Window
 
         IconPreviewImage.Source = null;
         IconPreviewImage.Visibility = Visibility.Collapsed;
+        IconPreviewGlyph.FontFamily = new System.Windows.Media.FontFamily("Segoe Fluent Icons");
         IconPreviewGlyph.Text = BuiltInIconCatalog.Get("image").Glyph;
         IconPreviewGlyph.Visibility = Visibility.Visible;
         CustomIconFileName.Text = icon.Value;
@@ -590,8 +706,23 @@ public partial class KeyEditorWindow : Window
     {
         IconPreviewImage.Source = null;
         IconPreviewImage.Visibility = Visibility.Collapsed;
+        IconPreviewGlyph.FontFamily = new System.Windows.Media.FontFamily(option.FontFamily);
         IconPreviewGlyph.Text = option.Glyph;
         IconPreviewGlyph.Visibility = Visibility.Visible;
+        CustomIconFileName.Text = string.Empty;
+    }
+
+    private void ShowEmoji(string emoji)
+    {
+        IconPreviewImage.Source = EmojiCatalog.TryLoadImage(emoji);
+        IconPreviewImage.Visibility = IconPreviewImage.Source is null
+            ? Visibility.Collapsed
+            : Visibility.Visible;
+        IconPreviewGlyph.FontFamily = new System.Windows.Media.FontFamily("Segoe UI Emoji");
+        IconPreviewGlyph.Text = emoji;
+        IconPreviewGlyph.Visibility = IconPreviewImage.Source is null
+            ? Visibility.Visible
+            : Visibility.Collapsed;
         CustomIconFileName.Text = string.Empty;
     }
 
@@ -608,6 +739,35 @@ public partial class KeyEditorWindow : Window
         IconPreviewGlyph.Visibility = Visibility.Collapsed;
     }
 
+    private void SelectIconKind(IconKind kind)
+    {
+        if (Equals(IconKindComboBox.SelectedValue, kind))
+        {
+            PopulateIconChoices(kind);
+            return;
+        }
+
+        IconKindComboBox.SelectedValue = kind;
+        PopulateIconChoices(kind);
+    }
+
+    private void PopulateIconChoices(IconKind kind)
+    {
+        IconListBox.ItemsSource = kind == IconKind.Emoji
+            ? EmojiCatalog.Options
+            : new[] { BuiltInIconCatalog.BlankOption }
+                .Concat(BuiltInIconCatalog.Options.Where(option => option.Id != "square"))
+                .ToArray();
+    }
+
+    private static object? FindIconChoice(IconReference icon) => icon.Kind switch
+    {
+        IconKind.BuiltIn => BuiltInIconCatalog.Get(
+            string.Equals(icon.Value, "square", StringComparison.Ordinal) ? "plus" : icon.Value),
+        IconKind.Emoji => EmojiCatalog.Find(icon.Value),
+        _ => null,
+    };
+
     private void ShowValidation(string message)
     {
         ValidationText.Text = message;
@@ -623,10 +783,24 @@ public partial class KeyEditorWindow : Window
         ValidationBorder.Visibility = Visibility.Collapsed;
     }
 
-    private string GetParameter() =>
-        ParameterComboBox.Visibility == Visibility.Visible
-            ? ParameterComboBox.Text
-            : ParameterTextBox.Text;
+    private string GetParameter()
+    {
+        if (ParameterComboBox.Visibility != Visibility.Visible)
+        {
+            return ParameterTextBox.Text;
+        }
+
+        return ParameterComboBox.SelectedItem is ParameterSuggestion suggestion
+               && string.Equals(ParameterComboBox.Text, suggestion.Display, StringComparison.CurrentCulture)
+            ? suggestion.Value
+            : ParameterComboBox.Text;
+    }
+
+    private string? GetParameterDisplay() =>
+        ParameterComboBox.SelectedItem is ParameterSuggestion suggestion
+        && string.Equals(GetParameter(), suggestion.Value, StringComparison.Ordinal)
+            ? suggestion.TargetName ?? suggestion.Display
+            : null;
 
     private async Task LoadParameterSuggestionsAsync(
         string actionId,
@@ -635,22 +809,42 @@ public partial class KeyEditorWindow : Window
     {
         try
         {
-            IReadOnlyList<string>? values = null;
+            IReadOnlyList<ParameterSuggestion>? values = null;
             if (actionId.StartsWith("app-volume-", StringComparison.Ordinal))
             {
                 values = (await getAudioApplications(cancellation.Token))
-                    .Select(application => application.Id)
+                    .Select(application => new ParameterSuggestion(application.Id, application.Id))
                     .ToArray();
             }
             else if (actionId.StartsWith("obs-", StringComparison.Ordinal))
             {
                 var catalog = await getObsCatalog(cancellation.Token);
-                values = actionId switch
+                var names = actionId switch
                 {
                     "obs-scene" => catalog.Scenes,
                     "obs-input-mute" or "obs-media-toggle" or "obs-media-stop" or "obs-media-restart" => catalog.Inputs,
                     _ => catalog.Sources,
                 };
+                values = names.Select(static name => new ParameterSuggestion(name, name)).ToArray();
+            }
+            else if (actionId.StartsWith("vts-", StringComparison.Ordinal))
+            {
+                var catalog = await getVTubeStudioCatalog(cancellation.Token);
+                values = actionId == "vts-hotkey"
+                    ? catalog.Hotkeys
+                        .Select(hotkey => new ParameterSuggestion(
+                            hotkey.Id,
+                            string.IsNullOrWhiteSpace(hotkey.Name)
+                                ? hotkey.Type
+                                : $"{hotkey.Name} · {hotkey.Type}",
+                            string.IsNullOrWhiteSpace(hotkey.Name) ? hotkey.Type : hotkey.Name))
+                        .ToArray()
+                    : catalog.Models
+                        .Select(model => new ParameterSuggestion(
+                            model.Id,
+                            model.IsLoaded ? $"{model.Name} · {AppStrings.Get("Common_Active", "active")}" : model.Name,
+                            model.Name))
+                        .ToArray();
             }
 
             cancellation.Token.ThrowIfCancellationRequested();
@@ -658,9 +852,15 @@ public partial class KeyEditorWindow : Window
                 && requestVersion == parameterSuggestionsRequestVersion
                 && (ActionListBox.SelectedItem as ActionOption)?.Id == actionId)
             {
-                var current = ParameterComboBox.Text;
+                var current = ParameterComboBox.SelectedValue as string ?? ParameterComboBox.Text;
                 ParameterComboBox.ItemsSource = values;
-                ParameterComboBox.Text = current;
+                var selected = values.FirstOrDefault(value =>
+                    string.Equals(value.Value, current, StringComparison.Ordinal));
+                ParameterComboBox.SelectedItem = selected;
+                if (selected is null)
+                {
+                    ParameterComboBox.Text = current;
+                }
             }
         }
         catch (OperationCanceledException) when (cancellation.IsCancellationRequested)
@@ -720,6 +920,14 @@ public partial class KeyEditorWindow : Window
         "obs-media-toggle" => new ObsActionDefinition(ObsActionKind.ToggleMediaPlayPause, parameter),
         "obs-media-stop" => new ObsActionDefinition(ObsActionKind.StopMediaSource, parameter),
         "obs-media-restart" => new ObsActionDefinition(ObsActionKind.RestartMediaSource, parameter),
+        "vts-hotkey" => new VTubeStudioActionDefinition(
+            VTubeStudioActionKind.TriggerHotkey,
+            parameter,
+            GetParameterDisplay()),
+        "vts-model" => new VTubeStudioActionDefinition(
+            VTubeStudioActionKind.LoadModel,
+            parameter,
+            GetParameterDisplay()),
         "automation" => CreateAutomationAction(),
         _ => throw new ArgumentOutOfRangeException(nameof(id)),
     };
@@ -755,6 +963,13 @@ public partial class KeyEditorWindow : Window
         LaunchProcessActionDefinition launch => new ActionState("launch", launch.ExecutablePath, 10, SoundPlaybackBehavior.RestartSameSound, launch.Arguments, launch.WorkingDirectory),
         KeyboardMacroActionDefinition macro => new ActionState("macro", KeyboardMacroTextCodec.Format(macro.Steps), 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         ObsActionDefinition obs => ReadObsAction(obs),
+        VTubeStudioActionDefinition vTubeStudio => new ActionState(
+            vTubeStudio.Action == VTubeStudioActionKind.TriggerHotkey ? "vts-hotkey" : "vts-model",
+            vTubeStudio.TargetId,
+            10,
+            SoundPlaybackBehavior.RestartSameSound,
+            null,
+            null),
         AutomationActionDefinition => new ActionState("automation", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         _ => new ActionState("none", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
     };
@@ -785,6 +1000,8 @@ public partial class KeyEditorWindow : Window
 
     private sealed record ActionGroupOption(string Id, string Name, string Glyph);
 
+    private sealed record IconKindOption(IconKind Kind, string Name);
+
     private sealed record ActionOption(
         string Id,
         string Name,
@@ -802,6 +1019,7 @@ public partial class KeyEditorWindow : Window
                 or "app-volume-up" or "app-volume-down" => "sound",
             "url" or "path" or "launch" or "macro" => "system",
             "automation" => "automation",
+            "vts-hotkey" or "vts-model" => "vtube-studio",
             _ => "obs",
         };
 
@@ -828,10 +1046,13 @@ public partial class KeyEditorWindow : Window
             "obs-virtual-camera-toggle" => "\uE714",
             "obs-studio-mode-toggle" or "obs-studio-transition" => "\uE8AB",
             "automation" => "\uE945",
+            "vts-hotkey" => "\uE756",
+            "vts-model" => "\uE714",
             _ => "\uE72C",
         };
     }
     private sealed record SoundBehaviorOption(SoundPlaybackBehavior Value, string Name);
+    private sealed record ParameterSuggestion(string Value, string Display, string? TargetName = null);
     private sealed record ActionState(
         string Id,
         string? Parameter,
@@ -929,6 +1150,7 @@ public partial class KeyEditorWindow : Window
                 "Automation_VolumeStep",
                 volume.StepPercent),
             AdjustApplicationVolumeActionDefinition volume => $"{volume.ApplicationId} · {AppStrings.Format("Automation_VolumeStep", volume.StepPercent)}",
+            VTubeStudioActionDefinition vTubeStudio => vTubeStudio.TargetName ?? vTubeStudio.TargetId,
             _ when !string.IsNullOrWhiteSpace(state.Parameter) => state.Parameter!,
             _ => option.Description ?? string.Empty,
         };

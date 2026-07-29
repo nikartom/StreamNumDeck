@@ -74,6 +74,12 @@ internal static class UserErrorFormatter
         UserActionError.ObsActionRejected => AppStrings.Get(
             "ActionError_ObsActionRejected",
             "OBS rejected the configured action. Check its scene, source, or input."),
+        UserActionError.VTubeStudioUnavailable => AppStrings.Get(
+            "ActionError_VTubeStudioUnavailable",
+            "VTube Studio is not connected. Start it and check the Plugin API settings."),
+        UserActionError.VTubeStudioActionRejected => AppStrings.Get(
+            "ActionError_VTubeStudioActionRejected",
+            "VTube Studio rejected the configured action. Check its hotkey or model."),
         UserActionError.AudioFileUnsupported => AppStrings.Format(
             "ActionError_AudioFileUnsupported",
             exception.Subject ?? AppStrings.Get("Editor_AudioFile.Header", "audio file")),

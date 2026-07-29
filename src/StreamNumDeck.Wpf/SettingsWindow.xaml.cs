@@ -15,11 +15,13 @@ public partial class SettingsWindow : Window
     private static readonly Uri LatestReleaseUri = new("https://github.com/nikartom/StreamNumDeck/releases/latest");
 
     private readonly MainViewModel viewModel;
+    private readonly bool focusVTubeStudio;
     private GlobalSettings? originalSettings;
 
-    public SettingsWindow(MainViewModel viewModel)
+    public SettingsWindow(MainViewModel viewModel, bool focusVTubeStudio = false)
     {
         this.viewModel = viewModel;
+        this.focusVTubeStudio = focusVTubeStudio;
         InitializeComponent();
     }
 
@@ -56,10 +58,20 @@ public partial class SettingsWindow : Window
             CaptureNavigationBlockCheckBox.IsChecked = snapshot.Settings.CaptureNavigationBlock;
             ObsHostTextBox.Text = snapshot.Settings.Obs.Host;
             ObsPortTextBox.Text = snapshot.Settings.Obs.Port.ToString();
+            VTubeStudioHostTextBox.Text = snapshot.Settings.VTubeStudio.Host;
+            VTubeStudioPortTextBox.Text = snapshot.Settings.VTubeStudio.Port.ToString();
             ObsPasswordBox.Password = string.Empty;
             PasswordStoredText.Visibility = string.IsNullOrEmpty(snapshot.ObsPassword)
                 ? Visibility.Collapsed
                 : Visibility.Visible;
+
+            if (focusVTubeStudio)
+            {
+                VTubeStudioSetupNotice.Visibility = Visibility.Visible;
+                UpdateLayout();
+                VTubeStudioCard.BringIntoView();
+                VTubeStudioHostTextBox.Focus();
+            }
         }
         catch (Exception exception)
         {
@@ -91,6 +103,12 @@ public partial class SettingsWindow : Window
                 throw new FormatException($"{AppStrings.Get("Settings_ObsPort.Header", "Port")}: 1–65535");
             }
 
+            if (!int.TryParse(VTubeStudioPortTextBox.Text, out var vTubeStudioPort)
+                || vTubeStudioPort is < 1 or > 65535)
+            {
+                throw new FormatException($"{AppStrings.Get("Settings_VTubeStudioPort.Header", "Port")}: 1–65535");
+            }
+
             var settings = new GlobalSettings(
                 AudioDeviceComboBox.SelectedValue as string,
                 checked((int)Math.Round(MasterVolumeSlider.Value)),
@@ -104,6 +122,10 @@ public partial class SettingsWindow : Window
             {
                 CaptureNumpad = CaptureNumpadCheckBox.IsChecked == true,
                 CaptureNavigationBlock = CaptureNavigationBlockCheckBox.IsChecked == true,
+                VTubeStudio = new VTubeStudioConnectionSettings(
+                    VTubeStudioHostTextBox.Text,
+                    vTubeStudioPort,
+                    originalSettings.VTubeStudio.CredentialKey),
             };
 
             var previousStartupState = WindowsStartupService.IsEnabled();
@@ -162,6 +184,48 @@ public partial class SettingsWindow : Window
         finally
         {
             TestObsButton.IsEnabled = true;
+        }
+    }
+
+    private async void TestVTubeStudio_Click(object sender, RoutedEventArgs e)
+    {
+        TestVTubeStudioButton.IsEnabled = false;
+        VTubeStudioTestResultText.Text = AppStrings.Get(
+            "VTubeStudio_WaitingForApproval",
+            "Waiting for approval in VTube Studio…");
+        VTubeStudioTestResultText.Foreground = new SolidColorBrush(
+            (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#FFD166"));
+        VTubeStudioTestResultText.Visibility = Visibility.Visible;
+
+        try
+        {
+            if (!int.TryParse(VTubeStudioPortTextBox.Text, out var port) || port is < 1 or > 65535)
+            {
+                throw new FormatException($"{AppStrings.Get("Settings_VTubeStudioPort.Header", "Port")}: 1–65535");
+            }
+
+            VTubeStudioTestResultText.Text = await viewModel.TestVTubeStudioConnectionAsync(
+                VTubeStudioHostTextBox.Text,
+                port);
+            VTubeStudioTestResultText.Foreground = new SolidColorBrush(
+                (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#9DDB9F"));
+            VTubeStudioTestResultText.Visibility = Visibility.Visible;
+        }
+        catch (Exception exception)
+        {
+            VTubeStudioTestResultText.Text = AppStrings.Get(
+                "VTubeStudio_ConnectionFailed",
+                "Could not connect to VTube Studio");
+            VTubeStudioTestResultText.Foreground = new SolidColorBrush(
+                (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#FF99A4"));
+            ShowErrorStatus(
+                "VTubeStudio_ConnectionFailed",
+                "Could not connect to VTube Studio",
+                exception);
+        }
+        finally
+        {
+            TestVTubeStudioButton.IsEnabled = true;
         }
     }
 

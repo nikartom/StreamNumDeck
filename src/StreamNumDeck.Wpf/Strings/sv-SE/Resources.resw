@@ -148,7 +148,7 @@
     <value>Stöd författaren</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Om StreamNumDeck är användbart för dig kan du stödja dess utveckling.</value>
+    <value>Om du tycker att StreamNumDeck är användbar kan du stödja dess utveckling.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Support på DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Automation</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Symboler</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Spela samtidigt</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS avvisade den konfigurerade åtgärden. Kontrollera dess scen, källa eller ingång.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio är inte ansluten. Starta den och kontrollera Plugin API-inställningarna.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio avvisade den konfigurerade åtgärden. Kontrollera dess snabbtangent eller modell.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows kunde inte spela upp den här ljudfilen. Kontrollera dess format eller codec: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>Källa</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Snabbtangent</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Modell</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>aktiv</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS ansluten</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Ansluten. Scener: {0}, källor: {1}.</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Värd</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Aktivera Tillåt Plugin API-åtkomst i VTube Studio innan du ansluter.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Efter att ha klickat på knappen, godkänn StreamNumDeck-förfrågan i VTube Studio-fönstret.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Auktorisera och testa</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Väntar på godkännande i VTube Studio...</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Anslut VTube Studio innan du tilldelar den här åtgärden. Auktorisera insticksprogrammet nedan och spara inställningarna.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Ansluten · {0} · {1} snabbtangenter · {2} modeller</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>ingen modell</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Kunde inte ansluta till VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Utlösa snabbtangent</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Ladda modell</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Inställningar sparade</value>
@@ -665,7 +722,7 @@ Högerklicka för profilåtgärder</value>
     <value>Starten är inaktiverad av Windows-policyn.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows kunde inte aktivera StreamNumDeck-start.</value>
+    <value>Windows kunde inte aktivera StreamNumDeck vid start.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Ingen ikon</value>

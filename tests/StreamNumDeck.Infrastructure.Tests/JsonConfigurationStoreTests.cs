@@ -5,6 +5,7 @@ using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Configuration;
 using StreamNumDeck.Core.Deck;
 using StreamNumDeck.Core.Icons;
+using StreamNumDeck.Core.Settings;
 using StreamNumDeck.Infrastructure.Configuration;
 
 namespace StreamNumDeck.Infrastructure.Tests;
@@ -94,6 +95,28 @@ public sealed class JsonConfigurationStoreTests
     }
 
     [TestMethod]
+    public async Task SaveAndLoad_PreservesEmojiIcon()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault();
+        var assignment = new KeyAssignment(
+            "Праздник",
+            IconReference.Emoji("🎉"),
+            new OpenUriActionDefinition("https://example.com"));
+        var updatedProfile = configuration.ActiveProfile.WithAssignment(
+            NumLockLayer.On,
+            DeckKey.NumpadAdd,
+            assignment);
+
+        await store.SaveAsync(configuration.ReplaceProfile(updatedProfile));
+        var loaded = await store.LoadAsync();
+
+        var loadedIcon = loaded.ActiveProfile.NumLockOn.GetAssignment(DeckKey.NumpadAdd).Icon;
+        Assert.AreEqual(IconKind.Emoji, loadedIcon.Kind);
+        Assert.AreEqual("🎉", loadedIcon.Value);
+    }
+
+    [TestMethod]
     public async Task SaveAndLoad_PreservesKeyboardMacroSteps()
     {
         using var store = new JsonConfigurationStore(paths);
@@ -138,6 +161,53 @@ public sealed class JsonConfigurationStoreTests
             loaded.ActiveProfile.NumLockOff.GetAssignment(DeckKey.Numpad2).Action);
         Assert.AreEqual(ObsActionKind.ToggleMediaPlayPause, action.Action);
         Assert.AreEqual("Заставка", action.TargetName);
+    }
+
+    [TestMethod]
+    public async Task SaveAndLoad_PreservesVTubeStudioActionAndSettings()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault().WithSettings(
+            GlobalSettings.Default with
+            {
+                VTubeStudio = new VTubeStudioConnectionSettings("localhost", 8002, "vts.custom"),
+            });
+        var profile = configuration.ActiveProfile.WithAssignment(
+            NumLockLayer.On,
+            DeckKey.Numpad8,
+            new KeyAssignment(
+                "Помахать",
+                IconReference.Emoji("👋"),
+                new VTubeStudioActionDefinition(
+                    VTubeStudioActionKind.TriggerHotkey,
+                    "hotkey-wave",
+                    "Wave")));
+
+        await store.SaveAsync(configuration.ReplaceProfile(profile));
+        var loaded = await store.LoadAsync();
+
+        Assert.AreEqual(8002, loaded.Settings.VTubeStudio.Port);
+        Assert.AreEqual("vts.custom", loaded.Settings.VTubeStudio.CredentialKey);
+        var action = Assert.IsInstanceOfType<VTubeStudioActionDefinition>(
+            loaded.ActiveProfile.NumLockOn.GetAssignment(DeckKey.Numpad8).Action);
+        Assert.AreEqual(VTubeStudioActionKind.TriggerHotkey, action.Action);
+        Assert.AreEqual("hotkey-wave", action.TargetId);
+        Assert.AreEqual("Wave", action.TargetName);
+    }
+
+    [TestMethod]
+    public async Task LoadAsync_OldConfigurationWithoutVTubeStudioSettings_UsesDefaults()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        await store.SaveAsync(AppConfiguration.CreateDefault());
+        var root = JsonNode.Parse(File.ReadAllText(paths.ConfigurationFilePath))!.AsObject();
+        root["configuration"]!["settings"]!.AsObject().Remove("vTubeStudio");
+        File.WriteAllText(paths.ConfigurationFilePath, root.ToJsonString());
+
+        var loaded = await store.LoadAsync();
+
+        Assert.AreEqual("127.0.0.1", loaded.Settings.VTubeStudio.Host);
+        Assert.AreEqual(8001, loaded.Settings.VTubeStudio.Port);
     }
 
     [TestMethod]

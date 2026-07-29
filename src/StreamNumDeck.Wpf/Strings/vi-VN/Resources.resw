@@ -148,7 +148,7 @@
     <value>Ủng hộ tác giả</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Nếu StreamNumDeck hữu ích với bạn, bạn có thể hỗ trợ sự phát triển của nó.</value>
+    <value>Nếu bạn thấy StreamNumDeck hữu ích, bạn có thể hỗ trợ sự phát triển của nó.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Hỗ trợ về DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Tự động hóa</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Biểu tượng</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Biểu tượng cảm xúc</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Chơi đồng thời</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS từ chối hành động được định cấu hình. Kiểm tra cảnh, nguồn hoặc đầu vào của nó.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio chưa được kết nối. Khởi động nó và kiểm tra cài đặt API Plugin.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio đã từ chối hành động được định cấu hình. Kiểm tra phím nóng hoặc mô hình của nó.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows không thể phát tệp âm thanh này. Kiểm tra định dạng hoặc codec của nó: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>Nguồn</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Phím nóng</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>người mẫu</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>hoạt động</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>Đã kết nối OBS</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Đã kết nối. Cảnh: {0}, nguồn: {1}.</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Máy chủ</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Cảng</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Bật Cho phép truy cập API plugin trong VTube Studio trước khi kết nối.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Sau khi nhấp vào nút, phê duyệt yêu cầu StreamNumDeck trong cửa sổ VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Cho phép và kiểm tra</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Đang chờ phê duyệt trong VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Kết nối VTube Studio trước khi chỉ định hành động này. Cho phép plugin bên dưới và lưu cài đặt.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Đã kết nối · {0} · {1} phím nóng · {2} kiểu máy</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>không có người mẫu</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Không thể kết nối với VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Phím nóng kích hoạt</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Tải mô hình</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Đã lưu cài đặt</value>
@@ -665,7 +722,7 @@ Nhấp chuột phải để thực hiện các thao tác trên hồ sơ</value>
     <value>Khởi động bị vô hiệu hóa bởi chính sách Windows.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows không thể kích hoạt tính năng khởi động StreamNumDeck.</value>
+    <value>Windows không thể bật StreamNumDeck khi khởi động.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Không có biểu tượng</value>

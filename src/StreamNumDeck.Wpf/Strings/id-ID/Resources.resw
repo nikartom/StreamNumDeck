@@ -148,7 +148,7 @@
     <value>Dukung penulisnya</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Jika StreamNumDeck bermanfaat bagi Anda, Anda dapat mendukung pengembangannya.</value>
+    <value>Jika Anda merasa StreamNumDeck bermanfaat, Anda dapat mendukung pengembangannya.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Dukungan pada Peringatan Donasi</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Otomatisasi</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Simbol</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Mainkan secara bersamaan</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS menolak tindakan yang dikonfigurasi. Periksa adegan, sumber, atau masukannya.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio tidak terhubung. Mulai dan periksa pengaturan Plugin API.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio menolak tindakan yang dikonfigurasi. Periksa hotkey atau modelnya.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows tidak dapat memutar file audio ini. Periksa format atau codecnya: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>Sumber</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Tombol pintas</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>aktif</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS terhubung</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Terhubung. Adegan: {0}, sumber: {1}.</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Tuan rumah</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Pelabuhan</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Aktifkan Izinkan akses Plugin API di VTube Studio sebelum menghubungkan.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Setelah mengklik tombol, setujui permintaan StreamNumDeck di jendela VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Otorisasi dan uji</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Menunggu persetujuan di VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Hubungkan VTube Studio sebelum menetapkan tindakan ini. Otorisasi plugin di bawah ini dan simpan pengaturannya.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Terhubung · {0} · {1} tombol pintas · {2} model</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>tidak ada model</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Tidak dapat terhubung ke VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Memicu tombol pintas</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Model beban</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Pengaturan disimpan</value>
@@ -665,7 +722,7 @@ Klik kanan untuk tindakan profil</value>
     <value>Startup dinonaktifkan oleh kebijakan Windows.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows tidak dapat mengaktifkan startup StreamNumDeck.</value>
+    <value>Windows tidak dapat mengaktifkan StreamNumDeck saat startup.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Tidak ada ikon</value>

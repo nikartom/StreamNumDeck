@@ -6,6 +6,8 @@ public enum UserActionError
     AudioSessionUnavailable,
     ObsUnavailable,
     ObsActionRejected,
+    VTubeStudioUnavailable,
+    VTubeStudioActionRejected,
     AudioFileUnsupported,
 }
 
@@ -31,6 +33,8 @@ public sealed class UserActionException : Exception
         UserActionError.AudioSessionUnavailable => $"The configured application has no active audio session: {subject}",
         UserActionError.ObsUnavailable => "OBS is not connected.",
         UserActionError.ObsActionRejected => $"OBS rejected the configured action: {subject}",
+        UserActionError.VTubeStudioUnavailable => "VTube Studio is not connected.",
+        UserActionError.VTubeStudioActionRejected => $"VTube Studio rejected the configured action: {subject}",
         UserActionError.AudioFileUnsupported => $"Windows could not play the configured audio file: {subject}",
         _ => "The configured action cannot be completed.",
     };

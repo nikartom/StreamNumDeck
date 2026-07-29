@@ -148,7 +148,7 @@
     <value>Podpořte autora</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Pokud je pro vás StreamNumDeck užitečný, můžete jeho vývoj podpořit.</value>
+    <value>Pokud považujete StreamNumDeck za užitečné, můžete podpořit jeho vývoj.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Podpora na DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>automatizace</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Symboly</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Hrajte současně</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS odmítl nakonfigurovanou akci. Zkontrolujte jeho scénu, zdroj nebo vstup.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio není připojeno. Spusťte jej a zkontrolujte nastavení Plugin API.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio odmítl nakonfigurovanou akci. Zkontrolujte jeho klávesovou zkratku nebo model.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Systém Windows nemohl přehrát tento zvukový soubor. Zkontrolujte jeho formát nebo kodek: {0}</value>
   </data>
@@ -518,6 +530,15 @@
   </data>
   <data name="Field_Source" xml:space="preserve">
     <value>Zdroj</value>
+  </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Klávesová zkratka</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>aktivní</value>
   </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS připojeno</value>
@@ -543,11 +564,47 @@
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Připojeno. Scény: {0}, zdroje: {1}.</value>
   </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Hostitel</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Před připojením povolte v VTube Studio přístup k rozhraní API pluginu.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Po kliknutí na tlačítko schvalte požadavek StreamNumDeck v okně VTube Studio.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Autorizovat a testovat</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Čekání na schválení v VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Před přiřazením této akce připojte VTube Studio. Níže autorizujte plugin a uložte nastavení.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Připojeno · {0} · {1} klávesové zkratky · {2} modelů</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>žádný model</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Nelze se připojit k VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Spustit klávesovou zkratku</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Model zatížení</value>
+  </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Nastavení uloženo</value>
   </data>
   <data name="Tray_Open" xml:space="preserve">
-    <value>Otevřete StreamNumDeck</value>
+    <value>Otevřít StreamNumDeck</value>
   </data>
   <data name="Tray_Capture" xml:space="preserve">
     <value>Snímání klávesnice</value>
@@ -665,7 +722,7 @@ Kliknutím pravým tlačítkem zobrazíte akce profilu</value>
     <value>Spouštění je zakázáno zásadami systému Windows.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows nemohl povolit spuštění StreamNumDeck.</value>
+    <value>Windows nemohl povolit StreamNumDeck při spuštění.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Žádná ikona</value>

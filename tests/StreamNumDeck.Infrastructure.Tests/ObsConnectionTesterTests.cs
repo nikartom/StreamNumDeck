@@ -8,6 +8,7 @@ using StreamNumDeck.Infrastructure.Obs;
 namespace StreamNumDeck.Infrastructure.Tests;
 
 [TestClass]
+[DoNotParallelize]
 public sealed class ObsConnectionTesterTests
 {
     [TestMethod]

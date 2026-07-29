@@ -148,7 +148,7 @@
     <value>Steun de auteur</value>
   </data>
   <data name="Settings_SupportHint.Text" xml:space="preserve">
-    <value>Als StreamNumDeck nuttig voor u is, kunt u de ontwikkeling ervan ondersteunen.</value>
+    <value>Als u StreamNumDeck nuttig vindt, kunt u de ontwikkeling ervan ondersteunen.</value>
   </data>
   <data name="Settings_SupportButton.Content" xml:space="preserve">
     <value>Ondersteuning op DonationAlerts</value>
@@ -314,6 +314,12 @@
   </data>
   <data name="ActionGroup_Automation" xml:space="preserve">
     <value>Automatisering</value>
+  </data>
+  <data name="Editor_IconKindSymbols" xml:space="preserve">
+    <value>Symbolen</value>
+  </data>
+  <data name="Editor_IconKindEmoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="SoundBehavior_Alongside" xml:space="preserve">
     <value>Speel tegelijkertijd</value>
@@ -495,6 +501,12 @@
   <data name="ActionError_ObsActionRejected" xml:space="preserve">
     <value>OBS heeft de geconfigureerde actie afgewezen. Controleer de scène, bron of ingang ervan.</value>
   </data>
+  <data name="ActionError_VTubeStudioUnavailable" xml:space="preserve">
+    <value>VTube Studio is niet verbonden. Start het en controleer de Plugin API-instellingen.</value>
+  </data>
+  <data name="ActionError_VTubeStudioActionRejected" xml:space="preserve">
+    <value>VTube Studio heeft de geconfigureerde actie afgewezen. Controleer de sneltoets of het model ervan.</value>
+  </data>
   <data name="ActionError_AudioFileUnsupported" xml:space="preserve">
     <value>Windows kon dit audiobestand niet afspelen. Controleer het formaat of de codec: {0}</value>
   </data>
@@ -519,6 +531,15 @@
   <data name="Field_Source" xml:space="preserve">
     <value>Bron</value>
   </data>
+  <data name="Field_Hotkey" xml:space="preserve">
+    <value>Sneltoets</value>
+  </data>
+  <data name="Field_Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Common_Active" xml:space="preserve">
+    <value>actief</value>
+  </data>
   <data name="Obs_Connected" xml:space="preserve">
     <value>OBS aangesloten</value>
   </data>
@@ -542,6 +563,42 @@
   </data>
   <data name="Obs_TestResult" xml:space="preserve">
     <value>Verbonden. Scènes: {0}, bronnen: {1}.</value>
+  </data>
+  <data name="Settings_VTubeStudioAddress.Header" xml:space="preserve">
+    <value>Gastheer</value>
+  </data>
+  <data name="Settings_VTubeStudioPort.Header" xml:space="preserve">
+    <value>Haven</value>
+  </data>
+  <data name="Settings_VTubeStudioHint.Text" xml:space="preserve">
+    <value>Schakel Toegang tot plug-in-API toestaan in VTube Studio in voordat verbinding wordt gemaakt.</value>
+  </data>
+  <data name="Settings_VTubeStudioApprovalHint.Text" xml:space="preserve">
+    <value>Nadat u op de knop hebt geklikt, keurt u het StreamNumDeck-verzoek goed in het VTube Studio-venster.</value>
+  </data>
+  <data name="Settings_AuthorizeVTubeStudio.Content" xml:space="preserve">
+    <value>Autoriseren en testen</value>
+  </data>
+  <data name="VTubeStudio_WaitingForApproval" xml:space="preserve">
+    <value>Wachten op goedkeuring in VTube Studio…</value>
+  </data>
+  <data name="VTubeStudio_SetupRequired" xml:space="preserve">
+    <value>Verbind VTube Studio voordat u deze actie toewijst. Autoriseer onderstaande plug-in en sla de instellingen op.</value>
+  </data>
+  <data name="VTubeStudio_TestResult" xml:space="preserve">
+    <value>Verbonden · {0} · {1} sneltoetsen · {2} modellen</value>
+  </data>
+  <data name="VTubeStudio_NoModel" xml:space="preserve">
+    <value>geen model</value>
+  </data>
+  <data name="VTubeStudio_ConnectionFailed" xml:space="preserve">
+    <value>Kan geen verbinding maken met VTube Studio</value>
+  </data>
+  <data name="Action_VTubeStudioHotkey" xml:space="preserve">
+    <value>Activeer sneltoets</value>
+  </data>
+  <data name="Action_VTubeStudioLoadModel" xml:space="preserve">
+    <value>Laadmodel</value>
   </data>
   <data name="Settings_Saved" xml:space="preserve">
     <value>Instellingen opgeslagen</value>
@@ -665,7 +722,7 @@ Klik met de rechtermuisknop voor profielacties</value>
     <value>Opstarten is uitgeschakeld door Windows-beleid.</value>
   </data>
   <data name="Error_AutostartEnable" xml:space="preserve">
-    <value>Windows kan het opstarten van StreamNumDeck niet inschakelen.</value>
+    <value>Windows kon StreamNumDeck niet inschakelen bij het opstarten.</value>
   </data>
   <data name="Icon_square" xml:space="preserve">
     <value>Geen pictogram</value>

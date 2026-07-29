@@ -65,6 +65,7 @@ The physical `NumLock` key switches between two independent layers. That gives y
 - Mute the microphone and keep a visible crossed-microphone indicator on any monitor.
 - Start, stop, or toggle recording and streaming; pause recording; and control the replay buffer from the keyboard.
 - Toggle the virtual camera and Studio Mode, trigger Studio Mode transitions, and control media source playback.
+- Trigger VTube Studio hotkeys and switch Live2D models from the same keyboard.
 - Play music, jingles, and sound effects with individual volume and playback behavior.
 - Mute Windows audio or adjust master and per-application volume.
 - Open a game, browser, folder, file, or website.
@@ -72,7 +73,7 @@ The physical `NumLock` key switches between two independent layers. That gives y
 - Run keyboard macros with shortcuts and key sequences.
 - Create separate profiles for streaming, gaming, editing, work, or any other setup.
 
-Each key can have a label, one of the included icons, or your own image. Profiles have their own icons and can be switched from the side panel or the system tray.
+Each key can have a label, a built-in symbol, one of the included color emoji, or your own image. Profiles have their own icons and can be switched from the side panel or the system tray.
 
 ### Download
 
@@ -104,9 +105,21 @@ StreamNumDeck uses the OBS WebSocket 5.x interface built into current OBS Studio
 
 The connection test only checks access and loads scene/source names. It never starts a stream or recording. Those operations occur only when you explicitly assign and press the corresponding action.
 
+### VTube Studio
+
+1. Open the settings in VTube Studio, enable **Allow Plugin API access**, and leave the server on its default port `8001` unless you specifically need another port.
+2. Open StreamNumDeck settings and find the **VTube Studio** section. Enter the same host and port, then click **Authorize and test**.
+3. Approve the `StreamNumDeck` plugin request in the VTube Studio window. StreamNumDeck will report the current model and the number of available hotkeys and models.
+4. Save the settings. Open any key, choose **VTube Studio**, then select **Trigger hotkey** or **Load model**.
+
+If VTube Studio has not been authorized yet, choosing its action group in the key editor automatically opens the required settings section. The authorization token is stored in Windows Password Vault and does not need to be entered again.
+
+The separate **Live2D Cubism Editor API** is not required. If you use its parameter-sync feature while rigging, create the corresponding hotkey in VTube Studio and trigger it through StreamNumDeck like any other VTube Studio hotkey.
+
 | Group | Actions |
 | --- | --- |
 | **OBS Studio** | Switch scenes and sources; control inputs, streaming, recording, replay buffer, virtual camera, Studio Mode, transitions, and media playback. |
+| **VTube Studio** | Trigger hotkeys configured for the current model and load another installed Live2D model. |
 | **Sound** | Play an audio file; mute/unmute the default microphone; mute Windows audio; adjust master volume; adjust a selected application's volume. |
 | **System** | Launch a program; open a file, folder, or web link; run a keyboard macro. |
 | **Automation** | Combine actions from the other groups; add pauses; stop the remaining sequence with a finish step. |
@@ -130,7 +143,7 @@ For users, the files on the [Releases page](https://github.com/nikartom/StreamNu
 Create the portable ZIP and Setup executable (Inno Setup 6 is required for Setup):
 
 ```powershell
-./scripts/package-wpf.ps1 -Version 1.2.5
+./scripts/package-wpf.ps1 -Version 1.3.0
 ```
 
 ---
@@ -153,6 +166,7 @@ StreamNumDeck превращает цифровой блок и шесть на�
 - Выключать микрофон и видеть поверх всех окон перечёркнутый микрофон на любом мониторе.
 - Запускать, останавливать или переключать запись и трансляцию, приостанавливать запись и управлять буфером повтора с клавиатуры.
 - Переключать виртуальную камеру и студийный режим, выполнять переходы и управлять воспроизведением медиаисточников.
+- Запускать хоткеи VTube Studio и переключать Live2D-модели с той же клавиатуры.
 - Воспроизводить музыку, джинглы и звуковые эффекты с отдельной громкостью и режимом запуска.
 - Отключать общий звук Windows и менять громкость системы или конкретного приложения.
 - Открывать игру, браузер, папку, файл или сайт.
@@ -160,7 +174,7 @@ StreamNumDeck превращает цифровой блок и шесть на�
 - Выполнять клавиатурные макросы с сочетаниями и последовательностями клавиш.
 - Создавать отдельные профили для стрима, игр, монтажа, работы и любых других задач.
 
-На клавише можно оставить подпись, выбрать одну из встроенных иконок или загрузить собственное изображение. Для профилей также выбираются иконки, а переключаться между ними можно на боковой панели или через меню в трее.
+На клавише можно оставить подпись, выбрать встроенный символ, одно из цветных эмодзи или загрузить собственное изображение. Для профилей также выбираются иконки, а переключаться между ними можно на боковой панели или через меню в трее.
 
 ### Скачать
 
@@ -192,9 +206,21 @@ StreamNumDeck использует интерфейс OBS WebSocket 5.x, вст�
 
 Проверка подключения только проверяет доступ и загружает названия сцен и источников. Она никогда не запускает трансляцию или запись. Эти операции выполняются только при явном назначении действия и нажатии соответствующей клавиши.
 
+### VTube Studio
+
+1. Откройте настройки VTube Studio, включите **Allow Plugin API access** и оставьте стандартный порт сервера `8001`, если вам не нужен другой порт.
+2. Откройте настройки StreamNumDeck и найдите раздел **VTube Studio**. Укажите тот же адрес и порт, затем нажмите **Авторизовать и проверить**.
+3. Подтвердите запрос плагина `StreamNumDeck` в окне VTube Studio. StreamNumDeck покажет текущую модель и количество доступных хоткеев и моделей.
+4. Сохраните настройки. Откройте любую клавишу, выберите **VTube Studio**, затем действие **Запустить хоткей** или **Загрузить модель**.
+
+Если VTube Studio ещё не авторизована, при выборе её раздела в редакторе клавиши приложение автоматически откроет нужную часть настроек. Токен авторизации хранится в защищённом хранилище Windows Password Vault, поэтому повторно вводить его не потребуется.
+
+Отдельный **Live2D Cubism Editor API** для этого не нужен. Если при риггинге вы используете синхронизацию параметров с Cubism Editor, создайте для неё хоткей в VTube Studio — StreamNumDeck сможет запустить его как любой другой хоткей VTube Studio.
+
 | Группа | Действия |
 | --- | --- |
 | **OBS Studio** | Переключать сцены и источники; управлять входами, трансляцией, записью, буфером повтора, виртуальной камерой, студийным режимом, переходами и медиаисточниками. |
+| **VTube Studio** | Запускать хоткеи текущей модели и загружать другую установленную Live2D-модель. |
 | **Звук** | Воспроизвести аудиофайл; включить или выключить микрофон по умолчанию; отключить звук Windows; изменить общую громкость или громкость выбранного приложения. |
 | **Система** | Запустить программу; открыть файл, папку или ссылку; выполнить клавиатурный макрос. |
 | **Автоматизация** | Объединить действия из других групп; добавить паузы; завершить оставшуюся последовательность отдельным элементом. |
@@ -218,7 +244,7 @@ StreamNumDeck использует интерфейс OBS WebSocket 5.x, вст�
 Создание portable ZIP и установщика Setup (для Setup потребуется Inno Setup 6):
 
 ```powershell
-./scripts/package-wpf.ps1 -Version 1.2.5
+./scripts/package-wpf.ps1 -Version 1.3.0
 ```
 
 ## Author and license / Автор и лицензия

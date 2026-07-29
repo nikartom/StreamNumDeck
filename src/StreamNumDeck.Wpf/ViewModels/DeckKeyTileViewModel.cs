@@ -20,6 +20,7 @@ public sealed class DeckKeyTileViewModel(DeckKey key) : ObservableObject
     private Thickness labelMargin = new(0, 4, 0, 0);
     private double iconDimension = 28;
     private double glyphFontSize = 20;
+    private string glyphFontFamily = "Segoe Fluent Icons";
 
     public string Label { get => label; private set => SetProperty(ref label, value); }
     public string Glyph { get => glyph; private set => SetProperty(ref glyph, value); }
@@ -31,6 +32,7 @@ public sealed class DeckKeyTileViewModel(DeckKey key) : ObservableObject
     public Thickness LabelMargin { get => labelMargin; private set => SetProperty(ref labelMargin, value); }
     public double IconDimension { get => iconDimension; private set => SetProperty(ref iconDimension, value); }
     public double GlyphFontSize { get => glyphFontSize; private set => SetProperty(ref glyphFontSize, value); }
+    public string GlyphFontFamily { get => glyphFontFamily; private set => SetProperty(ref glyphFontFamily, value); }
 
     public void Update(KeyAssignment assignment, IIconAssetStore iconAssetStore)
     {
@@ -47,6 +49,7 @@ public sealed class DeckKeyTileViewModel(DeckKey key) : ObservableObject
 
         if (assignment.Icon.Kind == IconKind.CustomAsset)
         {
+            GlyphFontFamily = "Segoe Fluent Icons";
             var path = iconAssetStore.ResolvePath(assignment.Icon);
             CustomIconSource = File.Exists(path) ? TryLoadImage(path) : null;
             CustomIconVisibility = CustomIconSource is null ? Visibility.Collapsed : Visibility.Visible;
@@ -59,6 +62,19 @@ public sealed class DeckKeyTileViewModel(DeckKey key) : ObservableObject
 
         CustomIconSource = null;
         CustomIconVisibility = Visibility.Collapsed;
+        if (assignment.Icon.Kind == IconKind.Emoji)
+        {
+            Glyph = assignment.Icon.Value;
+            GlyphFontFamily = "Segoe UI Emoji";
+            CustomIconSource = EmojiCatalog.TryLoadImage(assignment.Icon.Value);
+            CustomIconVisibility = CustomIconSource is null ? Visibility.Collapsed : Visibility.Visible;
+            GlyphVisibility = CustomIconSource is null ? Visibility.Visible : Visibility.Collapsed;
+            IconAreaVisibility = Visibility.Visible;
+            LabelMargin = new Thickness(0, 4, 0, 0);
+            return;
+        }
+
+        GlyphFontFamily = "Segoe Fluent Icons";
         var hasBuiltInIcon = !string.Equals(assignment.Icon.Value, "blank", StringComparison.Ordinal);
         GlyphVisibility = hasBuiltInIcon ? Visibility.Visible : Visibility.Collapsed;
         IconAreaVisibility = hasBuiltInIcon ? Visibility.Visible : Visibility.Collapsed;

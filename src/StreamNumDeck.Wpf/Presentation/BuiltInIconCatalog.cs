@@ -5,6 +5,10 @@ namespace StreamNumDeck.Wpf.Presentation;
 public sealed record BuiltInIconOption(string Id, string DefaultName, string Glyph, string? ResourceId = null)
 {
     public string Name => AppStrings.Get($"Icon_{(ResourceId ?? Id).Replace('-', '_')}", DefaultName);
+
+    public string FontFamily => "Segoe Fluent Icons";
+
+    public string? ImagePath => null;
 }
 
 public static class BuiltInIconCatalog

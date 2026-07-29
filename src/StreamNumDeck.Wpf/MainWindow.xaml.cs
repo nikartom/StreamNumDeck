@@ -239,6 +239,9 @@ public partial class MainWindow : Window
             viewModel.ImportIconAsync,
             viewModel.ResolveIconPath,
             viewModel.GetObsCatalogAsync,
+            viewModel.GetVTubeStudioCatalogAsync,
+            viewModel.IsVTubeStudioAuthorizedAsync,
+            OpenVTubeStudioSettings,
             viewModel.GetAudioApplicationsAsync,
             viewModel.PreviewSoundAsync,
             viewModel.StopSoundsAsync)
@@ -249,6 +252,12 @@ public partial class MainWindow : Window
         {
             await SaveAssignmentAsync(key, editor.Assignment);
         }
+    }
+
+    private bool OpenVTubeStudioSettings(Window owner)
+    {
+        var settings = new SettingsWindow(viewModel, focusVTubeStudio: true) { Owner = owner };
+        return settings.ShowDialog() == true;
     }
 
     private async Task SaveAssignmentAsync(DeckKey key, StreamNumDeck.Core.Deck.KeyAssignment assignment)

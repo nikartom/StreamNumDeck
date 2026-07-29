@@ -7,6 +7,7 @@ public enum ActionGroup
     None,
     Sound,
     Obs,
+    VTubeStudio,
     System,
     Automation,
 }
@@ -23,6 +24,7 @@ public enum ActionGroup
 [JsonDerivedType(typeof(OpenUriActionDefinition), "openUri")]
 [JsonDerivedType(typeof(KeyboardMacroActionDefinition), "keyboardMacro")]
 [JsonDerivedType(typeof(ObsActionDefinition), "obs")]
+[JsonDerivedType(typeof(VTubeStudioActionDefinition), "vTubeStudio")]
 [JsonDerivedType(typeof(AutomationActionDefinition), "automation")]
 public abstract record ActionDefinition
 {

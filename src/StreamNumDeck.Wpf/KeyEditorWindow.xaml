@@ -43,21 +43,22 @@
         </Style>
 
         <Style x:Key="GroupItemStyle" TargetType="ListBoxItem">
-            <Setter Property="Margin" Value="0,0,0,6" />
+            <Setter Property="Margin" Value="3" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
                         <Border x:Name="GroupBorder"
-                                Width="144" Height="42"
+                                Height="48"
                                 Background="#292929"
                                 BorderBrush="#454545"
                                 BorderThickness="1"
                                 CornerRadius="7"
-                                Padding="12,0">
-                            <ContentPresenter VerticalAlignment="Center" />
+                                Padding="9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -163,6 +164,11 @@
                         </Border>
 
                         <StackPanel Grid.Column="1">
+                            <ComboBox x:Name="IconKindComboBox"
+                                      Width="170" Height="32" Margin="3,0,0,8"
+                                      HorizontalAlignment="Left"
+                                      DisplayMemberPath="Name" SelectedValuePath="Kind"
+                                      SelectionChanged="IconKindComboBox_SelectionChanged" />
                             <ListBox x:Name="IconListBox" Height="150"
                                      Background="Transparent" BorderThickness="0" Padding="0"
                                      SelectedValuePath="Id" SelectionChanged="IconListBox_SelectionChanged"
@@ -174,8 +180,11 @@
                                 </ListBox.ItemsPanel>
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Glyph}" FontFamily="Segoe Fluent Icons" FontSize="20"
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <Grid Width="28" Height="28">
+                                            <TextBlock Text="{Binding Glyph}" FontFamily="{Binding FontFamily}" FontSize="20"
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <Image Source="{Binding ImagePath}" Stretch="Uniform" />
+                                        </Grid>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>
@@ -210,35 +219,36 @@
                                Foreground="{StaticResource SecondaryTextBrush}" Margin="0,3,0,12" />
 
                     <Grid Margin="0,12,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="144" />
-                            <ColumnDefinition Width="12" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
                         <ListBox x:Name="ActionGroupListBox"
-                                 Background="Transparent" BorderThickness="0" Padding="0"
+                                 Background="Transparent" BorderThickness="0" Padding="0" Margin="-3,0"
                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
                                  PreviewMouseWheel="NestedActionList_PreviewMouseWheel"
                                  SelectionChanged="ActionGroupListBox_SelectionChanged"
                                  ItemContainerStyle="{StaticResource GroupItemStyle}">
                             <ListBox.ItemsPanel>
-                                <ItemsPanelTemplate><StackPanel /></ItemsPanelTemplate>
+                                <ItemsPanelTemplate><UniformGrid Rows="1" /></ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions><ColumnDefinition Width="26" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
-                                        <TextBlock Text="{Binding Glyph}" FontFamily="Segoe Fluent Icons" FontSize="18" Width="26" />
-                                        <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center"
-                                                   TextWrapping="Wrap" FontSize="11" LineHeight="14" />
-                                    </Grid>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding Glyph}" FontFamily="Segoe Fluent Icons" FontSize="17"
+                                                   Margin="0,0,7,0" VerticalAlignment="Center" />
+                                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"
+                                                   TextWrapping="Wrap" TextAlignment="Center"
+                                                   FontSize="11" LineHeight="13" />
+                                    </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
 
-                        <ListBox x:Name="ActionListBox" Grid.Column="2" Margin="-3,-3,-3,0"
+                        <ListBox x:Name="ActionListBox" Grid.Row="2" Margin="-3,-3,-3,0"
                                  Background="Transparent" BorderThickness="0" Padding="0"
                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
@@ -261,7 +271,7 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
 
-                    <Border x:Name="AutomationPanel" Grid.Column="2" Margin="-3,-3,-3,0" Padding="14"
+                    <Border x:Name="AutomationPanel" Grid.Row="2" Margin="-3,-3,-3,0" Padding="14"
                             Background="#262626" BorderBrush="#414141" BorderThickness="1"
                             CornerRadius="9" Visibility="Collapsed" VerticalAlignment="Top">
                         <StackPanel>
@@ -394,6 +404,7 @@
                                              VerticalAlignment="Top" VerticalContentAlignment="Top"
                                              AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
                                     <ComboBox x:Name="ParameterComboBox" IsEditable="True" Height="34"
+                                              DisplayMemberPath="Display" SelectedValuePath="Value"
                                               VerticalAlignment="Top" Visibility="Collapsed" />
                                     <Button x:Name="BrowseButton" Grid.Column="1"
                                             Content="{localization:Loc Common_BrowseButton.Content, Fallback=Browse…}"
