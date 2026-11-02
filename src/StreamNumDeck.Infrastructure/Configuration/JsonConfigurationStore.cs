@@ -58,6 +58,14 @@ public sealed class JsonConfigurationStore : IConfigurationStore, IDisposable
             {
                 return await ReadAsync(paths.ConfigurationFilePath, cancellationToken).ConfigureAwait(false);
             }
+            catch (UnsupportedConfigurationVersionException versionFailure)
+            {
+                // The file is intact data from another application version, so
+                // restoring the backup over it would silently discard that data.
+                throw new ConfigurationLoadException(
+                    "The configuration file was created by an unsupported application version.",
+                    versionFailure);
+            }
             catch (Exception primaryFailure) when (IsRecoverableReadFailure(primaryFailure))
             {
                 if (!File.Exists(paths.BackupFilePath))

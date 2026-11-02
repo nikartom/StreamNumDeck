@@ -43,6 +43,59 @@ public sealed class WindowsAudioPlaybackServiceTests
         await service.StopAllAsync(TestContext.CancellationToken);
     }
 
+    [TestMethod]
+    public async Task PreloadAsync_DoesNotStartPlayback()
+    {
+        await using var service = new WindowsAudioPlaybackService();
+        var action = new PlaySoundActionDefinition(waveFilePath, volume: 0);
+
+        await service.PreloadAsync([action], GlobalSettings.Default, TestContext.CancellationToken);
+        await Task.Delay(50, TestContext.CancellationToken);
+
+        Assert.AreEqual(TimeSpan.Zero, service.GetPreloadedPosition(waveFilePath));
+    }
+
+    [TestMethod]
+    public async Task PlayAsync_ReplenishedNodeDoesNotStartPlayback()
+    {
+        await using var service = new WindowsAudioPlaybackService();
+        var action = new PlaySoundActionDefinition(waveFilePath, volume: 0);
+
+        await service.PlayAsync(action, GlobalSettings.Default, TestContext.CancellationToken);
+        while (service.GetPreloadedPosition(waveFilePath) is null)
+        {
+            await Task.Delay(5, TestContext.CancellationToken);
+        }
+
+        await Task.Delay(50, TestContext.CancellationToken);
+
+        Assert.AreEqual(TimeSpan.Zero, service.GetPreloadedPosition(waveFilePath));
+    }
+
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public async Task PlayAsync_PlaysSoundToCompletion(bool preloaded)
+    {
+        await using var service = new WindowsAudioPlaybackService();
+        var action = new PlaySoundActionDefinition(waveFilePath, volume: 0);
+        if (preloaded)
+        {
+            await service.PreloadAsync([action], GlobalSettings.Default, TestContext.CancellationToken);
+            await Task.Delay(200, TestContext.CancellationToken);
+        }
+
+        await service.PlayAsync(action, GlobalSettings.Default, TestContext.CancellationToken);
+
+        var deadline = DateTime.UtcNow.AddSeconds(5);
+        while (service.ActiveSoundCount > 0 && DateTime.UtcNow < deadline)
+        {
+            await Task.Delay(10, TestContext.CancellationToken);
+        }
+
+        Assert.AreEqual(0, service.ActiveSoundCount);
+    }
+
     public TestContext TestContext { get; set; }
 
     private static void WriteSilentWaveFile(string path, int durationMilliseconds)

@@ -139,6 +139,78 @@ public sealed class ObsWebSocketControllerTests
         CollectionAssert.AreEquivalent(new[] { "Camera", "Microphone" }, catalog.Sources.ToArray());
     }
 
+    [TestMethod]
+    [Timeout(15_000)]
+    public async Task ConnectAsync_WhenHelloNeverArrives_FaultsAndKeepsReconnecting()
+    {
+        var port = ReservePort();
+        using var listener = new HttpListener();
+        listener.Prefixes.Add($"http://127.0.0.1:{port}/");
+        listener.Start();
+
+        var secondConnection = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+        _ = AcceptWithoutHelloAsync(listener, connectionCount =>
+        {
+            if (connectionCount >= 2)
+            {
+                secondConnection.TrySetResult(true);
+            }
+        });
+        await using var controller = new ObsWebSocketController(new NullCredentialStore());
+
+        await Assert.ThrowsExactlyAsync<TimeoutException>(() =>
+            controller.ConnectAsync(new ObsConnectionSettings("127.0.0.1", port, "test")));
+
+        Assert.AreEqual(ObsConnectionState.Faulted, controller.State);
+        await WaitAsync(secondConnection.Task, TimeSpan.FromSeconds(3));
+    }
+
+    [TestMethod]
+    [Timeout(15_000)]
+    public async Task ConnectAsync_WhenCallerCancels_LeavesConnectingState()
+    {
+        var port = ReservePort();
+        using var listener = new HttpListener();
+        listener.Prefixes.Add($"http://127.0.0.1:{port}/");
+        listener.Start();
+
+        _ = AcceptWithoutHelloAsync(listener, static _ => { });
+        await using var controller = new ObsWebSocketController(new NullCredentialStore());
+        using var cancellation = new CancellationTokenSource(TimeSpan.FromMilliseconds(300));
+
+        await Assert.ThrowsAsync<OperationCanceledException>(() => controller.ConnectAsync(
+            new ObsConnectionSettings("127.0.0.1", port, "test"),
+            cancellation.Token));
+
+        Assert.AreEqual(ObsConnectionState.Disconnected, controller.State);
+    }
+
+    private static async Task AcceptWithoutHelloAsync(HttpListener listener, Action<int> connectionAccepted)
+    {
+        var sockets = new List<WebSocket>();
+        try
+        {
+            while (true)
+            {
+                var context = await listener.GetContextAsync();
+                var webSocketContext = await context.AcceptWebSocketAsync(null);
+                sockets.Add(webSocketContext.WebSocket);
+                connectionAccepted(sockets.Count);
+            }
+        }
+        catch (Exception exception) when (exception is HttpListenerException or ObjectDisposedException)
+        {
+            // The test finished and closed the listener.
+        }
+        finally
+        {
+            foreach (var socket in sockets)
+            {
+                socket.Dispose();
+            }
+        }
+    }
+
     private static async Task<string> RunServerAsync(HttpListener listener)
     {
         var context = await listener.GetContextAsync();

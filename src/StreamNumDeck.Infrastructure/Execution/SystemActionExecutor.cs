@@ -7,6 +7,18 @@ namespace StreamNumDeck.Infrastructure.Execution;
 
 public sealed class SystemActionExecutor : IActionExecutor
 {
+    private readonly Func<ProcessStartInfo, Process?> startProcess;
+
+    public SystemActionExecutor()
+        : this(Process.Start)
+    {
+    }
+
+    internal SystemActionExecutor(Func<ProcessStartInfo, Process?> startProcess)
+    {
+        this.startProcess = startProcess;
+    }
+
     public bool CanExecute(ActionDefinition action) => action is
         LaunchProcessActionDefinition or
         OpenPathActionDefinition or
@@ -42,8 +54,9 @@ public sealed class SystemActionExecutor : IActionExecutor
 
         try
         {
-            _ = Process.Start(startInfo)
-                ?? throw new InvalidOperationException($"Windows did not start '{startInfo.FileName}'.");
+            // No process is not a failure: the shell can hand the target over to
+            // an application that is already running.
+            startProcess(startInfo)?.Dispose();
         }
         catch (Win32Exception exception) when (exception.NativeErrorCode is 2 or 3)
         {

@@ -936,7 +936,7 @@ public partial class KeyEditorWindow : Window
     {
         if (automationSteps.Count == 0)
         {
-            throw new InvalidOperationException(AppStrings.Get(
+            throw new UserFacingException(AppStrings.Get(
                 "Automation_Empty",
                 "Add at least one element to the automation."));
         }

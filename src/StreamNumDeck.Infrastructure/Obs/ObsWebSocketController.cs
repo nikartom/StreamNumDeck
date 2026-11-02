@@ -70,7 +70,12 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
             SetState(ObsConnectionState.Connecting);
             await ConnectCoreAsync(settings, cancellationToken).ConfigureAwait(false);
         }
-        catch (Exception exception) when (exception is not OperationCanceledException)
+        catch (OperationCanceledException)
+        {
+            SetState(ObsConnectionState.Disconnected);
+            throw;
+        }
+        catch (Exception exception)
         {
             SetState(ObsConnectionState.Faulted, exception.Message);
             if (maintainConnection)
@@ -303,6 +308,11 @@ public sealed class ObsWebSocketController(IProtectedCredentialStore credentialS
             LastError = null;
             SetState(ObsConnectionState.Connected);
             receiveTask = ReceiveLoopAsync(candidate, receiveCancellation.Token);
+        }
+        catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
+        {
+            candidate.Dispose();
+            throw new TimeoutException("OBS did not complete the connection handshake in time.");
         }
         catch
         {

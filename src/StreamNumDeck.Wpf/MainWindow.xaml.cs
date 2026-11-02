@@ -230,15 +230,19 @@ public partial class MainWindow : Window
     {
         if (sender is not Button button
             || button.Tag is not string keyName
-            || !Enum.TryParse(keyName, out DeckKey key))
+            || !Enum.TryParse(keyName, out DeckKey key)
+            || viewModel.SelectedProfile is not { } profile)
         {
             return;
         }
 
+        // NumLock or the tray can change the current layer and profile while the
+        // editor is open, so the edit stays bound to the ones it was opened for.
+        var layer = viewModel.IsNumLockOn ? NumLockLayer.On : NumLockLayer.Off;
         var editor = new KeyEditorWindow(
             key,
-            viewModel.GetCurrentAssignment(key),
-            viewModel.GetAssignment(key, viewModel.IsNumLockOn ? NumLockLayer.Off : NumLockLayer.On),
+            viewModel.GetAssignment(key, layer),
+            viewModel.GetAssignment(key, layer is NumLockLayer.On ? NumLockLayer.Off : NumLockLayer.On),
             viewModel.ImportIconAsync,
             viewModel.ResolveIconPath,
             viewModel.GetObsCatalogAsync,
@@ -253,7 +257,7 @@ public partial class MainWindow : Window
         };
         if (editor.ShowDialog() == true)
         {
-            await SaveAssignmentAsync(key, editor.Assignment);
+            await SaveAssignmentAsync(profile.Id, layer, key, editor.Assignment);
         }
     }
 
@@ -263,11 +267,15 @@ public partial class MainWindow : Window
         return settings.ShowDialog() == true;
     }
 
-    private async Task SaveAssignmentAsync(DeckKey key, StreamNumDeck.Core.Deck.KeyAssignment assignment)
+    private async Task SaveAssignmentAsync(
+        Guid profileId,
+        NumLockLayer layer,
+        DeckKey key,
+        StreamNumDeck.Core.Deck.KeyAssignment assignment)
     {
         try
         {
-            await viewModel.UpdateAssignmentAsync(key, assignment);
+            await viewModel.UpdateAssignmentAsync(profileId, layer, key, assignment);
         }
         catch (Exception exception)
         {

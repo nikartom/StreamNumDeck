@@ -19,4 +19,19 @@ public sealed class SystemActionExecutorTests
         Assert.AreEqual(UserActionError.TargetUnavailable, exception.Error);
         Assert.AreEqual(missingPath, exception.Subject);
     }
+
+    [TestMethod]
+    public async Task ExecuteAsync_WhenShellReusesRunningApplication_Succeeds()
+    {
+        var startedTarget = string.Empty;
+        var executor = new SystemActionExecutor(startInfo =>
+        {
+            startedTarget = startInfo.FileName;
+            return null;
+        });
+
+        await executor.ExecuteAsync(new OpenUriActionDefinition("https://example.com/"));
+
+        Assert.AreEqual("https://example.com/", startedTarget);
+    }
 }

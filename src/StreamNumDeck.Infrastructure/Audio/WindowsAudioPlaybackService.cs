@@ -192,6 +192,20 @@ public sealed class WindowsAudioPlaybackService : IAudioPlaybackService
         }
     }
 
+    internal TimeSpan? GetPreloadedPosition(string filePath) =>
+        preloadedSounds.TryGetValue(Path.GetFullPath(filePath), out var node) ? node.Position : null;
+
+    internal int ActiveSoundCount
+    {
+        get
+        {
+            lock (activeSoundsGate)
+            {
+                return activeSounds.Count;
+            }
+        }
+    }
+
     public async ValueTask DisposeAsync()
     {
         if (disposed)
@@ -301,6 +315,8 @@ public sealed class WindowsAudioPlaybackService : IAudioPlaybackService
                 creationResult.ExtendedError);
         }
 
+        // A file node connected to a running graph starts playing on its own.
+        creationResult.FileInputNode.Stop();
         creationResult.FileInputNode.AddOutgoingConnection(outputNode!);
         return creationResult.FileInputNode;
     }

@@ -6,6 +6,11 @@ using StreamNumDeck.Core.Execution;
 
 namespace StreamNumDeck.Wpf.Services;
 
+/// <summary>
+/// Carries an already localized message that is safe to show to the user as is.
+/// </summary>
+internal sealed class UserFacingException(string message) : Exception(message);
+
 internal static class UserErrorFormatter
 {
     private static readonly Regex InlineParameterPattern = new(
@@ -51,7 +56,8 @@ internal static class UserErrorFormatter
             return FormatMacroError(macroException);
         }
 
-        return current is ArgumentException
+        return current is UserFacingException
+            or ArgumentException
             or FormatException
             or FileNotFoundException
             or DirectoryNotFoundException

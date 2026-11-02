@@ -265,10 +265,6 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         ReplaceProfiles(configuration, configuration.ActiveProfileId);
     }
 
-    public KeyAssignment GetCurrentAssignment(DeckKey key) =>
-        SelectedProfile?.GetLayer(IsNumLockOn ? NumLockLayer.On : NumLockLayer.Off).GetAssignment(key)
-        ?? KeyAssignment.Empty;
-
     public KeyAssignment GetAssignment(DeckKey key, NumLockLayer layer) =>
         SelectedProfile?.GetLayer(layer).GetAssignment(key) ?? KeyAssignment.Empty;
 
@@ -433,17 +429,19 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         }
     }
 
-    public async Task UpdateAssignmentAsync(DeckKey key, KeyAssignment assignment)
+    public async Task UpdateAssignmentAsync(
+        Guid profileId,
+        NumLockLayer layer,
+        DeckKey key,
+        KeyAssignment assignment)
     {
-        var profileId = SelectedProfile?.Id ?? throw new InvalidOperationException("No profile is selected.");
-        var layer = IsNumLockOn ? NumLockLayer.On : NumLockLayer.Off;
         var configuration = await configurationService.UpdateAsync(current =>
         {
             var profile = current.Profiles.Single(candidate => candidate.Id == profileId);
             return current.ReplaceProfile(profile.WithAssignment(layer, key, assignment));
         }).ConfigureAwait(true);
         await RefreshPreloadedSoundsAsync(configuration).ConfigureAwait(true);
-        ReplaceProfiles(configuration, profileId);
+        ReplaceProfiles(configuration, configuration.ActiveProfileId);
     }
 
     private async Task RefreshPreloadedSoundsAsync(
@@ -647,7 +645,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
                 profile.Id != excludedId
                 && string.Equals(profile.Name, name.Trim(), StringComparison.CurrentCultureIgnoreCase)))
         {
-            throw new InvalidOperationException(AppStrings.Get("Profile_NameExists"));
+            throw new UserFacingException(AppStrings.Get("Profile_NameExists"));
         }
     }
 

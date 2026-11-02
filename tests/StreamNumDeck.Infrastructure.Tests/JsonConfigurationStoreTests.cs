@@ -446,4 +446,23 @@ public sealed class JsonConfigurationStoreTests
         Assert.AreEqual(99, versionFailure.Version);
         Assert.AreEqual(ConfigurationSchema.CurrentVersion, versionFailure.CurrentVersion);
     }
+
+    [TestMethod]
+    public async Task LoadAsync_WhenSchemaIsUnsupported_KeepsPrimaryInsteadOfRestoringBackup()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault();
+        await store.SaveAsync(configuration);
+        await store.SaveAsync(configuration);
+        Assert.IsTrue(File.Exists(paths.BackupFilePath));
+        var newerConfiguration = File.ReadAllText(paths.ConfigurationFilePath).Replace(
+            $"\"schemaVersion\": {ConfigurationSchema.CurrentVersion}",
+            "\"schemaVersion\": 99");
+        File.WriteAllText(paths.ConfigurationFilePath, newerConfiguration);
+
+        var exception = await Assert.ThrowsAsync<ConfigurationLoadException>(() => store.LoadAsync());
+
+        Assert.IsInstanceOfType<UnsupportedConfigurationVersionException>(exception.PrimaryFailure);
+        Assert.AreEqual(newerConfiguration, File.ReadAllText(paths.ConfigurationFilePath));
+    }
 }
