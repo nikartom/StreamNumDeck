@@ -60,7 +60,8 @@ identifier is stored.
 - Physical keys are identified by scan code and extended-key information, not
   by the character produced by the current keyboard layout.
 - NumLock is the layer selector and is not an ordinary action key.
-- Both layers contain assignments for the other 22 keys, for 44 action slots.
+- Both layers contain assignments for the other 23 keys, including the optional
+  Back key, for 46 action slots.
 - Injected input is tagged and never recursively processed as physical input.
 - The hook callback performs constant-time classification and queueing only.
 - `Ctrl+Alt+F12` toggles an emergency pause independently of user profiles.
