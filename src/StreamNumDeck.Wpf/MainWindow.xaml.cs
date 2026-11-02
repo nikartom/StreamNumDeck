@@ -91,6 +91,9 @@ public partial class MainWindow : Window
     private async void CaptureNavigationBlock_Click(object sender, RoutedEventArgs e) =>
         await ToggleCaptureTargetAsync(KeyboardCaptureTargets.NavigationBlock);
 
+    private async void CaptureBackKey_Click(object sender, RoutedEventArgs e) =>
+        await ToggleCaptureTargetAsync(KeyboardCaptureTargets.BackKey);
+
     private async Task ToggleCaptureTargetAsync(KeyboardCaptureTargets target)
     {
         try

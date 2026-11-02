@@ -160,15 +160,18 @@ public sealed class JsonConfigurationStore : IConfigurationStore, IDisposable
         var hasCaptureNumpad = settingsDocument.TryGetProperty("captureNumpad", out _);
         var hasCaptureNavigationBlock = settingsDocument.TryGetProperty("captureNavigationBlock", out _);
         var hasVTubeStudio = settingsDocument.TryGetProperty("vTubeStudio", out _);
+        var hasShowMicrophoneMuteIndicator = settingsDocument.TryGetProperty("showMicrophoneMuteIndicator", out _);
         if (!hasCaptureNumpad ||
             !hasCaptureNavigationBlock ||
             !hasVTubeStudio ||
+            !hasShowMicrophoneMuteIndicator ||
             configuration.Settings.VTubeStudio is null)
         {
             configuration = configuration.WithSettings(configuration.Settings with
             {
                 CaptureNumpad = !hasCaptureNumpad || configuration.Settings.CaptureNumpad,
                 CaptureNavigationBlock = !hasCaptureNavigationBlock || configuration.Settings.CaptureNavigationBlock,
+                ShowMicrophoneMuteIndicator = !hasShowMicrophoneMuteIndicator || configuration.Settings.ShowMicrophoneMuteIndicator,
                 VTubeStudio = configuration.Settings.VTubeStudio ?? VTubeStudioConnectionSettings.Default,
             });
         }

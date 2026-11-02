@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Ekle, Giriş, Sayfa Yukarı, Sil, Sonlandır ve Sayfa Aşağı tuşlarını durdurun</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Backspace ve tarayıcının Geri tuşunu yakala</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Bu seçenek açıkken Backspace hiçbir uygulamada metin silmez.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Görünüm</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Karanlık</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Mikrofon sessiz göstergesini göster</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Konum mikrofon göstergesi</value>

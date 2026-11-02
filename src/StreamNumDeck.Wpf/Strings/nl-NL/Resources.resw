@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Onderschep de toetsen Invoegen, Home, Pagina omhoog, Verwijderen, Einde en Pagina omlaag</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Backspace en de browsertoets Terug onderscheppen</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Zolang dit aanstaat, verwijdert Backspace in geen enkele toepassing tekst.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Uiterlijk</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Donker</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Indicator voor gedempte microfoon weergeven</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Positie microfoonindicator</value>

@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Chặn các phím Chèn, Trang chủ, Lên trang, Xóa, Kết thúc và Xuống trang</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Chặn phím Backspace và phím Quay lại của trình duyệt</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Khi tùy chọn này bật, phím Backspace sẽ không xóa văn bản trong bất kỳ ứng dụng nào.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Ngoại hình</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Tối</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Hiển thị chỉ báo tắt tiếng micrô</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Chỉ báo vị trí micrô</value>

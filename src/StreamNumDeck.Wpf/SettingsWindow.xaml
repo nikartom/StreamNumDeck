@@ -209,6 +209,10 @@
                             </Grid>
 
                             <Border Height="1" Background="#3D3D3D" Margin="0,10" />
+                            <Grid Margin="0,0,0,8">
+                                <TextBlock Text="{localization:Loc Settings_ShowMicrophoneIndicator.Header, Fallback=Show the microphone mute indicator}" VerticalAlignment="Center" />
+                                <CheckBox x:Name="ShowMicrophoneIndicatorCheckBox" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" />
+                            </Grid>
                             <Button Content="{localization:Loc Settings_PositionOverlay.Content, Fallback=Position microphone indicator}"
                                     HorizontalAlignment="Left" Click="PositionOverlay_Click">
                                 <Button.ToolTip>
@@ -244,6 +248,12 @@
                                 <TextBlock Text="{localization:Loc Capture_NavigationBlockHint, Fallback=Intercept the six-key navigation block}" VerticalAlignment="Center" />
                                 <CheckBox x:Name="CaptureNavigationBlockCheckBox" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" />
                             </Grid>
+                            <Grid Margin="0,5,0,0">
+                                <TextBlock Text="{localization:Loc Capture_BackKeyHint, Fallback=Intercept Backspace and the browser Back key}" VerticalAlignment="Center" />
+                                <CheckBox x:Name="CaptureBackKeyCheckBox" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" />
+                            </Grid>
+                            <TextBlock Text="{localization:Loc Capture_BackKeyWarning, Fallback=Backspace does not delete text while this is on.}"
+                                       Margin="0,2,48,5" FontSize="11" Foreground="{StaticResource SecondaryTextBrush}" TextWrapping="Wrap" />
 
                             <Border Height="1" Background="#3D3D3D" Margin="0,10" />
                             <Grid>

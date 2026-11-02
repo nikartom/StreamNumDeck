@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Insert、Home、Page Up、Delete、End、および Page Down キーをインターセプトします</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Backspace キーとブラウザーの戻るキーをキャプチャする</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>オンの間は、どのアプリでも Backspace でテキストを削除できません。</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>外観</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>暗い</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>マイクのミュート インジケーターを表示する</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>マイク位置インジケーター</value>

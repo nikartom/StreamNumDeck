@@ -3,6 +3,7 @@ using StreamNumDeck.Core.Configuration;
 using StreamNumDeck.Core.Deck;
 using StreamNumDeck.Core.Icons;
 using StreamNumDeck.Core.Input;
+using StreamNumDeck.Core.Settings;
 using System.Collections.Immutable;
 
 namespace StreamNumDeck.Core.Tests;
@@ -20,15 +21,24 @@ public sealed class DeckModelTests
                 DeckKey.Delete or DeckKey.End or DeckKey.PageDown;
 
             Assert.AreEqual(isNavigationKey, KeyboardCaptureTargets.NavigationBlock.Includes(key), key.ToString());
-            Assert.AreEqual(!isNavigationKey, KeyboardCaptureTargets.Numpad.Includes(key), key.ToString());
+            Assert.AreEqual(!isNavigationKey && key != DeckKey.Back, KeyboardCaptureTargets.Numpad.Includes(key), key.ToString());
+            Assert.AreEqual(key == DeckKey.Back, KeyboardCaptureTargets.BackKey.Includes(key), key.ToString());
         }
     }
 
     [TestMethod]
-    public void AssignableKeyCatalog_ContainsTwentyTwoUniquePhysicalKeys()
+    public void CaptureTargets_DefaultLeavesBackKeyAvailableForTyping()
     {
-        Assert.HasCount(22, DeckKeyCatalog.AssignableKeys);
-        Assert.HasCount(22, DeckKeyCatalog.AssignableKeys.Distinct());
+        Assert.IsFalse(KeyboardCaptureTargets.Default.Includes(DeckKey.Back));
+        Assert.IsTrue(KeyboardCaptureTargets.All.Includes(DeckKey.Back));
+        Assert.IsFalse(GlobalSettings.Default.CaptureBackKey);
+    }
+
+    [TestMethod]
+    public void AssignableKeyCatalog_ContainsTwentyThreeUniquePhysicalKeys()
+    {
+        Assert.HasCount(23, DeckKeyCatalog.AssignableKeys);
+        Assert.HasCount(23, DeckKeyCatalog.AssignableKeys.Distinct());
     }
 
     [TestMethod]
@@ -38,8 +48,8 @@ public sealed class DeckModelTests
 
         Assert.AreEqual(NumLockLayer.Off, profile.NumLockOff.Mode);
         Assert.AreEqual(NumLockLayer.On, profile.NumLockOn.Mode);
-        Assert.HasCount(22, profile.NumLockOff.Assignments);
-        Assert.HasCount(22, profile.NumLockOn.Assignments);
+        Assert.HasCount(23, profile.NumLockOff.Assignments);
+        Assert.HasCount(23, profile.NumLockOn.Assignments);
         Assert.AreEqual(IconReference.BuiltIn("broadcast"), profile.Icon);
     }
 
@@ -123,6 +133,16 @@ public sealed class DeckModelTests
         Assert.AreEqual(assignment, updatedProfile.NumLockOff.GetAssignment(DeckKey.Numpad7));
         Assert.IsInstanceOfType<NoActionDefinition>(updatedProfile.NumLockOn.GetAssignment(DeckKey.Numpad7).Action);
         Assert.IsInstanceOfType<NoActionDefinition>(updatedProfile.NumLockOff.GetAssignment(DeckKey.Numpad8).Action);
+    }
+
+    [TestMethod]
+    public void DeckLayer_AddsBackKeyMissingFromOlderLayers()
+    {
+        var olderAssignments = DeckLayer.CreateEmpty(NumLockLayer.Off).Assignments.Remove(DeckKey.Back);
+
+        var layer = new DeckLayer(NumLockLayer.Off, olderAssignments);
+
+        Assert.AreEqual(KeyAssignment.Empty, layer.GetAssignment(DeckKey.Back));
     }
 
     [TestMethod]

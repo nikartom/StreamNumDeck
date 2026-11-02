@@ -1,11 +1,13 @@
 using System.Windows.Threading;
 using StreamNumDeck.Core.Audio;
+using StreamNumDeck.Core.Configuration;
 
 namespace StreamNumDeck.Wpf.Overlays;
 
 public sealed class MicrophoneMuteOverlayController : IAsyncDisposable
 {
     private readonly ISystemAudioControlService audioControlService;
+    private readonly ConfigurationService configurationService;
     private readonly OverlayPositionStore positionStore;
     private readonly DispatcherTimer timer = new(DispatcherPriority.Background)
     {
@@ -17,9 +19,11 @@ public sealed class MicrophoneMuteOverlayController : IAsyncDisposable
 
     public MicrophoneMuteOverlayController(
         ISystemAudioControlService audioControlService,
+        ConfigurationService configurationService,
         OverlayPositionStore positionStore)
     {
         this.audioControlService = audioControlService;
+        this.configurationService = configurationService;
         this.positionStore = positionStore;
         timer.Tick += Timer_Tick;
     }
@@ -83,7 +87,9 @@ public sealed class MicrophoneMuteOverlayController : IAsyncDisposable
                 return;
             }
 
-            if (await audioControlService.GetDefaultMicrophoneMuteAsync())
+            var configuration = await configurationService.GetAsync();
+            if (configuration.Settings.ShowMicrophoneMuteIndicator
+                && await audioControlService.GetDefaultMicrophoneMuteAsync())
             {
                 if (!window.IsVisible)
                 {

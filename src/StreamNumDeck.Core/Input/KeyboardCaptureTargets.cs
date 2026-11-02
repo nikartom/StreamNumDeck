@@ -8,7 +8,9 @@ public enum KeyboardCaptureTargets
     None = 0,
     Numpad = 1,
     NavigationBlock = 2,
-    All = Numpad | NavigationBlock,
+    BackKey = 4,
+    Default = Numpad | NavigationBlock,
+    All = Default | BackKey,
 }
 
 public static class KeyboardCaptureTargetsExtensions
@@ -40,6 +42,7 @@ public static class KeyboardCaptureTargetsExtensions
         DeckKey.NumpadEnter or
         DeckKey.Numpad0 or
         DeckKey.NumpadDecimal => targets.Includes(KeyboardCaptureTargets.Numpad),
+        DeckKey.Back => targets.Includes(KeyboardCaptureTargets.BackKey),
         _ => false,
     };
 }

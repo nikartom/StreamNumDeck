@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Interceptați tastele Inserare, Acasă, Pagină în sus, Ștergere, Sfârșit și Pagină în jos</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Interceptează Backspace și tasta Înapoi a browserului</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Cât timp această opțiune este activă, Backspace nu șterge text în nicio aplicație.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Aspectul</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Întuneric</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Afișează indicatorul de microfon dezactivat</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Indicatorul de poziție al microfonului</value>

@@ -56,6 +56,8 @@ public partial class SettingsWindow : Window
             CaptureOnStartupCheckBox.IsChecked = snapshot.Settings.EnableCaptureOnStartup;
             CaptureNumpadCheckBox.IsChecked = snapshot.Settings.CaptureNumpad;
             CaptureNavigationBlockCheckBox.IsChecked = snapshot.Settings.CaptureNavigationBlock;
+            CaptureBackKeyCheckBox.IsChecked = snapshot.Settings.CaptureBackKey;
+            ShowMicrophoneIndicatorCheckBox.IsChecked = snapshot.Settings.ShowMicrophoneMuteIndicator;
             ObsHostTextBox.Text = snapshot.Settings.Obs.Host;
             ObsPortTextBox.Text = snapshot.Settings.Obs.Port.ToString();
             VTubeStudioHostTextBox.Text = snapshot.Settings.VTubeStudio.Host;
@@ -122,6 +124,8 @@ public partial class SettingsWindow : Window
             {
                 CaptureNumpad = CaptureNumpadCheckBox.IsChecked == true,
                 CaptureNavigationBlock = CaptureNavigationBlockCheckBox.IsChecked == true,
+                CaptureBackKey = CaptureBackKeyCheckBox.IsChecked == true,
+                ShowMicrophoneMuteIndicator = ShowMicrophoneIndicatorCheckBox.IsChecked == true,
                 VTubeStudio = new VTubeStudioConnectionSettings(
                     VTubeStudioHostTextBox.Text,
                     vTubeStudioPort,

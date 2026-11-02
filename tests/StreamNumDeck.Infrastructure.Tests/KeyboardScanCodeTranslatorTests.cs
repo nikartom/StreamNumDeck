@@ -33,6 +33,8 @@ public sealed class KeyboardScanCodeTranslatorTests
             (0x1C, true, DeckKey.NumpadEnter),
             (0x52, false, DeckKey.Numpad0),
             (0x53, false, DeckKey.NumpadDecimal),
+            (0x0E, false, DeckKey.Back),
+            (0x6A, true, DeckKey.Back),
         ];
 
         foreach (var testCase in cases)
@@ -48,7 +50,7 @@ public sealed class KeyboardScanCodeTranslatorTests
 
         CollectionAssert.AreEquivalent(
             DeckKeyCatalog.AssignableKeys.ToArray(),
-            cases.Select(testCase => testCase.Key).ToArray());
+            cases.Select(testCase => testCase.Key).Distinct().ToArray());
     }
 
     [TestMethod]

@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Avlyssna knapparna Infoga, Hem, Sida upp, Ta bort, Avsluta och Sida ner</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Fånga Backsteg och webbläsarens Bakåt-tangent</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Så länge detta är på raderar Backsteg inte text i något program.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Utseende</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Mörkt</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Visa indikatorn för avstängd mikrofon</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Positionera mikrofonindikator</value>

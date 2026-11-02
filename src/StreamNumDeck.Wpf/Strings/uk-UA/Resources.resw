@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Перехопити клавіші Insert, Home, Page Up, Delete, End і Page Down</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Перехоплювати Backspace і клавішу «Назад» браузера</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Поки перехоплення ввімкнено, Backspace не видаляє текст у жодному застосунку.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Зовнішній вигляд</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Темний</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Показувати індикатор вимкненого мікрофона</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Індикатор положення мікрофона</value>

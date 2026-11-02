@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Cegat tombol Sisipkan, Beranda, Halaman Atas, Hapus, Akhiri, dan Halaman Bawah</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Cegat Backspace dan tombol Kembali browser</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Selama ini aktif, Backspace tidak menghapus teks di aplikasi apa pun.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Penampilan</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Gelap</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Tampilkan indikator mikrofon dibisukan</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Indikator posisi mikrofon</value>

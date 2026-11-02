@@ -42,7 +42,7 @@ public sealed class WindowsKeyboardCaptureService : IKeyboardCaptureService
     private nint hookHandle;
     private uint hookThreadId;
     private volatile bool numLockOn;
-    private int captureTargets = (int)KeyboardCaptureTargets.All;
+    private int captureTargets = (int)KeyboardCaptureTargets.Default;
     private long suppressNumLockPollingUntil;
     private bool numLockKeyDown;
     private bool controlDown;

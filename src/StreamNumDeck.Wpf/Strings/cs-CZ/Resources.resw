@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Zachyťte klávesy Insert, Home, Page Up, Delete, End a Page Down</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Zachytávat Backspace a klávesu Zpět prohlížeče</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Když je tato možnost zapnutá, Backspace nemaže text v žádné aplikaci.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Vzhled</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Tmavý</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Zobrazovat indikátor ztlumení mikrofonu</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Indikátor polohy mikrofonu</value>

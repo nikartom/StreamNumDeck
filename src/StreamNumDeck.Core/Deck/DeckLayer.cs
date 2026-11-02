@@ -8,6 +8,12 @@ public sealed record DeckLayer
     {
         Guard.NotNull(assignments, nameof(assignments));
 
+        // Layers saved before the Back key became assignable have no entry for it.
+        if (!assignments.ContainsKey(DeckKey.Back))
+        {
+            assignments = assignments.Add(DeckKey.Back, KeyAssignment.Empty);
+        }
+
         var missingKeys = DeckKeyCatalog.AssignableKeys.Where(key => !assignments.ContainsKey(key)).ToArray();
         var unknownKeys = assignments.Keys.Where(key => !DeckKeyCatalog.AssignableKeys.Contains(key)).ToArray();
 

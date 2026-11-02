@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Intercepta las teclas Insertar, Inicio, Re Pág, Eliminar, Fin y Av Pág</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Interceptar Retroceso y la tecla Atrás del navegador</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Mientras esté activado, Retroceso no borra texto en ninguna aplicación.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Apariencia</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>oscuro</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Mostrar el indicador de micrófono silenciado</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Indicador de posición del micrófono</value>

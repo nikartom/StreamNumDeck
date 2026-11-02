@@ -47,6 +47,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
     private bool isNumLockOn;
     private bool captureNumpad = true;
     private bool captureNavigationBlock = true;
+    private bool captureBackKey;
     private string obsStatusText = AppStrings.Get("Obs_Disconnected", "OBS disconnected");
     private Brush obsStatusBrush = ObsDisconnectedBrush;
     private string errorTitle = AppStrings.Get("Deck_ActionError.Title", "Action failed");
@@ -114,6 +115,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
     public Brush NumLockBackground => IsNumLockOn ? NumLockOnBrush : NumLockOffBrush;
     public bool CaptureNumpad { get => captureNumpad; private set => SetProperty(ref captureNumpad, value); }
     public bool CaptureNavigationBlock { get => captureNavigationBlock; private set => SetProperty(ref captureNavigationBlock, value); }
+    public bool CaptureBackKey { get => captureBackKey; private set => SetProperty(ref captureBackKey, value); }
     public string ObsStatusText { get => obsStatusText; private set => SetProperty(ref obsStatusText, value); }
     public Brush ObsStatusBrush { get => obsStatusBrush; private set => SetProperty(ref obsStatusBrush, value); }
     public string ErrorTitle { get => errorTitle; private set => SetProperty(ref errorTitle, value); }
@@ -181,7 +183,9 @@ public sealed class MainViewModel : ObservableObject, IDisposable
 
     public async Task ToggleCaptureTargetAsync(KeyboardCaptureTargets target)
     {
-        if (target is not KeyboardCaptureTargets.Numpad and not KeyboardCaptureTargets.NavigationBlock)
+        if (target is not KeyboardCaptureTargets.Numpad
+            and not KeyboardCaptureTargets.NavigationBlock
+            and not KeyboardCaptureTargets.BackKey)
         {
             throw new ArgumentOutOfRangeException(nameof(target), target, "A single capture target is required.");
         }
@@ -197,6 +201,9 @@ public sealed class MainViewModel : ObservableObject, IDisposable
                 CaptureNavigationBlock = target == KeyboardCaptureTargets.NavigationBlock
                     ? !settings.CaptureNavigationBlock
                     : settings.CaptureNavigationBlock,
+                CaptureBackKey = target == KeyboardCaptureTargets.BackKey
+                    ? !settings.CaptureBackKey
+                    : settings.CaptureBackKey,
             });
         }).ConfigureAwait(true);
 
@@ -574,9 +581,15 @@ public sealed class MainViewModel : ObservableObject, IDisposable
             targets |= KeyboardCaptureTargets.NavigationBlock;
         }
 
+        if (settings.CaptureBackKey)
+        {
+            targets |= KeyboardCaptureTargets.BackKey;
+        }
+
         await runtimeService.SetCaptureTargetsAsync(targets, cancellationToken).ConfigureAwait(true);
         CaptureNumpad = settings.CaptureNumpad;
         CaptureNavigationBlock = settings.CaptureNavigationBlock;
+        CaptureBackKey = settings.CaptureBackKey;
     }
 
     private void ApplyObsState(ObsConnectionState state)

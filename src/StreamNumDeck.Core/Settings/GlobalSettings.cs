@@ -125,6 +125,14 @@ public sealed record GlobalSettings
 
     public bool CaptureNavigationBlock { get; init; } = true;
 
+    /// <summary>
+    /// Off by default because the Back key shares its scan code with the main
+    /// Backspace key, so capturing it stops Backspace from deleting text.
+    /// </summary>
+    public bool CaptureBackKey { get; init; }
+
+    public bool ShowMicrophoneMuteIndicator { get; init; } = true;
+
     public AppTheme Theme { get; }
 
     public ObsConnectionSettings Obs { get; }

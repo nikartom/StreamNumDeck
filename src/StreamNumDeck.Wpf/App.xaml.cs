@@ -148,6 +148,7 @@ public partial class App : System.Windows.Application
             () => Dispatcher.InvokeAsync(viewModel.ToggleCaptureAsync).Task.Unwrap(),
             () => Dispatcher.InvokeAsync(() => viewModel.ToggleCaptureTargetAsync(KeyboardCaptureTargets.Numpad)).Task.Unwrap(),
             () => Dispatcher.InvokeAsync(() => viewModel.ToggleCaptureTargetAsync(KeyboardCaptureTargets.NavigationBlock)).Task.Unwrap(),
+            () => Dispatcher.InvokeAsync(() => viewModel.ToggleCaptureTargetAsync(KeyboardCaptureTargets.BackKey)).Task.Unwrap(),
             profileId => Dispatcher.InvokeAsync(() => viewModel.SelectProfileAsync(profileId)).Task.Unwrap(),
             () => Dispatcher.Invoke(window.ExitFromTray));
         provider.GetRequiredService<ConfigurationService>().Changed += (_, args) =>
@@ -158,7 +159,8 @@ public partial class App : System.Windows.Application
                     args.Configuration.ActiveProfileId);
                 tray.SetCaptureTargets(
                     args.Configuration.Settings.CaptureNumpad,
-                    args.Configuration.Settings.CaptureNavigationBlock);
+                    args.Configuration.Settings.CaptureNavigationBlock,
+                    args.Configuration.Settings.CaptureBackKey);
             }));
         provider.GetRequiredService<DeckRuntimeService>().CaptureStateChanged += (_, args) =>
             Dispatcher.BeginInvoke(new Action(() => tray.SetCaptureEnabled(args.State == KeyboardCaptureState.Running)));
@@ -195,7 +197,8 @@ public partial class App : System.Windows.Application
                 tray.SetCaptureEnabled(provider.GetRequiredService<DeckRuntimeService>().CaptureState == KeyboardCaptureState.Running);
                 tray.SetCaptureTargets(
                     configuration.Settings.CaptureNumpad,
-                    configuration.Settings.CaptureNavigationBlock);
+                    configuration.Settings.CaptureNavigationBlock,
+                    configuration.Settings.CaptureBackKey);
                 tray.SetProfiles(
                     configuration.Profiles.Select(profile => new TrayProfileOption(profile.Id, profile.Name)),
                     configuration.ActiveProfileId);

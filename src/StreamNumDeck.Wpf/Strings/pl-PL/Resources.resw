@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Przechwyć klawisze Insert, Home, Page Up, Delete, End i Page Down</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Przechwytuj Backspace i klawisz Wstecz przeglądarki</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Gdy ta opcja jest włączona, Backspace nie usuwa tekstu w żadnej aplikacji.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Wygląd</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Ciemny</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Pokazuj wskaźnik wyciszenia mikrofonu</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Wskaźnik położenia mikrofonu</value>

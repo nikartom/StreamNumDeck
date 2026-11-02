@@ -62,7 +62,7 @@ The physical `NumLock` key switches between two independent layers. That gives y
 ### What can I do with it?
 
 - Switch OBS scenes and show or hide sources without using `Alt+Tab`.
-- Mute the microphone and keep a visible crossed-microphone indicator on any monitor.
+- Mute the microphone and keep a visible crossed-microphone indicator on any monitor, or turn the indicator off in Settings.
 - Start, stop, or toggle recording and streaming; pause recording; and control the replay buffer from the keyboard.
 - Toggle the virtual camera and Studio Mode, trigger Studio Mode transitions, and control media source playback.
 - Trigger VTube Studio hotkeys and switch Live2D models from the same keyboard.
@@ -97,7 +97,7 @@ The portable build stores profiles and settings in `%LocalAppData%\StreamNumDeck
 4. Press the same physical key while StreamNumDeck is running.
 5. Press `NumLock` to configure and use the second layer.
 
-The numpad and the six-key navigation block can be captured independently from the main window. Capture can also be paused from the tray menu. `Ctrl+Alt+F12` remains available as an emergency capture toggle.
+The numpad and the six-key navigation block can be captured independently from the main window. An optional **Back** key adds two more actions per profile: it responds to Backspace (including the Backspace key on external numeric keypads) and to the browser Back key. It is off by default because Windows reports the main keyboard's Backspace with the same scan code, so while it is on, Backspace does not delete text in any application. Capture can also be paused from the tray menu. `Ctrl+Alt+F12` remains available as an emergency capture toggle.
 
 ### OBS Studio
 

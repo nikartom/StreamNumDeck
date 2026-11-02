@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Insert, Home, Page Up, Delete, End 및 Page Down 키를 가로채세요.</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Backspace 키와 브라우저 뒤로 키 가로채기</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>이 옵션이 켜져 있는 동안에는 어떤 앱에서도 Backspace로 텍스트를 지울 수 없습니다.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>외관</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>어둠</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>마이크 음소거 표시기 표시</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>위치 마이크 표시기</value>

@@ -11,7 +11,7 @@ public sealed class WindowsKeyboardCaptureServiceTests
     {
         await using var service = new WindowsKeyboardCaptureService();
 
-        Assert.AreEqual(KeyboardCaptureTargets.All, service.CaptureTargets);
+        Assert.AreEqual(KeyboardCaptureTargets.Default, service.CaptureTargets);
 
         await service.SetCaptureTargetsAsync(KeyboardCaptureTargets.Numpad, TestContext.CancellationToken);
         Assert.AreEqual(KeyboardCaptureTargets.Numpad, service.CaptureTargets);

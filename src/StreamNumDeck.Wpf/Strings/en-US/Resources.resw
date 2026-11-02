@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Intercept the Insert, Home, Page Up, Delete, End, and Page Down keys</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Intercept Backspace and the browser Back key</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>While this is on, Backspace does not delete text in any application.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Appearance</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Dark</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Show the microphone mute indicator</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Position the microphone indicator</value>

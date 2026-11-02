@@ -44,8 +44,8 @@ public sealed class JsonConfigurationStoreTests
 
         Assert.IsTrue(File.Exists(paths.ConfigurationFilePath));
         Assert.AreEqual("Основной стрим", configuration.ActiveProfile.Name);
-        Assert.HasCount(22, configuration.ActiveProfile.NumLockOff.Assignments);
-        Assert.HasCount(22, configuration.ActiveProfile.NumLockOn.Assignments);
+        Assert.HasCount(23, configuration.ActiveProfile.NumLockOff.Assignments);
+        Assert.HasCount(23, configuration.ActiveProfile.NumLockOn.Assignments);
     }
 
     [TestMethod]
@@ -303,6 +303,75 @@ public sealed class JsonConfigurationStoreTests
 
         Assert.IsTrue(loaded.Settings.CaptureNumpad);
         Assert.IsTrue(loaded.Settings.CaptureNavigationBlock);
+    }
+
+    [TestMethod]
+    public async Task SaveAndLoad_PreservesBackKeyAndIndicatorSettings()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault();
+        configuration = configuration.WithSettings(configuration.Settings with
+        {
+            CaptureBackKey = true,
+            ShowMicrophoneMuteIndicator = false,
+        });
+
+        await store.SaveAsync(configuration);
+        var loaded = await store.LoadAsync();
+
+        Assert.IsTrue(loaded.Settings.CaptureBackKey);
+        Assert.IsFalse(loaded.Settings.ShowMicrophoneMuteIndicator);
+    }
+
+    [TestMethod]
+    public async Task LoadAsync_ConfigurationFromBeforeBackKey_KeepsAssignmentsAndDefaults()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault();
+        var profile = configuration.ActiveProfile.WithAssignment(
+            NumLockLayer.Off,
+            DeckKey.Home,
+            new KeyAssignment("Kept", IconReference.BuiltIn("plus"), new OpenPathActionDefinition(@"C:\kept.txt")));
+        await store.SaveAsync(configuration.ReplaceProfile(profile));
+        var root = JsonNode.Parse(File.ReadAllText(paths.ConfigurationFilePath))!.AsObject();
+        var settings = root["configuration"]!["settings"]!.AsObject();
+        settings.Remove("captureBackKey");
+        settings.Remove("showMicrophoneMuteIndicator");
+        var removedBackEntries = RemoveBackAssignments(root);
+        File.WriteAllText(
+            paths.ConfigurationFilePath,
+            root.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+
+        var loaded = await store.LoadAsync();
+
+        Assert.IsGreaterThanOrEqualTo(2, removedBackEntries);
+        Assert.IsFalse(loaded.Settings.CaptureBackKey);
+        Assert.IsTrue(loaded.Settings.ShowMicrophoneMuteIndicator);
+        Assert.AreEqual(KeyAssignment.Empty, loaded.ActiveProfile.NumLockOff.GetAssignment(DeckKey.Back));
+        Assert.AreEqual("Kept", loaded.ActiveProfile.NumLockOff.GetAssignment(DeckKey.Home).Label);
+    }
+
+    private static int RemoveBackAssignments(JsonNode? node)
+    {
+        var removed = 0;
+        if (node is JsonObject item)
+        {
+            removed += item.Remove("back") ? 1 : 0;
+            removed += item.Remove("Back") ? 1 : 0;
+            foreach (var property in item)
+            {
+                removed += RemoveBackAssignments(property.Value);
+            }
+        }
+        else if (node is JsonArray array)
+        {
+            foreach (var element in array)
+            {
+                removed += RemoveBackAssignments(element);
+            }
+        }
+
+        return removed;
     }
 
     [TestMethod]

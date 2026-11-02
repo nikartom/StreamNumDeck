@@ -28,6 +28,7 @@ internal static class DeckPresentation
         DeckKey.Numpad7 => "7",
         DeckKey.Numpad8 => "8",
         DeckKey.Numpad9 => "9",
+        DeckKey.Back => "Back",
         _ => key.ToString(),
     };
 

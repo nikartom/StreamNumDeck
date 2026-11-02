@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Intercetta i tasti Inserisci, Home, Pagina su, Elimina, Fine e Pagina giù</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Intercetta Backspace e il tasto Indietro del browser</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Finché questa opzione è attiva, Backspace non elimina il testo in nessuna applicazione.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Aspetto</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Buio</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Mostra l'indicatore di microfono disattivato</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Indicatore di posizione del microfono</value>

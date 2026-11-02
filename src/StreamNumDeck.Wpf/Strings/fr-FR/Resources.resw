@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Interceptez les touches Insertion, Accueil, Page précédente, Supprimer, Fin et Page suivante</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Intercepter Retour arrière et la touche Précédent du navigateur</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Tant que cette option est activée, Retour arrière ne supprime plus de texte dans aucune application.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Apparence</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Sombre</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Afficher l'indicateur de micro coupé</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Indicateur de position du microphone</value>

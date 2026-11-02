@@ -13,6 +13,7 @@ internal sealed class TrayIconService : IDisposable
     private ToolStripMenuItem? captureItem;
     private ToolStripMenuItem? captureNumpadItem;
     private ToolStripMenuItem? captureNavigationBlockItem;
+    private ToolStripMenuItem? captureBackKeyItem;
     private ToolStripMenuItem? profilesItem;
     private Func<Guid, Task>? selectProfile;
 
@@ -21,6 +22,7 @@ internal sealed class TrayIconService : IDisposable
         Func<Task> toggleCapture,
         Func<Task> toggleCaptureNumpad,
         Func<Task> toggleCaptureNavigationBlock,
+        Func<Task> toggleCaptureBackKey,
         Func<Guid, Task> selectProfile,
         Action exitApplication)
     {
@@ -33,6 +35,8 @@ internal sealed class TrayIconService : IDisposable
         captureNumpadItem.Click += async (_, _) => await ExecuteAsync(toggleCaptureNumpad, captureNumpadItem);
         captureNavigationBlockItem = new ToolStripMenuItem(AppStrings.Get("Capture_NavigationBlockHint", "Intercept the six-key navigation block"));
         captureNavigationBlockItem.Click += async (_, _) => await ExecuteAsync(toggleCaptureNavigationBlock, captureNavigationBlockItem);
+        captureBackKeyItem = new ToolStripMenuItem(AppStrings.Get("Capture_BackKeyHint", "Intercept Backspace and the browser Back key"));
+        captureBackKeyItem.Click += async (_, _) => await ExecuteAsync(toggleCaptureBackKey, captureBackKeyItem);
         profilesItem = new ToolStripMenuItem(AppStrings.Get("Tray_Profiles", "Profiles")) { Enabled = false };
         var exitItem = new ToolStripMenuItem(AppStrings.Get("Tray_Exit", "Exit"));
         exitItem.Click += (_, _) => exitApplication();
@@ -43,6 +47,7 @@ internal sealed class TrayIconService : IDisposable
         menu.Items.Add(captureItem);
         menu.Items.Add(captureNumpadItem);
         menu.Items.Add(captureNavigationBlockItem);
+        menu.Items.Add(captureBackKeyItem);
         menu.Items.Add(profilesItem);
         menu.Items.Add(new ToolStripSeparator());
         menu.Items.Add(exitItem);
@@ -85,7 +90,7 @@ internal sealed class TrayIconService : IDisposable
         }
     }
 
-    public void SetCaptureTargets(bool captureNumpad, bool captureNavigationBlock)
+    public void SetCaptureTargets(bool captureNumpad, bool captureNavigationBlock, bool captureBackKey)
     {
         if (captureNumpadItem is not null)
         {
@@ -95,6 +100,11 @@ internal sealed class TrayIconService : IDisposable
         if (captureNavigationBlockItem is not null)
         {
             captureNavigationBlockItem.Checked = captureNavigationBlock;
+        }
+
+        if (captureBackKeyItem is not null)
+        {
+            captureBackKeyItem.Checked = captureBackKey;
         }
     }
 

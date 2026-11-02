@@ -96,6 +96,12 @@
   <data name="Capture_NavigationBlockHint" xml:space="preserve">
     <value>Перехватывать клавиши Insert, Home, Page Up, Delete, End и Page Down</value>
   </data>
+  <data name="Capture_BackKeyHint" xml:space="preserve">
+    <value>Перехватывать Backspace и клавишу «Назад» браузера</value>
+  </data>
+  <data name="Capture_BackKeyWarning" xml:space="preserve">
+    <value>Пока перехват включён, Backspace не удаляет текст ни в одном приложении.</value>
+  </data>
   <data name="Settings_Theme.Header" xml:space="preserve">
     <value>Оформление</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="Theme_Dark.Content" xml:space="preserve">
     <value>Тёмное</value>
+  </data>
+  <data name="Settings_ShowMicrophoneIndicator.Header" xml:space="preserve">
+    <value>Показывать индикатор отключённого микрофона</value>
   </data>
   <data name="Settings_PositionOverlay.Content" xml:space="preserve">
     <value>Расположить индикатор микрофона</value>

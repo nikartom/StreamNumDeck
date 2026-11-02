@@ -195,6 +195,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Border Width="320" Height="184" Padding="10,8,10,10"
                             Background="#202020" BorderBrush="#414141" BorderThickness="1" CornerRadius="12">
                         <Grid>
@@ -225,6 +226,31 @@
                             </Grid>
                         </Grid>
                     </Border>
+
+                    <Border Width="92" Height="184" Margin="8,0,0,0" Padding="10,8,10,10"
+                            Background="#202020" BorderBrush="#414141" BorderThickness="1" CornerRadius="12">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid Margin="2,0">
+                                <CheckBox HorizontalAlignment="Right" VerticalAlignment="Center"
+                                          Style="{StaticResource ZoneToggleSwitchStyle}"
+                                          IsChecked="{Binding CaptureBackKey, Mode=OneWay}"
+                                          Click="CaptureBackKey_Click">
+                                    <CheckBox.ToolTip>
+                                        <StackPanel MaxWidth="320">
+                                            <TextBlock Text="{localization:Loc Capture_BackKeyHint, Fallback=Intercept Backspace and the browser Back key}" TextWrapping="Wrap" />
+                                            <TextBlock Text="{localization:Loc Capture_BackKeyWarning, Fallback=Backspace does not delete text while this is on.}" Margin="0,4,0,0" TextWrapping="Wrap" />
+                                        </StackPanel>
+                                    </CheckBox.ToolTip>
+                                </CheckBox>
+                            </Grid>
+                            <Button Grid.Row="1" Tag="Back" Click="DeckKey_Click" Style="{StaticResource DeckKeyButtonStyle}" Content="{Binding Tiles[Back]}" ContentTemplate="{StaticResource DeckKeyTemplate}" />
+                        </Grid>
+                    </Border>
+                    </StackPanel>
 
                     <Border Width="420" Height="420" Margin="0,12,0,0" Padding="10,8,10,10"
                             Background="#202020" BorderBrush="#414141" BorderThickness="1" CornerRadius="12">
