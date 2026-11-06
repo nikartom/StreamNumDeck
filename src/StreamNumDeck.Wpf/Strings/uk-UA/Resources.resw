@@ -441,6 +441,33 @@
   <data name="Action_Automation" xml:space="preserve">
     <value>автоматизація</value>
   </data>
+  <data name="ActionGroup_Profiles" xml:space="preserve">
+    <value>Профілі</value>
+  </data>
+  <data name="Action_NextProfile" xml:space="preserve">
+    <value>Наступний профіль</value>
+  </data>
+  <data name="Action_SwitchProfile" xml:space="preserve">
+    <value>Перемкнути на профіль</value>
+  </data>
+  <data name="Field_Profile" xml:space="preserve">
+    <value>Профіль</value>
+  </data>
+  <data name="Editor_ProfileSwitchHint.Text" xml:space="preserve">
+    <value>Це призначення розміщується на цій клавіші в кожному профілі, тому ви можете знову перейти з будь-якого з них.</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteTitle" xml:space="preserve">
+    <value>Замінити завдання</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteMessage" xml:space="preserve">
+    <value>Ця клавіша вже має інші призначення в цих профілях: {0}. Їх буде замінено. Продовжити?</value>
+  </data>
+  <data name="ActionError_ProfileUnavailable" xml:space="preserve">
+    <value>Профіль, призначений цій клавіші, більше не існує. Виберіть інший профіль у налаштуваннях клавіші.</value>
+  </data>
+  <data name="Error_SelectProfile" xml:space="preserve">
+    <value>Виберіть профіль.</value>
+  </data>
   <data name="Automation_ActionPickerTitle" xml:space="preserve">
     <value>Додайте дію до автоматизації</value>
   </data>

@@ -441,6 +441,33 @@
   <data name="Action_Automation" xml:space="preserve">
     <value>Automatizare</value>
   </data>
+  <data name="ActionGroup_Profiles" xml:space="preserve">
+    <value>Profiluri</value>
+  </data>
+  <data name="Action_NextProfile" xml:space="preserve">
+    <value>Următorul profil</value>
+  </data>
+  <data name="Action_SwitchProfile" xml:space="preserve">
+    <value>Comutați la profil</value>
+  </data>
+  <data name="Field_Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Editor_ProfileSwitchHint.Text" xml:space="preserve">
+    <value>Această atribuire este plasată pe această tastă în fiecare profil, astfel încât să puteți comuta din nou din oricare dintre ele.</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteTitle" xml:space="preserve">
+    <value>Înlocuiți sarcinile</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteMessage" xml:space="preserve">
+    <value>Această tastă are deja alte atribuiri în aceste profiluri: {0}. Vor fi înlocuite. Continuați?</value>
+  </data>
+  <data name="ActionError_ProfileUnavailable" xml:space="preserve">
+    <value>Profilul atribuit acestei taste nu mai există. Alegeți alt profil în setările tastei.</value>
+  </data>
+  <data name="Error_SelectProfile" xml:space="preserve">
+    <value>Selectați un profil.</value>
+  </data>
   <data name="Automation_ActionPickerTitle" xml:space="preserve">
     <value>Add action to automation</value>
   </data>

@@ -1,3 +1,4 @@
+using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Icons;
 
 namespace StreamNumDeck.Core.Deck;
@@ -78,4 +79,27 @@ public sealed record DeckProfile
         NumLockLayer.On => new DeckProfile(Id, Name, NumLockOff, NumLockOn.WithAssignment(key, assignment), Icon),
         _ => throw new ArgumentOutOfRangeException(nameof(layer), layer, null),
     };
+
+    /// <summary>
+    /// Copies the profile switch assignments of another profile. They are kept on the
+    /// same keys in every profile, so the user can switch again from any of them.
+    /// </summary>
+    public DeckProfile WithProfileSwitchAssignmentsFrom(DeckProfile source)
+    {
+        Guard.NotNull(source, nameof(source));
+
+        var profile = this;
+        foreach (var layer in new[] { NumLockLayer.Off, NumLockLayer.On })
+        {
+            foreach (var pair in source.GetLayer(layer).Assignments)
+            {
+                if (pair.Value.Action is SwitchProfileActionDefinition)
+                {
+                    profile = profile.WithAssignment(layer, pair.Key, pair.Value);
+                }
+            }
+        }
+
+        return profile;
+    }
 }

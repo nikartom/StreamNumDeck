@@ -441,6 +441,33 @@
   <data name="Action_Automation" xml:space="preserve">
     <value>Automatyzacja</value>
   </data>
+  <data name="ActionGroup_Profiles" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Action_NextProfile" xml:space="preserve">
+    <value>Następny profil</value>
+  </data>
+  <data name="Action_SwitchProfile" xml:space="preserve">
+    <value>Przełącz na profil</value>
+  </data>
+  <data name="Field_Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Editor_ProfileSwitchHint.Text" xml:space="preserve">
+    <value>To przypisanie jest umieszczone na tym klawiszu w każdym profilu, więc możesz ponownie przełączyć się z dowolnego z nich.</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteTitle" xml:space="preserve">
+    <value>Zamień zadania</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteMessage" xml:space="preserve">
+    <value>Ten klawisz ma już inne przypisania w tych profilach: {0}. Zostaną zastąpione. Kontynuować?</value>
+  </data>
+  <data name="ActionError_ProfileUnavailable" xml:space="preserve">
+    <value>Profil przypisany do tego klawisza już nie istnieje. Wybierz inny profil w ustawieniach klawisza.</value>
+  </data>
+  <data name="Error_SelectProfile" xml:space="preserve">
+    <value>Wybierz profil.</value>
+  </data>
   <data name="Automation_ActionPickerTitle" xml:space="preserve">
     <value>Dodaj akcję do automatyzacji</value>
   </data>

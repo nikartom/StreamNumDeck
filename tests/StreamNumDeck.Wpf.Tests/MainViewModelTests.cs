@@ -69,6 +69,72 @@ public sealed class MainViewModelTests
     }
 
     [TestMethod]
+    public async Task UpdateAssignmentAsync_ProfileSwitchIsPlacedInEveryProfile()
+    {
+        var viewModel = CreateViewModel(AppConfiguration.CreateDefault("Основной"), out var configurationService);
+        await viewModel.CreateProfileAsync("Игры", IconReference.BuiltIn("play"));
+        var switchAssignment = new KeyAssignment(
+            "Дальше",
+            IconReference.BuiltIn("play"),
+            new SwitchProfileActionDefinition(ProfileSwitchMode.Next));
+
+        await viewModel.UpdateAssignmentAsync(
+            viewModel.SelectedProfile!.Id,
+            NumLockLayer.Off,
+            DeckKey.Numpad9,
+            switchAssignment);
+
+        var profiles = (await configurationService.GetAsync()).Profiles;
+        Assert.HasCount(2, profiles);
+        foreach (var profile in profiles)
+        {
+            Assert.AreEqual(switchAssignment, profile.NumLockOff.GetAssignment(DeckKey.Numpad9));
+        }
+    }
+
+    [TestMethod]
+    public async Task GetProfileSwitchConflicts_NamesOtherProfilesWithDifferentAssignments()
+    {
+        var configuration = AppConfiguration.CreateDefault("Основной");
+        var viewModel = CreateViewModel(configuration, out _);
+        await viewModel.UpdateAssignmentAsync(configuration.ActiveProfileId, NumLockLayer.Off, DeckKey.Numpad9, EditedAssignment);
+        await viewModel.CreateProfileAsync("Игры", IconReference.BuiltIn("play"));
+        await viewModel.CreateProfileAsync("Монтаж", IconReference.BuiltIn("play"));
+        var switchAssignment = new KeyAssignment(
+            "Дальше",
+            IconReference.BuiltIn("play"),
+            new SwitchProfileActionDefinition(ProfileSwitchMode.Next));
+
+        var conflicts = viewModel.GetProfileSwitchConflicts(
+            viewModel.SelectedProfile!.Id,
+            NumLockLayer.Off,
+            DeckKey.Numpad9,
+            switchAssignment);
+
+        CollectionAssert.AreEqual(new[] { "Основной" }, conflicts.ToArray());
+    }
+
+    [TestMethod]
+    public async Task CreateProfileAsync_CopiesExistingProfileSwitchKeys()
+    {
+        var configuration = AppConfiguration.CreateDefault("Основной");
+        var viewModel = CreateViewModel(configuration, out var configurationService);
+        var switchAssignment = new KeyAssignment(
+            "Дальше",
+            IconReference.BuiltIn("play"),
+            new SwitchProfileActionDefinition(ProfileSwitchMode.Next));
+        await viewModel.UpdateAssignmentAsync(configuration.ActiveProfileId, NumLockLayer.On, DeckKey.Numpad9, switchAssignment);
+        await viewModel.UpdateAssignmentAsync(configuration.ActiveProfileId, NumLockLayer.On, DeckKey.Numpad7, EditedAssignment);
+
+        await viewModel.CreateProfileAsync("Игры", IconReference.BuiltIn("play"));
+
+        var created = (await configurationService.GetAsync()).ActiveProfile;
+        Assert.AreEqual("Игры", created.Name);
+        Assert.AreEqual(switchAssignment, created.NumLockOn.GetAssignment(DeckKey.Numpad9));
+        Assert.AreEqual(KeyAssignment.Empty, created.NumLockOn.GetAssignment(DeckKey.Numpad7));
+    }
+
+    [TestMethod]
     public async Task CreateProfileAsync_DuplicateNameProducesVisibleReason()
     {
         var viewModel = CreateViewModel(AppConfiguration.CreateDefault("Основной"), out _);

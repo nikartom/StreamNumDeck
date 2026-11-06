@@ -448,6 +448,28 @@ public sealed class JsonConfigurationStoreTests
     }
 
     [TestMethod]
+    public async Task SaveAndLoad_PreservesProfileSwitchActions()
+    {
+        using var store = new JsonConfigurationStore(paths);
+        var configuration = AppConfiguration.CreateDefault();
+        var targetId = configuration.ActiveProfileId;
+        var next = new KeyAssignment("Next", IconReference.BuiltIn("play"), new SwitchProfileActionDefinition(ProfileSwitchMode.Next));
+        var specific = new KeyAssignment(
+            "Main",
+            IconReference.BuiltIn("play"),
+            new SwitchProfileActionDefinition(ProfileSwitchMode.Specific, targetId));
+        var profile = configuration.ActiveProfile
+            .WithAssignment(NumLockLayer.Off, DeckKey.Numpad1, next)
+            .WithAssignment(NumLockLayer.On, DeckKey.Numpad2, specific);
+
+        await store.SaveAsync(configuration.ReplaceProfile(profile));
+        var loaded = (await store.LoadAsync()).ActiveProfile;
+
+        Assert.AreEqual(next, loaded.NumLockOff.GetAssignment(DeckKey.Numpad1));
+        Assert.AreEqual(specific, loaded.NumLockOn.GetAssignment(DeckKey.Numpad2));
+    }
+
+    [TestMethod]
     public async Task LoadAsync_WhenSchemaIsUnsupported_KeepsPrimaryInsteadOfRestoringBackup()
     {
         using var store = new JsonConfigurationStore(paths);

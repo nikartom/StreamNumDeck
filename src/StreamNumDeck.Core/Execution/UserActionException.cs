@@ -9,6 +9,7 @@ public enum UserActionError
     VTubeStudioUnavailable,
     VTubeStudioActionRejected,
     AudioFileUnsupported,
+    ProfileUnavailable,
 }
 
 public sealed class UserActionException : Exception
@@ -36,6 +37,7 @@ public sealed class UserActionException : Exception
         UserActionError.VTubeStudioUnavailable => "VTube Studio is not connected.",
         UserActionError.VTubeStudioActionRejected => $"VTube Studio rejected the configured action: {subject}",
         UserActionError.AudioFileUnsupported => $"Windows could not play the configured audio file: {subject}",
+        UserActionError.ProfileUnavailable => $"The configured profile no longer exists: {subject}",
         _ => "The configured action cannot be completed.",
     };
 }

@@ -441,6 +441,33 @@
   <data name="Action_Automation" xml:space="preserve">
     <value>Automatización</value>
   </data>
+  <data name="ActionGroup_Profiles" xml:space="preserve">
+    <value>Perfiles</value>
+  </data>
+  <data name="Action_NextProfile" xml:space="preserve">
+    <value>Siguiente perfil</value>
+  </data>
+  <data name="Action_SwitchProfile" xml:space="preserve">
+    <value>Cambiar al perfil</value>
+  </data>
+  <data name="Field_Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="Editor_ProfileSwitchHint.Text" xml:space="preserve">
+    <value>Esta asignación se realiza en esta tecla en cada perfil, por lo que puedes volver a cambiar desde cualquiera de ellos.</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteTitle" xml:space="preserve">
+    <value>Reemplazar asignaciones</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteMessage" xml:space="preserve">
+    <value>Esta tecla ya tiene otras asignaciones en estos perfiles: {0}. Se reemplazarán. ¿Continuar?</value>
+  </data>
+  <data name="ActionError_ProfileUnavailable" xml:space="preserve">
+    <value>El perfil asignado a esta tecla ya no existe. Elige otro perfil en la configuración de la tecla.</value>
+  </data>
+  <data name="Error_SelectProfile" xml:space="preserve">
+    <value>Seleccione un perfil.</value>
+  </data>
   <data name="Automation_ActionPickerTitle" xml:space="preserve">
     <value>Agregar acción a la automatización</value>
   </data>

@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Deck;
 using StreamNumDeck.Core.Settings;
 
@@ -116,6 +117,28 @@ public sealed record AppConfiguration
 
     public AppConfiguration WithActiveProfile(Guid profileId) =>
         new(profileId, Profiles, Settings);
+
+    /// <summary>
+    /// Returns the profile the action switches to, or null when its target profile no longer exists.
+    /// </summary>
+    public Guid? ResolveProfileSwitchTarget(SwitchProfileActionDefinition action)
+    {
+        Guard.NotNull(action, nameof(action));
+
+        if (action.Mode is ProfileSwitchMode.Next)
+        {
+            var activeIndex = Profiles.IndexOf(ActiveProfile);
+            return Profiles[(activeIndex + 1) % Profiles.Length].Id;
+        }
+
+        return Profiles.Any(profile => profile.Id == action.ProfileId) ? action.ProfileId : null;
+    }
+
+    public AppConfiguration WithAssignmentInAllProfiles(NumLockLayer layer, DeckKey key, KeyAssignment assignment) =>
+        new(
+            ActiveProfileId,
+            Profiles.Select(profile => profile.WithAssignment(layer, key, assignment)).ToImmutableArray(),
+            Settings);
 
     public AppConfiguration WithSettings(GlobalSettings settings) =>
         new(ActiveProfileId, Profiles, settings);

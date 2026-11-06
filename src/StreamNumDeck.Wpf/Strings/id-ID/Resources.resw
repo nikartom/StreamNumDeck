@@ -441,6 +441,33 @@
   <data name="Action_Automation" xml:space="preserve">
     <value>Otomatisasi</value>
   </data>
+  <data name="ActionGroup_Profiles" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Action_NextProfile" xml:space="preserve">
+    <value>Profil berikutnya</value>
+  </data>
+  <data name="Action_SwitchProfile" xml:space="preserve">
+    <value>Beralih ke profil</value>
+  </data>
+  <data name="Field_Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Editor_ProfileSwitchHint.Text" xml:space="preserve">
+    <value>Penetapan ini dipasang pada tombol ini di setiap profil, sehingga Anda dapat beralih lagi dari profil mana pun.</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteTitle" xml:space="preserve">
+    <value>Ganti tugas</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteMessage" xml:space="preserve">
+    <value>Tombol ini sudah memiliki penetapan lain di profil berikut: {0}. Penetapan tersebut akan diganti. Lanjutkan?</value>
+  </data>
+  <data name="ActionError_ProfileUnavailable" xml:space="preserve">
+    <value>Profil yang ditetapkan untuk tombol ini sudah tidak ada. Pilih profil lain di pengaturan tombol.</value>
+  </data>
+  <data name="Error_SelectProfile" xml:space="preserve">
+    <value>Pilih profil.</value>
+  </data>
   <data name="Automation_ActionPickerTitle" xml:space="preserve">
     <value>Tambahkan tindakan ke otomatisasi</value>
   </data>

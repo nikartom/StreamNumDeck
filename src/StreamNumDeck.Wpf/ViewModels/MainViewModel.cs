@@ -86,6 +86,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
     public IReadOnlyDictionary<string, DeckKeyTileViewModel> Tiles { get; }
     public ObservableCollection<DeckProfile> Profiles { get; } = new();
     public event Action<string, string>? UserErrorRaised;
+    public event EventHandler? ProfilesReplaced;
 
     public DeckProfile? SelectedProfile
     {
@@ -149,6 +150,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         runtimeService.NumLockStateChanged += RuntimeService_NumLockStateChanged;
         runtimeService.ActionExecutionFailed += RuntimeService_ActionExecutionFailed;
         obsController.StateChanged += ObsController_StateChanged;
+        configurationService.Changed += ConfigurationService_Changed;
 
         IsNumLockOn = runtimeService.IsNumLockOn;
         await ApplyCaptureTargetsAsync(configuration.Settings, cancellationToken).ConfigureAwait(true);
@@ -229,7 +231,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         EnsureUniqueProfileName(current, name, null);
         var profile = DeckProfile.CreateDefault(name, icon);
         var configuration = await configurationService
-            .UpdateAsync(current => current.AddProfile(profile))
+            .UpdateAsync(current => current.AddProfile(profile.WithProfileSwitchAssignmentsFrom(current.ActiveProfile)))
             .ConfigureAwait(true);
         ReplaceProfiles(configuration, profile.Id);
     }
@@ -438,11 +440,34 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         var configuration = await configurationService.UpdateAsync(current =>
         {
             var profile = current.Profiles.Single(candidate => candidate.Id == profileId);
-            return current.ReplaceProfile(profile.WithAssignment(layer, key, assignment));
+
+            // A profile switch is kept on the same key in every profile, so the
+            // user can switch again from whichever profile becomes active.
+            return assignment.Action is SwitchProfileActionDefinition
+                ? current.WithAssignmentInAllProfiles(layer, key, assignment)
+                : current.ReplaceProfile(profile.WithAssignment(layer, key, assignment));
         }).ConfigureAwait(true);
         await RefreshPreloadedSoundsAsync(configuration).ConfigureAwait(true);
         ReplaceProfiles(configuration, configuration.ActiveProfileId);
     }
+
+    /// <summary>
+    /// Names the other profiles whose assignment on this key a profile switch would replace.
+    /// </summary>
+    public IReadOnlyList<string> GetProfileSwitchConflicts(
+        Guid profileId,
+        NumLockLayer layer,
+        DeckKey key,
+        KeyAssignment assignment) =>
+        Profiles
+            .Where(profile => profile.Id != profileId)
+            .Where(profile =>
+            {
+                var existing = profile.GetLayer(layer).GetAssignment(key);
+                return existing.Action is not NoActionDefinition && existing != assignment;
+            })
+            .Select(static profile => profile.Name)
+            .ToArray();
 
     private async Task RefreshPreloadedSoundsAsync(
         AppConfiguration configuration,
@@ -475,6 +500,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         runtimeService.NumLockStateChanged -= RuntimeService_NumLockStateChanged;
         runtimeService.ActionExecutionFailed -= RuntimeService_ActionExecutionFailed;
         obsController.StateChanged -= ObsController_StateChanged;
+        configurationService.Changed -= ConfigurationService_Changed;
     }
 
     private async Task ConnectObsAsync(StreamNumDeck.Core.Settings.ObsConnectionSettings settings)
@@ -498,6 +524,7 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         }
 
         SelectedProfile = Profiles.Single(profile => profile.Id == selectedId);
+        ProfilesReplaced?.Invoke(this, EventArgs.Empty);
     }
 
     private void RefreshTiles()
@@ -516,6 +543,16 @@ public sealed class MainViewModel : ObservableObject, IDisposable
 
     private void RuntimeService_NumLockStateChanged(object? sender, NumLockStateChangedEventArgs e) =>
         OnUi(() => IsNumLockOn = e.IsOn);
+
+    // Profile switch keys change the active profile without going through this view model.
+    private void ConfigurationService_Changed(object? sender, ConfigurationChangedEventArgs e) =>
+        OnUi(() =>
+        {
+            if (SelectedProfile?.Id != e.Configuration.ActiveProfileId)
+            {
+                ReplaceProfiles(e.Configuration, e.Configuration.ActiveProfileId);
+            }
+        });
 
     private void RuntimeService_ActionExecutionFailed(object? sender, ActionExecutionFailedEventArgs e) =>
         OnUi(() => ReportRuntimeActionFailure(e));
@@ -621,6 +658,8 @@ public sealed class MainViewModel : ObservableObject, IDisposable
         OpenUriActionDefinition => AppStrings.Get("Action_OpenUri", "Open link"),
         KeyboardMacroActionDefinition => AppStrings.Get("Action_KeyboardMacro", "Keyboard macro"),
         AutomationActionDefinition => AppStrings.Get("Action_Automation", "Automation"),
+        SwitchProfileActionDefinition { Mode: ProfileSwitchMode.Next } => AppStrings.Get("Action_NextProfile", "Next profile"),
+        SwitchProfileActionDefinition => AppStrings.Get("Action_SwitchProfile", "Switch to profile"),
         ObsActionDefinition => "OBS",
         VTubeStudioActionDefinition => "VTube Studio",
         _ => AppStrings.Get("Action_Execute", "Action"),

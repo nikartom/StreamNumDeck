@@ -441,6 +441,33 @@
   <data name="Action_Automation" xml:space="preserve">
     <value>Automation</value>
   </data>
+  <data name="ActionGroup_Profiles" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="Action_NextProfile" xml:space="preserve">
+    <value>Next profile</value>
+  </data>
+  <data name="Action_SwitchProfile" xml:space="preserve">
+    <value>Switch to profile</value>
+  </data>
+  <data name="Field_Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Editor_ProfileSwitchHint.Text" xml:space="preserve">
+    <value>This assignment is placed on this key in every profile, so you can switch again from any of them.</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteTitle" xml:space="preserve">
+    <value>Replace assignments</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteMessage" xml:space="preserve">
+    <value>This key already has other assignments in these profiles: {0}. They will be replaced. Continue?</value>
+  </data>
+  <data name="ActionError_ProfileUnavailable" xml:space="preserve">
+    <value>The profile assigned to this key no longer exists. Choose another profile in the key settings.</value>
+  </data>
+  <data name="Error_SelectProfile" xml:space="preserve">
+    <value>Select a profile.</value>
+  </data>
   <data name="Automation_ActionPickerTitle" xml:space="preserve">
     <value>Add action to automation</value>
   </data>

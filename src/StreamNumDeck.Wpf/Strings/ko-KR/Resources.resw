@@ -441,6 +441,33 @@
   <data name="Action_Automation" xml:space="preserve">
     <value>자동화</value>
   </data>
+  <data name="ActionGroup_Profiles" xml:space="preserve">
+    <value>프로필</value>
+  </data>
+  <data name="Action_NextProfile" xml:space="preserve">
+    <value>다음 프로필</value>
+  </data>
+  <data name="Action_SwitchProfile" xml:space="preserve">
+    <value>프로필로 전환</value>
+  </data>
+  <data name="Field_Profile" xml:space="preserve">
+    <value>프로필</value>
+  </data>
+  <data name="Editor_ProfileSwitchHint.Text" xml:space="preserve">
+    <value>이 할당은 모든 프로필의 이 키에 적용되므로 어느 프로필에서든 다시 전환할 수 있습니다.</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteTitle" xml:space="preserve">
+    <value>할당 바꾸기</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteMessage" xml:space="preserve">
+    <value>이 키에는 다음 프로필에 이미 다른 할당이 있습니다: {0}. 기존 할당은 대체됩니다. 계속하시겠습니까?</value>
+  </data>
+  <data name="ActionError_ProfileUnavailable" xml:space="preserve">
+    <value>이 키에 할당된 프로필이 더 이상 존재하지 않습니다. 키 설정에서 다른 프로필을 선택하세요.</value>
+  </data>
+  <data name="Error_SelectProfile" xml:space="preserve">
+    <value>프로필을 선택하세요.</value>
+  </data>
   <data name="Automation_ActionPickerTitle" xml:space="preserve">
     <value>자동화에 작업 추가</value>
   </data>

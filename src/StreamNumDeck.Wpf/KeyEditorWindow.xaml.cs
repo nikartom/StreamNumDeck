@@ -26,6 +26,7 @@ public partial class KeyEditorWindow : Window
         new ActionGroupOption("obs", "OBS Studio", "\uE95A"),
         new ActionGroupOption("vtube-studio", "VTube Studio", "\uE714"),
         new ActionGroupOption("system", AppStrings.Get("ActionGroup_System", "System"), "\uE756"),
+        new ActionGroupOption("profiles", AppStrings.Get("ActionGroup_Profiles", "Profiles"), "\uE77B"),
         new ActionGroupOption("automation", AppStrings.Get("ActionGroup_Automation", "Automation"), "\uE945"),
     };
 
@@ -70,6 +71,8 @@ public partial class KeyEditorWindow : Window
         new ActionOption("obs-media-restart", AppStrings.Get("Action_ObsRestartMedia", "OBS: restart media source"), AppStrings.Get("Field_Source", "Source"), false, false),
         new ActionOption("vts-hotkey", AppStrings.Get("Action_VTubeStudioHotkey", "VTube Studio: trigger hotkey"), AppStrings.Get("Field_Hotkey", "Hotkey"), false, false),
         new ActionOption("vts-model", AppStrings.Get("Action_VTubeStudioLoadModel", "VTube Studio: load model"), AppStrings.Get("Field_Model", "Model"), false, false),
+        new ActionOption("profile-next", AppStrings.Get("Action_NextProfile", "Next profile"), null, false, false),
+        new ActionOption("profile-switch", AppStrings.Get("Action_SwitchProfile", "Switch to profile"), AppStrings.Get("Field_Profile", "Profile"), false, false),
         new ActionOption("automation", AppStrings.Get("Action_Automation", "Automation"), null, false, false),
     };
 
@@ -83,6 +86,7 @@ public partial class KeyEditorWindow : Window
     private readonly KeyAssignment otherLayerAssignment;
     private readonly Func<string, int, SoundPlaybackBehavior, CancellationToken, Task> previewSound;
     private readonly Func<CancellationToken, Task> stopSounds;
+    private readonly IReadOnlyList<DeckProfile> profiles;
     private readonly ObservableCollection<AutomationStepItem> automationSteps = new();
     private readonly bool actionOnlyMode;
     private CancellationTokenSource? parameterSuggestionsCancellation;
@@ -105,9 +109,11 @@ public partial class KeyEditorWindow : Window
         Func<CancellationToken, Task<IReadOnlyList<AudioApplication>>> getAudioApplications,
         Func<string, int, SoundPlaybackBehavior, CancellationToken, Task> previewSound,
         Func<CancellationToken, Task> stopSounds,
+        IReadOnlyList<DeckProfile> profiles,
         bool actionOnlyMode = false)
     {
         this.importIcon = importIcon;
+        this.profiles = profiles;
         this.resolveIconPath = resolveIconPath;
         this.otherLayerAssignment = otherLayerAssignment;
         this.getObsCatalog = getObsCatalog;
@@ -138,7 +144,7 @@ public partial class KeyEditorWindow : Window
         iconPickerInitialized = true;
         AutomationStepsItemsControl.ItemsSource = automationSteps;
         ActionGroupListBox.ItemsSource = actionOnlyMode
-            ? ActionGroups.Where(group => group.Id is "sound" or "obs" or "vtube-studio" or "system").ToArray()
+            ? ActionGroups.Where(group => group.Id is "sound" or "obs" or "vtube-studio" or "system" or "profiles").ToArray()
             : ActionGroups;
         SoundBehaviorComboBox.ItemsSource = new[]
         {
@@ -486,7 +492,7 @@ public partial class KeyEditorWindow : Window
             return;
         }
 
-        automationSteps.Add(new AutomationStepItem(step));
+        automationSteps.Add(new AutomationStepItem(step, profiles));
         HideValidation();
     }
 
@@ -526,6 +532,7 @@ public partial class KeyEditorWindow : Window
             getAudioApplications,
             previewSound,
             stopSounds,
+            profiles,
             actionOnlyMode: true)
         {
             Owner = this,
@@ -537,7 +544,8 @@ public partial class KeyEditorWindow : Window
         }
 
         var replacement = new AutomationStepItem(
-            new ExecuteAutomationStepDefinition(editor.Assignment.Action));
+            new ExecuteAutomationStepDefinition(editor.Assignment.Action),
+            profiles);
         if (item is null)
         {
             AddAutomationStep(replacement.Definition);
@@ -594,7 +602,9 @@ public partial class KeyEditorWindow : Window
         var usesSuggestions = hasParameter
                               && (option.Id.StartsWith("obs-", StringComparison.Ordinal)
                                   || option.Id.StartsWith("vts-", StringComparison.Ordinal)
-                                  || option.Id.StartsWith("app-volume-", StringComparison.Ordinal));
+                                  || option.Id.StartsWith("app-volume-", StringComparison.Ordinal)
+                                  || option.Id == "profile-switch");
+        var isProfileSwitch = option.Id is "profile-next" or "profile-switch";
         ParameterLabel.Visibility = hasParameter ? Visibility.Visible : Visibility.Collapsed;
         ParameterTextBox.Visibility = hasParameter && !usesSuggestions ? Visibility.Visible : Visibility.Collapsed;
         ParameterComboBox.Visibility = hasParameter && usesSuggestions ? Visibility.Visible : Visibility.Collapsed;
@@ -614,6 +624,9 @@ public partial class KeyEditorWindow : Window
             "app-volume-up" or "app-volume-down" => AppStrings.Get(
                 "Editor_AudioSessionHint.Text",
                 "Only applications with an active Windows audio session are listed."),
+            _ when isProfileSwitch && !actionOnlyMode => AppStrings.Get(
+                "Editor_ProfileSwitchHint.Text",
+                "This assignment is placed on this key in every profile, so you can switch again from any of them."),
             _ => string.Empty,
         };
         ParameterHint.Text = hint;
@@ -623,7 +636,8 @@ public partial class KeyEditorWindow : Window
             : new Thickness(0);
         AutomationPanel.Visibility = isAutomation ? Visibility.Visible : Visibility.Collapsed;
         AutomationAddMenu.Visibility = Visibility.Collapsed;
-        ActionParametersCard.Visibility = !isAutomation && (hasParameter || option.ShowValue || option.Id == "launch")
+        ActionParametersCard.Visibility = !isAutomation
+                                          && (hasParameter || option.ShowValue || option.Id == "launch" || hint.Length > 0)
             ? Visibility.Visible
             : Visibility.Collapsed;
     }
@@ -638,7 +652,7 @@ public partial class KeyEditorWindow : Window
         {
             foreach (var step in automation.Steps)
             {
-                automationSteps.Add(new AutomationStepItem(step));
+                automationSteps.Add(new AutomationStepItem(step, profiles));
             }
         }
 
@@ -654,6 +668,17 @@ public partial class KeyEditorWindow : Window
         ArgumentsTextBox.Text = state.Arguments ?? string.Empty;
         WorkingDirectoryTextBox.Text = state.WorkingDirectory ?? string.Empty;
         UpdateActionFields();
+
+        // Profile suggestions load synchronously when the action is selected, before
+        // the stored profile is known, so select it in the list once it is set.
+        if (action.Id == "profile-switch")
+        {
+            StartParameterSuggestionsLoad(action.Id);
+            if (ParameterComboBox.SelectedItem is null)
+            {
+                ParameterComboBox.Text = string.Empty;
+            }
+        }
     }
 
     private void PopulateActions(string group, string? preferredActionId)
@@ -810,7 +835,13 @@ public partial class KeyEditorWindow : Window
         try
         {
             IReadOnlyList<ParameterSuggestion>? values = null;
-            if (actionId.StartsWith("app-volume-", StringComparison.Ordinal))
+            if (actionId == "profile-switch")
+            {
+                values = profiles
+                    .Select(static profile => new ParameterSuggestion(profile.Id.ToString(), profile.Name))
+                    .ToArray();
+            }
+            else if (actionId.StartsWith("app-volume-", StringComparison.Ordinal))
             {
                 values = (await getAudioApplications(cancellation.Token))
                     .Select(application => new ParameterSuggestion(application.Id, application.Id))
@@ -928,9 +959,21 @@ public partial class KeyEditorWindow : Window
             VTubeStudioActionKind.LoadModel,
             parameter,
             GetParameterDisplay()),
+        "profile-next" => new SwitchProfileActionDefinition(ProfileSwitchMode.Next),
+        "profile-switch" => new SwitchProfileActionDefinition(ProfileSwitchMode.Specific, ResolveProfileId(parameter)),
         "automation" => CreateAutomationAction(),
         _ => throw new ArgumentOutOfRangeException(nameof(id)),
     };
+
+    private Guid ResolveProfileId(string parameter)
+    {
+        var profile = Guid.TryParse(parameter, out var id)
+            ? profiles.FirstOrDefault(candidate => candidate.Id == id)
+            : profiles.FirstOrDefault(candidate =>
+                string.Equals(candidate.Name, parameter.Trim(), StringComparison.CurrentCultureIgnoreCase));
+        return profile?.Id
+               ?? throw new UserFacingException(AppStrings.Get("Error_SelectProfile", "Select a profile."));
+    }
 
     private AutomationActionDefinition CreateAutomationAction()
     {
@@ -971,6 +1014,8 @@ public partial class KeyEditorWindow : Window
             null,
             null),
         AutomationActionDefinition => new ActionState("automation", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        SwitchProfileActionDefinition { Mode: ProfileSwitchMode.Next } => new ActionState("profile-next", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
+        SwitchProfileActionDefinition profileSwitch => new ActionState("profile-switch", profileSwitch.ProfileId?.ToString(), 10, SoundPlaybackBehavior.RestartSameSound, null, null),
         _ => new ActionState("none", null, 10, SoundPlaybackBehavior.RestartSameSound, null, null),
     };
 
@@ -1018,6 +1063,7 @@ public partial class KeyEditorWindow : Window
             "sound" or "mic-mute" or "master-mute" or "volume-up" or "volume-down"
                 or "app-volume-up" or "app-volume-down" => "sound",
             "url" or "path" or "launch" or "macro" => "system",
+            "profile-next" or "profile-switch" => "profiles",
             "automation" => "automation",
             "vts-hotkey" or "vts-model" => "vtube-studio",
             _ => "obs",
@@ -1048,6 +1094,8 @@ public partial class KeyEditorWindow : Window
             "automation" => "\uE945",
             "vts-hotkey" => "\uE756",
             "vts-model" => "\uE714",
+            "profile-next" => "\uE72A",
+            "profile-switch" => "\uE77B",
             _ => "\uE72C",
         };
     }
@@ -1063,7 +1111,7 @@ public partial class KeyEditorWindow : Window
 
     private sealed class AutomationStepItem
     {
-        public AutomationStepItem(AutomationStepDefinition definition)
+        public AutomationStepItem(AutomationStepDefinition definition, IReadOnlyList<DeckProfile> profiles)
         {
             Definition = definition;
 
@@ -1073,7 +1121,7 @@ public partial class KeyEditorWindow : Window
                     var state = ReadAction(actionStep.Action);
                     var option = Actions.Single(action => action.Id == state.Id);
                     Title = option.Name;
-                    Detail = GetActionDetail(actionStep.Action, state, option);
+                    Detail = GetActionDetail(actionStep.Action, state, option, profiles);
                     Glyph = option.Glyph;
                     break;
 
@@ -1141,8 +1189,11 @@ public partial class KeyEditorWindow : Window
         private static string GetActionDetail(
             ActionDefinition action,
             ActionState state,
-            ActionOption option) => action switch
+            ActionOption option,
+            IReadOnlyList<DeckProfile> profiles) => action switch
         {
+            SwitchProfileActionDefinition { ProfileId: { } profileId } =>
+                profiles.FirstOrDefault(profile => profile.Id == profileId)?.Name ?? string.Empty,
             KeyboardMacroActionDefinition macro => AppStrings.Format(
                 "Automation_MacroSteps",
                 macro.Steps.Length),

@@ -90,6 +90,7 @@ public partial class App : System.Windows.Application
         collection.AddSingleton<IActionExecutor, ObsActionExecutor>();
         collection.AddSingleton<IVTubeStudioController, VTubeStudioWebSocketController>();
         collection.AddSingleton<IActionExecutor, VTubeStudioActionExecutor>();
+        collection.AddSingleton<IActionExecutor, ProfileActionExecutor>();
         collection.AddSingleton<ActionDispatcher>();
         collection.AddSingleton<DeckRuntimeService>();
         collection.AddSingleton<OverlayPositionStore>();

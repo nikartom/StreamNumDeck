@@ -2,6 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.ComponentModel;
+using StreamNumDeck.Core.Actions;
 using StreamNumDeck.Core.Deck;
 using StreamNumDeck.Core.Input;
 using StreamNumDeck.Wpf.ViewModels;
@@ -23,6 +24,7 @@ public partial class MainWindow : Window
         this.viewModel = viewModel;
         InitializeComponent();
         DataContext = viewModel;
+        viewModel.ProfilesReplaced += (_, _) => SelectActiveProfileInList();
         StateChanged += MainWindow_StateChanged;
         Closing += MainWindow_Closing;
     }
@@ -251,14 +253,38 @@ public partial class MainWindow : Window
             OpenVTubeStudioSettings,
             viewModel.GetAudioApplicationsAsync,
             viewModel.PreviewSoundAsync,
-            viewModel.StopSoundsAsync)
+            viewModel.StopSoundsAsync,
+            viewModel.Profiles.ToArray())
         {
             Owner = this,
         };
-        if (editor.ShowDialog() == true)
+        if (editor.ShowDialog() == true
+            && ConfirmProfileSwitchOverwrite(profile.Id, layer, key, editor.Assignment))
         {
             await SaveAssignmentAsync(profile.Id, layer, key, editor.Assignment);
         }
+    }
+
+    private bool ConfirmProfileSwitchOverwrite(
+        Guid profileId,
+        NumLockLayer layer,
+        DeckKey key,
+        StreamNumDeck.Core.Deck.KeyAssignment assignment)
+    {
+        if (assignment.Action is not SwitchProfileActionDefinition)
+        {
+            return true;
+        }
+
+        var conflicts = viewModel.GetProfileSwitchConflicts(profileId, layer, key, assignment);
+        return conflicts.Count == 0
+            || MessageBox.Show(
+                this,
+                AppStrings.Format("ProfileSwitch_OverwriteMessage", string.Join(", ", conflicts)),
+                AppStrings.Get("ProfileSwitch_OverwriteTitle", "Replace assignments"),
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning,
+                MessageBoxResult.No) == MessageBoxResult.Yes;
     }
 
     private bool OpenVTubeStudioSettings(Window owner)

@@ -9,6 +9,7 @@ public enum ActionGroup
     Obs,
     VTubeStudio,
     System,
+    Profile,
     Automation,
 }
 
@@ -25,6 +26,7 @@ public enum ActionGroup
 [JsonDerivedType(typeof(KeyboardMacroActionDefinition), "keyboardMacro")]
 [JsonDerivedType(typeof(ObsActionDefinition), "obs")]
 [JsonDerivedType(typeof(VTubeStudioActionDefinition), "vTubeStudio")]
+[JsonDerivedType(typeof(SwitchProfileActionDefinition), "switchProfile")]
 [JsonDerivedType(typeof(AutomationActionDefinition), "automation")]
 public abstract record ActionDefinition
 {

@@ -71,9 +71,9 @@ The physical `NumLock` key switches between two independent layers. That gives y
 - Open a game, browser, folder, file, or website.
 - Build multi-step automations that combine OBS, sound, and system actions with configurable pauses and an explicit finish step.
 - Run keyboard macros with shortcuts and key sequences.
-- Create separate profiles for streaming, gaming, editing, work, or any other setup.
+- Create separate profiles for streaming, gaming, editing, work, or any other setup, and switch between them from the keyboard.
 
-Each key can have a label, a built-in symbol, one of the included color emoji, or your own image. Profiles have their own icons and can be switched from the side panel or the system tray.
+Each key can have a label, a built-in symbol, one of the included color emoji, or your own image. Profiles have their own icons and can be switched from the side panel, the system tray, or a key. A profile switch key either cycles through the profiles or opens a selected one, and it is placed on the same key in every profile so you can always switch again.
 
 ### Download
 
@@ -122,6 +122,7 @@ The separate **Live2D Cubism Editor API** is not required. If you use its parame
 | **VTube Studio** | Trigger hotkeys configured for the current model and load another installed Live2D model. |
 | **Sound** | Play an audio file; mute/unmute the default microphone; mute Windows audio; adjust master volume; adjust a selected application's volume. |
 | **System** | Launch a program; open a file, folder, or web link; run a keyboard macro. |
+| **Profiles** | Switch to the next profile or to a selected profile. |
 | **Automation** | Combine actions from the other groups; add pauses; stop the remaining sequence with a finish step. |
 
 ### Languages and privacy
@@ -143,7 +144,7 @@ For users, the files on the [Releases page](https://github.com/nikartom/StreamNu
 Create the portable ZIP and Setup executable (Inno Setup 6 is required for Setup):
 
 ```powershell
-./scripts/package-wpf.ps1 -Version 1.4.0
+./scripts/package-wpf.ps1 -Version 1.4.5
 ```
 
 ---
@@ -172,9 +173,9 @@ StreamNumDeck превращает цифровой блок и шесть на�
 - Открывать игру, браузер, папку, файл или сайт.
 - Создавать многошаговые автоматизации из действий OBS, звука и системы, добавлять паузы и явно завершать оставшуюся последовательность.
 - Выполнять клавиатурные макросы с сочетаниями и последовательностями клавиш.
-- Создавать отдельные профили для стрима, игр, монтажа, работы и любых других задач.
+- Создавать отдельные профили для стрима, игр, монтажа, работы и любых других задач и переключаться между ними с клавиатуры.
 
-На клавише можно оставить подпись, выбрать встроенный символ, одно из цветных эмодзи или загрузить собственное изображение. Для профилей также выбираются иконки, а переключаться между ними можно на боковой панели или через меню в трее.
+На клавише можно оставить подпись, выбрать встроенный символ, одно из цветных эмодзи или загрузить собственное изображение. Для профилей также выбираются иконки, а переключаться между ними можно на боковой панели, через меню в трее или клавишей. Клавиша переключения либо перебирает профили по кругу, либо открывает выбранный профиль. Она ставится на ту же клавишу во всех профилях, поэтому переключиться дальше можно из любого из них.
 
 ### Скачать
 
@@ -223,6 +224,7 @@ StreamNumDeck использует интерфейс OBS WebSocket 5.x, вст�
 | **VTube Studio** | Запускать хоткеи текущей модели и загружать другую установленную Live2D-модель. |
 | **Звук** | Воспроизвести аудиофайл; включить или выключить микрофон по умолчанию; отключить звук Windows; изменить общую громкость или громкость выбранного приложения. |
 | **Система** | Запустить программу; открыть файл, папку или ссылку; выполнить клавиатурный макрос. |
+| **Профили** | Переключиться на следующий профиль или на выбранный профиль. |
 | **Автоматизация** | Объединить действия из других групп; добавить паузы; завершить оставшуюся последовательность отдельным элементом. |
 
 ### Языки и конфиденциальность
@@ -244,7 +246,7 @@ StreamNumDeck использует интерфейс OBS WebSocket 5.x, вст�
 Создание portable ZIP и установщика Setup (для Setup потребуется Inno Setup 6):
 
 ```powershell
-./scripts/package-wpf.ps1 -Version 1.4.0
+./scripts/package-wpf.ps1 -Version 1.4.5
 ```
 
 ## Author and license / Автор и лицензия

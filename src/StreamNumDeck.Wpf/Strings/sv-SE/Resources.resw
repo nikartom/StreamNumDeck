@@ -441,6 +441,33 @@
   <data name="Action_Automation" xml:space="preserve">
     <value>Automation</value>
   </data>
+  <data name="ActionGroup_Profiles" xml:space="preserve">
+    <value>Profiler</value>
+  </data>
+  <data name="Action_NextProfile" xml:space="preserve">
+    <value>Nästa profil</value>
+  </data>
+  <data name="Action_SwitchProfile" xml:space="preserve">
+    <value>Byt till profil</value>
+  </data>
+  <data name="Field_Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Editor_ProfileSwitchHint.Text" xml:space="preserve">
+    <value>Den här tilldelningen placeras på den här tangenten i varje profil, så att du kan byta igen från vilken som helst av dem.</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteTitle" xml:space="preserve">
+    <value>Byt ut uppdrag</value>
+  </data>
+  <data name="ProfileSwitch_OverwriteMessage" xml:space="preserve">
+    <value>Den här tangenten har redan andra tilldelningar i dessa profiler: {0}. De kommer att ersättas. Fortsätta?</value>
+  </data>
+  <data name="ActionError_ProfileUnavailable" xml:space="preserve">
+    <value>Profilen som har tilldelats den här tangenten finns inte längre. Välj en annan profil i tangentens inställningar.</value>
+  </data>
+  <data name="Error_SelectProfile" xml:space="preserve">
+    <value>Välj en profil.</value>
+  </data>
   <data name="Automation_ActionPickerTitle" xml:space="preserve">
     <value>Lägg till åtgärder för automatisering</value>
   </data>
